@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Character/SusWizCharacterBase.h"
+#include "SusWizCharacterBase.h"
 #include "SusWizCharacterPlayer.generated.h"
 
 /**

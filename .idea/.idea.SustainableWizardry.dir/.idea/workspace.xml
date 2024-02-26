@@ -7,7 +7,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1579a7cd-1dd9-4102-8fb2-ded64c6e3088" name="Changes" comment="" />
+    <list default="true" id="1579a7cd-1dd9-4102-8fb2-ded64c6e3088" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/SusWizCharacterPlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterPlayer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/SusWizCharacterPlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterPlayer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/SustainableWizardryCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/ZZZTemplateCode/SustainableWizardryCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/SustainableWizardryCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/ZZZTemplateCode/SustainableWizardryCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/SustainableWizardryGameMode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/ZZZTemplateCode/SustainableWizardryGameMode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/SustainableWizardryGameMode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/ZZZTemplateCode/SustainableWizardryGameMode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/SustainableWizardryProjectile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/ZZZTemplateCode/SustainableWizardryProjectile.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/SustainableWizardryProjectile.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/ZZZTemplateCode/SustainableWizardryProjectile.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/TP_PickUpComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/ZZZTemplateCode/TP_PickUpComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/TP_PickUpComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/ZZZTemplateCode/TP_PickUpComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/TP_WeaponComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/ZZZTemplateCode/TP_WeaponComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/TP_WeaponComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/ZZZTemplateCode/TP_WeaponComponent.h" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,9 +33,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2chhFv7RZUomZYz49zEsdmt89mK" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -31,7 +45,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "Uproject.SustainableWizardry.executor": "Run",
+    "git-widget-placeholder": "Upload-From-Testing-Env-1",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -121,6 +136,7 @@
       <option name="presentableId" value="Default" />
       <updated>1708569617536</updated>
       <workItem from="1708569619278" duration="922000" />
+      <workItem from="1708966720518" duration="433000" />
     </task>
     <servers />
   </component>
