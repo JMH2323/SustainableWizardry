@@ -8,29 +8,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1579a7cd-1dd9-4102-8fb2-ded64c6e3088" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/Player/LeftHand/ABP_Left.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/Player/LeftHand/AS_LHand_Idle.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/Player/RightHand/ABP_RightHand.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/Player/RightHand/AS_RHCombat1_Fire.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/Player/RightHand/AS_RHand_Idle.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/Player/RightHand/AS_RHand_Idle/Driving_AS_RHand_Idle.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Player/BP_SusWizPlayer.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Robo/BP_Robo.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Input/IMC_SusWizMappingContext.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Input/InputActions/IA_Look.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Input/InputActions/IA_Move.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Player/BP_SusWizPlayerController.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/Enemy/ABP_Robo.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/Enemy/ABP_Robo.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/LeftHand/ABP_Left.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/LeftHand/ABP_Left.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/LeftHand/AS_LHand_Idle.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/LeftHand/AS_LHand_Idle.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/RightHand/ABP_Right.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/RightHand/ABP_Right.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/RightHand/AS_RHCombat1_Fire.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/RightHand/AS_RHCombat1_Fire.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/RightHand/AS_RHand_Idle.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/RightHand/AS_RHand_Idle.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/RightHand/AS_RHand_Idle/Driving_AS_RHand_Idle.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/RightHand/AS_RHand_Idle/Driving_AS_RHand_Idle.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Player/Model/Meshes/Gideon.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Robo/Minions/Meshes/Minion_Lane_Ranged_Core_Dusk_Skeleton.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/EnemyRef/Characters/Minions/Down_Minions/Animations/Ranged/Fire_A.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/EnemyRef/Characters/Minions/Down_Minions/Animations/Ranged/Jog_Fwd_Combat_A.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/EnemyRef/Characters/Minions/Down_Minions/Animations/Ranged/KnockUp_A_Loop.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/EnemyRef/Characters/Minions/Down_Minions/Animations/Ranged/KnockUp_B_Loop.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/EnemyRef/Characters/Minions/Down_Minions/Animations/Ranged/Stun.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameMode/BP_GameMode.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Player/BP_SusWizPlayer.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Player/BP_SusWizPlayer.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GameMode/BP_GameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GameMode/BP_GameMode.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Input/IMC_SusWizMappingContext.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Input/IMC_SusWizMappingContext.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/TestLevelSW.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/TestLevelSW.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterBase.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterBase.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Player/SusWizPlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Player/SusWizPlayerController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Player/SusWizPlayerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Player/SusWizPlayerController.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +33,10 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -148,7 +146,7 @@
       <workItem from="1708569619278" duration="922000" />
       <workItem from="1708966720518" duration="1641000" />
       <workItem from="1709160433502" duration="761000" />
-      <workItem from="1710361008557" duration="5536000" />
+      <workItem from="1710361008557" duration="8945000" />
     </task>
     <servers />
   </component>
