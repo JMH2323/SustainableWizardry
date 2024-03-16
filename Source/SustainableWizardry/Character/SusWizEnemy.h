@@ -13,5 +13,7 @@ UCLASS()
 class SUSTAINABLEWIZARDRY_API ASusWizEnemy : public ASusWizCharacterBase
 {
 	GENERATED_BODY()
+
+	ASusWizEnemy();
 	
 };
