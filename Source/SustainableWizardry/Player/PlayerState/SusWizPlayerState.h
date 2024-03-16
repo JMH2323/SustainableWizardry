@@ -3,34 +3,32 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Character.h"
 #include "AbilitySystemInterface.h"
-#include "SusWizCharacterBase.generated.h"
+#include "GameFramework/PlayerState.h"
+#include "SusWizPlayerState.generated.h"
 
+/**
+ * 
+ */
 
-// Forward declare for GAS
 class UAbilitySystemComponent;
 class UAttributeSet;
-class UGameplayAbility;
-
 
 UCLASS()
-class SUSTAINABLEWIZARDRY_API ASusWizCharacterBase : public ACharacter, public IAbilitySystemInterface
+class SUSTAINABLEWIZARDRY_API ASusWizPlayerState : public APlayerState, public IAbilitySystemInterface
 {
 	GENERATED_BODY()
 
+	
+
 public:
-	// Sets default values for this character's properties
-	ASusWizCharacterBase();
-
+	
+	ASusWizPlayerState();
+	
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
-
 	UAttributeSet* GetAttributeSet() const { return AttributeSet; }
 
 protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-
 
 	UPROPERTY()
 	TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;
@@ -38,4 +36,5 @@ protected:
 	UPROPERTY()
 	TObjectPtr<UAttributeSet> AttributeSet;
 
+	
 };
