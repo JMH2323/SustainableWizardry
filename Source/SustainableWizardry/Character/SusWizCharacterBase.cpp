@@ -23,4 +23,9 @@ void ASusWizCharacterBase::BeginPlay()
 	
 }
 
+void ASusWizCharacterBase::InitAbilityActorInfo()
+{
+	// override in characterplayer
+}
+
 

@@ -12,7 +12,7 @@
 class UAbilitySystemComponent;
 class UAttributeSet;
 class UGameplayAbility;
-
+class UGameplayEffect;
 
 UCLASS()
 class SUSTAINABLEWIZARDRY_API ASusWizCharacterBase : public ACharacter, public IAbilitySystemInterface
@@ -31,11 +31,16 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	
 
 	UPROPERTY()
 	TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;
 
 	UPROPERTY()
 	TObjectPtr<UAttributeSet> AttributeSet;
+
+
+	// 6.0 virtual InitAbilities for ASC. Override in player character
+	virtual void InitAbilityActorInfo();
 
 };
