@@ -3,3 +3,8 @@
 
 #include "SusWizUserWidget.h"
 
+void USusWizUserWidget::SetWidgetController(UObject* InWidgetController)
+{
+	WidgetController = InWidgetController;
+	WidgetControllerSet();
+}

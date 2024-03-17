@@ -25,9 +25,6 @@ public:
 	
 	ASusWizPlayerState();
 	
-	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
-	UAttributeSet* GetAttributeSet() const { return AttributeSet; }
-
 protected:
 
 	UPROPERTY()
@@ -36,5 +33,22 @@ protected:
 	UPROPERTY()
 	TObjectPtr<UAttributeSet> AttributeSet;
 
+
+	
+public:
+	
+	
+	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
+	UAttributeSet* GetAttributeSet() const
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Player state is getting ABS."));
+		return AttributeSet;
+	}
+
+
+
+	
+public:
+	
 	
 };
