@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "AttributeSet.h"
 #include "AbilitySystemComponent.h"
+#include "GameplayEffectExtension.h"
 #include "SusWizAttributeSet.generated.h"
 
 /**
@@ -15,6 +16,42 @@ GAMEPLAYATTRIBUTE_PROPERTY_GETTER(ClassName, PropertyName) \
 GAMEPLAYATTRIBUTE_VALUE_GETTER(PropertyName) \
 GAMEPLAYATTRIBUTE_VALUE_SETTER(PropertyName) \
 GAMEPLAYATTRIBUTE_VALUE_INITTER(PropertyName)
+
+// VERY LATE STEP. Post Gameplay Accessors
+
+USTRUCT()
+struct FEffectProperties
+{
+	GENERATED_BODY()
+
+	FEffectProperties(){}
+
+	FGameplayEffectContextHandle EffectContextHandle;
+
+	UPROPERTY()
+	UAbilitySystemComponent* SourceASC = nullptr;
+
+	UPROPERTY()
+	AActor* SourceAvatarActor = nullptr;
+
+	UPROPERTY()
+	AController* SourceController = nullptr;
+
+	UPROPERTY()
+	ACharacter* SourceCharacter = nullptr;
+
+	UPROPERTY()
+	UAbilitySystemComponent* TargetASC = nullptr;
+
+	UPROPERTY()
+	AActor* TargetAvatarActor = nullptr;
+
+	UPROPERTY()
+	AController* TargetController = nullptr;
+
+	UPROPERTY()
+	ACharacter* TargetCharacter = nullptr;
+};
 
 
 // TODO: READ THROUGH ATTRIBUTE SET COMMENTS!!!!
@@ -39,6 +76,16 @@ public:
 	// Attribute Data
 	// Steps) 1. Create attribute in .h file. 2. creating the OnRep_ Function. 3. Add to props list
 
+private:
+
+	// Get all the data effect properties
+	void SetEffectProperties(const FGameplayEffectModCallbackData Data, FEffectProperties& Props) const;
+
+	// PART ONE VERSION
+	void EmptyPartOne(const FGameplayEffectModCallbackData& Data);
+
+	
+public:
 	
 	/*
 	 * Primary Attributes
