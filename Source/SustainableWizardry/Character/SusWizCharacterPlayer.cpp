@@ -72,5 +72,13 @@ void ASusWizCharacterPlayer::InitAbilityActorInfo()
 			SusWizHUD->InitOverlay(SusWizPlayerController, SusWizPlayerState, AbilitySystemComponent, AttributeSet);
 		}
 	}
+
+
+	// 11.2 initializing default primary attributes
+	// InitializePrimaryAttributes();
+	// 12.4 Initialize all attributes
+	InitializeDefaultAttributes();
+
+	
 };
 

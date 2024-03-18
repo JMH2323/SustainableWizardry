@@ -44,4 +44,20 @@ protected:
 	// 6.0 virtual InitAbilities for ASC. Override in player character
 	virtual void InitAbilityActorInfo();
 
+	// // 11.0 Creating default attributes on the character...
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Attributes")
+	TSubclassOf<UGameplayEffect> DefaultPrimaryAttributes;
+
+	// // 12.0 Add secondary Attributes too! Make sure these go after Primary.
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Attributes")
+	TSubclassOf<UGameplayEffect> DefaultSecondaryAttributes;
+
+	// 15 Add vital attributes.
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Attributes")
+	TSubclassOf<UGameplayEffect> DefaultVitalAttributes;
+
+	// 16 Implement above code
+	void ApplyEffectToSelf(TSubclassOf<UGameplayEffect> GameplayEffectClass, float Level) const;
+	void InitializeDefaultAttributes() const;
+	
 };
