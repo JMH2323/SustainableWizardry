@@ -16,3 +16,18 @@ ASusWizEnemy::ASusWizEnemy()
 
 	
 }
+
+void ASusWizEnemy::BeginPlay()
+{
+	Super::BeginPlay();
+	InitAbilityActorInfo();
+}
+
+void ASusWizEnemy::InitAbilityActorInfo()
+{
+	Super::InitAbilityActorInfo();
+
+	AbilitySystemComponent->InitAbilityActorInfo(this, this);
+	Cast<USusWizAbilitySystemComponent>(AbilitySystemComponent)->AbilityActorInfoSet();
+	
+}
