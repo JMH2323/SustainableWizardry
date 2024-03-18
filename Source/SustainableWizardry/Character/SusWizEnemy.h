@@ -14,6 +14,11 @@ class SUSTAINABLEWIZARDRY_API ASusWizEnemy : public ASusWizCharacterBase
 {
 	GENERATED_BODY()
 
+public:
 	ASusWizEnemy();
-	
+
+protected:
+
+	virtual void BeginPlay() override;
+	virtual void InitAbilityActorInfo() override;
 };

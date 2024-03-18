@@ -10,26 +10,26 @@
 #include "OverlayWidgetController.generated.h"
 
 // 8.0 Create Row Structure for our Data Tables
-//TODO: Uncomment from 14 to 32 after tags are added
-// USTRUCT(BlueprintType)
-// struct FUIWidgetRow : public FTableRowBase
-// {
-// 	GENERATED_BODY()
-//
-// 	// Tag for sending messages to the screen
-// 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-// 	FGameplayTag MessageTag = FGameplayTag();
-//
-// 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-// 	FText Message = FText();
-//
-// 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-// 	TSubclassOf<class USusWizUserWidget> MessageWidget;
-//
-// 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-// 	UTexture2D* Image = nullptr;
-// 	
-// };
+
+USTRUCT(BlueprintType)
+struct FUIWidgetRow : public FTableRowBase
+{
+	GENERATED_BODY()
+
+	// Tag for sending messages to the screen
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	FGameplayTag MessageTag = FGameplayTag();
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	FText Message = FText();
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	TSubclassOf<class USusWizUserWidget> MessageWidget;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UTexture2D* Image = nullptr;
+	
+};
 
 class USusWizUserWidget;
 // 7.0
@@ -43,8 +43,8 @@ class USusWizUserWidget;
 // changing attributes = broadcasting a float. KEEP ATTRIBUTES FLOATS FOR THIS DELEGATE
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnAttributeChangedSignature, float, NewValue);
 
-// 9. TODO: Uncomment
-//DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMessageWidgetRowSignature, FUIWidgetRow, Row);
+// 9. 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMessageWidgetRowSignature, FUIWidgetRow, Row);
 
 
 /**
@@ -78,9 +78,9 @@ public:
 	UPROPERTY(BlueprintAssignable, Category="GAS|Attributes")
 	FOnAttributeChangedSignature OnMaxEnergyChanged;
 
-	//9.1 TODO: Uncomment
-	//UPROPERTY(BlueprintAssignable, Category="GAS|Messages")
-	//FMessageWidgetRowSignature MessageWidgetRowDelegate;
+	//9.1 
+	UPROPERTY(BlueprintAssignable, Category="GAS|Messages")
+	FMessageWidgetRowSignature MessageWidgetRowDelegate;
 	
 protected:
 
