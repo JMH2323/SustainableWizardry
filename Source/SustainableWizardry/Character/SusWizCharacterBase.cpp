@@ -3,6 +3,8 @@
 
 #include "SusWizCharacterBase.h"
 
+#include "SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.h"
+
 // Sets default values
 ASusWizCharacterBase::ASusWizCharacterBase()
 {
@@ -11,11 +13,42 @@ ASusWizCharacterBase::ASusWizCharacterBase()
 
 }
 
+UAbilitySystemComponent* ASusWizCharacterBase::GetAbilitySystemComponent() const
+{
+	return AbilitySystemComponent;	
+}
+
 // Called when the game starts or when spawned
 void ASusWizCharacterBase::BeginPlay()
 {
 	Super::BeginPlay();
 	
+}
+
+void ASusWizCharacterBase::InitAbilityActorInfo()
+{
+	// override in characterplayer
+}
+
+void ASusWizCharacterBase::ApplyEffectToSelf(TSubclassOf<UGameplayEffect> GameplayEffectClass, float Level) const
+{
+	check(IsValid(GetAbilitySystemComponent()));
+	check(GameplayEffectClass);
+	FGameplayEffectContextHandle ContextHandle = GetAbilitySystemComponent()->MakeEffectContext();
+	// Ran into a Null pointer error, implemented source object during effect application
+	ContextHandle.AddSourceObject(this);
+	const FGameplayEffectSpecHandle SpecHandle = GetAbilitySystemComponent()->MakeOutgoingSpec(GameplayEffectClass, Level, ContextHandle);
+	GetAbilitySystemComponent()->ApplyGameplayEffectSpecToTarget(*SpecHandle.Data.Get(), GetAbilitySystemComponent());
+	
+}
+
+void ASusWizCharacterBase::InitializeDefaultAttributes() const
+{
+	// PAY ATTENTION to the order you apply.
+	// These values are dependent on each other!
+	ApplyEffectToSelf(DefaultPrimaryAttributes, 1);
+	ApplyEffectToSelf(DefaultSecondaryAttributes, 1);
+	ApplyEffectToSelf(DefaultVitalAttributes, 1);
 }
 
 

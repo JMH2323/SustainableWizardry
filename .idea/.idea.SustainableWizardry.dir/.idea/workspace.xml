@@ -8,23 +8,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1579a7cd-1dd9-4102-8fb2-ded64c6e3088" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Player/BP_SusWizPlayerController.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/Data/DA_AttributeInfo.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/AttributeMenu/WBP_AttributeMenu.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/AttributeMenu/WBP_FramedValue.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/AttributeMenu/WBP_RowButton.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/AttributeMenu/WBP_TextValueRow.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Button/WBP_Button.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Button/WBP_WideButton.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/Data/AttributeInfo.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/Data/AttributeInfo.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/ModMagCalc/DefaultAttributes/MMC_MaxHealth.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/ModMagCalc/DefaultAttributes/MMC_MaxHealth.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/SusWizAbilitySystemLibrary.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/SusWizAbilitySystemLibrary.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Interaction/CombatInterface.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Interaction/CombatInterface.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/SustainableWizardry/SusWizAssetManager.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/SustainableWizardry/SusWizAssetManager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/SustainableWizardry/SusWizGameplayTags.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/SustainableWizardry/SusWizGameplayTags.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/SustainableWizardry/UI/Widget/WidgetController/AttributeMenuWidgetController.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/SustainableWizardry/UI/Widget/WidgetController/AttributeMenuWidgetController.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Player/Model/Meshes/Gideon.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Robo/Minions/Meshes/Minion_Lane_Ranged_Core_Dusk_Skeleton.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/EnemyRef/Characters/Minions/Down_Minions/Animations/Ranged/Fire_A.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/EnemyRef/Characters/Minions/Down_Minions/Animations/Ranged/Jog_Fwd_Combat_A.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/EnemyRef/Characters/Minions/Down_Minions/Animations/Ranged/KnockUp_A_Loop.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/EnemyRef/Characters/Minions/Down_Minions/Animations/Ranged/KnockUp_B_Loop.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/EnemyRef/Characters/Minions/Down_Minions/Animations/Ranged/Stun.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameMode/BP_GameMode.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Player/BP_SusWizPlayer.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Player/BP_SusWizPlayer.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GameMode/BP_GameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GameMode/BP_GameMode.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Input/IMC_SusWizMappingContext.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Input/IMC_SusWizMappingContext.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultGameplayTags.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultGameplayTags.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayEffects/DefaultPlayerAttributes/GE_DefaultPrimaryAttribute.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayEffects/DefaultPlayerAttributes/GE_DefaultPrimaryAttribute.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayEffects/DefaultPlayerAttributes/GE_DefaultSecondaryAttributes.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayEffects/DefaultPlayerAttributes/GE_DefaultSecondaryAttributes.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/TestLevelSW.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/TestLevelSW.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Player/SusWizPlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Player/SusWizPlayerController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Player/SusWizPlayerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Player/SusWizPlayerController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/Overlay/WBP_Overlay.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/Overlay/WBP_Overlay.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/ProgressBars/WBP_HealthCrystal.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/ProgressBars/WBP_HealthCrystal.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/ProgressBars/WBP_ProgressBar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/ProgressBars/WBP_ProgressBar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterBase.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterPlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterPlayer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterPlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterPlayer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizEnemy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizEnemy.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizEnemy.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizEnemy.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Player/PlayerState/SusWizPlayerState.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Player/PlayerState/SusWizPlayerState.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Player/PlayerState/SusWizPlayerState.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Player/PlayerState/SusWizPlayerState.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,11 +56,29 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterBase.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterBase.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizEnemy.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizEnemy.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/SustainableWizardry/Effects/Actors/SusWizEffectActor.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/SustainableWizardry/Effects/Actors/SusWizEffectActor.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/SustainableWizardry/GAS/Attribute/SusWizAttributeSet.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/SustainableWizardry/GAS/Attribute/SusWizAttributeSet.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/SustainableWizardry/Player/PlayerState/SusWizPlayerState.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/SustainableWizardry/Player/PlayerState/SusWizPlayerState.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/SustainableWizardry/Player/SusWizPlayerController.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/SustainableWizardry/Player/SusWizPlayerController.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/SustainableWizardry/SustainableWizardry.Build.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/SustainableWizardry/UI/Widget/UserWidget/SusWizUserWidget.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/SustainableWizardry/UI/Widget/UserWidget/SusWizUserWidget.h" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Toolset" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -51,17 +90,18 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;Uproject.SustainableWizardry.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Upload-From-Testing-Env-1&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Upload-From-Testing-Env-2&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -146,7 +186,13 @@
       <workItem from="1708569619278" duration="922000" />
       <workItem from="1708966720518" duration="1641000" />
       <workItem from="1709160433502" duration="761000" />
-      <workItem from="1710361008557" duration="8945000" />
+      <workItem from="1710361008557" duration="9824000" />
+      <workItem from="1710534589027" duration="1194000" />
+      <workItem from="1710536578759" duration="2911000" />
+      <workItem from="1710628200858" duration="8704000" />
+      <workItem from="1710640304653" duration="6099000" />
+      <workItem from="1710705001762" duration="9162000" />
+      <workItem from="1710792508799" duration="8839000" />
     </task>
     <servers />
   </component>
