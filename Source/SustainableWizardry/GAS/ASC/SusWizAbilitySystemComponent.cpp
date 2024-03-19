@@ -3,6 +3,8 @@
 
 #include "SusWizAbilitySystemComponent.h"
 
+#include "SustainableWizardry/SusWizGameplayTags.h"
+
 
 void USusWizAbilitySystemComponent::AbilityActorInfoSet()
 {
@@ -11,7 +13,10 @@ void USusWizAbilitySystemComponent::AbilityActorInfoSet()
 	OnGameplayEffectAppliedDelegateToSelf.AddUObject(this, &USusWizAbilitySystemComponent::EffectApplied);
 
 	// 16 testing for getting tags
-	// const FSusWizGameplayTags& GameplayTags = FSusWizGameplayTags::Get();
+	const FSusWizGameplayTags& GameplayTags = FSusWizGameplayTags::Get();
+	//GameplayTags.Attributes_Secondary_Armor
+	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Green,
+		FString::Printf(TEXT("Tag: %s"), *GameplayTags.Attributes_Secondary_Armor.ToString()));
 	
 	
 }

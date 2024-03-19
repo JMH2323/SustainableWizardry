@@ -17,6 +17,11 @@ ASusWizEnemy::ASusWizEnemy()
 	
 }
 
+int32 ASusWizEnemy::GetPlayerLevel()
+{
+	return Level;
+}
+
 void ASusWizEnemy::BeginPlay()
 {
 	Super::BeginPlay();

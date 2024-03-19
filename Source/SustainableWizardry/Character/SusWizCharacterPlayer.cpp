@@ -34,10 +34,17 @@ void ASusWizCharacterPlayer::OnRep_PlayerState()
 	
 }
 
+int32 ASusWizCharacterPlayer::GetPlayerLevel()
+{
+	ASusWizPlayerState* SusWizPlayerState = GetPlayerState<ASusWizPlayerState>();
+	check(SusWizPlayerState)
+	return SusWizPlayerState->GetPlayerLevel();
+}
+
 void ASusWizCharacterPlayer::InitAbilityActorInfo()
 {
 	ASusWizPlayerState* SusWizPlayerState = GetPlayerState<ASusWizPlayerState>();
-
+	
 
 	if(SusWizPlayerState && SusWizPlayerState->GetAbilitySystemComponent())
 	{

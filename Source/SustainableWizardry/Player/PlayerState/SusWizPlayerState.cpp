@@ -5,6 +5,7 @@
 
 #include "SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.h"
 #include "SustainableWizardry/GAS/Attribute/SusWizAttributeSet.h"
+#include "Net/UnrealNetwork.h"
 
 ASusWizPlayerState::ASusWizPlayerState()
 {
@@ -33,4 +34,17 @@ UAbilitySystemComponent* ASusWizPlayerState::GetAbilitySystemComponent() const
 	UE_LOG(LogTemp, Warning, TEXT("Player state is getting ASC."));
 	return AbilitySystemComponent;
 	
+}
+
+void ASusWizPlayerState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	DOREPLIFETIME(ASusWizPlayerState, Level);
+}
+
+
+void ASusWizPlayerState::OnRep_Level(int32 OldLevel)
+{
+	// 
 }

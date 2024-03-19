@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "AbilitySystemInterface.h"
+#include "SustainableWizardry/Interaction/CombatInterface.h"
 #include "SusWizCharacterBase.generated.h"
 
 
@@ -15,7 +16,8 @@ class UGameplayAbility;
 class UGameplayEffect;
 
 UCLASS()
-class SUSTAINABLEWIZARDRY_API ASusWizCharacterBase : public ACharacter, public IAbilitySystemInterface
+class SUSTAINABLEWIZARDRY_API ASusWizCharacterBase : public ACharacter,
+public IAbilitySystemInterface, public ICombatInterface
 {
 	GENERATED_BODY()
 
