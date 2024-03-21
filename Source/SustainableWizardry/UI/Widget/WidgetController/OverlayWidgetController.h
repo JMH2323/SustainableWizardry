@@ -11,7 +11,7 @@
 
 // 8.0 Create Row Structure for our Data Tables
 
-USTRUCT(BlueprintType)
+USTRUCT(BlueprintType, Blueprintable)
 struct FUIWidgetRow : public FTableRowBase
 {
 	GENERATED_BODY()
