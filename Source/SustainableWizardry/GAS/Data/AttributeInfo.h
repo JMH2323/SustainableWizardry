@@ -45,4 +45,5 @@ public:
 	// Function that can get info from the tag
 	FSusWizAttributeInfo FindAttributeInfoForTag(const FGameplayTag& AttributeTag, bool bLogNotFound = false) const;
 	
+	
 };
