@@ -61,7 +61,8 @@ void ASusWizPlayerController::Look(const FInputActionValue& Value)
 	// Inverting Y Axis
 	LookAxisVector.Y *= -1;
 
-	UE_LOG(LogTemp, Warning, TEXT("Checking Axes: X: %f, Y: %f"), LookAxisVector.X, LookAxisVector.Y);
+	// Warning log for checking mouse input
+	//UE_LOG(LogTemp, Warning, TEXT("Checking Axes: X: %f, Y: %f"), LookAxisVector.X, LookAxisVector.Y);
 	
 	if (APawn* ControlledPawn = GetPawn<APawn>())
 	{

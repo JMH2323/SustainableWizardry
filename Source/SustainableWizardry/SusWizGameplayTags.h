@@ -24,10 +24,10 @@ static const FSusWizGameplayTags& Get() { return GameplayTags; }
 
  // Secondary Attribute Tags
  // TODO: Alex/Jeff add tags for attributes you have been working with.
- FGameplayTag Attributes_Secondary_MaxHealth;
- FGameplayTag Attributes_Secondary_MaxEnergy;
  FGameplayTag Attributes_Secondary_Armor;
  FGameplayTag Attributes_Secondary_ArmorPen;
+ FGameplayTag Attributes_Secondary_MaxEnergy;
+ FGameplayTag Attributes_Secondary_MaxHealth;
 
  // Vital Attribute Tags
  FGameplayTag Attributes_Vital_Health;
