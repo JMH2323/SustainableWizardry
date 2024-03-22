@@ -7,12 +7,32 @@
 #include "AbilitySystemBlueprintLibrary.h"
 #include "GameFramework/Character.h"
 #include "GameplayEffectExtension.h"
+#include "SustainableWizardry/SusWizGameplayTags.h"
 
 USusWizAttributeSet::USusWizAttributeSet()
 {
 	// This is where we CAN set our base values
-	InitHealth(50.0f);
+	//InitHealth(50.0f);
 	//InitMaxHealth(100.0f);
+
+const FSusWizGameplayTags& GameplayTags = FSusWizGameplayTags::Get();
+
+	// Adding Tag to Attribute Conversion
+	/* Primary */
+	TagsToAttributes.Add(GameplayTags.Attributes_Primary_Deep, GetDeepAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Primary_Flare, GetFlareAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Primary_Seismic, GetSeismicAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Primary_Swift, GetSwiftAttribute);
+
+	/* Secondary */
+	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_MaxEnergy, GetMaxEnergyAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_MaxHealth, GetMaxHealthAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_Armor, GetArmorAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_ArmorPen, GetArmorPenAttribute);
+	
+	/* Vital */
+	TagsToAttributes.Add(GameplayTags.Attributes_Vital_Health, GetHealthAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Vital_Energy, GetEnergyAttribute);
 }
 
 
@@ -181,14 +201,16 @@ void USusWizAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& 
 	// Secondary
 	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, Armor, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, ArmorPen, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, MaxHealth, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, MaxEnergy, COND_None, REPNOTIFY_Always);
 	// TODO: JEFF AND ALEX
 
 	
 	// Vital
 	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, Health, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, MaxHealth, COND_None, REPNOTIFY_Always);
+	
 	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, Energy, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, MaxEnergy, COND_None, REPNOTIFY_Always);
+	
 }
 
 
@@ -230,6 +252,16 @@ void USusWizAttributeSet::OnRep_ArmorPen(const FGameplayAttributeData& OldArmorP
 	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, ArmorPen, OldArmorPen);
 }
 
+void USusWizAttributeSet::OnRep_MaxHealth(const FGameplayAttributeData& OldMaxHealth) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, MaxHealth, OldMaxHealth);
+}
+
+void USusWizAttributeSet::OnRep_MaxEnergy(const FGameplayAttributeData& OldMaxEnergy) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, MaxHealth, OldMaxEnergy);
+}
+
 //TODO: JEFF ALEX
 
 /*
@@ -241,18 +273,10 @@ void USusWizAttributeSet::OnRep_Health(const FGameplayAttributeData& OldHealth) 
 	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, Health, OldHealth);
 }
 
-void USusWizAttributeSet::OnRep_MaxHealth(const FGameplayAttributeData& OldMaxHealth) const
-{
-	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, MaxHealth, OldMaxHealth);
-}
-
 void USusWizAttributeSet::OnRep_Energy(const FGameplayAttributeData& OldEnergy) const
 {
 	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, MaxHealth, OldEnergy);
 }
 
-void USusWizAttributeSet::OnRep_MaxEnergy(const FGameplayAttributeData& OldMaxEnergy) const
-{
-	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, MaxHealth, OldMaxEnergy);
-}
+
 
