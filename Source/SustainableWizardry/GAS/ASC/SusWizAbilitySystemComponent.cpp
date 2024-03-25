@@ -3,7 +3,10 @@
 
 #include "SusWizAbilitySystemComponent.h"
 
+#include "AbilitySystemComponent.h"
 #include "SustainableWizardry/SusWizGameplayTags.h"
+#include "AbilitySystemBlueprintLibrary.h"
+#include "SustainableWizardry/GAS/GameplayAbilities/SusWizGameplayAbility.h"
 
 
 void USusWizAbilitySystemComponent::AbilityActorInfoSet()
@@ -26,12 +29,52 @@ void USusWizAbilitySystemComponent::AddCharacterAbilities(TArray<TSubclassOf<UGa
 
 	for (TSubclassOf<UGameplayAbility> AbilityClass : StartupAbilities)
 	{
-
 		FGameplayAbilitySpec AbilitySpec = FGameplayAbilitySpec(AbilityClass, 1);
-		GiveAbility(AbilitySpec);
+
+		if (const USusWizGameplayAbility* SusWizAbility = Cast<USusWizGameplayAbility>(AbilitySpec.Ability))
+		{
+			AbilitySpec.DynamicAbilityTags.AddTag(SusWizAbility->StartupInputTag);
+			// Give ability to player
+			GiveAbility(AbilitySpec);
+		}
+
+		
+
+		
+		
 		
 	}
 	
+}
+
+void USusWizAbilitySystemComponent::AbilityInputTagHeld(const FGameplayTag& InputTag)
+{
+	if (!InputTag.IsValid()) return;
+
+	for (FGameplayAbilitySpec& AbilitySpec : GetActivatableAbilities())
+	{
+		if (AbilitySpec.DynamicAbilityTags.HasTagExact(InputTag))
+		{
+			AbilitySpecInputPressed(AbilitySpec);
+			if (!AbilitySpec.IsActive())
+			{
+				TryActivateAbility(AbilitySpec.Handle);
+			}
+		}
+	}
+}
+
+void USusWizAbilitySystemComponent::AbilityInputTagReleased(const FGameplayTag& InputTag)
+{
+	if (!InputTag.IsValid()) return;
+
+	for (FGameplayAbilitySpec& AbilitySpec : GetActivatableAbilities())
+	{
+		if (AbilitySpec.DynamicAbilityTags.HasTagExact(InputTag))
+		{
+			AbilitySpecInputReleased(AbilitySpec);
+		}
+	}
 }
 
 void USusWizAbilitySystemComponent::EffectApplied(UAbilitySystemComponent* AbilitySystemComponent,

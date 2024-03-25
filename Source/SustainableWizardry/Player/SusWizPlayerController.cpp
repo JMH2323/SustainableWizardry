@@ -6,6 +6,7 @@
 
 #include "AbilitySystemBlueprintLibrary.h"
 #include "AttributeSet.h"
+#include "SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
 #include "Animation/AnimInstance.h"
@@ -106,10 +107,21 @@ void ASusWizPlayerController::AbilityInputTagPressed(FGameplayTag InputTag)
 
 void ASusWizPlayerController::AbilityInputTagReleased(FGameplayTag InputTag)
 {
-	//
+	if (GetASC() == nullptr) return;
+	GetASC()->AbilityInputTagReleased(InputTag);
 }
 
 void ASusWizPlayerController::AbilityInputTagHeld(FGameplayTag InputTag)
 {
-	//
+	if (GetASC() == nullptr) return;
+	GetASC()->AbilityInputTagHeld(InputTag);
+}
+
+USusWizAbilitySystemComponent* ASusWizPlayerController::GetASC()
+{
+	if (SusWizAbilitySystemComponent == nullptr)
+	{
+		SusWizAbilitySystemComponent = Cast<USusWizAbilitySystemComponent>(UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(GetPawn<APawn>()));
+	}
+	return SusWizAbilitySystemComponent;
 }

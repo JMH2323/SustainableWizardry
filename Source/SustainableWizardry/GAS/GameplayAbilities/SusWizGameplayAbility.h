@@ -13,5 +13,10 @@ UCLASS()
 class SUSTAINABLEWIZARDRY_API USusWizGameplayAbility : public UGameplayAbility
 {
 	GENERATED_BODY()
+
+public:
+
+	UPROPERTY(EditDefaultsOnly, Category="Input")
+	FGameplayTag StartupInputTag;
 	
 };

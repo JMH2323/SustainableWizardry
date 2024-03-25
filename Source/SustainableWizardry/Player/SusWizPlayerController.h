@@ -17,6 +17,7 @@ class UInputAction;
 struct FInputActionValue;
 class IEnemyInterface;
 class USusWizInputConfig;
+class USusWizAbilitySystemComponent;
 UCLASS()
 class SUSTAINABLEWIZARDRY_API ASusWizPlayerController : public APlayerController
 {
@@ -57,6 +58,11 @@ private:
 	
 	UPROPERTY(EditDefaultsOnly, Category="Input")
 	TObjectPtr<USusWizInputConfig> InputConfig;
+
+	UPROPERTY()
+	TObjectPtr<USusWizAbilitySystemComponent> SusWizAbilitySystemComponent;
+
+	USusWizAbilitySystemComponent* GetASC();
 
 	
 };
