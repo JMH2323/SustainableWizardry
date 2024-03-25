@@ -25,6 +25,9 @@ public:
 	void AbilityActorInfoSet();
 
 	FEffectAssetTags EffectAssetTags;
+
+void AddCharacterAbilities(TArray<TSubclassOf<UGameplayAbility>>& StartupAbilities);
+	
 	
 protected:
 

@@ -2,7 +2,7 @@
 
 
 #include "SusWizCharacterBase.h"
-
+#include "AbilitySystemComponent.h"
 #include "SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.h"
 
 // Sets default values
@@ -49,6 +49,16 @@ void ASusWizCharacterBase::InitializeDefaultAttributes() const
 	ApplyEffectToSelf(DefaultPrimaryAttributes, 1);
 	ApplyEffectToSelf(DefaultSecondaryAttributes, 1);
 	ApplyEffectToSelf(DefaultVitalAttributes, 1);
+}
+
+void ASusWizCharacterBase::AddCharacterAbilities()
+{
+
+	USusWizAbilitySystemComponent* SusWizASC = CastChecked<USusWizAbilitySystemComponent>(AbilitySystemComponent);
+		if(!HasAuthority()) return;
+	
+	SusWizASC->AddCharacterAbilities(StartupAbilities);
+	
 }
 
 

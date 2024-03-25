@@ -9,7 +9,7 @@
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
 #include "Animation/AnimInstance.h"
-
+#include "SustainableWizardry/Input/SusWizInputComponent.h"
 
 
 ASusWizPlayerController::ASusWizPlayerController()
@@ -37,18 +37,19 @@ void ASusWizPlayerController::SetupInputComponent()
 	Super::SetupInputComponent();
 
 
-	/*
-	 * OLD INPUT COMPONENT METHOD
-	 */
-	UEnhancedInputComponent* EnhancedInputComponent = CastChecked<UEnhancedInputComponent>(InputComponent);
+	
+	USusWizInputComponent* SusWizInputComponent = CastChecked<USusWizInputComponent>(InputComponent);
 	
 	///Moving
-	EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &ASusWizPlayerController::Move);
+	SusWizInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &ASusWizPlayerController::Move);
 	
 	//Looking
-	EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &ASusWizPlayerController::Look);
-	
+	SusWizInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &ASusWizPlayerController::Look);
 
+	// Ability Actions
+	SusWizInputComponent->BindAbilityActions(InputConfig, this, &ThisClass::AbilityInputTagPressed, &ThisClass::AbilityInputTagReleased, &ThisClass::AbilityInputTagHeld);
+	
+	
 	
 }
 
@@ -96,4 +97,19 @@ void ASusWizPlayerController::Move(const FInputActionValue& InputActionValue)
 	}
 
 	
+}
+
+void ASusWizPlayerController::AbilityInputTagPressed(FGameplayTag InputTag)
+{
+	//
+}
+
+void ASusWizPlayerController::AbilityInputTagReleased(FGameplayTag InputTag)
+{
+	//
+}
+
+void ASusWizPlayerController::AbilityInputTagHeld(FGameplayTag InputTag)
+{
+	//
 }
