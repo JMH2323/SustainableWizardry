@@ -4,6 +4,7 @@
 #include "SusWizHUD.h"
 
 #include "Blueprint/UserWidget.h"
+#include "SustainableWizardry/UI/Widget/WidgetController/AttributeMenuWidgetController.h"
 #include "SustainableWizardry/UI/Widget/WidgetController/OverlayWidgetController.h"
 
 UOverlayWidgetController* ASusWizHUD::GetOverlayWidgetController(const FWidgetControllerParams& WCParams)
@@ -17,10 +18,25 @@ UOverlayWidgetController* ASusWizHUD::GetOverlayWidgetController(const FWidgetCo
 		//Bind callbacks
 		OverlayWidgetController->BindCallbacksToDependencies();
 
-		return OverlayWidgetController;
+		
 	}
 	return OverlayWidgetController;
 	
+}
+
+UAttributeMenuWidgetController* ASusWizHUD::GetAttributeMenuWidgetController(const FWidgetControllerParams& WCParams)
+{
+	if (AttributeMenuWidgetController == nullptr)
+	{
+		AttributeMenuWidgetController = NewObject<UAttributeMenuWidgetController>(this, AttributeMenuWidgetControllerClass);
+		AttributeMenuWidgetController->SetWidgetControllerParams(WCParams);
+
+		//Bind callbacks
+		AttributeMenuWidgetController->BindCallbacksToDependencies();
+
+		
+	}
+	return AttributeMenuWidgetController;
 }
 
 void ASusWizHUD::InitOverlay(APlayerController* PC, APlayerState* PS, UAbilitySystemComponent* ASC, UAttributeSet* AS)

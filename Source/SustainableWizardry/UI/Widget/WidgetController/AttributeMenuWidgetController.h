@@ -9,7 +9,14 @@
 /**
  * 
  */
-UCLASS()
+
+class UAttributeInfo;
+struct FSusWizAttributeInfo;
+struct FGameplayTag;
+struct FGameplayAttribute;
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAttributeInfoSignature, const FSusWizAttributeInfo&, Info);
+
+UCLASS(BlueprintType, Blueprintable)
 class SUSTAINABLEWIZARDRY_API UAttributeMenuWidgetController : public USusWizWidgetController
 {
 	GENERATED_BODY()
@@ -17,5 +24,17 @@ class SUSTAINABLEWIZARDRY_API UAttributeMenuWidgetController : public USusWizWid
 public:
 	virtual void BindCallbacksToDependencies() override;
 	virtual void BroadcastInitialValues() override;
-	
+
+	UPROPERTY(BlueprintAssignable, Category="GAS|Attributes")
+	FAttributeInfoSignature AttributeInfoDelegate;
+
+protected:
+
+	UPROPERTY(EditDefaultsOnly)
+	TObjectPtr<UAttributeInfo> AttributeInfo;
+
+private:
+	void BroadcastAttributeInfo(const FGameplayTag& AttributeTag, const FGameplayAttribute& Attribute) const;
+
+	void BruteForceBroadcast() const;
 };

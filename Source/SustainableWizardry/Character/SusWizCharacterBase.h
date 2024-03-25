@@ -33,8 +33,22 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	
 
+	
+	// Create the weapon mesh component to allow us to spawn spells from hand
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	TObjectPtr<USkeletalMeshComponent> MainWeapon;
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	TObjectPtr<USkeletalMeshComponent> SecondaryWeapon;
+	
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	FName MainWeaponTipSocketName;
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	FName SecondaryWeaponTipSocketName;
+
+	virtual FVector GetCombatSocketLocation() override;
+
+	
 	UPROPERTY()
 	TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;
 	
@@ -61,5 +75,13 @@ protected:
 	// 16 Implement above code
 	void ApplyEffectToSelf(TSubclassOf<UGameplayEffect> GameplayEffectClass, float Level) const;
 	void InitializeDefaultAttributes() const;
+	
+	void AddCharacterAbilities();
+
+	private:
+
+	UPROPERTY(EditAnywhere, Category = "Abilities|Startup")
+	TArray<TSubclassOf<UGameplayAbility>> StartupAbilities;
+
 	
 };
