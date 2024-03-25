@@ -11,6 +11,12 @@ ASusWizCharacterBase::ASusWizCharacterBase()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = false;
 
+	//PrimaryWeapon = CreateDefaultSubobject<USkeletalMeshComponent>("PrimaryWeapon");
+	SecondaryWeapon = CreateDefaultSubobject<USkeletalMeshComponent>("SecondaryWeapon");
+	SecondaryWeapon->SetupAttachment(GetMesh());
+	MainWeapon = CreateDefaultSubobject<USkeletalMeshComponent>("MainWeapon");
+	MainWeapon->SetupAttachment(GetMesh());
+	
 }
 
 UAbilitySystemComponent* ASusWizCharacterBase::GetAbilitySystemComponent() const
@@ -25,9 +31,14 @@ void ASusWizCharacterBase::BeginPlay()
 	
 }
 
+FVector ASusWizCharacterBase::GetCombatSocketLocation()
+{
+	return MainWeapon->GetSocketLocation(MainWeaponTipSocketName);
+}
+
 void ASusWizCharacterBase::InitAbilityActorInfo()
 {
-	// override in characterplayer
+	// override in character player
 }
 
 void ASusWizCharacterBase::ApplyEffectToSelf(TSubclassOf<UGameplayEffect> GameplayEffectClass, float Level) const
