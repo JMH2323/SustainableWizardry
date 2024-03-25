@@ -21,7 +21,7 @@ FSusWizAttributeInfo UAttributeInfo::FindAttributeInfoForTag(const FGameplayTag&
 	{
 		// Print an error if we can't find anything in the array
 		UE_LOG(LogTemp, Error, TEXT("Cant find Info for AttributeTag [%s] on Attribute Info [%s]."),
-			*AttributeTag.ToString(), *GetNameSafe(this));
+		*AttributeTag.ToString(), *GetNameSafe(this));
 		
 	}
 

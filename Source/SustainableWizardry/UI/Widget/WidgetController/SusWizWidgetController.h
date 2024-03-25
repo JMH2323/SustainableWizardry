@@ -16,7 +16,7 @@ class UAbilitySystemComponent;
 
 
 
-USTRUCT(BlueprintType)
+USTRUCT(BlueprintType, Blueprintable)
 struct FWidgetControllerParams
 {
 	GENERATED_BODY()
@@ -41,7 +41,7 @@ struct FWidgetControllerParams
 /**
  * 
  */
-UCLASS()
+UCLASS(BlueprintType, Blueprintable)
 class SUSTAINABLEWIZARDRY_API USusWizWidgetController : public UObject
 {
 	GENERATED_BODY()
@@ -51,6 +51,7 @@ public:
 	void SetWidgetControllerParams(const FWidgetControllerParams& WCParams);
 
 	// Send the starting values of our attributes
+	UFUNCTION(BlueprintCallable)
 	virtual void BroadcastInitialValues();
 
 	virtual void BindCallbacksToDependencies();

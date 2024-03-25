@@ -6,13 +6,16 @@
 #include "GameFramework/HUD.h"
 #include "SustainableWizardry/UI/Widget/UserWidget/SusWizUserWidget.h"
 #include "SustainableWizardry/UI/Widget/WidgetController/SusWizWidgetController.h"
+#include "SustainableWizardry/UI/Widget/WidgetController/AttributeMenuWidgetController.h"
 #include "SusWizHUD.generated.h"
 
+class UAttributeMenuWidgetController;
+class UAttributeSet;
+class UOverlayWidgetController;
 /**
  * 
  */
-class UOverlayWidgetController;
-class UAuraUserWidget;
+
 UCLASS()
 class SUSTAINABLEWIZARDRY_API ASusWizHUD : public AHUD
 {
@@ -20,25 +23,34 @@ class SUSTAINABLEWIZARDRY_API ASusWizHUD : public AHUD
 
 public:
 
-	UPROPERTY()
-	TObjectPtr<USusWizUserWidget>  OverlayWidget;
+	
 
 	// Get widget controller
 	UOverlayWidgetController* GetOverlayWidgetController(const FWidgetControllerParams& WCParams);
 
+	// Get Attribute menu widget controller
+	UAttributeMenuWidgetController* GetAttributeMenuWidgetController(const FWidgetControllerParams& WCParams);
+	
 	// Get key variables to initialize
 	void InitOverlay(APlayerController* PC, APlayerState* PS, UAbilitySystemComponent* ASC, UAttributeSet* AS);
 
 private:
 
+
+	UPROPERTY()
+	TObjectPtr<USusWizUserWidget>  OverlayWidget;
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<USusWizUserWidget> OverlayWidgetClass;
 
+	
 	UPROPERTY()
 	TObjectPtr<UOverlayWidgetController> OverlayWidgetController;
-
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<UOverlayWidgetController> OverlayWidgetControllerClass;
 
+	UPROPERTY()
+	TObjectPtr<UAttributeMenuWidgetController> AttributeMenuWidgetController;
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<UAttributeMenuWidgetController> AttributeMenuWidgetControllerClass;
 	
 };

@@ -22,6 +22,9 @@ void ASusWizCharacterPlayer::PossessedBy(AController* NewController)
 	// Init ability actor info for the Server and HUD
 	// If this actor is possessed by a player, we access the player's abilities
 	InitAbilityActorInfo();
+
+	AddCharacterAbilities();
+	
 }
 
 void ASusWizCharacterPlayer::OnRep_PlayerState()

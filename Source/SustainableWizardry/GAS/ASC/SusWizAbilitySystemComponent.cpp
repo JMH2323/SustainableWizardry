@@ -3,14 +3,17 @@
 
 #include "SusWizAbilitySystemComponent.h"
 
+#include "AbilitySystemComponent.h"
 #include "SustainableWizardry/SusWizGameplayTags.h"
+#include "AbilitySystemBlueprintLibrary.h"
+#include "SustainableWizardry/GAS/GameplayAbilities/SusWizGameplayAbility.h"
 
 
 void USusWizAbilitySystemComponent::AbilityActorInfoSet()
 {
 
 	// 6.3 Bind to delegate
-	OnGameplayEffectAppliedDelegateToSelf.AddUObject(this, &USusWizAbilitySystemComponent::EffectApplied);
+	OnGameplayEffectAppliedDelegateToSelf.AddUObject(this, &USusWizAbilitySystemComponent::ClientEffectApplied);
 
 	// 16 testing for getting tags
 	const FSusWizGameplayTags& GameplayTags = FSusWizGameplayTags::Get();
@@ -21,8 +24,61 @@ void USusWizAbilitySystemComponent::AbilityActorInfoSet()
 	
 }
 
-void USusWizAbilitySystemComponent::EffectApplied(UAbilitySystemComponent* AbilitySystemComponent,
-	const FGameplayEffectSpec& EffectSpec, FActiveGameplayEffectHandle ActiveEffectHandle)
+void USusWizAbilitySystemComponent::AddCharacterAbilities(TArray<TSubclassOf<UGameplayAbility>>& StartupAbilities)
+{
+
+	for (TSubclassOf<UGameplayAbility> AbilityClass : StartupAbilities)
+	{
+		FGameplayAbilitySpec AbilitySpec = FGameplayAbilitySpec(AbilityClass, 1);
+
+		if (const USusWizGameplayAbility* SusWizAbility = Cast<USusWizGameplayAbility>(AbilitySpec.Ability))
+		{
+			AbilitySpec.DynamicAbilityTags.AddTag(SusWizAbility->StartupInputTag);
+			// Give ability to player
+			GiveAbility(AbilitySpec);
+		}
+
+		
+
+		
+		
+		
+	}
+	
+}
+
+void USusWizAbilitySystemComponent::AbilityInputTagHeld(const FGameplayTag& InputTag)
+{
+	if (!InputTag.IsValid()) return;
+
+	for (FGameplayAbilitySpec& AbilitySpec : GetActivatableAbilities())
+	{
+		if (AbilitySpec.DynamicAbilityTags.HasTagExact(InputTag))
+		{
+			AbilitySpecInputPressed(AbilitySpec);
+			if (!AbilitySpec.IsActive())
+			{
+				TryActivateAbility(AbilitySpec.Handle);
+			}
+		}
+	}
+}
+
+void USusWizAbilitySystemComponent::AbilityInputTagReleased(const FGameplayTag& InputTag)
+{
+	if (!InputTag.IsValid()) return;
+
+	for (FGameplayAbilitySpec& AbilitySpec : GetActivatableAbilities())
+	{
+		if (AbilitySpec.DynamicAbilityTags.HasTagExact(InputTag))
+		{
+			AbilitySpecInputReleased(AbilitySpec);
+		}
+	}
+}
+
+void USusWizAbilitySystemComponent::ClientEffectApplied_Implementation(UAbilitySystemComponent* AbilitySystemComponent,
+                                                  const FGameplayEffectSpec& EffectSpec, FActiveGameplayEffectHandle ActiveEffectHandle)
 {
 
 

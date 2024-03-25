@@ -53,6 +53,11 @@ struct FEffectProperties
 	ACharacter* TargetCharacter = nullptr;
 };
 
+// typedef is specific to the FGameplayAttribute() signature, but TStaticFunPtr is generic to any signature chosen
+// typedef TBaseStaticDelegateInstance<FGameplayAttribute(), FDefaultDelegateUserPolicy>::FFuncPtr FAttributeFuncPtr;
+template<class T>
+using TStaticFunPtr = typename TBaseStaticDelegateInstance<T, FDefaultDelegateUserPolicy>::FFuncPtr;
+
 
 // TODO: READ THROUGH ATTRIBUTE SET COMMENTS!!!!
 UCLASS()
@@ -73,8 +78,11 @@ public:
 	// Post Gameplay Effect
 	virtual void PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data) override;
 
-	// Attribute Data
-	// Steps) 1. Create attribute in .h file. 2. creating the OnRep_ Function. 3. Add to props list
+
+	// Getting the attribute data from the tag using templatized FuncPtr from Unreal and handling GameplayAttributes
+	TMap<FGameplayTag, TStaticFunPtr<FGameplayAttribute()>> TagsToAttributes;
+	
+
 
 private:
 
@@ -86,6 +94,10 @@ private:
 
 	
 public:
+
+
+	// Attribute Data
+	// Steps) 1. Create attribute in .h file. 2. creating the OnRep_ Function. 3. Add to props list
 	
 	/*
 	 * Primary Attributes

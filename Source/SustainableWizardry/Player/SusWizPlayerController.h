@@ -4,8 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
-#include "Camera/CameraComponent.h"
 #include "InputActionValue.h"
+#include "GameplayTagContainer.h"
 #include "SusWizPlayerController.generated.h"
 
 
@@ -13,6 +13,11 @@
  * 
  */
 class UInputMappingContext;
+class UInputAction;
+struct FInputActionValue;
+class IEnemyInterface;
+class USusWizInputConfig;
+class USusWizAbilitySystemComponent;
 UCLASS()
 class SUSTAINABLEWIZARDRY_API ASusWizPlayerController : public APlayerController
 {
@@ -44,5 +49,20 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
 	class UInputAction* MoveAction;
 	void Move(const FInputActionValue& InputActionValue);
+
+
+	void AbilityInputTagPressed(FGameplayTag InputTag);
+	void AbilityInputTagReleased(FGameplayTag InputTag);
+	void AbilityInputTagHeld(FGameplayTag InputTag);
+	
+	
+	UPROPERTY(EditDefaultsOnly, Category="Input")
+	TObjectPtr<USusWizInputConfig> InputConfig;
+
+	UPROPERTY()
+	TObjectPtr<USusWizAbilitySystemComponent> SusWizAbilitySystemComponent;
+
+	USusWizAbilitySystemComponent* GetASC();
+
 	
 };

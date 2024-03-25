@@ -6,10 +6,11 @@
 
 #include "AbilitySystemBlueprintLibrary.h"
 #include "AttributeSet.h"
+#include "SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
 #include "Animation/AnimInstance.h"
-
+#include "SustainableWizardry/Input/SusWizInputComponent.h"
 
 
 ASusWizPlayerController::ASusWizPlayerController()
@@ -24,9 +25,22 @@ void ASusWizPlayerController::BeginPlay()
 
 	// Initialize Subsystem for Enhanced Input.
 	check(SusWizContext);
-	UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(GetLocalPlayer());
-	check(Subsystem);
-	Subsystem->AddMappingContext(SusWizContext, 0);
+    
+	if(const ULocalPlayer* LocalPlayer = Cast<ULocalPlayer>(Player))
+	{
+		if (UEnhancedInputLocalPlayerSubsystem* Subsystem = LocalPlayer->GetSubsystem<UEnhancedInputLocalPlayerSubsystem>())
+		{
+			Subsystem->AddMappingContext(SusWizContext, 0);
+		}
+		else
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Unable to get EnhancedInputLocalPlayerSubsystem."));
+		}
+	}
+	else 
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Player is not of type ULocalPlayer or is nullptr."));
+	}
 
 	
 }
@@ -35,20 +49,17 @@ void ASusWizPlayerController::SetupInputComponent()
 {
 	
 	Super::SetupInputComponent();
-
-
-	/*
-	 * OLD INPUT COMPONENT METHOD
-	 */
-	UEnhancedInputComponent* EnhancedInputComponent = CastChecked<UEnhancedInputComponent>(InputComponent);
+	
+	USusWizInputComponent* SusWizInputComponent = CastChecked<USusWizInputComponent>(InputComponent);
 	
 	///Moving
-	EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &ASusWizPlayerController::Move);
+	SusWizInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &ASusWizPlayerController::Move);
 	
 	//Looking
-	EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &ASusWizPlayerController::Look);
-	
+	SusWizInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &ASusWizPlayerController::Look);
 
+	// Ability Actions
+	SusWizInputComponent->BindAbilityActions(InputConfig, this, &ThisClass::AbilityInputTagPressed, &ThisClass::AbilityInputTagReleased, &ThisClass::AbilityInputTagHeld);
 	
 }
 
@@ -61,7 +72,8 @@ void ASusWizPlayerController::Look(const FInputActionValue& Value)
 	// Inverting Y Axis
 	LookAxisVector.Y *= -1;
 
-	UE_LOG(LogTemp, Warning, TEXT("Checking Axes: X: %f, Y: %f"), LookAxisVector.X, LookAxisVector.Y);
+	// Warning log for checking mouse input
+	//UE_LOG(LogTemp, Warning, TEXT("Checking Axes: X: %f, Y: %f"), LookAxisVector.X, LookAxisVector.Y);
 	
 	if (APawn* ControlledPawn = GetPawn<APawn>())
 	{
@@ -95,4 +107,30 @@ void ASusWizPlayerController::Move(const FInputActionValue& InputActionValue)
 	}
 
 	
+}
+
+void ASusWizPlayerController::AbilityInputTagPressed(FGameplayTag InputTag)
+{
+	//
+}
+
+void ASusWizPlayerController::AbilityInputTagReleased(FGameplayTag InputTag)
+{
+	if (GetASC() == nullptr) return;
+	GetASC()->AbilityInputTagReleased(InputTag);
+}
+
+void ASusWizPlayerController::AbilityInputTagHeld(FGameplayTag InputTag)
+{
+	if (GetASC() == nullptr) return;
+	GetASC()->AbilityInputTagHeld(InputTag);
+}
+
+USusWizAbilitySystemComponent* ASusWizPlayerController::GetASC()
+{
+	if (SusWizAbilitySystemComponent == nullptr)
+	{
+		SusWizAbilitySystemComponent = Cast<USusWizAbilitySystemComponent>(UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(GetPawn<APawn>()));
+	}
+	return SusWizAbilitySystemComponent;
 }

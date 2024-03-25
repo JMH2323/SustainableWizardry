@@ -9,7 +9,7 @@ FSusWizGameplayTags FSusWizGameplayTags::GameplayTags;
 void FSusWizGameplayTags::InitializeNativeGameplayTags()
 {
 	// kickoff initializing gameplay tags by getting the gameplay tag manager and adding tags to it.
-
+		
 	// Primary Attributes
 	GameplayTags.Attributes_Primary_Flare = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Primary.Flare"), FString ("Increases Damage/MaxEnergy"));
 	GameplayTags.Attributes_Primary_Swift = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Primary.Swift"), FString ("Increases Speed/Dodge"));
@@ -21,8 +21,11 @@ void FSusWizGameplayTags::InitializeNativeGameplayTags()
 	// TODO: Alex/Jeff add your attributes
 	GameplayTags.Attributes_Secondary_Armor = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Secondary.Armor"), FString ("Reduces Damage Taken"));
 	GameplayTags.Attributes_Secondary_ArmorPen = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Secondary.ArmorPen"), FString ("Reduces Armor Effect"));
+	GameplayTags.Attributes_Secondary_MaxHealth = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Secondary.MaxHealth"), FString ("Maximum Health Capacity"));
+	GameplayTags.Attributes_Secondary_MaxEnergy = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Secondary.MaxEnergy"), FString ("Maximum Energy Capacity"));
 	
-	// Secondary Attributes
+	
+	// Vital Attributes
 	GameplayTags.Attributes_Vital_Health = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Vital.Health"), FString ("Health"));
 	GameplayTags.Attributes_Vital_Energy = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Vital.Energy"), FString ("Energy"));
 	
