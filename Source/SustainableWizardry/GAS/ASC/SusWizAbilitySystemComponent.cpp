@@ -13,7 +13,7 @@ void USusWizAbilitySystemComponent::AbilityActorInfoSet()
 {
 
 	// 6.3 Bind to delegate
-	OnGameplayEffectAppliedDelegateToSelf.AddUObject(this, &USusWizAbilitySystemComponent::EffectApplied);
+	OnGameplayEffectAppliedDelegateToSelf.AddUObject(this, &USusWizAbilitySystemComponent::ClientEffectApplied);
 
 	// 16 testing for getting tags
 	const FSusWizGameplayTags& GameplayTags = FSusWizGameplayTags::Get();
@@ -77,7 +77,7 @@ void USusWizAbilitySystemComponent::AbilityInputTagReleased(const FGameplayTag& 
 	}
 }
 
-void USusWizAbilitySystemComponent::EffectApplied(UAbilitySystemComponent* AbilitySystemComponent,
+void USusWizAbilitySystemComponent::ClientEffectApplied_Implementation(UAbilitySystemComponent* AbilitySystemComponent,
                                                   const FGameplayEffectSpec& EffectSpec, FActiveGameplayEffectHandle ActiveEffectHandle)
 {
 

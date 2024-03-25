@@ -25,9 +25,22 @@ void ASusWizPlayerController::BeginPlay()
 
 	// Initialize Subsystem for Enhanced Input.
 	check(SusWizContext);
-	UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(GetLocalPlayer());
-	check(Subsystem);
-	Subsystem->AddMappingContext(SusWizContext, 0);
+    
+	if(const ULocalPlayer* LocalPlayer = Cast<ULocalPlayer>(Player))
+	{
+		if (UEnhancedInputLocalPlayerSubsystem* Subsystem = LocalPlayer->GetSubsystem<UEnhancedInputLocalPlayerSubsystem>())
+		{
+			Subsystem->AddMappingContext(SusWizContext, 0);
+		}
+		else
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Unable to get EnhancedInputLocalPlayerSubsystem."));
+		}
+	}
+	else 
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Player is not of type ULocalPlayer or is nullptr."));
+	}
 
 	
 }
@@ -36,8 +49,6 @@ void ASusWizPlayerController::SetupInputComponent()
 {
 	
 	Super::SetupInputComponent();
-
-
 	
 	USusWizInputComponent* SusWizInputComponent = CastChecked<USusWizInputComponent>(InputComponent);
 	
@@ -49,8 +60,6 @@ void ASusWizPlayerController::SetupInputComponent()
 
 	// Ability Actions
 	SusWizInputComponent->BindAbilityActions(InputConfig, this, &ThisClass::AbilityInputTagPressed, &ThisClass::AbilityInputTagReleased, &ThisClass::AbilityInputTagHeld);
-	
-	
 	
 }
 
