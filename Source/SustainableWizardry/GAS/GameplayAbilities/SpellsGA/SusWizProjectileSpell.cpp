@@ -24,8 +24,18 @@ void USusWizProjectileSpell::ActivateAbility(const FGameplayAbilitySpecHandle Ha
 		FTransform SpawnTransform;
 		SpawnTransform.SetLocation(SocketLocation);
 
-		FRotator PlayerRotation = ActorInfo->PlayerController->GetControlRotation();
-		SpawnTransform.SetRotation(PlayerRotation.Quaternion());
+		// Getting the player's viewpoint.
+		FVector PlayerViewPointLocation;
+		FRotator PlayerViewPointRotation;
+		ActorInfo->PlayerController->GetPlayerViewPoint(PlayerViewPointLocation, PlayerViewPointRotation);
+
+		// Calculating the shot direction from the socket location to the player's viewpoint.
+		FVector ShotDirection = ActorInfo->PlayerController->PlayerCameraManager->GetCameraRotation().Vector();
+		ShotDirection = -PlayerViewPointRotation.Vector();
+		
+		// Setting this direction as the rotation for the SpawnTransform.
+		SpawnTransform.SetRotation(ShotDirection.Rotation().Quaternion());
+		
 		
 		ASusWizProjectiles* Projectile = GetWorld()->SpawnActorDeferred<ASusWizProjectiles>(ProjectileClass, SpawnTransform,
 			GetOwningActorFromActorInfo(), Cast<APawn>(GetOwningActorFromActorInfo()),
