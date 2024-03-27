@@ -10,12 +10,26 @@
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
 #include "Animation/AnimInstance.h"
+#include "GameFramework/Character.h"
+#include "SustainableWizardry/UI/Widget/WidgetComponent/DamageTextComponent.h"
 #include "SustainableWizardry/Input/SusWizInputComponent.h"
 
 
 ASusWizPlayerController::ASusWizPlayerController()
 {
 	bReplicates = true;
+}
+
+void ASusWizPlayerController::ShowDamageNumber_Implementation(float DamageAmount, ACharacter* TargetCharacter)
+{
+	if (IsValid(TargetCharacter) && DamageTextComponentClass)
+	{
+		UDamageTextComponent* DamageText = NewObject<UDamageTextComponent>(TargetCharacter, DamageTextComponentClass);
+		DamageText->RegisterComponent();
+		DamageText->AttachToComponent(TargetCharacter->GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);
+		DamageText->DetachFromComponent(FDetachmentTransformRules::KeepWorldTransform);
+		DamageText->SetDamageText(DamageAmount);
+	}
 }
 
 void ASusWizPlayerController::BeginPlay()
