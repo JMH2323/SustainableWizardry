@@ -206,6 +206,8 @@ void USusWizAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& 
 	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, MaxHealth, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, MaxEnergy, COND_None, REPNOTIFY_Always);
 	// TODO: JEFF AND ALEX
+	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, Speed, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, Dodge, COND_None, REPNOTIFY_Always);
 
 	
 	// Vital
@@ -252,6 +254,16 @@ void USusWizAttributeSet::OnRep_Armor(const FGameplayAttributeData& OldArmor) co
 void USusWizAttributeSet::OnRep_ArmorPen(const FGameplayAttributeData& OldArmorPen) const
 {
 	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, ArmorPen, OldArmorPen);
+}
+
+void USusWizAttributeSet::OnRep_Speed(const FGameplayAttributeData& OldSpeed) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, Speed, OldSpeed);
+}
+
+void USusWizAttributeSet::OnRep_Dodge(const FGameplayAttributeData& OldDodge) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, Dodge, OldDodge);
 }
 
 void USusWizAttributeSet::OnRep_MaxHealth(const FGameplayAttributeData& OldMaxHealth) const
