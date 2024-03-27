@@ -12,40 +12,64 @@ void USusWizProjectileSpell::ActivateAbility(const FGameplayAbilitySpecHandle Ha
 {
 	Super::ActivateAbility(Handle, ActorInfo, ActivationInfo, TriggerEventData);
 
-
-	const bool bIsServer = HasAuthority(&ActivationInfo);
-	if (!bIsServer) return;
-
-	ICombatInterface* CombatInterface = Cast<ICombatInterface>(GetAvatarActorFromActorInfo());
-	if (CombatInterface)
-	{
-		const FVector SocketLocation = CombatInterface->GetCombatSocketLocation();
-
-		FTransform SpawnTransform;
-		SpawnTransform.SetLocation(SocketLocation);
-
-		// Getting the player's viewpoint.
-		FVector PlayerViewPointLocation;
-		FRotator PlayerViewPointRotation;
-		ActorInfo->PlayerController->GetPlayerViewPoint(PlayerViewPointLocation, PlayerViewPointRotation);
-
-		// Calculating the shot direction from the socket location to the player's viewpoint.
-		FVector ShotDirection = ActorInfo->PlayerController->PlayerCameraManager->GetCameraRotation().Vector();
-		ShotDirection = -PlayerViewPointRotation.Vector();
-		
-		// Setting this direction as the rotation for the SpawnTransform.
-		SpawnTransform.SetRotation(ShotDirection.Rotation().Quaternion());
-		
-		
-		ASusWizProjectiles* Projectile = GetWorld()->SpawnActorDeferred<ASusWizProjectiles>(ProjectileClass, SpawnTransform,
-			GetOwningActorFromActorInfo(), Cast<APawn>(GetOwningActorFromActorInfo()),
-			ESpawnActorCollisionHandlingMethod::AlwaysSpawn);
-
-
-		// TODO: Give Projectile a GE Spec for damage
-		Projectile->FinishSpawning(SpawnTransform);
-	}
-
+	// Storing ActorInfo for future use
+	StoredActorInfo = ActorInfo;
 	
+}
+
+void USusWizProjectileSpell::SpawnProjectile()
+{
+
+	const bool bIsServer = GetAvatarActorFromActorInfo()->HasAuthority();
+    if (!bIsServer) return;
+
+    ICombatInterface* CombatInterface = Cast<ICombatInterface>(GetAvatarActorFromActorInfo());
+    if (CombatInterface && StoredActorInfo)
+    {
+        const FVector SocketLocation = CombatInterface->GetCombatSocketLocation();
+        FTransform SpawnTransform;
+
+        // Getting the player's viewpoint.
+        FVector PlayerViewPointLocation;
+        FRotator PlayerViewPointRotator;
+        StoredActorInfo->PlayerController->GetPlayerViewPoint(PlayerViewPointLocation, PlayerViewPointRotator);
+
+        // Get the forward vector of the player viewpoint
+        FVector ViewPointForward = PlayerViewPointRotator.Vector();
+
+        // Create a line trace from the viewport location in the direction that the viewport is facing.
+        FVector EndPoint = PlayerViewPointLocation + (ViewPointForward * 5000);  // 5000 is your trace distance
+
+        FHitResult TraceResult;
+        FCollisionQueryParams TraceParams;
+        bool bHit = GetWorld()->LineTraceSingleByChannel(TraceResult, PlayerViewPointLocation, EndPoint, ECC_Visibility, TraceParams);
+
+        // The direction in which the projectile should be shot.
+        FVector ShotDirection;
+
+        if(bHit)
+        {
+            // If the line trace hits something, shoot in the direction of the hit.
+            ShotDirection = (TraceResult.ImpactPoint - SocketLocation).GetSafeNormal();
+        }
+        else
+        {
+            // If the line trace does not hit anything, shoot in the direction of the line trace end point.
+            ShotDirection = (EndPoint - SocketLocation).GetSafeNormal();
+        }
+
+        // Set the spawn rotation using the shot direction.
+        FRotator Rotation = ShotDirection.Rotation();
+        SpawnTransform.SetLocation(SocketLocation);
+        SpawnTransform.SetRotation(Rotation.Quaternion());
+
+        // Spawn the projectile.
+        ASusWizProjectiles* Projectile = GetWorld()->SpawnActorDeferred<ASusWizProjectiles>(ProjectileClass, SpawnTransform,
+            GetOwningActorFromActorInfo(), Cast<APawn>(GetOwningActorFromActorInfo()),
+            ESpawnActorCollisionHandlingMethod::AlwaysSpawn);
+
+        // TODO: Give Projectile a GE Spec for damage.
+        Projectile->FinishSpawning(SpawnTransform);
+	}
 	
 }
