@@ -5,6 +5,7 @@
 
 #include "SustainableWizardry/GAS/GameplayAbilities/Spells/SpellsBase/SusWizProjectiles.h"
 #include "SustainableWizardry/Interaction/CombatInterface.h"
+#include "SustainableWizardry/SusWizGameplayTags.h"
 #include "AbilitySystemBlueprintLibrary.h"
 #include "AbilitySystemComponent.h"
 
@@ -70,9 +71,18 @@ void USusWizProjectileSpell::SpawnProjectile()
             GetOwningActorFromActorInfo(), Cast<APawn>(GetOwningActorFromActorInfo()),
             ESpawnActorCollisionHandlingMethod::AlwaysSpawn);
 
-// TODONE: Give Projectile a GE Spec for damage.
+		// TODONE: Give Projectile a GE Spec for damage.
     	const UAbilitySystemComponent* SourceASC = UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(GetAvatarActorFromActorInfo());
     	const FGameplayEffectSpecHandle SpecHandle = SourceASC->MakeOutgoingSpec(DamageEffectClass, GetAbilityLevel(), SourceASC->MakeEffectContext());
+
+
+    	/* Damage from Tags Meta */
+    	FSusWizGameplayTags GameplayTags = FSusWizGameplayTags::Get();
+    	UAbilitySystemBlueprintLibrary::AssignTagSetByCallerMagnitude(SpecHandle, GameplayTags.Damage, 50.f);
+    	const float ScaledDamage = Damage.GetValueAtLevel(GetAbilityLevel());
+
+    	UAbilitySystemBlueprintLibrary::AssignTagSetByCallerMagnitude(SpecHandle, GameplayTags.Damage, ScaledDamage);
+
     	Projectile->DamageEffectSpecHandle = SpecHandle;
         
         Projectile->FinishSpawning(SpawnTransform);

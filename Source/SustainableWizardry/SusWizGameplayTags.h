@@ -41,6 +41,11 @@ static const FSusWizGameplayTags& Get() { return GameplayTags; }
  FGameplayTag InputTag_3;
  FGameplayTag InputTag_4;
 
+ // Meta
+ FGameplayTag Damage;
+
+ //Misc
+ FGameplayTag Effects_HitReact;
  
  
 protected:

@@ -16,6 +16,7 @@ class UCombatInterface : public UInterface
 /**
  * 
  */
+class UAnimMontage;
 class SUSTAINABLEWIZARDRY_API ICombatInterface
 {
 	GENERATED_BODY()
@@ -25,4 +26,9 @@ public:
 	virtual int32 GetPlayerLevel();
 
 	virtual FVector GetCombatSocketLocation();
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+	UAnimMontage* GetHitReactMontage();
+
+	virtual void Die() = 0;
 };

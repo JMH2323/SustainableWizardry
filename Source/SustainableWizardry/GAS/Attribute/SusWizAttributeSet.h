@@ -89,8 +89,7 @@ private:
 	// Get all the data effect properties
 	void SetEffectProperties(const FGameplayEffectModCallbackData Data, FEffectProperties& Props) const;
 
-	// PART ONE VERSION
-	void EmptyPartOne(const FGameplayEffectModCallbackData& Data);
+	void ShowFloatingText(const FEffectProperties& Props, float Damage);
 
 	
 public:
@@ -186,6 +185,19 @@ public:
 	ATTRIBUTE_ACCESSORS(USusWizAttributeSet, MaxEnergy);
 	UFUNCTION()
 	void OnRep_MaxEnergy(const FGameplayAttributeData& OldMaxEnergy) const;
+
+
+	/*
+	 * Meta Attributes
+	 * Attributes for the server
+	 */
+
+	UPROPERTY(BlueprintReadOnly, Category = "Meta Attributes")
+	FGameplayAttributeData IncomingDamage;
+	ATTRIBUTE_ACCESSORS(USusWizAttributeSet, IncomingDamage);
+
+
+
 
 	
 };
