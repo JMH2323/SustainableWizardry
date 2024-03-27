@@ -9,10 +9,13 @@
 /**
  * 
  */
+class UCharacterClassInfo;
 UCLASS()
 class SUSTAINABLEWIZARDRY_API ASuzWizGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
-
+public:
+	UPROPERTY(EditDefaultsOnly, Category = "Character Class Defaults")
+	TObjectPtr<UCharacterClassInfo> CharacterClassInfo;
 	
 };
