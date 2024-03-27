@@ -187,5 +187,16 @@ public:
 	UFUNCTION()
 	void OnRep_MaxEnergy(const FGameplayAttributeData& OldMaxEnergy) const;
 
+
+	/*
+	 * Meta Attributes
+	 * Attributes for the server
+	 */
+
+	UPROPERTY(BlueprintReadOnly, Category = "Meta Attributes")
+	FGameplayAttributeData IncomingDamage;
+	ATTRIBUTE_ACCESSORS(USusWizAttributeSet, IncomingDamage);
+
+	
 	
 };

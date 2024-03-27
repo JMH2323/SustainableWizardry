@@ -14,6 +14,7 @@ class UAbilitySystemComponent;
 class UAttributeSet;
 class UGameplayAbility;
 class UGameplayEffect;
+class UAnimMontage;
 
 UCLASS()
 class SUSTAINABLEWIZARDRY_API ASusWizCharacterBase : public ACharacter,
@@ -28,6 +29,9 @@ public:
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 
 	UAttributeSet* GetAttributeSet() const { return AttributeSet; }
+
+	virtual UAnimMontage* GetHitReactMontage_Implementation() override;
+	
 
 protected:
 	// Called when the game starts or when spawned
@@ -83,5 +87,7 @@ protected:
 	UPROPERTY(EditAnywhere, Category = "Abilities|Startup")
 	TArray<TSubclassOf<UGameplayAbility>> StartupAbilities;
 
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	TObjectPtr<UAnimMontage> HitReactMontage;
 	
 };

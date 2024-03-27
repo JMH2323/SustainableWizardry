@@ -7,6 +7,8 @@
 #include "SustainableWizardry/GAS/Attribute/SusWizAttributeSet.h"
 #include "SustainableWizardry/UI/Widget/UserWidget/SusWizUserWidget.h"
 #include "Components/WidgetComponent.h"
+#include "SustainableWizardry/SusWizGameplayTags.h"
+#include "GameFramework/CharacterMovementComponent.h"
 #include "SustainableWizardry/GAS/SusWizAbilitySystemLibrary.h"
 
 ASusWizEnemy::ASusWizEnemy()
@@ -27,11 +29,15 @@ int32 ASusWizEnemy::GetPlayerLevel()
 	return Level;
 }
 
+
+
+
 void ASusWizEnemy::BeginPlay()
 {
 	Super::BeginPlay();
 	InitAbilityActorInfo();
-
+	USusWizAbilitySystemLibrary::GiveStartupAbilities(this, AbilitySystemComponent);
+	
 	if (USusWizUserWidget* SusWizUserWidget = Cast<USusWizUserWidget>(HealthBar->GetUserWidgetObject()))
 	{
 		SusWizUserWidget->SetWidgetController(this);
@@ -52,11 +58,26 @@ void ASusWizEnemy::BeginPlay()
 			}
 		);
 
+
+		AbilitySystemComponent->RegisterGameplayTagEvent(FSusWizGameplayTags::Get().Effects_HitReact,
+			EGameplayTagEventType::NewOrRemoved).AddUObject(
+				this, &ASusWizEnemy::HitReactTagChanged);
+		
+
 		OnHealthChanged.Broadcast(SusWizAS->GetHealth());
 		OnMaxHealthChanged.Broadcast(SusWizAS->GetMaxHealth());
 	}
 	
 }
+
+
+void ASusWizEnemy::HitReactTagChanged(const FGameplayTag CallbackTag, int32 NewCount)
+{
+	bHitReacting = NewCount > 0;
+	GetCharacterMovement()->MaxWalkSpeed = bHitReacting ? 0.f : BaseWalkSpeed;
+}
+
+
 
 void ASusWizEnemy::InitAbilityActorInfo()
 {
