@@ -10,6 +10,7 @@
  * 
  */
 class ASusWizProjectiles;
+class UGameplayEffect;
 UCLASS()
 class SUSTAINABLEWIZARDRY_API USusWizProjectileSpell : public USusWizGameplayAbility
 {
@@ -29,4 +30,8 @@ protected:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TSubclassOf<ASusWizProjectiles> ProjectileClass;
+	
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	TSubclassOf<UGameplayEffect> DamageEffectClass;
+	
 };

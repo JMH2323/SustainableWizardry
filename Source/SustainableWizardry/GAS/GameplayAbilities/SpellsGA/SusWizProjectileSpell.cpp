@@ -5,6 +5,8 @@
 
 #include "SustainableWizardry/GAS/GameplayAbilities/Spells/SpellsBase/SusWizProjectiles.h"
 #include "SustainableWizardry/Interaction/CombatInterface.h"
+#include "AbilitySystemBlueprintLibrary.h"
+#include "AbilitySystemComponent.h"
 
 void USusWizProjectileSpell::ActivateAbility(const FGameplayAbilitySpecHandle Handle,
                                              const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo,
@@ -68,7 +70,11 @@ void USusWizProjectileSpell::SpawnProjectile()
             GetOwningActorFromActorInfo(), Cast<APawn>(GetOwningActorFromActorInfo()),
             ESpawnActorCollisionHandlingMethod::AlwaysSpawn);
 
-        // TODO: Give Projectile a GE Spec for damage.
+// TODONE: Give Projectile a GE Spec for damage.
+    	const UAbilitySystemComponent* SourceASC = UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(GetAvatarActorFromActorInfo());
+    	const FGameplayEffectSpecHandle SpecHandle = SourceASC->MakeOutgoingSpec(DamageEffectClass, GetAbilityLevel(), SourceASC->MakeEffectContext());
+    	Projectile->DamageEffectSpecHandle = SpecHandle;
+        
         Projectile->FinishSpawning(SpawnTransform);
 	}
 	
