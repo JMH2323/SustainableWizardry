@@ -3,6 +3,7 @@
 
 #include "SusWizCharacterBase.h"
 #include "AbilitySystemComponent.h"
+#include "Components/CapsuleComponent.h"
 #include "SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.h"
 
 // Sets default values
@@ -27,6 +28,31 @@ UAbilitySystemComponent* ASusWizCharacterBase::GetAbilitySystemComponent() const
 UAnimMontage* ASusWizCharacterBase::GetHitReactMontage_Implementation()
 {
 	return HitReactMontage;
+}
+
+void ASusWizCharacterBase::Die()
+{
+	MulticastHandleDeath_Implementation();
+}
+
+void ASusWizCharacterBase::MulticastHandleDeath_Implementation()
+{
+
+	GetMesh()->SetSimulatePhysics(true);
+	GetMesh()->SetEnableGravity(true);
+	GetMesh()->SetCollisionEnabled(ECollisionEnabled::PhysicsOnly);
+	GetMesh()->SetCollisionResponseToChannel(ECC_WorldStatic, ECR_Block);
+	GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	UMaterialInterface* NoOverlay = nullptr;
+	GetMesh()->SetOverlayMaterial(NoOverlay);
+
+	// Apply impulse
+	FVector ImpulseDirection(FMath::FRandRange(-1.f,1.f), FMath::FRandRange(-1.f,1.f), FMath::FRandRange(1.f,2.f));
+	float ImpulseStrength = 2000.0f; // Adjust as needed
+	GetMesh()->AddImpulse(ImpulseDirection * ImpulseStrength, NAME_None, true);
+
+	Dissolve();
+	
 }
 
 // Called when the game starts or when spawned
@@ -74,6 +100,18 @@ void ASusWizCharacterBase::AddCharacterAbilities()
 		if(!HasAuthority()) return;
 	
 	SusWizASC->AddCharacterAbilities(StartupAbilities);
+	
+}
+
+void ASusWizCharacterBase::Dissolve()
+{
+	if (IsValid(DissolveMaterialInstance))
+	{
+		UMaterialInstanceDynamic* DynamicMatInst = UMaterialInstanceDynamic::Create(DissolveMaterialInstance, this);
+		GetMesh()->SetMaterial(0, DynamicMatInst);
+
+		StartDissolveTimeline(DynamicMatInst);
+	}
 	
 }
 

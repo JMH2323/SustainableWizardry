@@ -7,7 +7,10 @@
 #include "AbilitySystemBlueprintLibrary.h"
 #include "GameFramework/Character.h"
 #include "GameplayEffectExtension.h"
+#include "Kismet/GameplayStatics.h"
 #include "SustainableWizardry/SusWizGameplayTags.h"
+#include "SustainableWizardry/Interaction/CombatInterface.h"
+#include "SustainableWizardry/Player/SusWizPlayerController.h"
 
 USusWizAttributeSet::USusWizAttributeSet()
 {
@@ -82,7 +85,7 @@ void USusWizAttributeSet::SetEffectProperties(const FGameplayEffectModCallbackDa
 		// Get the character as well if it is a player.
 		if (Props.SourceController)
 		{
-			ACharacter* SourceCharacter = Cast<ACharacter>(Props.SourceController->GetPawn());
+			Props.SourceCharacter = Cast<ACharacter>(Props.SourceController->GetPawn());
 		}
 	}
 
@@ -99,50 +102,7 @@ void USusWizAttributeSet::SetEffectProperties(const FGameplayEffectModCallbackDa
 	
 }
 
-void USusWizAttributeSet::EmptyPartOne(const FGameplayEffectModCallbackData& Data)
-{
 
-
-	// PART 1
-	//		Get data from Effect Spec and context. 
-	const FGameplayEffectContextHandle EffectContextHandle = Data.EffectSpec.GetContext();
-	//		Source = causer of effect, Target = target of the effect (OWNER OF THIS AS).
-	const UAbilitySystemComponent* SourceASC = EffectContextHandle.GetOriginalInstigatorAbilitySystemComponent();
-
-	// We're going to access a lot of pointers so we need checks.
-	if (IsValid(SourceASC) && SourceASC->AbilityActorInfo.IsValid() && SourceASC->AbilityActorInfo->AvatarActor.IsValid())
-	{
-		// If we have an actor who did this, get the player if its a player.
-		AActor* SourceAvatarActor = SourceASC->AbilityActorInfo->AvatarActor.Get();
-		const AController* SourceController = SourceASC->AbilityActorInfo->PlayerController.Get();
-
-		// If its not a player, but it is an actor, get the pawn (Enemy).
-		if (SourceController == nullptr && SourceAvatarActor != nullptr)
-		{
-			if (const APawn* Pawn = Cast<APawn>(SourceAvatarActor))
-			{
-				SourceController = Pawn->GetController();
-			}
-		}
-		// Get the character as well if it is a player.
-		if (SourceController)
-		{
-			ACharacter* SourceCharacter = Cast<ACharacter>(SourceController->GetPawn());
-		}
-	}
-
-	// First round of data collection complete.
-	//  Second round is getting the target. Remember to check pointers!
-	if (Data.Target.AbilityActorInfo.IsValid() && Data.Target.AbilityActorInfo->AvatarActor.IsValid())
-	{
-		// Set Actor and get it's controller
-		AActor* TargetAvatarActor = Data.Target.AbilityActorInfo->AvatarActor.Get();
-		AController* TargetController = Data.Target.AbilityActorInfo->PlayerController.Get();
-		ACharacter* TargetCharacter = Cast<ACharacter>(TargetAvatarActor);
-		UAbilitySystemComponent* TargetASC = UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(TargetAvatarActor);
-	}
-	
-}
 
 
 void USusWizAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data)
@@ -182,21 +142,43 @@ void USusWizAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCall
 			SetHealth(FMath::Clamp(NewHealth, 0.f, GetMaxHealth()));
 
 
-			// Check if damage was fatal, apply stun if able
+			// Check if damage was fatal, apply death or hit if able
 			const bool bFatal = NewHealth <= 0.f;
-			if (!bFatal)
+			if(bFatal)
+			{
+				ICombatInterface* CombatInterface = Cast<ICombatInterface>(Props.TargetAvatarActor);
+				if(CombatInterface)
+				{
+					CombatInterface->Die();
+				}
+			}
+			else
 			{
 				FGameplayTagContainer TagContainer;
 				TagContainer.AddTag(FSusWizGameplayTags::Get().Effects_HitReact);
 				Props.TargetASC->TryActivateAbilitiesByTag(TagContainer);
 			}
+
+			// When damage is dealt, show the damage on the enemy as a pop-up
+			ShowFloatingText(Props, LocalIncomingDamage);
+			
 		}
 	}
 	
 }
 
 
+void USusWizAttributeSet::ShowFloatingText(const FEffectProperties& Props, float Damage)
+{
 
+	if(Props.SourceCharacter != Props.TargetCharacter)
+	{
+		ASusWizPlayerController* PC = Cast<ASusWizPlayerController>(UGameplayStatics::GetPlayerController(Props.SourceCharacter, 0));
+		PC->ShowDamageNumber(Damage, Props.TargetCharacter);
+				
+	}
+	
+}
 
 
 
@@ -281,6 +263,7 @@ void USusWizAttributeSet::OnRep_MaxEnergy(const FGameplayAttributeData& OldMaxEn
 {
 	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, MaxHealth, OldMaxEnergy);
 }
+
 
 //TODO: JEFF ALEX
 

@@ -12,6 +12,7 @@
 /**
  * 
  */
+class UDamageTextComponent;
 class UInputMappingContext;
 class UInputAction;
 struct FInputActionValue;
@@ -25,6 +26,9 @@ class SUSTAINABLEWIZARDRY_API ASusWizPlayerController : public APlayerController
 
 public:
 	ASusWizPlayerController();
+
+	UFUNCTION(Client, Reliable)
+	void ShowDamageNumber(float DamageAmount, ACharacter* TargetCharacter);
 
 protected:
 	virtual void BeginPlay() override;
@@ -63,6 +67,9 @@ private:
 	TObjectPtr<USusWizAbilitySystemComponent> SusWizAbilitySystemComponent;
 
 	USusWizAbilitySystemComponent* GetASC();
+
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UDamageTextComponent> DamageTextComponentClass;
 
 	
 };
