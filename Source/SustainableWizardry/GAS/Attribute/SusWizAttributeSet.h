@@ -89,8 +89,7 @@ private:
 	// Get all the data effect properties
 	void SetEffectProperties(const FGameplayEffectModCallbackData Data, FEffectProperties& Props) const;
 
-	// PART ONE VERSION
-	void EmptyPartOne(const FGameplayEffectModCallbackData& Data);
+	void ShowFloatingText(const FEffectProperties& Props, float Damage);
 
 	
 public:
@@ -197,6 +196,8 @@ public:
 	FGameplayAttributeData IncomingDamage;
 	ATTRIBUTE_ACCESSORS(USusWizAttributeSet, IncomingDamage);
 
-	
+
+
+
 	
 };

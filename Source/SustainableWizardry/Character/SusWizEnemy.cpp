@@ -30,7 +30,11 @@ int32 ASusWizEnemy::GetPlayerLevel()
 }
 
 
-
+void ASusWizEnemy::Die()
+{
+	SetLifeSpan(Lifespan);
+	Super::Die();
+}
 
 void ASusWizEnemy::BeginPlay()
 {
