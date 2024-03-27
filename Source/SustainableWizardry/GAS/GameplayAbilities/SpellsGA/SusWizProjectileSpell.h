@@ -15,7 +15,7 @@ class SUSTAINABLEWIZARDRY_API USusWizProjectileSpell : public USusWizGameplayAbi
 {
 	GENERATED_BODY()
 
-
+	
 protected:
 
 	virtual void ActivateAbility(const FGameplayAbilitySpecHandle Handle,
@@ -23,7 +23,10 @@ protected:
 		const FGameplayAbilityActivationInfo ActivationInfo,
 		const FGameplayEventData* TriggerEventData) override;
 
-	//
+	UFUNCTION(BlueprintCallable, Category="Projectile")
+	void SpawnProjectile();
+	const FGameplayAbilityActorInfo *StoredActorInfo;
+	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TSubclassOf<ASusWizProjectiles> ProjectileClass;
 };
