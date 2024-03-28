@@ -13,6 +13,8 @@
  */
 
 class UWidgetComponent;
+class UBehaviorTree;
+class ASusWizAIController;
 UCLASS()
 class SUSTAINABLEWIZARDRY_API ASusWizEnemy : public ASusWizCharacterBase
 {
@@ -20,6 +22,7 @@ class SUSTAINABLEWIZARDRY_API ASusWizEnemy : public ASusWizCharacterBase
 
 public:
 	ASusWizEnemy();
+	virtual void PossessedBy(AController* NewController) override;
 
 	/* Combat Interface */
 	virtual int32 GetPlayerLevel() override;
@@ -58,6 +61,12 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	TObjectPtr<UWidgetComponent> HealthBar;
+
+	UPROPERTY(EditAnywhere, Category = "AI")
+	TObjectPtr<UBehaviorTree> BehaviorTree;
+
+	UPROPERTY()
+	TObjectPtr<ASusWizAIController> SusWizAIController;
 
 	
 	
