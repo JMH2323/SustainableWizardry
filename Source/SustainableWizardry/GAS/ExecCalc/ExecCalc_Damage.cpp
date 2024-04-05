@@ -7,6 +7,9 @@
 #include "AbilitySystemComponent.h"
 #include "VectorVM.h"
 #include "SustainableWizardry/SusWizGameplayTags.h"
+#include "SustainableWizardry/GAS/SusWizAbilitySystemLibrary.h"
+#include "SustainableWizardry/GAS/Data/CharacterClassInfo.h"
+#include "SustainableWizardry/Interaction/CombatInterface.h"
 
 struct SusWizDamageStatics
 {
@@ -17,9 +20,16 @@ struct SusWizDamageStatics
 	
 	SusWizDamageStatics()
 	{
-		// Defined the armor capture definition. Set, def, source, and boolean(snapshot)
+		// Defined capture definition. Set, def, source, and boolean(snapshot)
+		/* Armor */
 		DEFINE_ATTRIBUTE_CAPTUREDEF(USusWizAttributeSet, Armor, Target, false);
 		DEFINE_ATTRIBUTE_CAPTUREDEF(USusWizAttributeSet, ArmorPen, Source, false);
+		/* TODO: Crit */
+		
+		/* TODO: Dodge */
+		
+		/* TODO: DamageScale */
+		
 	}
 };
 
@@ -46,9 +56,12 @@ void UExecCalc_Damage::Execute_Implementation(const FGameplayEffectCustomExecuti
 	const UAbilitySystemComponent* TargetASC = ExecutionParams.GetTargetAbilitySystemComponent();
 
 	// Get the Avatars from the ASCs if they are valid
-	const AActor* SourceAvatar = SourceASC ? SourceASC->GetAvatarActor() : nullptr;
-	const AActor* TargetAvatar = TargetASC ? TargetASC->GetAvatarActor() : nullptr;
-
+	AActor* SourceAvatar = SourceASC ? SourceASC->GetAvatarActor() : nullptr;
+	AActor* TargetAvatar = TargetASC ? TargetASC->GetAvatarActor() : nullptr;
+	// Get Combat Interface for level interaction
+	ICombatInterface* SourceCombatInterface = Cast<ICombatInterface>(SourceAvatar);
+	ICombatInterface* TargetCombatInterface = Cast<ICombatInterface>(TargetAvatar);
+	
 	// Get the owning gameplay effect specs
 	const FGameplayEffectSpec& Spec = ExecutionParams.GetOwningSpec();
 
@@ -76,7 +89,15 @@ void UExecCalc_Damage::Execute_Implementation(const FGameplayEffectCustomExecuti
 	 * Dodge last
 	 */
 
-	/* TODO: Scale Damage?? */
+	// Character class information in case we want to scale values in UE (levels, etc.)
+	const UCharacterClassInfo* SourceCharacterClassInfo = USusWizAbilitySystemLibrary::GetCharacterClassInfo(SourceAvatar);
+	// Example:
+	//const FRealCurve* /*CurveNameCurve*/ CharacterClassInfo->DamageCalculationCoefficients->FindCurve(/*FName("CurveHere"), FString()/*)
+	//const float /*CurveNameCoefficient*/ = /*CurveNameCurve*/->Eval(/*Source/Target*/CombatInterface->GetPlayerLevel());
+	// Use Coefficient in math^^ TODO: MAKE SURE YOU MAKE THE CURVE TABLE AND ASSIGN IT IF USED
+
+
+	/* TODO: Scale Damage */
 
 	
 	/* Armor */
@@ -90,8 +111,18 @@ void UExecCalc_Damage::Execute_Implementation(const FGameplayEffectCustomExecuti
 	SourceArmorPen = FMath::Max<float>(SourceArmorPen, 0.f);
 
 	float ArmorApplied = TargetArmor - SourceArmorPen;
+	ArmorApplied = (ArmorApplied <= 0.f) ? ArmorApplied = 0.f : ArmorApplied;
+	Damage *= (1.0f - (ArmorApplied / 100.f)); 
+
+	/* TODO: Crit Chance */
+	// Similar to Dodge Chance
+	// Capture Crit change, if dodged, negate all damage.
+	float SourceCritChance = 0.f;
+
 	
-	Damage *= (1.0f - (ArmorApplied / 100.f));
+	const bool bCrit = FMath::RandRange(1,100) < SourceCritChance;
+	Damage = bCrit ? Damage *= 2.f : Damage;
+
 
 	
 	/* TODO: Dodge Chance */
@@ -100,6 +131,7 @@ void UExecCalc_Damage::Execute_Implementation(const FGameplayEffectCustomExecuti
 	
 	// Use this bool for dodging
 	const bool bDodged = FMath::RandRange(1, 100) < TargetDodgeChance;
+	// Set damage. if dodged is true = 0. otherwise, keep it as it is.
 	Damage = bDodged ? Damage = 0.f : Damage;
 
 
