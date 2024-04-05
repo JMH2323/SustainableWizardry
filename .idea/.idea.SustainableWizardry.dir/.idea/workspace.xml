@@ -7,11 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1579a7cd-1dd9-4102-8fb2-ded64c6e3088" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/Attribute/SusWizAttributeSet.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/Attribute/SusWizAttributeSet.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/Attribute/SusWizAttributeSet.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/Attribute/SusWizAttributeSet.h" afterDir="false" />
-    </list>
+    <list default="true" id="1579a7cd-1dd9-4102-8fb2-ded64c6e3088" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,14 +100,14 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "settings.editor.selected.configurable": "UnrealLinkOptionsId",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "rider.external.source.directories": [
-      "C:\\Users\\Tito\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Tito\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\Tito\\AppData\\Local\\Symbols\\src"
+      "C:\\Users\\angryjack67\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\angryjack67\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\angryjack67\\AppData\\Local\\Symbols\\src"
     ]
   }
 }]]></component>
@@ -121,9 +117,9 @@
       <configuration_2>
         <option name="CONFIGURATION" value="DebugGame Editor" />
         <option name="PLATFORM" value="Win64" />
-        <option name="EXECUTABLE_PATH" value="C:\Program Files\Epic Games\UE_5.2\Engine\Binaries\Win64\UnrealEditor-Win64-DebugGame.exe" />
-        <option name="WORKING_DIRECTORY" value="C:\Program Files\Epic Games\UE_5.2" />
-        <option name="MANDATORY_PROGRAM_PARAMETERS" value=" &quot;C:\Users\Tito\Documents\GitHub\SustainableWizardry\SustainableWizardry.uproject&quot;" />
+        <option name="EXECUTABLE_PATH" value="C:\UnrealEngineVersions\UE_5.2\Engine\Binaries\Win64\UnrealEditor-Win64-DebugGame.exe" />
+        <option name="WORKING_DIRECTORY" value="C:\UnrealEngineVersions\UE_5.2" />
+        <option name="MANDATORY_PROGRAM_PARAMETERS" value=" &quot;C:\Documents\Unreal Projects\GameBuilder\SustainableWizardry\SustainableWizardry.uproject&quot;" />
         <option name="CUSTOM_PROGRAM_PARAMETERS" value="" />
         <option name="PASS_PARENT_ENVS" value="1" />
         <option name="USE_EXTERNAL_CONSOLE" value="0" />
@@ -132,8 +128,8 @@
       <configuration_3>
         <option name="CONFIGURATION" value="DebugGame" />
         <option name="PLATFORM" value="Win64" />
-        <option name="EXECUTABLE_PATH" value="C:\Users\Tito\Documents\GitHub\SustainableWizardry\Binaries\Win64\SustainableWizardry-Win64-DebugGame.exe" />
-        <option name="WORKING_DIRECTORY" value="C:\Program Files\Epic Games\UE_5.2" />
+        <option name="EXECUTABLE_PATH" value="C:\Documents\Unreal Projects\GameBuilder\SustainableWizardry\Binaries\Win64\SustainableWizardry-Win64-DebugGame.exe" />
+        <option name="WORKING_DIRECTORY" value="C:\UnrealEngineVersions\UE_5.2" />
         <option name="MANDATORY_PROGRAM_PARAMETERS" value="" />
         <option name="CUSTOM_PROGRAM_PARAMETERS" value="" />
         <option name="PASS_PARENT_ENVS" value="1" />
@@ -143,9 +139,9 @@
       <configuration_4>
         <option name="CONFIGURATION" value="Development Editor" />
         <option name="PLATFORM" value="Win64" />
-        <option name="EXECUTABLE_PATH" value="C:\Program Files\Epic Games\UE_5.2\Engine\Binaries\Win64\UnrealEditor.exe" />
-        <option name="WORKING_DIRECTORY" value="C:\Program Files\Epic Games\UE_5.2" />
-        <option name="MANDATORY_PROGRAM_PARAMETERS" value=" &quot;C:\Users\Tito\Documents\GitHub\SustainableWizardry\SustainableWizardry.uproject&quot;" />
+        <option name="EXECUTABLE_PATH" value="C:\UnrealEngineVersions\UE_5.2\Engine\Binaries\Win64\UnrealEditor.exe" />
+        <option name="WORKING_DIRECTORY" value="C:\UnrealEngineVersions\UE_5.2" />
+        <option name="MANDATORY_PROGRAM_PARAMETERS" value=" &quot;C:\Documents\Unreal Projects\GameBuilder\SustainableWizardry\SustainableWizardry.uproject&quot;" />
         <option name="CUSTOM_PROGRAM_PARAMETERS" value="" />
         <option name="PASS_PARENT_ENVS" value="1" />
         <option name="USE_EXTERNAL_CONSOLE" value="0" />
@@ -154,8 +150,8 @@
       <configuration_5>
         <option name="CONFIGURATION" value="Development" />
         <option name="PLATFORM" value="Win64" />
-        <option name="EXECUTABLE_PATH" value="C:\Users\Tito\Documents\GitHub\SustainableWizardry\Binaries\Win64\SustainableWizardry.exe" />
-        <option name="WORKING_DIRECTORY" value="C:\Program Files\Epic Games\UE_5.2" />
+        <option name="EXECUTABLE_PATH" value="C:\Documents\Unreal Projects\GameBuilder\SustainableWizardry\Binaries\Win64\SustainableWizardry.exe" />
+        <option name="WORKING_DIRECTORY" value="C:\UnrealEngineVersions\UE_5.2" />
         <option name="MANDATORY_PROGRAM_PARAMETERS" value="" />
         <option name="CUSTOM_PROGRAM_PARAMETERS" value="" />
         <option name="PASS_PARENT_ENVS" value="1" />
@@ -165,14 +161,31 @@
       <configuration_6>
         <option name="CONFIGURATION" value="Shipping" />
         <option name="PLATFORM" value="Win64" />
-        <option name="EXECUTABLE_PATH" value="C:\Users\Tito\Documents\GitHub\SustainableWizardry\Binaries\Win64\SustainableWizardry-Win64-Shipping.exe" />
-        <option name="WORKING_DIRECTORY" value="C:\Program Files\Epic Games\UE_5.2" />
+        <option name="EXECUTABLE_PATH" value="C:\Documents\Unreal Projects\GameBuilder\SustainableWizardry\Binaries\Win64\SustainableWizardry-Win64-Shipping.exe" />
+        <option name="WORKING_DIRECTORY" value="C:\UnrealEngineVersions\UE_5.2" />
         <option name="MANDATORY_PROGRAM_PARAMETERS" value="" />
         <option name="CUSTOM_PROGRAM_PARAMETERS" value="" />
         <option name="PASS_PARENT_ENVS" value="1" />
         <option name="USE_EXTERNAL_CONSOLE" value="0" />
         <option name="TERMINAL_INTERACTION_BEHAVIOR" value="FORCE_CONSOLE" />
       </configuration_6>
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Uproject" factoryName="rider.uproject">
+      <option name="PROJECT_FILE_PATH" value="$PROJECT_DIR$/SustainableWizardry.uproject" />
+      <configuration_2>
+        <option name="CONFIGURATION" value="Development Editor" />
+        <option name="PLATFORM" value="Win64" />
+        <option name="EXECUTABLE_PATH" value="" />
+        <option name="WORKING_DIRECTORY" value="" />
+        <option name="MANDATORY_PROGRAM_PARAMETERS" value="" />
+        <option name="CUSTOM_PROGRAM_PARAMETERS" value="" />
+        <option name="PASS_PARENT_ENVS" value="1" />
+        <option name="USE_EXTERNAL_CONSOLE" value="0" />
+        <option name="TERMINAL_INTERACTION_BEHAVIOR" value="AUTO_DETECT" />
+      </configuration_2>
       <method v="2">
         <option name="Build" />
       </method>
@@ -201,6 +214,7 @@
       <workItem from="1711153817682" duration="816000" />
       <workItem from="1711385132901" duration="8189000" />
       <workItem from="1711495716348" duration="2636000" />
+      <workItem from="1712284283172" duration="1672000" />
     </task>
     <servers />
   </component>
@@ -209,5 +223,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
