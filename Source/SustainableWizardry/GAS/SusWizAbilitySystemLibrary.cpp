@@ -74,12 +74,10 @@ UAttributeMenuWidgetController* USusWizAbilitySystemLibrary::GetAttributeMenuWid
 void USusWizAbilitySystemLibrary::InitializeDefaultAttributes(const UObject* WorldContextObject,
 	ECharacterClass CharacterClass, float Level, UAbilitySystemComponent* ASC)
 {
-	ASuzWizGameModeBase* SusWizGameMode = Cast<ASuzWizGameModeBase>(UGameplayStatics::GetGameMode(WorldContextObject));
-	if (SusWizGameMode == nullptr) return;
 	
 	AActor* AvatarActor = ASC->GetAvatarActor();
 
-	UCharacterClassInfo* CharacterClassInfo = SusWizGameMode->CharacterClassInfo;
+	UCharacterClassInfo* CharacterClassInfo = GetCharacterClassInfo(WorldContextObject);
 	FCharacterClassDefaultInfo ClassDefaultInfo = CharacterClassInfo->GetClassDefaultInfo(CharacterClass);
 
 	FGameplayEffectContextHandle PrimaryAttributesContextHandle = ASC->MakeEffectContext();
@@ -105,7 +103,7 @@ void USusWizAbilitySystemLibrary::GiveStartupAbilities(const UObject* WorldConte
 	ASuzWizGameModeBase* SusWizGameMode = Cast<ASuzWizGameModeBase>(UGameplayStatics::GetGameMode(WorldContextObject));
 	if (SusWizGameMode == nullptr) return;
 
-	UCharacterClassInfo* CharacterClassInfo = SusWizGameMode->CharacterClassInfo;
+	UCharacterClassInfo* CharacterClassInfo = GetCharacterClassInfo(WorldContextObject);
 	for (TSubclassOf<UGameplayAbility> AbilityClass : CharacterClassInfo->CommonAbilities)
 	{
 		FGameplayAbilitySpec AbilitySpec = FGameplayAbilitySpec(AbilityClass, 1);
@@ -113,4 +111,11 @@ void USusWizAbilitySystemLibrary::GiveStartupAbilities(const UObject* WorldConte
 	}
 	
 	
+}
+
+UCharacterClassInfo* USusWizAbilitySystemLibrary::GetCharacterClassInfo(const UObject* WorldContextObject)
+{
+	ASuzWizGameModeBase* SusWizGameMode = Cast<ASuzWizGameModeBase>(UGameplayStatics::GetGameMode(WorldContextObject));
+	if (SusWizGameMode == nullptr) return nullptr;
+	return SusWizGameMode->CharacterClassInfo;
 }
