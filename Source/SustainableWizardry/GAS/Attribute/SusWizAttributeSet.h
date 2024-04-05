@@ -150,6 +150,22 @@ public:
 	void OnRep_ArmorPen(const FGameplayAttributeData& OldArmorPen) const;
 
 	// TODO: Jeff = Speed, dodge (Wind power/Swift)
+	//Speed
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_ArmorPen, Category = "Secondary Attributes")
+	FGameplayAttributeData Speed;
+	ATTRIBUTE_ACCESSORS(USusWizAttributeSet, Speed);
+	UFUNCTION()
+	void OnRep_Speed(const FGameplayAttributeData& OldSpeed) const;
+
+	//Dodge
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_ArmorPen, Category = "Secondary Attributes")
+	FGameplayAttributeData Dodge;
+	ATTRIBUTE_ACCESSORS(USusWizAttributeSet, Dodge);
+	UFUNCTION()
+	void OnRep_Dodge(const FGameplayAttributeData& OldDodge) const;
+
+	
+	
 	// TODO: Alex = Healing scale, Damage scale (Deep/Swift)
 
 
