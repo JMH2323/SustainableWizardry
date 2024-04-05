@@ -12,7 +12,7 @@ public class SustainableWizardry : ModuleRules
 		PublicDependencyModuleNames.AddRange(new string[]
 		{
 			"Core", "CoreUObject", "Engine", "InputCore", "HeadMountedDisplay", "EnhancedInput",
-			"GameplayTasks", "GameplayAbilities", "GameplayTags", "UMG", "Niagara"
+			"GameplayTasks", "GameplayAbilities", "GameplayTags", "UMG", "Niagara", "AIModule"
 		});
 	}
 }

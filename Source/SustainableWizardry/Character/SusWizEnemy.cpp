@@ -9,6 +9,9 @@
 #include "Components/WidgetComponent.h"
 #include "SustainableWizardry/SusWizGameplayTags.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "SustainableWizardry/AI/Controller/SusWizAIController.h"
+#include "BehaviorTree/BehaviorTree.h"
+#include "BehaviorTree/BlackboardComponent.h"
 #include "SustainableWizardry/GAS/SusWizAbilitySystemLibrary.h"
 
 ASusWizEnemy::ASusWizEnemy()
@@ -21,6 +24,17 @@ ASusWizEnemy::ASusWizEnemy()
 
 	HealthBar = CreateDefaultSubobject<UWidgetComponent>("HealthBar");
 	HealthBar->SetupAttachment(GetRootComponent());
+	
+}
+
+void ASusWizEnemy::PossessedBy(AController* NewController)
+{
+	Super::PossessedBy(NewController);
+
+	if (!HasAuthority()) return;
+	SusWizAIController = Cast<ASusWizAIController>(NewController);
+	SusWizAIController->GetBlackboardComponent()->InitializeBlackboard(*BehaviorTree->BlackboardAsset);
+	SusWizAIController->RunBehaviorTree(BehaviorTree);
 	
 }
 
