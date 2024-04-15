@@ -6,6 +6,7 @@
 #include "GameplayEffectTypes.h"
 #include "SustainableWizardry/Game/SuzWizGameModeBase.h"
 #include "AbilitySystemComponent.h"
+#include "GameplayAbilities/SusWizAbilityTypes.h"
 #include "Kismet/GameplayStatics.h"
 #include "SustainableWizardry/Player/PlayerState/SusWizPlayerState.h"
 #include "SustainableWizardry/UI/HUD/SusWizHUD.h"
@@ -118,4 +119,39 @@ UCharacterClassInfo* USusWizAbilitySystemLibrary::GetCharacterClassInfo(const UO
 	ASuzWizGameModeBase* SusWizGameMode = Cast<ASuzWizGameModeBase>(UGameplayStatics::GetGameMode(WorldContextObject));
 	if (SusWizGameMode == nullptr) return nullptr;
 	return SusWizGameMode->CharacterClassInfo;
+}
+
+bool USusWizAbilitySystemLibrary::IsDodgedHit(const FGameplayEffectContextHandle& EffectContextHandle)
+{
+	if (const FSusWizGameplayEffectContext* SusWizEffectContext = static_cast<const FSusWizGameplayEffectContext*>(EffectContextHandle.Get()))
+	{
+		return SusWizEffectContext->IsDodgedHit();
+	}
+	return false;
+}
+
+bool USusWizAbilitySystemLibrary::IsCriticalHit(const FGameplayEffectContextHandle& EffectContextHandle)
+{
+	if (const FSusWizGameplayEffectContext* SusWizEffectContext = static_cast<const FSusWizGameplayEffectContext*>(EffectContextHandle.Get()))
+	{
+		return SusWizEffectContext->IsCriticalHit();
+	}
+	return false;
+}
+
+void USusWizAbilitySystemLibrary::SetIsDodgedHit(FGameplayEffectContextHandle& EffectContextHandle, bool bInIsDodgedHit)
+{
+	if (FSusWizGameplayEffectContext* SusWizEffectContext = static_cast<FSusWizGameplayEffectContext*>(EffectContextHandle.Get()))
+	{
+		SusWizEffectContext->SetIsDodgedHit(bInIsDodgedHit);
+	}
+}
+
+void USusWizAbilitySystemLibrary::SetIsCriticalHit(FGameplayEffectContextHandle& EffectContextHandle,
+	bool bInIsCriticalHit)
+{
+	if (FSusWizGameplayEffectContext* SusWizEffectContext = static_cast<FSusWizGameplayEffectContext*>(EffectContextHandle.Get()))
+	{
+		SusWizEffectContext->SetIsCriticalHit(bInIsCriticalHit);
+	}
 }
