@@ -9,6 +9,7 @@
 #include "SustainableWizardry/SusWizGameplayTags.h"
 #include "SustainableWizardry/GAS/SusWizAbilitySystemLibrary.h"
 #include "SustainableWizardry/GAS/Data/CharacterClassInfo.h"
+#include "SustainableWizardry/GAS/GameplayAbilities/SusWizAbilityTypes.h"
 #include "SustainableWizardry/Interaction/CombatInterface.h"
 
 struct SusWizDamageStatics
@@ -123,7 +124,8 @@ void UExecCalc_Damage::Execute_Implementation(const FGameplayEffectCustomExecuti
 	const bool bCrit = FMath::RandRange(1,100) < SourceCritChance;
 	Damage = bCrit ? Damage *= 2.f : Damage;
 
-
+	FGameplayEffectContextHandle EffectContextHandle = Spec.GetContext();
+	USusWizAbilitySystemLibrary::SetIsCriticalHit(EffectContextHandle, bCrit);
 	
 	/* TODO: Dodge Chance */
 	// Capture dodge change, if dodged, negate all damage.
@@ -133,7 +135,8 @@ void UExecCalc_Damage::Execute_Implementation(const FGameplayEffectCustomExecuti
 	const bool bDodged = FMath::RandRange(1, 100) < TargetDodgeChance;
 	// Set damage. if dodged is true = 0. otherwise, keep it as it is.
 	Damage = bDodged ? Damage = 0.f : Damage;
-
+	
+	USusWizAbilitySystemLibrary::SetIsDodgedHit(EffectContextHandle, bDodged);
 
 	/*
 	 * Math done

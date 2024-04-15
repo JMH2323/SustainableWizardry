@@ -9,6 +9,7 @@
 #include "GameplayEffectExtension.h"
 #include "Kismet/GameplayStatics.h"
 #include "SustainableWizardry/SusWizGameplayTags.h"
+#include "SustainableWizardry/GAS/SusWizAbilitySystemLibrary.h"
 #include "SustainableWizardry/Interaction/CombatInterface.h"
 #include "SustainableWizardry/Player/SusWizPlayerController.h"
 
@@ -159,8 +160,11 @@ void USusWizAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCall
 				Props.TargetASC->TryActivateAbilitiesByTag(TagContainer);
 			}
 
-			// When damage is dealt, show the damage on the enemy as a pop-up
-			ShowFloatingText(Props, LocalIncomingDamage);
+			const bool bDodge = USusWizAbilitySystemLibrary::IsDodgedHit(Props.EffectContextHandle);
+			const bool bCrit = USusWizAbilitySystemLibrary::IsCriticalHit(Props.EffectContextHandle);
+						
+			// When damage is dealt, show the damage on the enemy as a pop-up and it's context
+			ShowFloatingText(Props, LocalIncomingDamage, bDodge, bCrit);
 			
 		}
 	}
@@ -168,20 +172,19 @@ void USusWizAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCall
 }
 
 
-void USusWizAttributeSet::ShowFloatingText(const FEffectProperties& Props, float Damage)
+void USusWizAttributeSet::ShowFloatingText(const FEffectProperties& Props, float Damage, bool bDodgedHit, bool bCrit)
 {
 
 	if(Props.SourceCharacter != Props.TargetCharacter)
 	{
-		ASusWizPlayerController* PC = Cast<ASusWizPlayerController>(UGameplayStatics::GetPlayerController(Props.SourceCharacter, 0));
-		PC->ShowDamageNumber(Damage, Props.TargetCharacter);
+		if(ASusWizPlayerController* PC = Cast<ASusWizPlayerController>(UGameplayStatics::GetPlayerController(Props.SourceCharacter, 0)))
+		{
+			PC->ShowDamageNumber(Damage, Props.TargetCharacter, bDodgedHit, bCrit);
+		}
 				
 	}
 	
 }
-
-
-
 
 /*
  * Attribute stuff start

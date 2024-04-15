@@ -20,7 +20,7 @@ ASusWizPlayerController::ASusWizPlayerController()
 	bReplicates = true;
 }
 
-void ASusWizPlayerController::ShowDamageNumber_Implementation(float DamageAmount, ACharacter* TargetCharacter)
+void ASusWizPlayerController::ShowDamageNumber_Implementation(float DamageAmount, ACharacter* TargetCharacter, bool bDodgedHit, bool bCrit)
 {
 	if (IsValid(TargetCharacter) && DamageTextComponentClass)
 	{
@@ -28,7 +28,7 @@ void ASusWizPlayerController::ShowDamageNumber_Implementation(float DamageAmount
 		DamageText->RegisterComponent();
 		DamageText->AttachToComponent(TargetCharacter->GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);
 		DamageText->DetachFromComponent(FDetachmentTransformRules::KeepWorldTransform);
-		DamageText->SetDamageText(DamageAmount);
+		DamageText->SetDamageText(DamageAmount, bDodgedHit, bCrit);
 	}
 }
 
