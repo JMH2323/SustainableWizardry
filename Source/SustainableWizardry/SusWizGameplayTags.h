@@ -28,6 +28,10 @@ static const FSusWizGameplayTags& Get() { return GameplayTags; }
  FGameplayTag Attributes_Secondary_ArmorPen;
  FGameplayTag Attributes_Secondary_MaxEnergy;
  FGameplayTag Attributes_Secondary_MaxHealth;
+ FGameplayTag Attributes_Secondary_Dodge; 
+ FGameplayTag Attributes_Secondary_CriticalChance;
+ FGameplayTag Attributes_Secondary_DamageScaling; 
+ FGameplayTag Attributes_Secondary_HealingScaling;
 
  // Vital Attribute Tags
  FGameplayTag Attributes_Vital_Health;

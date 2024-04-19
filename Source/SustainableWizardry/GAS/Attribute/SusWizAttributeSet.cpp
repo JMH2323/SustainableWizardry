@@ -9,6 +9,7 @@
 #include "GameplayEffectExtension.h"
 #include "Kismet/GameplayStatics.h"
 #include "SustainableWizardry/SusWizGameplayTags.h"
+#include "SustainableWizardry/GAS/SusWizAbilitySystemLibrary.h"
 #include "SustainableWizardry/Interaction/CombatInterface.h"
 #include "SustainableWizardry/Player/SusWizPlayerController.h"
 
@@ -32,6 +33,10 @@ const FSusWizGameplayTags& GameplayTags = FSusWizGameplayTags::Get();
 	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_MaxHealth, GetMaxHealthAttribute);
 	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_Armor, GetArmorAttribute);
 	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_ArmorPen, GetArmorPenAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_CriticalChance, GetCriticalChanceAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_Dodge, GetDodgeAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_DamageScaling, GetDamageScaleAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_HealingScaling, GetHealingScaleAttribute);
 	
 	/* Vital */
 	TagsToAttributes.Add(GameplayTags.Attributes_Vital_Health, GetHealthAttribute);
@@ -159,8 +164,11 @@ void USusWizAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCall
 				Props.TargetASC->TryActivateAbilitiesByTag(TagContainer);
 			}
 
-			// When damage is dealt, show the damage on the enemy as a pop-up
-			ShowFloatingText(Props, LocalIncomingDamage);
+			const bool bDodgedHit = USusWizAbilitySystemLibrary::IsDodgedHit(Props.EffectContextHandle);
+			const bool bCrit = USusWizAbilitySystemLibrary::IsCriticalHit(Props.EffectContextHandle);
+						
+			// When damage is dealt, show the damage on the enemy as a pop-up and it's context
+			ShowFloatingText(Props, LocalIncomingDamage, bDodgedHit, bCrit);
 			
 		}
 	}
@@ -168,20 +176,19 @@ void USusWizAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCall
 }
 
 
-void USusWizAttributeSet::ShowFloatingText(const FEffectProperties& Props, float Damage)
+void USusWizAttributeSet::ShowFloatingText(const FEffectProperties& Props, float Damage, bool bDodgedHit, bool bCrit)
 {
 
 	if(Props.SourceCharacter != Props.TargetCharacter)
 	{
-		ASusWizPlayerController* PC = Cast<ASusWizPlayerController>(UGameplayStatics::GetPlayerController(Props.SourceCharacter, 0));
-		PC->ShowDamageNumber(Damage, Props.TargetCharacter);
+		if(ASusWizPlayerController* PC = Cast<ASusWizPlayerController>(Props.SourceCharacter->Controller))
+		{
+			PC->ShowDamageNumber(Damage, Props.TargetCharacter, bDodgedHit, bCrit);
+		}
 				
 	}
 	
 }
-
-
-
 
 /*
  * Attribute stuff start
@@ -206,8 +213,10 @@ void USusWizAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& 
 	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, MaxHealth, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, MaxEnergy, COND_None, REPNOTIFY_Always);
 	// TODO: JEFF AND ALEX
-	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, Speed, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, CriticalChance, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, Dodge, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, DamageScale, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, HealingScale, COND_None, REPNOTIFY_Always);
 
 	
 	// Vital
@@ -256,14 +265,24 @@ void USusWizAttributeSet::OnRep_ArmorPen(const FGameplayAttributeData& OldArmorP
 	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, ArmorPen, OldArmorPen);
 }
 
-void USusWizAttributeSet::OnRep_Speed(const FGameplayAttributeData& OldSpeed) const
+void USusWizAttributeSet::OnRep_CriticalChance(const FGameplayAttributeData& OldCriticalChance) const
 {
-	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, Speed, OldSpeed);
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, CriticalChance, OldCriticalChance);
 }
 
 void USusWizAttributeSet::OnRep_Dodge(const FGameplayAttributeData& OldDodge) const
 {
 	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, Dodge, OldDodge);
+}
+
+void USusWizAttributeSet::OnRep_DamageScale(const FGameplayAttributeData& OldDamageScale) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, DamageScale, OldDamageScale);
+}
+
+void USusWizAttributeSet::OnRep_HealingScale(const FGameplayAttributeData& OldHealingScale) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, HealingScale, OldHealingScale);
 }
 
 void USusWizAttributeSet::OnRep_MaxHealth(const FGameplayAttributeData& OldMaxHealth) const

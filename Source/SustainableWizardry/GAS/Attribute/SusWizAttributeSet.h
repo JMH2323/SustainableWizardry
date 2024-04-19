@@ -89,7 +89,7 @@ private:
 	// Get all the data effect properties
 	void SetEffectProperties(const FGameplayEffectModCallbackData Data, FEffectProperties& Props) const;
 
-	void ShowFloatingText(const FEffectProperties& Props, float Damage);
+	void ShowFloatingText(const FEffectProperties& Props, float Damage, bool bDodgedHit, bool bCriticalHit);
 
 	
 public:
@@ -150,24 +150,35 @@ public:
 	void OnRep_ArmorPen(const FGameplayAttributeData& OldArmorPen) const;
 
 	// TODO: Jeff = Speed, dodge (Wind power/Swift)
-	//Speed
-	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_ArmorPen, Category = "Secondary Attributes")
-	FGameplayAttributeData Speed;
-	ATTRIBUTE_ACCESSORS(USusWizAttributeSet, Speed);
+	//CriticalChance
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_CriticalChance, Category = "Secondary Attributes")
+	FGameplayAttributeData CriticalChance;
+	ATTRIBUTE_ACCESSORS(USusWizAttributeSet, CriticalChance);
 	UFUNCTION()
-	void OnRep_Speed(const FGameplayAttributeData& OldSpeed) const;
+	void OnRep_CriticalChance(const FGameplayAttributeData& OldCriticalChance) const;
 
 	//Dodge
-	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_ArmorPen, Category = "Secondary Attributes")
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_Dodge, Category = "Secondary Attributes")
 	FGameplayAttributeData Dodge;
 	ATTRIBUTE_ACCESSORS(USusWizAttributeSet, Dodge);
 	UFUNCTION()
 	void OnRep_Dodge(const FGameplayAttributeData& OldDodge) const;
-
 	
-	
-	// TODO: Alex = Healing scale, Damage scale (Deep/Swift)
+	// TODO: Alex = Healing scale, Damage scale (Deep/Flare)
 
+	//DamageScale
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_DamageScale, Category = "Secondary Attributes")
+	FGameplayAttributeData DamageScale;
+	ATTRIBUTE_ACCESSORS(USusWizAttributeSet, DamageScale);
+	UFUNCTION()
+	void OnRep_DamageScale(const FGameplayAttributeData& OldDamageScale) const;
+
+	//CriticalChance
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_HealingScale, Category = "Secondary Attributes")
+	FGameplayAttributeData HealingScale;
+	ATTRIBUTE_ACCESSORS(USusWizAttributeSet, HealingScale);
+	UFUNCTION()
+	void OnRep_HealingScale(const FGameplayAttributeData& OldHealingScale) const;
 
 	/*
 	 * Vital Attributes

@@ -23,6 +23,10 @@ void FSusWizGameplayTags::InitializeNativeGameplayTags()
 	GameplayTags.Attributes_Secondary_ArmorPen = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Secondary.ArmorPen"), FString ("Reduces Armor Effect"));
 	GameplayTags.Attributes_Secondary_MaxHealth = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Secondary.MaxHealth"), FString ("Maximum Health Capacity"));
 	GameplayTags.Attributes_Secondary_MaxEnergy = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Secondary.MaxEnergy"), FString ("Maximum Energy Capacity"));
+	GameplayTags.Attributes_Secondary_Dodge = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Secondary.Dodge"), FString (" na "));
+	GameplayTags.Attributes_Secondary_CriticalChance = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Secondary.CriticalChance"), FString ("na"));
+	GameplayTags.Attributes_Secondary_DamageScaling = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Secondary.DamageScaling"), FString ("na"));
+	GameplayTags.Attributes_Secondary_HealingScaling = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Secondary.HealingScaling"), FString ("na"));
 	
 	
 	// Vital Attributes
