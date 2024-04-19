@@ -35,6 +35,10 @@ void ASusWizEnemy::PossessedBy(AController* NewController)
 	SusWizAIController = Cast<ASusWizAIController>(NewController);
 	SusWizAIController->GetBlackboardComponent()->InitializeBlackboard(*BehaviorTree->BlackboardAsset);
 	SusWizAIController->RunBehaviorTree(BehaviorTree);
+	SusWizAIController->GetBlackboardComponent()->SetValueAsBool(FName("HitReacting"), false);
+	SusWizAIController->GetBlackboardComponent()->SetValueAsBool(FName("RangedAttacker"), CharacterClass != ECharacterClass::Warrior);
+	
+	
 	
 }
 
@@ -54,7 +58,11 @@ void ASusWizEnemy::BeginPlay()
 {
 	Super::BeginPlay();
 	InitAbilityActorInfo();
-	USusWizAbilitySystemLibrary::GiveStartupAbilities(this, AbilitySystemComponent);
+	if (HasAuthority())
+	{
+		USusWizAbilitySystemLibrary::GiveStartupAbilities(this, AbilitySystemComponent);
+	}
+	
 	
 	if (USusWizUserWidget* SusWizUserWidget = Cast<USusWizUserWidget>(HealthBar->GetUserWidgetObject()))
 	{
@@ -93,6 +101,7 @@ void ASusWizEnemy::HitReactTagChanged(const FGameplayTag CallbackTag, int32 NewC
 {
 	bHitReacting = NewCount > 0;
 	GetCharacterMovement()->MaxWalkSpeed = bHitReacting ? 0.f : BaseWalkSpeed;
+	SusWizAIController->GetBlackboardComponent()->SetValueAsBool(FName("HitReacting"), bHitReacting);
 }
 
 
@@ -103,8 +112,12 @@ void ASusWizEnemy::InitAbilityActorInfo()
 
 	AbilitySystemComponent->InitAbilityActorInfo(this, this);
 	Cast<USusWizAbilitySystemComponent>(AbilitySystemComponent)->AbilityActorInfoSet();
+
+	if (HasAuthority())
+	{
+		InitializeDefaultAttributes();		
+	}
 	
-	InitializeDefaultAttributes();
 }
 
 void ASusWizEnemy::InitializeDefaultAttributes() const

@@ -177,7 +177,7 @@ void USusWizAttributeSet::ShowFloatingText(const FEffectProperties& Props, float
 
 	if(Props.SourceCharacter != Props.TargetCharacter)
 	{
-		if(ASusWizPlayerController* PC = Cast<ASusWizPlayerController>(UGameplayStatics::GetPlayerController(Props.SourceCharacter, 0)))
+		if(ASusWizPlayerController* PC = Cast<ASusWizPlayerController>(Props.SourceCharacter->Controller))
 		{
 			PC->ShowDamageNumber(Damage, Props.TargetCharacter, bDodgedHit, bCrit);
 		}
@@ -209,8 +209,10 @@ void USusWizAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& 
 	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, MaxHealth, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, MaxEnergy, COND_None, REPNOTIFY_Always);
 	// TODO: JEFF AND ALEX
-	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, Speed, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, CriticalChance, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, Dodge, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, DamageScale, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, HealingScale, COND_None, REPNOTIFY_Always);
 
 	
 	// Vital
@@ -259,14 +261,24 @@ void USusWizAttributeSet::OnRep_ArmorPen(const FGameplayAttributeData& OldArmorP
 	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, ArmorPen, OldArmorPen);
 }
 
-void USusWizAttributeSet::OnRep_Speed(const FGameplayAttributeData& OldSpeed) const
+void USusWizAttributeSet::OnRep_CriticalChance(const FGameplayAttributeData& OldCriticalChance) const
 {
-	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, Speed, OldSpeed);
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, CriticalChance, OldCriticalChance);
 }
 
 void USusWizAttributeSet::OnRep_Dodge(const FGameplayAttributeData& OldDodge) const
 {
 	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, Dodge, OldDodge);
+}
+
+void USusWizAttributeSet::OnRep_DamageScale(const FGameplayAttributeData& OldDamageScale) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, DamageScale, OldDamageScale);
+}
+
+void USusWizAttributeSet::OnRep_HealingScale(const FGameplayAttributeData& OldHealingScale) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, HealingScale, OldHealingScale);
 }
 
 void USusWizAttributeSet::OnRep_MaxHealth(const FGameplayAttributeData& OldMaxHealth) const
