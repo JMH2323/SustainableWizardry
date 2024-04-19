@@ -45,6 +45,9 @@ static const FSusWizGameplayTags& Get() { return GameplayTags; }
  FGameplayTag InputTag_3;
  FGameplayTag InputTag_4;
 
+ // Abilities
+ FGameplayTag Abilities_Attack;
+
  // Meta
  FGameplayTag Damage;
 
