@@ -60,7 +60,7 @@ void ASusWizEnemy::BeginPlay()
 	InitAbilityActorInfo();
 	if (HasAuthority())
 	{
-		USusWizAbilitySystemLibrary::GiveStartupAbilities(this, AbilitySystemComponent);
+		USusWizAbilitySystemLibrary::GiveStartupAbilities(this, AbilitySystemComponent, CharacterClass);
 	}
 	
 	
