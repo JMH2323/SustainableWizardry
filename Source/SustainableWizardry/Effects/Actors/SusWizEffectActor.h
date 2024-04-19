@@ -60,7 +60,10 @@ protected:
 
 	// 2.3 Create boolean for removing effect
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Applied Effects")
-	bool bDestroyOnEffectRemoval = false;
+	bool bDestroyOnEffectApplication = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Applied Effects")
+	bool bApplyEffectsToEnemies = false;
 
 	// 1.1 Create class for instant effects.
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Applied Effects")

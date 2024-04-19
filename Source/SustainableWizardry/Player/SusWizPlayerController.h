@@ -28,7 +28,7 @@ public:
 	ASusWizPlayerController();
 
 	UFUNCTION(Client, Reliable)
-	void ShowDamageNumber(float DamageAmount, ACharacter* TargetCharacter);
+	void ShowDamageNumber(float DamageAmount, ACharacter* TargetCharacter, bool bDodgedHit, bool bCrit);
 
 protected:
 	virtual void BeginPlay() override;

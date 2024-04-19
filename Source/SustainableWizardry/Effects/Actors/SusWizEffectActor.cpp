@@ -34,6 +34,8 @@ void ASusWizEffectActor::BeginPlay()
 void ASusWizEffectActor::OnOverlap(AActor* TargetActor)
 {
 
+	if(TargetActor->ActorHasTag(FName("Enemy")) && !bApplyEffectsToEnemies) return;
+	
 	// Instant Case
 	if (InstantEffectApplicationPolicy == EEffectApplicationPolicy::ApplyOnOverlap)
 	{
@@ -55,7 +57,8 @@ void ASusWizEffectActor::OnOverlap(AActor* TargetActor)
 
 void ASusWizEffectActor::OnEndOverlap(AActor* TargetActor)
 {
-
+	if(TargetActor->ActorHasTag(FName("Enemy")) && !bApplyEffectsToEnemies) return;
+	
 	if (InstantEffectApplicationPolicy == EEffectApplicationPolicy::ApplyOnEndOverlap)
 	{
 		ApplyEffectToTarget(TargetActor, InstantGameplayEffectClass);
@@ -104,6 +107,8 @@ void ASusWizEffectActor::OnEndOverlap(AActor* TargetActor)
 void ASusWizEffectActor::ApplyEffectToTarget(AActor* TargetActor, TSubclassOf<UGameplayEffect> GameplayEffectClass)
 {
 
+	if(TargetActor->ActorHasTag(FName("Enemy")) && !bApplyEffectsToEnemies) return;
+	
 	// IAbilitySystemInterface* ASCInterface = Cast<IAbilitySystemInterface>(Target);
 	//
 	// if (ASCInterface)
@@ -138,4 +143,10 @@ void ASusWizEffectActor::ApplyEffectToTarget(AActor* TargetActor, TSubclassOf<UG
 		// refer to map made to match spec to handles. 3.3
 		ActiveEffectHandles.Add(ActiveEffectHandle, TargetASC);
 	}
+
+	if(bDestroyOnEffectApplication && EffectSpecHandle.Data.Get()->Def.Get()->DurationPolicy == EGameplayEffectDurationType::Instant)
+	{
+		Destroy();
+	}
+	
 }
