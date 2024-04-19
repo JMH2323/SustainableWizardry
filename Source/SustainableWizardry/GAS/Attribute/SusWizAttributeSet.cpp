@@ -33,6 +33,10 @@ const FSusWizGameplayTags& GameplayTags = FSusWizGameplayTags::Get();
 	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_MaxHealth, GetMaxHealthAttribute);
 	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_Armor, GetArmorAttribute);
 	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_ArmorPen, GetArmorPenAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_CriticalChance, GetCriticalChanceAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_Dodge, GetDodgeAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_DamageScaling, GetDamageScaleAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_HealingScaling, GetHealingScaleAttribute);
 	
 	/* Vital */
 	TagsToAttributes.Add(GameplayTags.Attributes_Vital_Health, GetHealthAttribute);
@@ -160,11 +164,11 @@ void USusWizAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCall
 				Props.TargetASC->TryActivateAbilitiesByTag(TagContainer);
 			}
 
-			const bool bDodge = USusWizAbilitySystemLibrary::IsDodgedHit(Props.EffectContextHandle);
+			const bool bDodgedHit = USusWizAbilitySystemLibrary::IsDodgedHit(Props.EffectContextHandle);
 			const bool bCrit = USusWizAbilitySystemLibrary::IsCriticalHit(Props.EffectContextHandle);
 						
 			// When damage is dealt, show the damage on the enemy as a pop-up and it's context
-			ShowFloatingText(Props, LocalIncomingDamage, bDodge, bCrit);
+			ShowFloatingText(Props, LocalIncomingDamage, bDodgedHit, bCrit);
 			
 		}
 	}
