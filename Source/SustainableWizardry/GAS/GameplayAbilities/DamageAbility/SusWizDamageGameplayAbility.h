@@ -14,6 +14,11 @@ class SUSTAINABLEWIZARDRY_API USusWizDamageGameplayAbility : public USusWizGamep
 {
 	GENERATED_BODY()
 
+public:
+
+	UFUNCTION(BlueprintCallable)
+	void CauseDamage(AActor* TargetActor);
+	
 protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	TSubclassOf<UGameplayEffect> DamageEffectClass;
