@@ -32,6 +32,7 @@ void USusWizProjectileSpell::SpawnProjectile()
         const FVector SocketLocation = CombatInterface->GetCombatSocketLocation();
         FTransform SpawnTransform;
 
+    	
         // Getting the player's viewpoint.
         FVector PlayerViewPointLocation;
         FRotator PlayerViewPointRotator;
