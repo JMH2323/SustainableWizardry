@@ -3,6 +3,8 @@
 
 #include "AttributeInfo.h"
 
+#include "SustainableWizardry/SusWizLogChannels.h"
+
 FSusWizAttributeInfo UAttributeInfo::FindAttributeInfoForTag(const FGameplayTag& AttributeTag, bool bLogNotFound) const
 {
 
@@ -20,7 +22,7 @@ FSusWizAttributeInfo UAttributeInfo::FindAttributeInfoForTag(const FGameplayTag&
 	if (bLogNotFound)
 	{
 		// Print an error if we can't find anything in the array
-		UE_LOG(LogTemp, Error, TEXT("Cant find Info for AttributeTag [%s] on Attribute Info [%s]."),
+		UE_LOG(LogSusWiz, Error, TEXT("Cant find Info for AttributeTag [%s] on Attribute Info [%s]."),
 		*AttributeTag.ToString(), *GetNameSafe(this));
 		
 	}

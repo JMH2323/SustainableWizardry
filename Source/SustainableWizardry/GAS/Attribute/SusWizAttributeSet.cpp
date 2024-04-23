@@ -41,6 +41,10 @@ const FSusWizGameplayTags& GameplayTags = FSusWizGameplayTags::Get();
 	/* Vital */
 	TagsToAttributes.Add(GameplayTags.Attributes_Vital_Health, GetHealthAttribute);
 	TagsToAttributes.Add(GameplayTags.Attributes_Vital_Energy, GetEnergyAttribute);
+
+	/* Resistance Attributes */
+	TagsToAttributes.Add(GameplayTags.Attributes_Resistance_Fire, GetFireResistanceAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Resistance_Physical, GetPhysicalResistanceAttribute);
 }
 
 
@@ -184,6 +188,11 @@ void USusWizAttributeSet::ShowFloatingText(const FEffectProperties& Props, float
 		if(ASusWizPlayerController* PC = Cast<ASusWizPlayerController>(Props.SourceCharacter->Controller))
 		{
 			PC->ShowDamageNumber(Damage, Props.TargetCharacter, bDodgedHit, bCrit);
+			return;
+		}
+		if(ASusWizPlayerController* PC = Cast<ASusWizPlayerController>(Props.TargetCharacter->Controller))
+		{
+			PC->ShowDamageNumber(Damage, Props.TargetCharacter, bDodgedHit, bCrit);
 		}
 				
 	}
@@ -221,8 +230,12 @@ void USusWizAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& 
 	
 	// Vital
 	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, Health, COND_None, REPNOTIFY_Always);
-	
 	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, Energy, COND_None, REPNOTIFY_Always);
+
+	// Resistance Attributes
+
+	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, FireResistance, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, PhysicalResistance, COND_None, REPNOTIFY_Always);
 	
 }
 
@@ -313,4 +326,15 @@ void USusWizAttributeSet::OnRep_Energy(const FGameplayAttributeData& OldEnergy) 
 }
 
 
+/*
+ * Resistance
+ */
+void USusWizAttributeSet::OnRep_FireResistance(const FGameplayAttributeData& OldFireResistance) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, FireResistance, OldFireResistance);
+}
 
+void USusWizAttributeSet::OnRep_PhysicalResistance(const FGameplayAttributeData& OldPhysicalResistance) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, PhysicalResistance, OldPhysicalResistance);
+}

@@ -52,7 +52,7 @@ void ASusWizCharacterBase::MulticastHandleDeath_Implementation()
 	GetMesh()->AddImpulse(ImpulseDirection * ImpulseStrength, NAME_None, true);
 
 	Dissolve();
-	
+	bDead = true;
 }
 
 // Called when the game starts or when spawned
@@ -65,6 +65,16 @@ void ASusWizCharacterBase::BeginPlay()
 FVector ASusWizCharacterBase::GetCombatSocketLocation()
 {
 	return MainWeapon->GetSocketLocation(MainWeaponTipSocketName);
+}
+
+bool ASusWizCharacterBase::IsDead_Implementation() const
+{
+	return bDead;
+}
+
+AActor* ASusWizCharacterBase::GetAvatar_Implementation()
+{
+	return this;
 }
 
 void ASusWizCharacterBase::InitAbilityActorInfo()
