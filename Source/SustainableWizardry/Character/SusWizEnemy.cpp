@@ -54,13 +54,24 @@ void ASusWizEnemy::Die()
 	Super::Die();
 }
 
+void ASusWizEnemy::SetCombatTarget_Implementation(AActor* InCombatTarget)
+{
+	CombatTarget = InCombatTarget;
+}
+
+AActor* ASusWizEnemy::GetCombatTarget_Implementation() const
+{
+	return CombatTarget;
+}
+
+
 void ASusWizEnemy::BeginPlay()
 {
 	Super::BeginPlay();
 	InitAbilityActorInfo();
 	if (HasAuthority())
 	{
-		USusWizAbilitySystemLibrary::GiveStartupAbilities(this, AbilitySystemComponent);
+		USusWizAbilitySystemLibrary::GiveStartupAbilities(this, AbilitySystemComponent, CharacterClass);
 	}
 	
 	

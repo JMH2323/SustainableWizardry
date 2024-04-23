@@ -30,19 +30,28 @@ public:
 
 	UAttributeSet* GetAttributeSet() const { return AttributeSet; }
 
-	virtual UAnimMontage* GetHitReactMontage_Implementation() override;
+	
 
-	virtual void Die() override;
+	
 
 	UFUNCTION(NetMulticast, Reliable)
 	virtual void MulticastHandleDeath();
-	
+
+	/** Combat Interface */
+	virtual UAnimMontage* GetHitReactMontage_Implementation() override;	
+	virtual void Die() override;	
+	virtual FVector GetCombatSocketLocation() override;
+	virtual bool IsDead_Implementation() const override;
+	virtual AActor* GetAvatar_Implementation() override;
+	/** end Combat Interface */
+
+	bool bDead = false;
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-
+	
 	
 	// Create the weapon mesh component to allow us to spawn spells from hand
 	UPROPERTY(EditAnywhere, Category = "Combat")
@@ -55,7 +64,7 @@ protected:
 	UPROPERTY(EditAnywhere, Category = "Combat")
 	FName SecondaryWeaponTipSocketName;
 
-	virtual FVector GetCombatSocketLocation() override;
+	
 
 	
 	UPROPERTY()

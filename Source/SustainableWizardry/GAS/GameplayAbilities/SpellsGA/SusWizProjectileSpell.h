@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "SustainableWizardry/GAS/GameplayAbilities/SusWizGameplayAbility.h"
+#include "SustainableWizardry/GAS/GameplayAbilities/DamageAbility/SusWizDamageGameplayAbility.h"
 #include "SusWizProjectileSpell.generated.h"
 
 /**
@@ -12,7 +13,7 @@
 class ASusWizProjectiles;
 class UGameplayEffect;
 UCLASS()
-class SUSTAINABLEWIZARDRY_API USusWizProjectileSpell : public USusWizGameplayAbility
+class SUSTAINABLEWIZARDRY_API USusWizProjectileSpell : public USusWizDamageGameplayAbility
 {
 	GENERATED_BODY()
 
@@ -31,7 +32,6 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TSubclassOf<ASusWizProjectiles> ProjectileClass;
 	
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	TSubclassOf<UGameplayEffect> DamageEffectClass;
+	
 	
 };
