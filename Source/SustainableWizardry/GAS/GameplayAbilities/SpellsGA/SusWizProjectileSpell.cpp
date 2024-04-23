@@ -79,10 +79,15 @@ void USusWizProjectileSpell::SpawnProjectile()
 
     	/* Damage from Tags Meta */
     	FSusWizGameplayTags GameplayTags = FSusWizGameplayTags::Get();
-    	UAbilitySystemBlueprintLibrary::AssignTagSetByCallerMagnitude(SpecHandle, GameplayTags.Damage, 50.f);
-    	const float ScaledDamage = Damage.GetValueAtLevel(GetAbilityLevel());
+    	
 
-    	UAbilitySystemBlueprintLibrary::AssignTagSetByCallerMagnitude(SpecHandle, GameplayTags.Damage, ScaledDamage);
+    	for (auto& Pair : DamageTypes)
+    	{
+    		const float ScaledDamage = Pair.Value.GetValueAtLevel(GetAbilityLevel());
+    		UAbilitySystemBlueprintLibrary::AssignTagSetByCallerMagnitude(SpecHandle, Pair.Key, ScaledDamage);
+    	}
+
+    	
 
     	Projectile->DamageEffectSpecHandle = SpecHandle;
         

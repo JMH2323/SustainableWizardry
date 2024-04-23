@@ -39,30 +39,29 @@ void USusWizRoboProjectile::SpawnProjectile()
     // Create the transform for spawning the projectile
     FTransform SpawnTransform(SpawnRotation, SpawnLocation);
 
-    // Spawn the projectile
-    ASusWizProjectiles* Projectile = GetWorld()->SpawnActorDeferred<ASusWizProjectiles>(ProjectileClass, SpawnTransform,
-                                                                                          GetOwningActorFromActorInfo(),
-                                                                                          Cast<APawn>(GetOwningActorFromActorInfo()),
-                                                                                          ESpawnActorCollisionHandlingMethod::AlwaysSpawn);
+	// Spawn the projectile.
+	ASusWizProjectiles* Projectile = GetWorld()->SpawnActorDeferred<ASusWizProjectiles>(ProjectileClass, SpawnTransform,
+		GetOwningActorFromActorInfo(), Cast<APawn>(GetOwningActorFromActorInfo()),
+		ESpawnActorCollisionHandlingMethod::AlwaysSpawn);
 
-    if (!Projectile) return; // Check if the spawned projectile is valid
+	// TODONE: Give Projectile a GE Spec for damage.
+	const UAbilitySystemComponent* SourceASC = UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(GetAvatarActorFromActorInfo());
+	const FGameplayEffectSpecHandle SpecHandle = SourceASC->MakeOutgoingSpec(DamageEffectClass, GetAbilityLevel(), SourceASC->MakeEffectContext());
 
-    // Give the projectile a GE Spec for damage.
-    const UAbilitySystemComponent* SourceASC = UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(GetAvatarActorFromActorInfo());
-    if (!SourceASC) return; // Check if the ability system component is valid
 
-    const FGameplayEffectSpecHandle SpecHandle = SourceASC->MakeOutgoingSpec(DamageEffectClass, GetAbilityLevel(), SourceASC->MakeEffectContext());
+	/* Damage from Tags Meta */
+	FSusWizGameplayTags GameplayTags = FSusWizGameplayTags::Get();
+    	
 
-    if (!SpecHandle.IsValid()) return; // Check if the effect spec handle is valid
+	for (auto& Pair : DamageTypes)
+	{
+		const float ScaledDamage = Pair.Value.GetValueAtLevel(GetAbilityLevel());
+		UAbilitySystemBlueprintLibrary::AssignTagSetByCallerMagnitude(SpecHandle, Pair.Key, ScaledDamage);
+	}
 
-    /* Damage from Tags Meta */
-    FSusWizGameplayTags GameplayTags = FSusWizGameplayTags::Get();
-    UAbilitySystemBlueprintLibrary::AssignTagSetByCallerMagnitude(SpecHandle, GameplayTags.Damage, 50.f);
-    const float ScaledDamage = Damage.GetValueAtLevel(GetAbilityLevel());
+    	
 
-    UAbilitySystemBlueprintLibrary::AssignTagSetByCallerMagnitude(SpecHandle, GameplayTags.Damage, ScaledDamage);
-
-    Projectile->DamageEffectSpecHandle = SpecHandle;
-
-    Projectile->FinishSpawning(SpawnTransform);
+	Projectile->DamageEffectSpecHandle = SpecHandle;
+        
+	Projectile->FinishSpawning(SpawnTransform);
 }
