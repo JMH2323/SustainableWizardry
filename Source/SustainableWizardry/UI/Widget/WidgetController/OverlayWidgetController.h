@@ -32,6 +32,8 @@ struct FUIWidgetRow : public FTableRowBase
 };
 
 class USusWizUserWidget;
+class UAbilityInfo;
+
 // 7.0
 // Here we are declaring a delegate for every attribute. We can scale them instead -> see part 10
 // DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnHealthChangedSignature, float, NewHealth);
@@ -88,6 +90,10 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Widget Data")
 	TObjectPtr<UDataTable> MessageWidgetDataTable;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Widget Data")
+	TObjectPtr<UAbilityInfo> AbilityInfo;
+	
+	
 	// PRE LAMBDA
 	// Callbacks on delegates. When change is made, broadcast.
 	//void HealthChanged(const FOnAttributeChangeData& Data) const;

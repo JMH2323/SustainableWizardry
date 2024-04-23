@@ -21,6 +21,12 @@ struct SusWizDamageStatics
 	DECLARE_ATTRIBUTE_CAPTUREDEF(CriticalChance);
 	DECLARE_ATTRIBUTE_CAPTUREDEF(Dodge);
 	DECLARE_ATTRIBUTE_CAPTUREDEF(DamageScale);
+
+	// Resistances
+	DECLARE_ATTRIBUTE_CAPTUREDEF(FireResistance);
+	DECLARE_ATTRIBUTE_CAPTUREDEF(PhysicalResistance);
+
+	TMap<FGameplayTag, FGameplayEffectAttributeCaptureDefinition> TagsToCaptureDefs;
 	
 	SusWizDamageStatics()
 	{
@@ -34,6 +40,20 @@ struct SusWizDamageStatics
 		DEFINE_ATTRIBUTE_CAPTUREDEF(USusWizAttributeSet, Dodge, Target, false);
 		/* TODONE: DamageScale */
 		DEFINE_ATTRIBUTE_CAPTUREDEF(USusWizAttributeSet, DamageScale, Source, false);
+
+		DEFINE_ATTRIBUTE_CAPTUREDEF(USusWizAttributeSet, FireResistance, Target, false);
+		DEFINE_ATTRIBUTE_CAPTUREDEF(USusWizAttributeSet, PhysicalResistance, Target, false);
+
+		const FSusWizGameplayTags& Tags = FSusWizGameplayTags::Get();
+
+		TagsToCaptureDefs.Add(Tags.Attributes_Secondary_Armor, ArmorDef);
+		TagsToCaptureDefs.Add(Tags.Attributes_Secondary_Dodge, DodgeDef);
+		TagsToCaptureDefs.Add(Tags.Attributes_Secondary_ArmorPen, ArmorPenDef);
+		TagsToCaptureDefs.Add(Tags.Attributes_Secondary_CriticalChance, CriticalChanceDef);
+		TagsToCaptureDefs.Add(Tags.Attributes_Secondary_DamageScaling, DamageScaleDef);
+		
+		TagsToCaptureDefs.Add(Tags.Attributes_Resistance_Fire, FireResistanceDef);
+		TagsToCaptureDefs.Add(Tags.Attributes_Resistance_Physical, PhysicalResistanceDef);
 	}
 };
 
@@ -52,6 +72,9 @@ UExecCalc_Damage::UExecCalc_Damage()
 	RelevantAttributesToCapture.Add(DamageStatics().CriticalChanceDef);
 	RelevantAttributesToCapture.Add(DamageStatics().DodgeDef);
 	RelevantAttributesToCapture.Add(DamageStatics().DamageScaleDef);
+
+	RelevantAttributesToCapture.Add(DamageStatics().FireResistanceDef);
+	RelevantAttributesToCapture.Add(DamageStatics().PhysicalResistanceDef);
 }
 
 void UExecCalc_Damage::Execute_Implementation(const FGameplayEffectCustomExecutionParameters& ExecutionParams,
@@ -83,7 +106,27 @@ void UExecCalc_Damage::Execute_Implementation(const FGameplayEffectCustomExecuti
 
 
 	// Get Damage set by the caller magnitude
-	float Damage = Spec.GetSetByCallerMagnitude(FSusWizGameplayTags::Get().Damage);
+	float Damage = 0.f;
+	for (const TTuple<FGameplayTag, FGameplayTag>& Pair  : FSusWizGameplayTags::Get().DamageTypesToResistances)
+	{
+		const FGameplayTag DamageTypeTag = Pair.Key;
+		const FGameplayTag ResistanceTag = Pair.Value;
+
+		checkf(SusWizDamageStatics().TagsToCaptureDefs.Contains(ResistanceTag), TEXT("TagsToCaptureDefs doesn't contain Tag: [%s] in ExecCalc_Damage"), *ResistanceTag.ToString());
+		const FGameplayEffectAttributeCaptureDefinition CaptureDef = SusWizDamageStatics().TagsToCaptureDefs[ResistanceTag];
+
+		float DamageTypeValue = Spec.GetSetByCallerMagnitude(Pair.Key);
+
+		float Resistance = 1.f;
+		ExecutionParams.AttemptCalculateCapturedAttributeMagnitude(CaptureDef, EvaluateParameters, Resistance);
+		Resistance = FMath::Clamp(Resistance, 1.f, 100.f);
+
+		DamageTypeValue *= ( 100.f - Resistance ) / 100.f;
+
+		Damage += DamageTypeValue;
+
+		
+	}
 	
 
 	
