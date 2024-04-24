@@ -42,6 +42,8 @@ void ASusWizPlayerState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& O
 
 	DOREPLIFETIME(ASusWizPlayerState, Level);
 	DOREPLIFETIME(ASusWizPlayerState, XP);
+	DOREPLIFETIME(ASusWizPlayerState, AttributePoints);
+	DOREPLIFETIME(ASusWizPlayerState, SpellPoints);
 }
 
 
@@ -77,4 +79,26 @@ void ASusWizPlayerState::OnRep_Level(int32 OldLevel)
 void ASusWizPlayerState::OnRep_XP(int32 OldXP)
 {
 	OnXPChangedDelegate.Broadcast(XP);
+}
+
+void ASusWizPlayerState::OnRep_AttributePoints(int32 OldAttributePoints)
+{
+	OnAttributePointsChangedDelegate.Broadcast(AttributePoints);
+}
+
+void ASusWizPlayerState::OnRep_SpellPoints(int32 OldSpellPoints)
+{
+	OnSpellPointsChangedDelegate.Broadcast(SpellPoints);
+}
+
+void ASusWizPlayerState::AddToAttributePoints(int32 InPoints)
+{
+	AttributePoints += InPoints;
+	OnAttributePointsChangedDelegate.Broadcast(AttributePoints);
+}
+
+void ASusWizPlayerState::AddToSpellPoints(int32 InPoints)
+{
+	SpellPoints += InPoints;
+	OnSpellPointsChangedDelegate.Broadcast(SpellPoints);
 }
