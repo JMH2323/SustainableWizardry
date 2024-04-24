@@ -7,7 +7,7 @@
 #include "SustainableWizardry/Player/PlayerState/SusWizPlayerState.h"
 #include "SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.h"
 #include "SustainableWizardry/Character/SusWizCharacterPlayer.h"
-
+#include "SustainableWizardry/GAS/Data/LevelUpInfo.h"
 #include "SustainableWizardry/GAS/Data/CharacterClassInfo.h"
 #include "SustainableWizardry/UI/HUD/SusWizHUD.h"
 
@@ -51,6 +51,50 @@ void ASusWizCharacterPlayer::LevelUp_Implementation()
 	
 }
 
+int32 ASusWizCharacterPlayer::GetXP_Implementation() const
+{
+	const ASusWizPlayerState* SusWizPlayerState = GetPlayerState<ASusWizPlayerState>();
+	check(SusWizPlayerState);
+	return SusWizPlayerState->GetXP();
+}
+
+int32 ASusWizCharacterPlayer::FindLevelForXP_Implementation(int32 InXP) const
+{
+	const ASusWizPlayerState* SusWizPlayerState = GetPlayerState<ASusWizPlayerState>();
+	check(SusWizPlayerState);
+	return SusWizPlayerState->LevelUpInfo->FindLevelForXP(InXP);
+}
+
+int32 ASusWizCharacterPlayer::GetAttributePointsReward_Implementation(int32 Level) const
+{
+	const ASusWizPlayerState* SusWizPlayerState = GetPlayerState<ASusWizPlayerState>();
+	check(SusWizPlayerState);
+	return SusWizPlayerState->LevelUpInfo->LevelUpInformation[Level].AttributePointAward;
+}
+
+int32 ASusWizCharacterPlayer::GetSpellPointsReward_Implementation(int32 Level) const
+{
+	const ASusWizPlayerState* SusWizPlayerState = GetPlayerState<ASusWizPlayerState>();
+	check(SusWizPlayerState);
+	return SusWizPlayerState->LevelUpInfo->LevelUpInformation[Level].SpellPointAward;
+}
+
+void ASusWizCharacterPlayer::AddToPlayerLevel_Implementation(int32 InPlayerLevel)
+{
+	ASusWizPlayerState* SusWizPlayerState = GetPlayerState<ASusWizPlayerState>();
+	check(SusWizPlayerState);
+	SusWizPlayerState->AddToLevel(InPlayerLevel);
+}
+
+void ASusWizCharacterPlayer::AddToAttributePoints_Implementation(int32 InAttributePoints)
+{
+	//TODO: Add AttributePoints to PlayerState
+}
+
+void ASusWizCharacterPlayer::AddToSpellPoints_Implementation(int32 InSpellPoints)
+{
+	//TODO: Add SpellPoints to PlayerState
+}
 
 int32 ASusWizCharacterPlayer::GetPlayerLevel_Implementation()
 {
