@@ -12,6 +12,7 @@
 
 
 DECLARE_MULTICAST_DELEGATE_OneParam(FEffectAssetTags, const FGameplayTagContainer& /*AssetTags*/)
+DECLARE_MULTICAST_DELEGATE_OneParam(FAbilitiesGiven, USusWizAbilitySystemComponent*);
 
 UCLASS()
 class SUSTAINABLEWIZARDRY_API USusWizAbilitySystemComponent : public UAbilitySystemComponent
@@ -25,8 +26,10 @@ public:
 	void AbilityActorInfoSet();
 
 	FEffectAssetTags EffectAssetTags;
+	FAbilitiesGiven AbilitiesGivenDelegate;
 
-void AddCharacterAbilities(TArray<TSubclassOf<UGameplayAbility>>& StartupAbilities);
+	void AddCharacterAbilities(TArray<TSubclassOf<UGameplayAbility>>& StartupAbilities);
+	bool bStartupAbilitiesGiven = false;
 
 	void AbilityInputTagHeld(const FGameplayTag& InputTag);
 	void AbilityInputTagReleased(const FGameplayTag& InputTag);

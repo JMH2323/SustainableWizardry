@@ -99,8 +99,7 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Uproject.SustainableWizardry.executor&quot;: &quot;Debug&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;origin/testing-environment&quot;,
+    &quot;Uproject.SustainableWizardry.executor&quot;: &quot;Run&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -232,6 +231,8 @@
       <workItem from="1713897139058" duration="27000" />
       <workItem from="1713897192830" duration="16000" />
       <workItem from="1713897371897" duration="6068000" />
+      <workItem from="1713911654551" duration="1213000" />
+      <workItem from="1713920591776" duration="1031000" />
     </task>
     <servers />
   </component>

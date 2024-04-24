@@ -62,38 +62,79 @@ void UOverlayWidgetController::BindCallbacksToDependencies()
 	
 	
 
-	// 7.1 We want the ability system components tags so we cast to it
-	// TODO: Uncomment from 67 to 93
-	Cast<USusWizAbilitySystemComponent>(AbilitySystemComponent)->EffectAssetTags.AddLambda(
-		// Lambda to use over callback function. Lambda allows us to build and use a function right now.
-		[this](const FGameplayTagContainer& AssetTags)
-		{
-			// 7.2 Use same log message to check tags being broadcast
-			for (const FGameplayTag& Tag : AssetTags)
-			{
-	
-				// Create a way to match the tag with message tags so that only messages print.
-				//				FGameplayTag::MatchesTag()    
-				FGameplayTag MessageTag = FGameplayTag::RequestGameplayTag(FName("Message"));
-				if (Tag.MatchesTag(MessageTag))
-				{
-					// How do we get a table and tag and return the row? We should make a function -> GetDataTableRowByTag
-				// LAMBDA doesn't know getdatatable function exists so we have to "capture" this object in the []
-				const FUIWidgetRow* Row = GetDataTableRowByTag<FUIWidgetRow>(MessageWidgetDataTable, Tag);
-				// Pt2
-				MessageWidgetRowDelegate.Broadcast(*Row);
-				}
-				
-				// TODONE: TIE INTO TO WIDGET CONTROLLER
-				//const FString Msg = FString::Printf(TEXT("GE Tag: %s"), *Tag.ToString());
-				//GEngine->AddOnScreenDebugMessage(-1, 8.f, FColor::Green, Msg);
-				
-			}
-		}
-	);
 
-	
+	if (USusWizAbilitySystemComponent* SusWizASC = Cast<USusWizAbilitySystemComponent>(AbilitySystemComponent))
+	{
+		if (SusWizASC->bStartupAbilitiesGiven)
+		{
+			OnInitializeStartupAbilities(SusWizASC);
+		}
+		else
+		{
+			SusWizASC->AbilitiesGivenDelegate.AddUObject(this, &UOverlayWidgetController::OnInitializeStartupAbilities);
+		}
+
+		SusWizASC->EffectAssetTags.AddLambda(
+			[this](const FGameplayTagContainer& AssetTags)
+			{
+				for (const FGameplayTag& Tag : AssetTags)
+				{
+					// For example, say that Tag = Message.HealthPotion
+					// "Message.HealthPotion".MatchesTag("Message") will return True, "Message".MatchesTag("Message.HealthPotion") will return False
+					FGameplayTag MessageTag = FGameplayTag::RequestGameplayTag(FName("Message"));
+					if (Tag.MatchesTag(MessageTag))
+					{
+						const FUIWidgetRow* Row = GetDataTableRowByTag<FUIWidgetRow>(MessageWidgetDataTable, Tag);
+						MessageWidgetRowDelegate.Broadcast(*Row);
+					}
+				}
+			}
+		);
+	}
+
 }
+
+ void UOverlayWidgetController::OnInitializeStartupAbilities(USusWizAbilitySystemComponent* SusWizAbilitySystemComponent)
+ {
+ 	//TODO Get information about all given abilities, look up their Ability Info, and broadcast it to widgets.
+ 	if (!SusWizAbilitySystemComponent->bStartupAbilitiesGiven) return;
+
+
+ }
+//
+// 	
+// 	// 7.1 We want the ability system components tags so we cast to it
+// 	// TODO: Uncomment from 67 to 93
+// 	Cast<USusWizAbilitySystemComponent>(AbilitySystemComponent)->EffectAssetTags.AddLambda(
+// 		// Lambda to use over callback function. Lambda allows us to build and use a function right now.
+// 		[this](const FGameplayTagContainer& AssetTags)
+// 		{
+// 			// 7.2 Use same log message to check tags being broadcast
+// 			for (const FGameplayTag& Tag : AssetTags)
+// 			{
+// 	
+// 				// Create a way to match the tag with message tags so that only messages print.
+// 				//				FGameplayTag::MatchesTag()    
+// 				FGameplayTag MessageTag = FGameplayTag::RequestGameplayTag(FName("Message"));
+// 				if (Tag.MatchesTag(MessageTag))
+// 				{
+// 					// How do we get a table and tag and return the row? We should make a function -> GetDataTableRowByTag
+// 				// LAMBDA doesn't know getdatatable function exists so we have to "capture" this object in the []
+// 				const FUIWidgetRow* Row = GetDataTableRowByTag<FUIWidgetRow>(MessageWidgetDataTable, Tag);
+// 				// Pt2
+// 				MessageWidgetRowDelegate.Broadcast(*Row);
+// 				}
+// 				
+// 				// TODONE: TIE INTO TO WIDGET CONTROLLER
+// 				//const FString Msg = FString::Printf(TEXT("GE Tag: %s"), *Tag.ToString());
+// 				//GEngine->AddOnScreenDebugMessage(-1, 8.f, FColor::Green, Msg);
+// 				
+// 			}
+// 		}
+// 	);
+//
+// 	
+// }
 
 
 // PRE LAMBDA 

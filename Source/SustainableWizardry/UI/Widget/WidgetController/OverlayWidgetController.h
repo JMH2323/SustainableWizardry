@@ -33,6 +33,7 @@ struct FUIWidgetRow : public FTableRowBase
 
 class USusWizUserWidget;
 class UAbilityInfo;
+class USusWizAbilitySystemComponent;
 
 // 7.0
 // Here we are declaring a delegate for every attribute. We can scale them instead -> see part 10
@@ -102,6 +103,9 @@ protected:
 	// Template files want you to create the function here and not in the cpp
 	template<typename T>
 	T* GetDataTableRowByTag(UDataTable* DataTable, const FGameplayTag& Tag);
+
+	void OnInitializeStartupAbilities(USusWizAbilitySystemComponent* AuraAbilitySystemComponent);
+	
 };
 
 // Template files want you to create the function here and not in the cpp
