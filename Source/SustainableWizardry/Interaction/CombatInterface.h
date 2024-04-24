@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "UObject/Interface.h"
+#include "SustainableWizardry/GAS/Data/CharacterClassInfo.h"
 #include "CombatInterface.generated.h"
 
 // This class does not need to be modified.
@@ -43,4 +44,8 @@ public:
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 	AActor* GetAvatar();
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+	ECharacterClass GetCharacterClass();
+	
 };

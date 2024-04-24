@@ -91,5 +91,11 @@ void FSusWizGameplayTags::InitializeNativeGameplayTags()
 		FString("FireBolt Ability Tag")
 		);
 
+	// Meta Tags
+	GameplayTags.Attributes_Meta_IncomingXP = UGameplayTagsManager::Get().AddNativeGameplayTag(
+		FName("Attributes.Meta.IncomingXP"),
+		FString("IncomingXP Tag")
+		);
+
 	
 }

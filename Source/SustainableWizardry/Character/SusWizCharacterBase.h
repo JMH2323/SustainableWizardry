@@ -6,6 +6,7 @@
 #include "GameFramework/Character.h"
 #include "AbilitySystemInterface.h"
 #include "SustainableWizardry/Interaction/CombatInterface.h"
+#include "SustainableWizardry/GAS/Data/CharacterClassInfo.h"
 #include "SusWizCharacterBase.generated.h"
 
 
@@ -43,6 +44,9 @@ public:
 	virtual FVector GetCombatSocketLocation() override;
 	virtual bool IsDead_Implementation() const override;
 	virtual AActor* GetAvatar_Implementation() override;
+
+
+	virtual ECharacterClass GetCharacterClass_Implementation() override;
 	/** end Combat Interface */
 
 	bool bDead = false;
@@ -65,7 +69,8 @@ protected:
 	FName SecondaryWeaponTipSocketName;
 
 	
-
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Character Class Defaults")
+	ECharacterClass CharacterClass = ECharacterClass::Warrior;
 	
 	UPROPERTY()
 	TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;
@@ -110,6 +115,9 @@ protected:
 
 	UPROPERTY(EditAnywhere, Category = "Abilities|Startup")
 	TArray<TSubclassOf<UGameplayAbility>> StartupAbilities;
+
+	UPROPERTY(EditAnywhere, Category = "Abilities|Startup")
+	TArray<TSubclassOf<UGameplayAbility>> StartupPassiveAbilities;
 
 	UPROPERTY(EditAnywhere, Category = "Combat")
 	TObjectPtr<UAnimMontage> HitReactMontage;

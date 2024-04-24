@@ -48,7 +48,7 @@ static const FSusWizGameplayTags& Get() { return GameplayTags; }
  // Abilities
  FGameplayTag Abilities_Attack;
 
- // Meta
+ // Damage
  FGameplayTag Damage;
  FGameplayTag Damage_Fire;
  FGameplayTag Damage_Physical;
@@ -57,11 +57,16 @@ static const FSusWizGameplayTags& Get() { return GameplayTags; }
 
  TMap<FGameplayTag, FGameplayTag> DamageTypesToResistances;
 
+ // Res
  FGameplayTag Attributes_Resistance_Physical;
  FGameplayTag Attributes_Resistance_Fire;
+
+ // Meta
+ FGameplayTag Attributes_Meta_IncomingXP;
  
  //Misc
  FGameplayTag Effects_HitReact;
+ 
 
  // Abilities
  FGameplayTag Abilities_Fire_FireBolt;
