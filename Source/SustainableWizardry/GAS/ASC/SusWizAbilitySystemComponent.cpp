@@ -37,14 +37,9 @@ void USusWizAbilitySystemComponent::AddCharacterAbilities(TArray<TSubclassOf<UGa
 			// Give ability to player
 			GiveAbility(AbilitySpec);
 		}
-
-		
-
-		
-		
-		
 	}
-	
+	bStartupAbilitiesGiven = true;
+	AbilitiesGivenDelegate.Broadcast(this);
 }
 
 void USusWizAbilitySystemComponent::AbilityInputTagHeld(const FGameplayTag& InputTag)
