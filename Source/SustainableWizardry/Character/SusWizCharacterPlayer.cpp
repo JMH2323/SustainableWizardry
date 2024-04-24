@@ -105,12 +105,16 @@ void ASusWizCharacterPlayer::AddToPlayerLevel_Implementation(int32 InPlayerLevel
 
 void ASusWizCharacterPlayer::AddToAttributePoints_Implementation(int32 InAttributePoints)
 {
-	//TODO: Add AttributePoints to PlayerState
+	ASusWizPlayerState* SusWizPlayerState = GetPlayerState<ASusWizPlayerState>();
+	check(SusWizPlayerState);
+	SusWizPlayerState->AddToAttributePoints(InAttributePoints);
 }
 
 void ASusWizCharacterPlayer::AddToSpellPoints_Implementation(int32 InSpellPoints)
 {
-	//TODO: Add SpellPoints to PlayerState
+	ASusWizPlayerState* SusWizPlayerState = GetPlayerState<ASusWizPlayerState>();
+	check(SusWizPlayerState);
+	SusWizPlayerState->AddToSpellPoints(InSpellPoints);
 }
 
 int32 ASusWizCharacterPlayer::GetPlayerLevel_Implementation()

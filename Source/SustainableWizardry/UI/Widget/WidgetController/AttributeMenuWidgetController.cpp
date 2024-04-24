@@ -6,6 +6,7 @@
 #include "SustainableWizardry/SusWizGameplayTags.h"
 #include "SustainableWizardry/GAS/Data/AttributeInfo.h"
 #include "SustainableWizardry/GAS/Attribute/SusWizAttributeSet.h"
+#include "SustainableWizardry/Player/PlayerState/SusWizPlayerState.h"
 
 void UAttributeMenuWidgetController::BindCallbacksToDependencies()
 {
@@ -23,10 +24,17 @@ void UAttributeMenuWidgetController::BindCallbacksToDependencies()
 		);
 
 		// Error Log each bind operation
-		UE_LOG(LogTemp, Log, TEXT("Binding Callbacks For Tag: %s, Attribute: %s"),
-				*Pair.Key.ToString(), *Pair.Value().AttributeName);
+		//UE_LOG(LogTemp, Log, TEXT("Binding Callbacks For Tag: %s, Attribute: %s"),
+				//*Pair.Key.ToString(), *Pair.Value().AttributeName);
 	}
-	
+
+	ASusWizPlayerState* SusWizPlayerState = CastChecked<ASusWizPlayerState>(PlayerState);
+	SusWizPlayerState->OnAttributePointsChangedDelegate.AddLambda(
+		[this](int32 Points)
+		{
+			AttributePointsChangedDelegate.Broadcast(Points);
+		}
+	);
 	
 }
 
@@ -42,9 +50,10 @@ void UAttributeMenuWidgetController::BroadcastInitialValues()
 		BroadcastAttributeInfo(Pair.Key, Pair.Value());
 	}
 
-	
 	BruteForceBroadcast();
-	
+
+	ASusWizPlayerState* SusWizPlayerState = CastChecked<ASusWizPlayerState>(PlayerState);
+	AttributePointsChangedDelegate.Broadcast(SusWizPlayerState->GetAttributePoints());
 	
 }
 
