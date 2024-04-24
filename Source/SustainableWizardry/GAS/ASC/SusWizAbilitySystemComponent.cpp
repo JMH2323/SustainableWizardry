@@ -19,8 +19,8 @@ void USusWizAbilitySystemComponent::AbilityActorInfoSet()
 	// 16 testing for getting tags
 	const FSusWizGameplayTags& GameplayTags = FSusWizGameplayTags::Get();
 	//GameplayTags.Attributes_Secondary_Armor
-	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Green,
-		FString::Printf(TEXT("Tag: %s"), *GameplayTags.Attributes_Secondary_Armor.ToString()));
+	//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Green,
+		//FString::Printf(TEXT("Tag: %s"), *GameplayTags.Attributes_Secondary_Armor.ToString()));
 	
 	
 }

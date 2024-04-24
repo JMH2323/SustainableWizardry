@@ -42,7 +42,7 @@ void ASusWizEnemy::PossessedBy(AController* NewController)
 	
 }
 
-int32 ASusWizEnemy::GetPlayerLevel()
+int32 ASusWizEnemy::GetPlayerLevel_Implementation()
 {
 	return Level;
 }
