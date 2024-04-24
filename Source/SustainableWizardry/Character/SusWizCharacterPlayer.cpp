@@ -39,7 +39,20 @@ void ASusWizCharacterPlayer::OnRep_PlayerState()
 	
 }
 
-int32 ASusWizCharacterPlayer::GetPlayerLevel()
+void ASusWizCharacterPlayer::AddToXP_Implementation(int32 InXP)
+{
+	ASusWizPlayerState* SusWizPlayerState = GetPlayerState<ASusWizPlayerState>();
+	check(SusWizPlayerState);
+	SusWizPlayerState->AddToXP(InXP);
+}
+
+void ASusWizCharacterPlayer::LevelUp_Implementation()
+{
+	
+}
+
+
+int32 ASusWizCharacterPlayer::GetPlayerLevel_Implementation()
 {
 	ASusWizPlayerState* SusWizPlayerState = GetPlayerState<ASusWizPlayerState>();
 	check(SusWizPlayerState)

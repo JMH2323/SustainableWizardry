@@ -12,6 +12,7 @@
 #include "SustainableWizardry/SusWizLogChannels.h"
 #include "SustainableWizardry/GAS/SusWizAbilitySystemLibrary.h"
 #include "SustainableWizardry/Interaction/CombatInterface.h"
+#include "SustainableWizardry/Interaction/PlayerInterface.h"
 #include "SustainableWizardry/Player/SusWizPlayerController.h"
 
 USusWizAttributeSet::USusWizAttributeSet()
@@ -161,7 +162,9 @@ void USusWizAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCall
 				{
 					CombatInterface->Die();
 				}
+				
 				SendXPEvent(Props);
+				
 			}
 			else
 			{
@@ -183,9 +186,14 @@ void USusWizAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCall
 	{
 		const float LocalIncomingXP = GetIncomingXP();
 		SetIncomingXP(0.f);
-		UE_LOG(LogSusWiz, Log, TEXT("Incoming XP: %f"), LocalIncomingXP);
+		//UE_LOG(LogSusWiz, Log, TEXT("Incoming XP: %f"), LocalIncomingXP);
+		
+		 // TODO: Check Level Ups
+		 if (Props.SourceCharacter->Implements<UPlayerInterface>())
+		 {
+		 	IPlayerInterface::Execute_AddToXP(Props.SourceCharacter, LocalIncomingXP);
+		 }
 	}
-	
 }
 
 
@@ -210,9 +218,9 @@ void USusWizAttributeSet::ShowFloatingText(const FEffectProperties& Props, float
 
 void USusWizAttributeSet::SendXPEvent(const FEffectProperties& Props)
 {
-	if (ICombatInterface* CombatInterface = Cast<ICombatInterface>(Props.TargetCharacter))
+	if (Props.TargetCharacter->Implements<UCombatInterface>())
 	{
-		const int32 TargetLevel = CombatInterface->GetPlayerLevel();
+		const int32 TargetLevel = ICombatInterface::Execute_GetPlayerLevel(Props.TargetCharacter);
 		const ECharacterClass TargetClass = ICombatInterface::Execute_GetCharacterClass(Props.TargetCharacter);
 		const int32 XPReward = USusWizAbilitySystemLibrary::GetXPRewardForClassAndLevel(Props.TargetCharacter, TargetClass, TargetLevel);
 
