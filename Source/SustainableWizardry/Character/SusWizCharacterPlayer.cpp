@@ -47,6 +47,20 @@ void ASusWizCharacterPlayer::OnRep_PlayerState()
 	
 }
 
+int32 ASusWizCharacterPlayer::GetAttributePoints_Implementation() const
+{
+	ASusWizPlayerState* SusWizPlayerState = GetPlayerState<ASusWizPlayerState>();
+	check(SusWizPlayerState);
+	return SusWizPlayerState->GetAttributePoints();
+}
+
+int32 ASusWizCharacterPlayer::GetSpellPoints_Implementation() const
+{
+	ASusWizPlayerState* SusWizPlayerState = GetPlayerState<ASusWizPlayerState>();
+	check(SusWizPlayerState);
+	return SusWizPlayerState->GetSpellPoints();
+}
+
 void ASusWizCharacterPlayer::AddToXP_Implementation(int32 InXP)
 {
 	ASusWizPlayerState* SusWizPlayerState = GetPlayerState<ASusWizPlayerState>();

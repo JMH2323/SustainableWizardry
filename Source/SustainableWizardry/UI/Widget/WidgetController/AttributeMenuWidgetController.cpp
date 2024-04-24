@@ -4,8 +4,10 @@
 #include "AttributeMenuWidgetController.h"
 
 #include "SustainableWizardry/SusWizGameplayTags.h"
+#include "SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.h"
 #include "SustainableWizardry/GAS/Data/AttributeInfo.h"
 #include "SustainableWizardry/GAS/Attribute/SusWizAttributeSet.h"
+#include "SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.h"
 #include "SustainableWizardry/Player/PlayerState/SusWizPlayerState.h"
 
 void UAttributeMenuWidgetController::BindCallbacksToDependencies()
@@ -57,8 +59,14 @@ void UAttributeMenuWidgetController::BroadcastInitialValues()
 	
 }
 
+void UAttributeMenuWidgetController::UpgradeAttribute(const FGameplayTag& AttributeTag)
+{
+	USusWizAbilitySystemComponent* SusWizASC = CastChecked<USusWizAbilitySystemComponent>(AbilitySystemComponent);
+	SusWizASC->UpgradeAttribute(AttributeTag);
+}
+
 void UAttributeMenuWidgetController::BroadcastAttributeInfo(const FGameplayTag& AttributeTag,
-	const FGameplayAttribute& Attribute) const
+                                                            const FGameplayAttribute& Attribute) const
 {
 	FSusWizAttributeInfo Info = AttributeInfo->FindAttributeInfoForTag(AttributeTag);
 	Info.AttributeValue = Attribute.GetNumericValue(AttributeSet);
