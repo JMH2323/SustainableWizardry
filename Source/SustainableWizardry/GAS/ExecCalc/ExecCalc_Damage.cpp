@@ -195,7 +195,7 @@ void UExecCalc_Damage::Execute_Implementation(const FGameplayEffectCustomExecuti
 	ExecutionParams.AttemptCalculateCapturedAttributeMagnitude(DamageStatics().DodgeDef, EvaluateParameters, TargetDodgeChance);
 	// Use this bool for dodging
 	const bool bDodged = FMath::RandRange(1, 100) < TargetDodgeChance;
-	// Set damage. if dodged is true = 0. otherwise, keep it as it is.
+	// Set damage. if dodged is true = 1. otherwise, keep it as it is.
 	Damage = bDodged ? Damage = 1.f : Damage;
 	
 	USusWizAbilitySystemLibrary::SetIsDodgedHit(EffectContextHandle, bDodged);

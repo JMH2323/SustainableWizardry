@@ -4,6 +4,8 @@
 #include "SusWizAbilitySystemComponent.h"
 
 #include "AbilitySystemComponent.h"
+#include "SustainableWizardry/GAS/SusWizAbilitySystemLibrary.h"
+#include "SustainableWizardry/Interaction/PlayerInterface.h"
 #include "SustainableWizardry/SusWizGameplayTags.h"
 #include "AbilitySystemBlueprintLibrary.h"
 #include "SustainableWizardry/SusWizLogChannels.h"
@@ -110,6 +112,34 @@ FGameplayTag USusWizAbilitySystemComponent::GetAbilityTagFromSpec(const FGamepla
 	}
 	return FGameplayTag();
 }
+
+
+void USusWizAbilitySystemComponent::UpgradeAttribute(const FGameplayTag& AttributeTag)
+{
+	if (GetAvatarActor()->Implements<UPlayerInterface>())
+	{
+		if (IPlayerInterface::Execute_GetAttributePoints(GetAvatarActor()) > 0)
+		{
+			ServerUpgradeAttribute(AttributeTag);
+		}
+	}
+}
+
+void USusWizAbilitySystemComponent::ServerUpgradeAttribute_Implementation(const FGameplayTag& AttributeTag)
+{
+	FGameplayEventData Payload;
+	Payload.EventTag = AttributeTag;
+	Payload.EventMagnitude = 1.f;
+
+	UAbilitySystemBlueprintLibrary::SendGameplayEventToActor(GetAvatarActor(), AttributeTag, Payload);
+
+	if (GetAvatarActor()->Implements<UPlayerInterface>())
+	{
+		IPlayerInterface::Execute_AddToAttributePoints(GetAvatarActor(), -1);
+	}
+}
+
+
 
 FGameplayTag USusWizAbilitySystemComponent::GetInputTagFromSpec(const FGameplayAbilitySpec& AbilitySpec)
 {
