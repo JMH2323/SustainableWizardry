@@ -7,12 +7,14 @@
 #include "SustainableWizardry/Player/PlayerState/SusWizPlayerState.h"
 #include "SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.h"
 #include "SustainableWizardry/Character/SusWizCharacterPlayer.h"
+
+#include "SustainableWizardry/GAS/Data/CharacterClassInfo.h"
 #include "SustainableWizardry/UI/HUD/SusWizHUD.h"
 
 
 ASusWizCharacterPlayer::ASusWizCharacterPlayer()
 {
-	
+	CharacterClass = ECharacterClass::Wizard;
 }
 
 void ASusWizCharacterPlayer::PossessedBy(AController* NewController)

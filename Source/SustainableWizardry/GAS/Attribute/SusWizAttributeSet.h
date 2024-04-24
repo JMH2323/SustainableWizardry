@@ -91,9 +91,15 @@ private:
 
 	void ShowFloatingText(const FEffectProperties& Props, float Damage, bool bDodgedHit, bool bCriticalHit);
 
+	void SendXPEvent(const FEffectProperties& Props);
+
 	
 public:
 
+
+
+	
+	
 
 	// Attribute Data
 	// Steps) 1. Create attribute in .h file. 2. creating the OnRep_ Function. 3. Add to props list
@@ -223,6 +229,10 @@ public:
 	FGameplayAttributeData IncomingDamage;
 	ATTRIBUTE_ACCESSORS(USusWizAttributeSet, IncomingDamage);
 
+	UPROPERTY(BlueprintReadOnly, Category = "Meta Attributes")
+	FGameplayAttributeData IncomingXP;
+	ATTRIBUTE_ACCESSORS(USusWizAttributeSet, IncomingXP);
+
 
 	/*
 	 * Res
@@ -239,6 +249,8 @@ public:
 	ATTRIBUTE_ACCESSORS(USusWizAttributeSet, PhysicalResistance);
 	UFUNCTION()
 	void OnRep_PhysicalResistance(const FGameplayAttributeData& OldPhysicalResistance) const;
+
+	
 
 	
 };

@@ -77,6 +77,11 @@ AActor* ASusWizCharacterBase::GetAvatar_Implementation()
 	return this;
 }
 
+ECharacterClass ASusWizCharacterBase::GetCharacterClass_Implementation()
+{
+	return CharacterClass;
+}
+
 void ASusWizCharacterBase::InitAbilityActorInfo()
 {
 	// override in character player
@@ -110,6 +115,7 @@ void ASusWizCharacterBase::AddCharacterAbilities()
 		if(!HasAuthority()) return;
 	
 	SusWizASC->AddCharacterAbilities(StartupAbilities);
+	SusWizASC->AddCharacterPassiveAbilities(StartupPassiveAbilities);
 	
 }
 

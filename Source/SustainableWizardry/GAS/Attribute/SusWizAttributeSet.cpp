@@ -9,6 +9,7 @@
 #include "GameplayEffectExtension.h"
 #include "Kismet/GameplayStatics.h"
 #include "SustainableWizardry/SusWizGameplayTags.h"
+#include "SustainableWizardry/SusWizLogChannels.h"
 #include "SustainableWizardry/GAS/SusWizAbilitySystemLibrary.h"
 #include "SustainableWizardry/Interaction/CombatInterface.h"
 #include "SustainableWizardry/Player/SusWizPlayerController.h"
@@ -160,6 +161,7 @@ void USusWizAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCall
 				{
 					CombatInterface->Die();
 				}
+				SendXPEvent(Props);
 			}
 			else
 			{
@@ -175,6 +177,13 @@ void USusWizAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCall
 			ShowFloatingText(Props, LocalIncomingDamage, bDodgedHit, bCrit);
 			
 		}
+	}
+
+	if (Data.EvaluatedData.Attribute == GetIncomingXPAttribute())
+	{
+		const float LocalIncomingXP = GetIncomingXP();
+		SetIncomingXP(0.f);
+		UE_LOG(LogSusWiz, Log, TEXT("Incoming XP: %f"), LocalIncomingXP);
 	}
 	
 }
@@ -197,6 +206,22 @@ void USusWizAttributeSet::ShowFloatingText(const FEffectProperties& Props, float
 				
 	}
 	
+}
+
+void USusWizAttributeSet::SendXPEvent(const FEffectProperties& Props)
+{
+	if (ICombatInterface* CombatInterface = Cast<ICombatInterface>(Props.TargetCharacter))
+	{
+		const int32 TargetLevel = CombatInterface->GetPlayerLevel();
+		const ECharacterClass TargetClass = ICombatInterface::Execute_GetCharacterClass(Props.TargetCharacter);
+		const int32 XPReward = USusWizAbilitySystemLibrary::GetXPRewardForClassAndLevel(Props.TargetCharacter, TargetClass, TargetLevel);
+
+		const FSusWizGameplayTags& GameplayTags = FSusWizGameplayTags::Get();
+		FGameplayEventData Payload;
+		Payload.EventTag = GameplayTags.Attributes_Meta_IncomingXP;
+		Payload.EventMagnitude = XPReward;
+		UAbilitySystemBlueprintLibrary::SendGameplayEventToActor(Props.SourceCharacter, GameplayTags.Attributes_Meta_IncomingXP, Payload);
+	}
 }
 
 /*

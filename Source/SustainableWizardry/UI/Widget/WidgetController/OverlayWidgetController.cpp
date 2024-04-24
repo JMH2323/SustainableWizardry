@@ -4,6 +4,9 @@
 #include "OverlayWidgetController.h"
 #include "SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.h"
 #include "SustainableWizardry/GAS/Attribute/SusWizAttributeSet.h"
+#include "SustainableWizardry/GAS/Data/AbilityInfo.h"
+#include "SustainableWizardry/GAS/Data/LevelUpInfo.h"
+#include "SustainableWizardry/Player/PlayerState/SusWizPlayerState.h"
 
 
 void UOverlayWidgetController::BroadcastInitialValues()
@@ -20,6 +23,11 @@ void UOverlayWidgetController::BroadcastInitialValues()
 
 void UOverlayWidgetController::BindCallbacksToDependencies()
 {
+
+	ASusWizPlayerState* SusWizPlayerState = CastChecked<ASusWizPlayerState>(PlayerState);
+	SusWizPlayerState->OnXPChangedDelegate.AddUObject(this, &UOverlayWidgetController::OnXPChanged);
+
+	
 	const USusWizAttributeSet* SusWizAttributeSet = CastChecked<USusWizAttributeSet>(AttributeSet);
 
 	// PRE LAMBDA. We bind the callbacks to a function to broadcast delegate changes.
@@ -99,8 +107,46 @@ void UOverlayWidgetController::BindCallbacksToDependencies()
  	//TODO Get information about all given abilities, look up their Ability Info, and broadcast it to widgets.
  	if (!SusWizAbilitySystemComponent->bStartupAbilitiesGiven) return;
 
+	FForEachAbility BroadcastDelegate;
+	BroadcastDelegate.BindLambda([this, SusWizAbilitySystemComponent](const FGameplayAbilitySpec& AbilitySpec)
+	{
+		//TODO need a way to figure out the ability tag for a given ability spec.
+		FSusWizAbilityInfo Info = AbilityInfo->FindAbilityInfoForTag(SusWizAbilitySystemComponent->GetAbilityTagFromSpec(AbilitySpec));
+		Info.InputTag = SusWizAbilitySystemComponent->GetInputTagFromSpec(AbilitySpec);
+		AbilityInfoDelegate.Broadcast(Info);
+	});
+	SusWizAbilitySystemComponent->ForEachAbility(BroadcastDelegate);
+
 
  }
+
+
+void UOverlayWidgetController::OnXPChanged(int32 NewXP) const 
+{
+	const ASusWizPlayerState* SusWizPlayerState = CastChecked<ASusWizPlayerState>(PlayerState);
+	const ULevelUpInfo* LevelUpInfo = SusWizPlayerState->LevelUpInfo;
+	checkf(LevelUpInfo, TEXT("Unabled to find LevelUpInfo. Please fill out SusWizPlayerState Blueprint"));
+
+	const int32 Level = LevelUpInfo->FindLevelForXP(NewXP);
+	const int32 MaxLevel = LevelUpInfo->LevelUpInformation.Num();
+
+	if (Level <= MaxLevel && Level > 0)
+	{
+		const int32 LevelUpRequirement = LevelUpInfo->LevelUpInformation[Level].LevelUpRequirement;
+		const int32 PreviousLevelUpRequirement = LevelUpInfo->LevelUpInformation[Level - 1].LevelUpRequirement;
+
+		const int32 DeltaLevelRequirement = LevelUpRequirement - PreviousLevelUpRequirement;
+		const int32 XPForThisLevel = NewXP - PreviousLevelUpRequirement;
+
+		const float XPBarPercent = static_cast<float>(XPForThisLevel) / static_cast<float>(DeltaLevelRequirement);
+
+		OnXPPercentChangedDelegate.Broadcast(XPBarPercent);
+	}
+}
+
+
+
+
 //
 // 	
 // 	// 7.1 We want the ability system components tags so we cast to it
