@@ -12,6 +12,10 @@
 /**
  * 
  */
+class UNiagaraComponent;
+class UCameraComponent;
+class USpringArmComponent;
+
 UCLASS()
 class SUSTAINABLEWIZARDRY_API ASusWizCharacterPlayer : public ASusWizCharacterBase, public IPlayerInterface
 {
@@ -38,9 +42,17 @@ public:
 	virtual int32 GetPlayerLevel_Implementation() override;
 	/* End Combat Interface */
 	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	TObjectPtr<UNiagaraComponent> LevelUpNiagaraComponent;
+	
 	
 
 private:
 	// 6.0 overrided from character base. Not needed at first
 	void InitAbilityActorInfo() override;
+	
+	
+
+	UFUNCTION(NetMulticast, Reliable)
+	void MulticastLevelUpParticles() const;
 };
