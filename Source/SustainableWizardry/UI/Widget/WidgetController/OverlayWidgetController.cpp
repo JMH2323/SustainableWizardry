@@ -27,6 +27,10 @@ void UOverlayWidgetController::BindCallbacksToDependencies()
 	ASusWizPlayerState* SusWizPlayerState = CastChecked<ASusWizPlayerState>(PlayerState);
 	SusWizPlayerState->OnXPChangedDelegate.AddUObject(this, &UOverlayWidgetController::OnXPChanged);
 
+	SusWizPlayerState->OnLevelChangedDelegate.AddLambda(
+		[this](int32 NewLevel)
+		{OnPlayerLevelChangedDelegate.Broadcast(NewLevel);}
+	);
 	
 	const USusWizAttributeSet* SusWizAttributeSet = CastChecked<USusWizAttributeSet>(AttributeSet);
 
