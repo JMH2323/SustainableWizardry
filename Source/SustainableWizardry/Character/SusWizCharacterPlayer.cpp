@@ -8,6 +8,9 @@
 #include "SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.h"
 #include "SustainableWizardry/Character/SusWizCharacterPlayer.h"
 #include "SustainableWizardry/GAS/Data/LevelUpInfo.h"
+#include "NiagaraComponent.h"
+#include "Camera/CameraComponent.h"
+#include "GameFramework/SpringArmComponent.h"
 #include "SustainableWizardry/GAS/Data/CharacterClassInfo.h"
 #include "SustainableWizardry/UI/HUD/SusWizHUD.h"
 
@@ -15,6 +18,11 @@
 ASusWizCharacterPlayer::ASusWizCharacterPlayer()
 {
 	CharacterClass = ECharacterClass::Wizard;
+	
+
+	LevelUpNiagaraComponent = CreateDefaultSubobject<UNiagaraComponent>("LevelUpNiagaraComponent");
+	LevelUpNiagaraComponent->SetupAttachment(GetRootComponent());
+	LevelUpNiagaraComponent->bAutoActivate = false;
 }
 
 void ASusWizCharacterPlayer::PossessedBy(AController* NewController)
@@ -48,7 +56,16 @@ void ASusWizCharacterPlayer::AddToXP_Implementation(int32 InXP)
 
 void ASusWizCharacterPlayer::LevelUp_Implementation()
 {
-	
+	MulticastLevelUpParticles();
+}
+
+void ASusWizCharacterPlayer::MulticastLevelUpParticles_Implementation() const
+{
+	if (IsValid(LevelUpNiagaraComponent))
+	{
+		
+		LevelUpNiagaraComponent->Activate(true);
+	}
 }
 
 int32 ASusWizCharacterPlayer::GetXP_Implementation() const
