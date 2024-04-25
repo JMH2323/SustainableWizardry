@@ -13,10 +13,9 @@
 void UAttributeMenuWidgetController::BindCallbacksToDependencies()
 {
 
-	// Get attribute set for getting attribute values
-	USusWizAttributeSet* AS = CastChecked<USusWizAttributeSet>(AttributeSet);
 	
-	for (auto& Pair : AS->TagsToAttributes)
+	
+	for (auto& Pair : GetSusWizAS()->TagsToAttributes)
 	{
 		AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(Pair.Value()).AddLambda(
 		[this, Pair](const FOnAttributeChangeData& Data)
@@ -30,8 +29,8 @@ void UAttributeMenuWidgetController::BindCallbacksToDependencies()
 				//*Pair.Key.ToString(), *Pair.Value().AttributeName);
 	}
 
-	ASusWizPlayerState* SusWizPlayerState = CastChecked<ASusWizPlayerState>(PlayerState);
-	SusWizPlayerState->OnAttributePointsChangedDelegate.AddLambda(
+	
+	GetSusWizPS()->OnAttributePointsChangedDelegate.AddLambda(
 		[this](int32 Points)
 		{
 			AttributePointsChangedDelegate.Broadcast(Points);
@@ -54,8 +53,8 @@ void UAttributeMenuWidgetController::BroadcastInitialValues()
 
 	BruteForceBroadcast();
 
-	ASusWizPlayerState* SusWizPlayerState = CastChecked<ASusWizPlayerState>(PlayerState);
-	AttributePointsChangedDelegate.Broadcast(SusWizPlayerState->GetAttributePoints());
+	
+	AttributePointsChangedDelegate.Broadcast(GetSusWizPS()->GetAttributePoints());
 	
 }
 

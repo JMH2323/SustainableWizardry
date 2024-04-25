@@ -11,36 +11,29 @@
 
 void UOverlayWidgetController::BroadcastInitialValues()
 {
-	const USusWizAttributeSet* SusWizAttributeSet = CastChecked<USusWizAttributeSet>(AttributeSet);
-
-	OnHealthChanged.Broadcast(SusWizAttributeSet->GetHealth());
-	OnMaxHealthChanged.Broadcast(SusWizAttributeSet->GetMaxHealth());
-	OnEnergyChanged.Broadcast(SusWizAttributeSet->GetEnergy());
-	OnMaxEnergyChanged.Broadcast(SusWizAttributeSet->GetMaxEnergy());
-	
-	
+	OnHealthChanged.Broadcast(GetSusWizAS()->GetHealth());
+	OnMaxHealthChanged.Broadcast(GetSusWizAS()->GetMaxHealth());
+	OnEnergyChanged.Broadcast(GetSusWizAS()->GetEnergy());
+	OnMaxEnergyChanged.Broadcast(GetSusWizAS()->GetMaxEnergy());
 }
 
 void UOverlayWidgetController::BindCallbacksToDependencies()
 {
 
-	ASusWizPlayerState* SusWizPlayerState = CastChecked<ASusWizPlayerState>(PlayerState);
-	SusWizPlayerState->OnXPChangedDelegate.AddUObject(this, &UOverlayWidgetController::OnXPChanged);
-
-	SusWizPlayerState->OnLevelChangedDelegate.AddLambda(
+	GetSusWizPS()->OnXPChangedDelegate.AddUObject(this, &UOverlayWidgetController::OnXPChanged);
+	GetSusWizPS()->OnLevelChangedDelegate.AddLambda(
 		[this](int32 NewLevel)
 		{OnPlayerLevelChangedDelegate.Broadcast(NewLevel);}
 	);
 	
-	const USusWizAttributeSet* SusWizAttributeSet = CastChecked<USusWizAttributeSet>(AttributeSet);
+	
 
 	// PRE LAMBDA. We bind the callbacks to a function to broadcast delegate changes.
 	//  AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(
 	// 	SusWizAttributeSet->GetHealthAttribute()).AddUObject(this, &UOverlayWidgetController::HealthChanged);
 
 	// POST LAMBDA. We can simplify use of expressions by doing the broadcasting as we get the attribute
-	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(
-		SusWizAttributeSet->GetHealthAttribute()).AddLambda(
+	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(GetSusWizAS()->GetHealthAttribute()).AddLambda(
 		[this](const FOnAttributeChangeData& Data)
 		{
 			OnHealthChanged.Broadcast(Data.NewValue);
@@ -49,7 +42,7 @@ void UOverlayWidgetController::BindCallbacksToDependencies()
 
 	// 
 	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(
-		SusWizAttributeSet->GetMaxHealthAttribute()).AddLambda(
+		GetSusWizAS()->GetMaxHealthAttribute()).AddLambda(
 		[this](const FOnAttributeChangeData& Data)
 		{
 			OnMaxHealthChanged.Broadcast(Data.NewValue);
@@ -57,7 +50,7 @@ void UOverlayWidgetController::BindCallbacksToDependencies()
 		);
 
 	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(
-		SusWizAttributeSet->GetEnergyAttribute()).AddLambda(
+		GetSusWizAS()->GetEnergyAttribute()).AddLambda(
 		[this](const FOnAttributeChangeData& Data)
 		{
 			OnEnergyChanged.Broadcast(Data.NewValue);
@@ -65,7 +58,7 @@ void UOverlayWidgetController::BindCallbacksToDependencies()
 		);
 
 	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(
-		SusWizAttributeSet->GetMaxEnergyAttribute()).AddLambda(
+		GetSusWizAS()->GetMaxEnergyAttribute()).AddLambda(
 		[this](const FOnAttributeChangeData& Data)
 		{
 			OnMaxEnergyChanged.Broadcast(Data.NewValue);
@@ -75,18 +68,18 @@ void UOverlayWidgetController::BindCallbacksToDependencies()
 	
 
 
-	if (USusWizAbilitySystemComponent* SusWizASC = Cast<USusWizAbilitySystemComponent>(AbilitySystemComponent))
+	if (GetSusWizASC())
 	{
-		if (SusWizASC->bStartupAbilitiesGiven)
+		if (GetSusWizASC()->bStartupAbilitiesGiven)
 		{
-			OnInitializeStartupAbilities(SusWizASC);
+			BroadcastAbilityInfo();
 		}
 		else
 		{
-			SusWizASC->AbilitiesGivenDelegate.AddUObject(this, &UOverlayWidgetController::OnInitializeStartupAbilities);
+			GetSusWizASC()->AbilitiesGivenDelegate.AddUObject(this, &UOverlayWidgetController::BroadcastAbilityInfo);
 		}
 
-		SusWizASC->EffectAssetTags.AddLambda(
+		GetSusWizASC()->EffectAssetTags.AddLambda(
 			[this](const FGameplayTagContainer& AssetTags)
 			{
 				for (const FGameplayTag& Tag : AssetTags)
@@ -106,29 +99,13 @@ void UOverlayWidgetController::BindCallbacksToDependencies()
 
 }
 
- void UOverlayWidgetController::OnInitializeStartupAbilities(USusWizAbilitySystemComponent* SusWizAbilitySystemComponent)
- {
- 	//TODO Get information about all given abilities, look up their Ability Info, and broadcast it to widgets.
- 	if (!SusWizAbilitySystemComponent->bStartupAbilitiesGiven) return;
-
-	FForEachAbility BroadcastDelegate;
-	BroadcastDelegate.BindLambda([this, SusWizAbilitySystemComponent](const FGameplayAbilitySpec& AbilitySpec)
-	{
-		//TODO need a way to figure out the ability tag for a given ability spec.
-		FSusWizAbilityInfo Info = AbilityInfo->FindAbilityInfoForTag(SusWizAbilitySystemComponent->GetAbilityTagFromSpec(AbilitySpec));
-		Info.InputTag = SusWizAbilitySystemComponent->GetInputTagFromSpec(AbilitySpec);
-		AbilityInfoDelegate.Broadcast(Info);
-	});
-	SusWizAbilitySystemComponent->ForEachAbility(BroadcastDelegate);
+ 
 
 
- }
-
-
-void UOverlayWidgetController::OnXPChanged(int32 NewXP) const 
+void UOverlayWidgetController::OnXPChanged(int32 NewXP)  
 {
-	const ASusWizPlayerState* SusWizPlayerState = CastChecked<ASusWizPlayerState>(PlayerState);
-	const ULevelUpInfo* LevelUpInfo = SusWizPlayerState->LevelUpInfo;
+	
+	const ULevelUpInfo* LevelUpInfo = GetSusWizPS()->LevelUpInfo;
 	checkf(LevelUpInfo, TEXT("Unabled to find LevelUpInfo. Please fill out SusWizPlayerState Blueprint"));
 
 	const int32 Level = LevelUpInfo->FindLevelForXP(NewXP);

@@ -42,7 +42,7 @@ void USusWizAbilitySystemComponent::AddCharacterAbilities(TArray<TSubclassOf<UGa
 		}
 	}
 	bStartupAbilitiesGiven = true;
-	AbilitiesGivenDelegate.Broadcast(this);
+	AbilitiesGivenDelegate.Broadcast();
 }
 
 void USusWizAbilitySystemComponent::AddCharacterPassiveAbilities(
@@ -122,6 +122,16 @@ void USusWizAbilitySystemComponent::UpgradeAttribute(const FGameplayTag& Attribu
 		{
 			ServerUpgradeAttribute(AttributeTag);
 		}
+	}
+}
+
+void USusWizAbilitySystemComponent::OnRep_ActivateAbilities()
+{
+	Super::OnRep_ActivateAbilities();
+	if (!bStartupAbilitiesGiven)
+	{
+		bStartupAbilitiesGiven = true;
+		AbilitiesGivenDelegate.Broadcast();
 	}
 }
 
