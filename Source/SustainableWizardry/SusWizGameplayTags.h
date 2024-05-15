@@ -48,13 +48,22 @@ static const FSusWizGameplayTags& Get() { return GameplayTags; }
  // Abilities
  FGameplayTag Abilities_Attack;
 
- // Damage
+ // Ability Info
+ FGameplayTag Abilities_Status_Locked;
+ FGameplayTag Abilities_Status_Eligible;
+ FGameplayTag Abilities_Status_Unlocked;
+ FGameplayTag Abilities_Status_Equipped;
+
+ FGameplayTag Abilities_Type_Passive;
+ FGameplayTag Abilities_Type_Active;
+ FGameplayTag Abilities_Type_None;
+
+ // Damage Types
  FGameplayTag Damage;
  FGameplayTag Damage_Fire;
  FGameplayTag Damage_Physical;
-
+ // Array of Damages
  TArray<FGameplayTag> DamageTypes;
-
  TMap<FGameplayTag, FGameplayTag> DamageTypesToResistances;
 
  // Res

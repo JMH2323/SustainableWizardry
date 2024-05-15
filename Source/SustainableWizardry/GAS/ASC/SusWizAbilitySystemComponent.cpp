@@ -37,6 +37,9 @@ void USusWizAbilitySystemComponent::AddCharacterAbilities(TArray<TSubclassOf<UGa
 		if (const USusWizGameplayAbility* SusWizAbility = Cast<USusWizGameplayAbility>(AbilitySpec.Ability))
 		{
 			AbilitySpec.DynamicAbilityTags.AddTag(SusWizAbility->StartupInputTag);
+
+			AbilitySpec.DynamicAbilityTags.AddTag(FSusWizGameplayTags::Get().Abilities_Status_Equipped);
+			
 			// Give ability to player
 			GiveAbility(AbilitySpec);
 		}
@@ -163,8 +166,20 @@ FGameplayTag USusWizAbilitySystemComponent::GetInputTagFromSpec(const FGameplayA
 	return FGameplayTag();
 }
 
+FGameplayTag USusWizAbilitySystemComponent::GetStatusFromSpec(const FGameplayAbilitySpec& AbilitySpec)
+{
+	for (FGameplayTag StatusTag : AbilitySpec.DynamicAbilityTags)
+	{
+		if (StatusTag.MatchesTag(FGameplayTag::RequestGameplayTag(FName("Abilities.Status"))))
+		{
+			return StatusTag;
+		}
+	}
+	return FGameplayTag();
+}
+
 void USusWizAbilitySystemComponent::ClientEffectApplied_Implementation(UAbilitySystemComponent* AbilitySystemComponent,
-                                                  const FGameplayEffectSpec& EffectSpec, FActiveGameplayEffectHandle ActiveEffectHandle)
+                                                                       const FGameplayEffectSpec& EffectSpec, FActiveGameplayEffectHandle ActiveEffectHandle)
 {
 
 
