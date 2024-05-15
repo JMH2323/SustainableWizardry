@@ -7,7 +7,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1579a7cd-1dd9-4102-8fb2-ded64c6e3088" name="Changes" comment="" />
+    <list default="true" id="1579a7cd-1dd9-4102-8fb2-ded64c6e3088" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultGameplayTags.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultGameplayTags.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/Player/LeftHand/ABP_Left.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/Player/LeftHand/ABP_Left.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/Player/RightHand/ABP_RH.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/Player/RightHand/ABP_RightHand.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/Player/RightHand/ABP_RightHand.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/Player/RightHand/AM_LongFingerFire.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/Player/RightHand/AM_LongFingerFire.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/Player/RightHand/AS_LongFingerFire.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/Player/RightHand/AS_LongFingerFire.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaSounds/Abilities/FireBolt/sfx_FireBolt_Impact.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaSounds/Abilities/FireBolt/sfx_FireBolt_Impact.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Player/BP_SusWizPlayer.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Player/BP_SusWizPlayer.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Fire/GA_FireBolt.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Fire/GA_FireBolt.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Fire/GA_FireBolt2.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Fire/GA_FireBolt2.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Input/IC_SusWiz.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Input/IC_SusWiz.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Input/IMC_SusWizMappingContext.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Input/IMC_SusWizMappingContext.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TestLevelSW.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/TestLevelSW.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/SpellGlobes/WBP_SpellGlobe_Button.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/SpellGlobes/WBP_SpellGlobe_Button.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/SpellMenu/SpellRow/WBP_EquippedRow.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/SpellMenu/SpellRow/WBP_EquippedRow.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/SpellMenu/SpellTrees/WBP_SpellTreeOffense.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/SpellMenu/SpellTrees/WBP_SpellTreeOffense.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/SpellMenu/WBP_SpellMenu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/SpellMenu/WBP_SpellMenu.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterBase.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterBase.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterPlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterPlayer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/SpellsGA/SusWizProjectileSpell.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/SpellsGA/SusWizProjectileSpell.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/SpellsGA/SusWizProjectileSpell.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/SpellsGA/SusWizProjectileSpell.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/SusWizGameplayAbility.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/SusWizGameplayAbility.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Interaction/CombatInterface.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Interaction/CombatInterface.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Interaction/CombatInterface.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Interaction/CombatInterface.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/UI/Widget/WidgetController/OverlayWidgetController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/UI/Widget/WidgetController/OverlayWidgetController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/UI/Widget/WidgetController/SpellMenuWidgetController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/UI/Widget/WidgetController/SpellMenuWidgetController.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,72 +47,18 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="cidr-memory-view://3" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterBase.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterBase.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizEnemy.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -120,29 +95,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Uproject.SustainableWizardry.executor&quot;: &quot;Run&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;UnrealLinkOptionsId&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Uproject.SustainableWizardry.executor": "Debug",
+    "git-widget-placeholder": "Abilities-Level-GameLoop",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "UnrealLinkOptionsId",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\angryjack67\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\angryjack67\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\angryjack67\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\angryjack67\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\angryjack67\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\angryjack67\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="SustainableWizardry" type="Uproject" factoryName="rider.uproject">
       <option name="PROJECT_FILE_PATH" value="$PROJECT_DIR$/SustainableWizardry.uproject" />
@@ -260,7 +236,8 @@
       <workItem from="1713911654551" duration="1213000" />
       <workItem from="1713920591776" duration="7738000" />
       <workItem from="1713971939081" duration="15035000" />
-      <workItem from="1714013419213" duration="3520000" />
+      <workItem from="1714013419213" duration="4122000" />
+      <workItem from="1715726060382" duration="5888000" />
     </task>
     <servers />
   </component>
@@ -269,6 +246,17 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/SpellsGA/SusWizProjectileSpell.cpp</url>
+          <line>39</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

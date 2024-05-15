@@ -67,6 +67,11 @@ FVector ASusWizCharacterBase::GetCombatSocketLocation()
 	return MainWeapon->GetSocketLocation(MainWeaponTipSocketName);
 }
 
+FVector ASusWizCharacterBase::GetSecCombatSocketLocation()
+{
+	return SecondaryWeapon->GetSocketLocation(SecondaryWeaponTipSocketName);
+}
+
 bool ASusWizCharacterBase::IsDead_Implementation() const
 {
 	return bDead;
