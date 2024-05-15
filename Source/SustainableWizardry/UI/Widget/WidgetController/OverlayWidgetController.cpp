@@ -131,7 +131,7 @@ void UOverlayWidgetController::OnXPChanged(int32 NewXP)
 //
 // 	
 // 	// 7.1 We want the ability system components tags so we cast to it
-// 	// TODO: Uncomment from 67 to 93
+// 	// TODO: Uncomment 
 // 	Cast<USusWizAbilitySystemComponent>(AbilitySystemComponent)->EffectAssetTags.AddLambda(
 // 		// Lambda to use over callback function. Lambda allows us to build and use a function right now.
 // 		[this](const FGameplayTagContainer& AssetTags)

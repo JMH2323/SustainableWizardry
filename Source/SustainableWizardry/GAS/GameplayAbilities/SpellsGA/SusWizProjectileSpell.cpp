@@ -29,7 +29,14 @@ void USusWizProjectileSpell::SpawnProjectile()
     ICombatInterface* CombatInterface = Cast<ICombatInterface>(GetAvatarActorFromActorInfo());
     if (CombatInterface && StoredActorInfo)
     {
-        const FVector SocketLocation = CombatInterface->GetCombatSocketLocation();
+
+    	FVector SocketLocation = CombatInterface->GetCombatSocketLocation();
+    	
+    	if (isLeftHanded)
+    	{
+    		SocketLocation = CombatInterface->GetSecCombatSocketLocation();
+    	}
+          	
         FTransform SpawnTransform;
 
     	

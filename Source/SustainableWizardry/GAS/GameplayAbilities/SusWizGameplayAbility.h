@@ -16,9 +16,13 @@ class SUSTAINABLEWIZARDRY_API USusWizGameplayAbility : public UGameplayAbility
 
 public:
 
-	UPROPERTY(EditDefaultsOnly, Category="Input")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Input")
 	FGameplayTag StartupInputTag;
 
-	
+	UPROPERTY(EditAnywhere, BlueprintType)
+	bool isLeftHanded = false;
+
+	UFUNCTION(BlueprintCallable)
+	void setLeftHanded() { isLeftHanded = true; }
 	
 };

@@ -42,6 +42,7 @@ public:
 	virtual UAnimMontage* GetHitReactMontage_Implementation() override;	
 	virtual void Die() override;	
 	virtual FVector GetCombatSocketLocation() override;
+	virtual FVector GetSecCombatSocketLocation() override;
 	virtual bool IsDead_Implementation() const override;
 	virtual AActor* GetAvatar_Implementation() override;
 
@@ -59,9 +60,12 @@ protected:
 	
 	// Create the weapon mesh component to allow us to spawn spells from hand
 	UPROPERTY(EditAnywhere, Category = "Combat")
-	TObjectPtr<USkeletalMeshComponent> MainWeapon;
+	USkeletalMeshComponent* MainWeapon;
 	UPROPERTY(EditAnywhere, Category = "Combat")
-	TObjectPtr<USkeletalMeshComponent> SecondaryWeapon;
+	USkeletalMeshComponent* SecondaryWeapon;
+
+	UFUNCTION(BlueprintCallable, Category = "Combat")
+	const USkeletalMeshComponent* GetSecWeapon() { return SecondaryWeapon; }
 	
 	UPROPERTY(EditAnywhere, Category = "Combat")
 	FName MainWeaponTipSocketName;
