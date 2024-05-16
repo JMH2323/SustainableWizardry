@@ -37,7 +37,6 @@ void USusWizAbilitySystemComponent::AddCharacterAbilities(TArray<TSubclassOf<UGa
 		if (const USusWizGameplayAbility* SusWizAbility = Cast<USusWizGameplayAbility>(AbilitySpec.Ability))
 		{
 			AbilitySpec.DynamicAbilityTags.AddTag(SusWizAbility->StartupInputTag);
-
 			AbilitySpec.DynamicAbilityTags.AddTag(FSusWizGameplayTags::Get().Abilities_Status_Equipped);
 			
 			// Give ability to player
