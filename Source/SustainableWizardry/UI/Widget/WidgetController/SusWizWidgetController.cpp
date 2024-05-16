@@ -39,6 +39,7 @@ void USusWizWidgetController::BroadcastAbilityInfo()
 	{
 		FSusWizAbilityInfo Info = AbilityInfo->FindAbilityInfoForTag(SusWizAbilitySystemComponent->GetAbilityTagFromSpec(AbilitySpec));
 		Info.InputTag = SusWizAbilitySystemComponent->GetInputTagFromSpec(AbilitySpec);
+		Info.StatusTag = SusWizAbilitySystemComponent->GetStatusFromSpec(AbilitySpec);
 		AbilityInfoDelegate.Broadcast(Info);
 	});
 	GetSusWizASC()->ForEachAbility(BroadcastDelegate);
