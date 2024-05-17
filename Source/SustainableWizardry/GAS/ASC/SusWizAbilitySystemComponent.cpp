@@ -9,6 +9,7 @@
 #include "SustainableWizardry/SusWizGameplayTags.h"
 #include "AbilitySystemBlueprintLibrary.h"
 #include "SustainableWizardry/SusWizLogChannels.h"
+#include "SustainableWizardry/GAS/Data/AbilityInfo.h"
 #include "SustainableWizardry/GAS/GameplayAbilities/SusWizGameplayAbility.h"
 
 
@@ -127,6 +128,7 @@ void USusWizAbilitySystemComponent::UpgradeAttribute(const FGameplayTag& Attribu
 	}
 }
 
+
 void USusWizAbilitySystemComponent::OnRep_ActivateAbilities()
 {
 	Super::OnRep_ActivateAbilities();
@@ -176,6 +178,50 @@ FGameplayTag USusWizAbilitySystemComponent::GetStatusFromSpec(const FGameplayAbi
 	}
 	return FGameplayTag();
 }
+
+FGameplayAbilitySpec* USusWizAbilitySystemComponent::GetSpecFromAbilityTag(const FGameplayTag& AbilityTag)
+{
+
+	FScopedAbilityListLock ActiveScopeLoc(*this);
+	for (FGameplayAbilitySpec& AbilitySpec : GetActivatableAbilities())
+	{
+		for (FGameplayTag Tag : AbilitySpec.Ability.Get()->AbilityTags)
+		{
+			if (Tag.MatchesTag(AbilityTag))
+			{
+				return &AbilitySpec;
+			}
+		}
+	}
+	return nullptr;
+	
+}
+
+void USusWizAbilitySystemComponent::UpdateAbilityStatuses(int32 Level)
+{
+	UAbilityInfo* AbilityInfo = USusWizAbilitySystemLibrary::GetAbilityInfo(GetAvatarActor());
+	for (const FSusWizAbilityInfo& Info : AbilityInfo->AbilityInformation)
+	{
+		if (!Info.AbilityTag.IsValid()) continue;
+		if (Level < Info.LevelRequirement) continue;
+		if (GetSpecFromAbilityTag(Info.AbilityTag) == nullptr)
+		{
+			FGameplayAbilitySpec AbilitySpec = FGameplayAbilitySpec(Info.Ability, 1);
+			AbilitySpec.DynamicAbilityTags.AddTag(FSusWizGameplayTags::Get().Abilities_Status_Eligible);
+			GiveAbility(AbilitySpec);
+			MarkAbilitySpecDirty(AbilitySpec);
+			ClientUpdateAbilityStatus(Info.AbilityTag, FSusWizGameplayTags::Get().Abilities_Status_Eligible);
+		}
+	}
+}
+
+
+void USusWizAbilitySystemComponent::ClientUpdateAbilityStatus_Implementation(const FGameplayTag& AbilityTag,
+	const FGameplayTag& StatusTag)
+{
+	AbilityStatusChanged.Broadcast(AbilityTag, StatusTag);
+}
+
 
 void USusWizAbilitySystemComponent::ClientEffectApplied_Implementation(UAbilitySystemComponent* AbilitySystemComponent,
                                                                        const FGameplayEffectSpec& EffectSpec, FActiveGameplayEffectHandle ActiveEffectHandle)

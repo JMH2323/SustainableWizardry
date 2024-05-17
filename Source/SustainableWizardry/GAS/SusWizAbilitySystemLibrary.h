@@ -7,6 +7,8 @@
 #include "SustainableWizardry/GAS/Data/CharacterClassInfo.h"
 #include "SusWizAbilitySystemLibrary.generated.h"
 
+
+class UAbilityInfo;
 class UAbilitySystemComponent;
 class UAttributeMenuWidgetController;
 class UOverlayWidgetController;
@@ -51,6 +53,9 @@ public:
 	// A way to get curve tables or data assets from our engine to our c++
 	UFUNCTION(BlueprintCallable, Category="SusWizAbilitySystemLibrary|CharacterClassDefaults")
 	static UCharacterClassInfo* GetCharacterClassInfo(const UObject* WorldContextObject);
+
+	UFUNCTION(BlueprintCallable, Category="AuraAbilitySystemLibrary|CharacterClassDefaults")
+	static UAbilityInfo* GetAbilityInfo(const UObject* WorldContextObject);
 
 
 	// Setting and getting global booleans

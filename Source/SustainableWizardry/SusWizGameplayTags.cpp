@@ -96,17 +96,37 @@ void FSusWizGameplayTags::InitializeNativeGameplayTags()
 		);
 
 
-	// Ability Tags
-	GameplayTags.Abilities_Fire_FireBolt = UGameplayTagsManager::Get().AddNativeGameplayTag(
-		FName("Abilities.Fire.FireBolt"),
-		FString("FireBolt Ability Tag")
-		);
-
+	
 	// Meta Tags
 	GameplayTags.Attributes_Meta_IncomingXP = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("Attributes.Meta.IncomingXP"),
 		FString("Incoming XP Meta Attribute")
 		);
+
+	/*
+	 * Spell Ability Tags
+	 */
+	// Fire
+	GameplayTags.Abilities_Fire_FireBolt = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Fire.FireBolt"), FString ("FireBolt Ability Tag"));
+	GameplayTags.Abilities_Fire_BigFireBolt = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Fire.BigFireBolt"), FString ("FireBolt Ability Tag"));
+	// Solar
+	GameplayTags.Abilities_Solar_Flare = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Solar.Flare"), FString ("SOLAR Ability Tag"));
+	GameplayTags.Abilities_Solar_Beam = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Solar.Beam"), FString ("SOLAR Ability Tag"));
+	GameplayTags.Abilities_Solar_EverPresence = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Solar.EverPresence"), FString ("SOLAR Ability Tag"));
+	// Geo
+	GameplayTags.Abilities_Geo_RockPunch = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Geo.RockPunch"), FString ("GEO Ability Tag"));
+	GameplayTags.Abilities_Geo_ForceOfEarth = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Geo.ForceOfEarth"), FString ("GEO Ability Tag"));
+	GameplayTags.Abilities_Geo_Boulder = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Geo.Boulder"), FString ("GEO Ability Tag"));
+	// Hydro
+	GameplayTags.Abilities_Hydro_HydroPulse = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Hydro.HydroPulse"), FString ("HYDRO Ability Tag"));
+	GameplayTags.Abilities_Hydro_WaterWhip = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Hydro.WaterWhip"), FString ("HYDRO Ability Tag"));
+	GameplayTags.Abilities_Hydro_OceanCall = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Hydro.OceanCall"), FString ("HYDRO Ability Tag"));
+
+	// Wind
+	GameplayTags.Abilities_Wind_Cut = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Wind.Cut"), FString ("WIND Ability Tag"));
+	GameplayTags.Abilities_Wind_Dash = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Wind.Dash"), FString ("WIND Ability Tag"));
+	GameplayTags.Abilities_Wind_InstantCarnage = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Wind.InstantCarnage"), FString ("WIND Ability Tag"));
+
 
 	
 }
