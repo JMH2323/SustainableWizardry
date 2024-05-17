@@ -58,7 +58,7 @@ static const FSusWizGameplayTags& Get() { return GameplayTags; }
  FGameplayTag Abilities_Type_Active;
  FGameplayTag Abilities_Type_None;
 
- // Damage Types
+ // Damage Types. Not Implemented
  FGameplayTag Damage;
  FGameplayTag Damage_Fire;
  FGameplayTag Damage_Physical;
@@ -77,8 +77,28 @@ static const FSusWizGameplayTags& Get() { return GameplayTags; }
  FGameplayTag Effects_HitReact;
  
 
- // Abilities
+ /* 
+  * Spell Abilities
+  */
+ // Starting Fire 
  FGameplayTag Abilities_Fire_FireBolt;
+ FGameplayTag Abilities_Fire_BigFireBolt;
+ // Hydro
+ FGameplayTag Abilities_Hydro_HydroPulse;
+ FGameplayTag Abilities_Hydro_WaterWhip;
+ FGameplayTag Abilities_Hydro_OceanCall;
+ // Geo
+ FGameplayTag Abilities_Geo_RockPunch;
+ FGameplayTag Abilities_Geo_ForceOfEarth;
+ FGameplayTag Abilities_Geo_Boulder;
+ // Solar
+ FGameplayTag Abilities_Solar_Flare;
+ FGameplayTag Abilities_Solar_Beam;
+ FGameplayTag Abilities_Solar_EverPresence;
+ // Wind
+ FGameplayTag Abilities_Wind_Cut;
+ FGameplayTag Abilities_Wind_Dash;
+ FGameplayTag Abilities_Wind_InstantCarnage;
  
 protected:
 

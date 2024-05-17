@@ -178,9 +178,19 @@ void USusWizAbilitySystemLibrary::GetLivePlayersWithinRadius(const UObject* Worl
 
 UCharacterClassInfo* USusWizAbilitySystemLibrary::GetCharacterClassInfo(const UObject* WorldContextObject)
 {
-	ASuzWizGameModeBase* SusWizGameMode = Cast<ASuzWizGameModeBase>(UGameplayStatics::GetGameMode(WorldContextObject));
+	const ASuzWizGameModeBase* SusWizGameMode = Cast<ASuzWizGameModeBase>(UGameplayStatics::GetGameMode(WorldContextObject));
 	if (SusWizGameMode == nullptr) return nullptr;
 	return SusWizGameMode->CharacterClassInfo;
+}
+
+UAbilityInfo* USusWizAbilitySystemLibrary::GetAbilityInfo(const UObject* WorldContextObject)
+{
+
+
+	const ASuzWizGameModeBase* SusWizGameMode = Cast<ASuzWizGameModeBase>(UGameplayStatics::GetGameMode(WorldContextObject));
+	if (SusWizGameMode == nullptr) return nullptr;
+	return SusWizGameMode->AbilityInfo;
+	
 }
 
 bool USusWizAbilitySystemLibrary::IsDodgedHit(const FGameplayEffectContextHandle& EffectContextHandle)

@@ -16,5 +16,8 @@ class SUSTAINABLEWIZARDRY_API USpellMenuWidgetController : public USusWizWidgetC
 public:
 	virtual void BroadcastInitialValues() override;
 	virtual void BindCallbacksToDependencies() override;
+
+	UPROPERTY(BlueprintAssignable)
+	FOnPlayerStatChangedSignature SpellPointsChanged;
 	
 };

@@ -115,6 +115,11 @@ void ASusWizCharacterPlayer::AddToPlayerLevel_Implementation(int32 InPlayerLevel
 	ASusWizPlayerState* SusWizPlayerState = GetPlayerState<ASusWizPlayerState>();
 	check(SusWizPlayerState);
 	SusWizPlayerState->AddToLevel(InPlayerLevel);
+	if (USusWizAbilitySystemComponent* SusWizASC = Cast<USusWizAbilitySystemComponent>(GetAbilitySystemComponent()))
+	{
+		SusWizASC->UpdateAbilityStatuses(SusWizPlayerState->GetPlayerLevel());
+	}
+	
 }
 
 void ASusWizCharacterPlayer::AddToAttributePoints_Implementation(int32 InAttributePoints)
