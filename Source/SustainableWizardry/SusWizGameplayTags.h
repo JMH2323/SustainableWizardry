@@ -57,6 +57,7 @@ static const FSusWizGameplayTags& Get() { return GameplayTags; }
  FGameplayTag Abilities_Type_Passive;
  FGameplayTag Abilities_Type_Active;
  FGameplayTag Abilities_Type_None;
+ FGameplayTag Abilities_None;
 
  // Damage Types. Not Implemented
  FGameplayTag Damage;
