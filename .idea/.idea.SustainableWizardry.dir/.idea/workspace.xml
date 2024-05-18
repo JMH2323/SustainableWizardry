@@ -9,149 +9,10 @@
   <component name="ChangeListManager">
     <list default="true" id="1579a7cd-1dd9-4102-8fb2-ded64c6e3088" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/Enemy/SludgeGolem/ABP_SGolem.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/Enemy/SludgeGolem/ABP_SGolem.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/OutsideEffects/AuraEffects/Projectiles/FireBolt/NS_Fire_3.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/OutsideEffects/AuraEffects/Projectiles/FireBolt/NS_Fire_3.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/SunSpells/NS_SolarBeam.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/SunSpells/NS_SolarBeam.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaEffects/Projectiles/FireExplosion/NS_FireExplosion.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaEffects/Projectiles/FireExplosion/NS_FireExplosion.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaEffects/Projectiles/FireExplosion/NS_FireExplosion1.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaEffects/Projectiles/FireExplosion/NS_FireExplosion1.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Animations/AM_StunGreen.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Animations/AimOffsets/Aim_CC.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Animations/AimOffsets/Aim_CD.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Animations/AimOffsets/Aim_CU.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Animations/AimOffsets/Aim_LC.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Animations/AimOffsets/Aim_LD.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Animations/AimOffsets/Aim_LU.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Animations/AimOffsets/Aim_RC.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Animations/AimOffsets/Aim_RD.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Animations/AimOffsets/Aim_RU.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Animations/AimOffsets/NewAimOffsetBlendSpace.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Animations/Blendspaces/MovementBlends.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Animations/Hit_Back.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Animations/Hit_Front.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Animations/Hit_Left.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Animations/Hit_Right.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Animations/Idle.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Animations/Knock_Bwd.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Animations/Knock_Fwd.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Animations/Run_Back.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Animations/Run_Fwd.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Animations/Run_Left.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Animations/Run_Right.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Animations/Stunned.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Animations/Turn_Left_180.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Animations/Turn_Left_90.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Animations/Turn_Right_180.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Animations/Turn_Right_90.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Materials/M_GreenBuff.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Materials/M_Green_Buff_LavaDrip.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Materials/T_Greenbuff_LUT.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Meshes/Buff_Green.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Meshes/Buff_Green_CylShadows.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Meshes/Buff_Green_Physics.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Meshes/Buff_Green_Skeleton.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Textures/T_SmallFlower01.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/GreenGolem/Textures/T_SmallFlower01_N.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/AM_SludgeGolemAttack_Big.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_CC.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_CD.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_CU.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_LC.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_LD.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_LU.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_RC.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_RD.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_RU.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/AimOffsets/NewAimOffsetBlendSpace.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/Attack_BigSmash.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/Attack_Punch_01.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/Attack_Punch_02.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/Attack_SmallCombo.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/Attack_Uppercut.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/Blendspaces/CombatAims.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/Blendspaces/MovementBlends.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/Death_Back.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/Death_Fwd.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/Hit_Back.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/Hit_Front.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/Hit_Left.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/Hit_Right.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/Idle.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/Idle_Variant_01.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/Knock_Bwd.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/Knock_Fwd.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/Run_Back.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/Run_Fwd.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/Run_Left.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/Run_Right.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/Spawn.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/Stunned.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/Turn_Left_180.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/Turn_Left_90.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/Turn_Right_180.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Animations/Turn_Right_90.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Materials/M_RedBuff.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Materials/M_Red_Buff_LavaDrip.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Meshes/Buff_Red.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Meshes/Buff_Red_CylShadows.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Meshes/Buff_Red_Skeleton.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Meshes/Buff_Redd.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Meshes/Buff_Redd_Physics.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Textures/T_BuffRed_N.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Textures/T_Buff_Red_D.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Textures/T_Buff_Red_FXMask.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Textures/T_Buff_Red_Height.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Textures/T_Buff_Red_M.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Textures/T_LavaDrip_M.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Textures/T_LavaDrip_N.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Textures/T_LavaRocks.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Textures/T_MicroCrackle_M.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Textures/T_MicroCrackle_N.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Textures/T_SwirlNoise.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Extra/LavaGolem/Textures/T_Water2_M.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Global2/FX/Textures/Water/T_Caustics_Softer.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Global2/MaterialFunctions/HitFlash.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Global2/MaterialFunctions/MF_BrightnessAdjust.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Global2/MaterialFunctions/MF_CharacterEffects.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Global2/MaterialFunctions/MF_DeathFade.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Global2/MaterialFunctions/MF_OrionRimlight.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Global2/MaterialFunctions/MaterialLayerConstructors/MLC_ScratchAndGrime.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Global2/MaterialFunctions/MaterialLayerConstructors/MLC_Standard.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Global2/MaterialFunctions/Textures/T_AtmosphericCloudNoise01.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Global2/MaterialFunctions/Textures/T_AtmosphericCloudNoise01_N.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Global2/MaterialFunctions/Textures/T_AtmosphericCloudNoise03.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Global2/MaterialFunctions/Textures/T_Plasma_Noise.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Global2/MaterialLayers/Foliage/T_TilingMoss_Clovers-n-Flowers_02_D.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Global2/MaterialLayers/Foliage/T_TilingMoss_Clovers-n-Flowers_02_N.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Global2/MaterialLayers/ML__Blank.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Global2/MaterialLayers/Metal/ML_blue_Metal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Global2/MaterialLayers/Metal/T_Blue_Metal02.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Global2/MaterialLayers/Rubber/T_Blank_N.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Global2/MaterialLayers/Special/T_LavaFloor_02_D.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Global2/MaterialLayers/T_TestML_Mask.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Global2/MaterialLayers/Wood/ML_Moss.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Global2/MaterialLayers/Wood/ML_TreeBark.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Global2/MaterialLayers/Wood/T_TreeBark_D.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Global2/MaterialLayers/Wood/T_TreeBark_N.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Global2/ParameterCollections/OrionGlobalGameplayCollection.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Enemy/Robo/BP_RoboFighter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Enemy/Robo/BP_RoboFighter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Player/BP_SusWizPlayer.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Player/BP_SusWizPlayer.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/Data/DA_AbilityInfo.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/Data/DA_AbilityInfo.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/EnemyAbilities/Melee/GA_SludgeGolemAttack.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/EnemyAbilities/Melee/GA_SludgeGolemAttack.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Fire/BP_Firebolt.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Fire/BP_Firebolt.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Fire/GA_FireBoltLong.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Fire/GA_FireBoltLong.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Fire/GA_FireBoltShort.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Fire/GA_FireBoltShort.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GameMode/BP_GameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GameMode/BP_GameMode.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/TestLevelSW.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/TestLevelSW.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/UI/SpellGlobes/WBP_SpellGlobe_Button.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/SpellGlobes/WBP_SpellGlobe_Button.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/UI/SpellMenu/SpellTrees/WBP_SpellTreeOffense.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/SpellMenu/SpellTrees/WBP_SpellTreeOffense.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UI/UIAssets/AuraAssets/UI/Spells/FireBlast.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/UIAssets/AuraAssets/UI/Spells/FireBlast.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterPlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterPlayer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/Data/AbilityInfo.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/Data/AbilityInfo.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/SusWizAbilitySystemLibrary.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/SusWizAbilitySystemLibrary.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/SusWizAbilitySystemLibrary.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/SusWizAbilitySystemLibrary.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Game/SuzWizGameModeBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Game/SuzWizGameModeBase.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/SpellMenu/WBP_SpellMenu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/SpellMenu/WBP_SpellMenu.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/UIAssets/AuraAssets/UI/Wide_Button_Red/WideButton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/UIAssets/AuraAssets/UI/Wide_Button_Red/WideButton.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/SusWizGameplayTags.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/SusWizGameplayTags.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/SusWizGameplayTags.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/SusWizGameplayTags.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/UI/Widget/WidgetController/SpellMenuWidgetController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/UI/Widget/WidgetController/SpellMenuWidgetController.cpp" afterDir="false" />
@@ -218,30 +79,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Uproject.SustainableWizardry.executor": "Debug",
-    "git-widget-placeholder": "Abilities-Level-GameLoop",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "UnrealLinkOptionsId",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Uproject.SustainableWizardry.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Abilities-Level-GameLoop&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;UnrealLinkOptionsId&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\angryjack67\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\angryjack67\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\angryjack67\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\angryjack67\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\angryjack67\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\angryjack67\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="SustainableWizardry" type="Uproject" factoryName="rider.uproject">
       <option name="PROJECT_FILE_PATH" value="$PROJECT_DIR$/SustainableWizardry.uproject" />
@@ -364,7 +225,9 @@
       <workItem from="1715801715113" duration="1284000" />
       <workItem from="1715896483014" duration="569000" />
       <workItem from="1715897651332" duration="2819000" />
-      <workItem from="1715911382286" duration="6321000" />
+      <workItem from="1715911382286" duration="6924000" />
+      <workItem from="1715979091606" duration="2243000" />
+      <workItem from="1716070874425" duration="240000" />
     </task>
     <servers />
   </component>
