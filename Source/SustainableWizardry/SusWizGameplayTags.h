@@ -100,6 +100,29 @@ static const FSusWizGameplayTags& Get() { return GameplayTags; }
  FGameplayTag Abilities_Wind_Cut;
  FGameplayTag Abilities_Wind_Dash;
  FGameplayTag Abilities_Wind_InstantCarnage;
+
+ /* 
+  * Spell Cooldowns
+  */
+ // Starting Fire 
+ FGameplayTag Cooldown_Fire_FireBolt;
+ FGameplayTag Cooldown_Fire_BigFireBolt;
+ // Hydro
+ FGameplayTag Cooldown_Hydro_HydroPulse;
+ FGameplayTag Cooldown_Hydro_WaterWhip;
+ FGameplayTag Cooldown_Hydro_OceanCall;
+ // Geo
+ FGameplayTag Cooldown_Geo_RockPunch;
+ FGameplayTag Cooldown_Geo_ForceOfEarth;
+ FGameplayTag Cooldown_Geo_Boulder;
+ // Solar
+ FGameplayTag Cooldown_Solar_Flare;
+ FGameplayTag Cooldown_Solar_Beam;
+ FGameplayTag Cooldown_Solar_EverPresence;
+ // Wind
+ FGameplayTag Cooldown_Wind_Cut;
+ FGameplayTag Cooldown_Wind_Dash;
+ FGameplayTag Cooldown_Wind_InstantCarnage;
  
 protected:
 
