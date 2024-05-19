@@ -215,6 +215,26 @@ void USusWizAbilitySystemComponent::UpdateAbilityStatuses(int32 Level)
 	}
 }
 
+bool USusWizAbilitySystemComponent::GetDescriptionsByAbilityTag(const FGameplayTag& AbilityTag, FString& OutDescription,
+	FString& OutNextLevelDescription)
+{
+
+	if (const FGameplayAbilitySpec* AbilitySpec = GetSpecFromAbilityTag(AbilityTag))
+	{
+		if(USusWizGameplayAbility* SusWizAbility = Cast<USusWizGameplayAbility>(AbilitySpec->Ability))
+		{
+			OutDescription = SusWizAbility->GetDescription(AbilitySpec->Level);
+			OutNextLevelDescription = SusWizAbility->GetNextLevelDescription(AbilitySpec->Level + 1);
+			return true;
+		}
+	}
+	const UAbilityInfo* AbilityInfo = USusWizAbilitySystemLibrary::GetAbilityInfo(GetAvatarActor());
+	OutDescription = USusWizGameplayAbility::GetLockedDescription(AbilityInfo->FindAbilityInfoForTag(AbilityTag).LevelRequirement);
+	OutNextLevelDescription = FString();
+	return false;
+	
+}
+
 void USusWizAbilitySystemComponent::ServerSpendSpellPoint_Implementation(const FGameplayTag& AbilityTag)
 {
 	if (FGameplayAbilitySpec* AbilitySpec = GetSpecFromAbilityTag(AbilityTag))
