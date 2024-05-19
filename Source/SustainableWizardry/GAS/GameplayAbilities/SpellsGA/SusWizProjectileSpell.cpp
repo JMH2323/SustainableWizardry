@@ -79,7 +79,7 @@ void USusWizProjectileSpell::SpawnProjectile()
             GetOwningActorFromActorInfo(), Cast<APawn>(GetOwningActorFromActorInfo()),
             ESpawnActorCollisionHandlingMethod::AlwaysSpawn);
 
-		// TODONE: Give Projectile a GE Spec for damage.
+		// Give Projectile a GE Spec for damage.
     	const UAbilitySystemComponent* SourceASC = UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(GetAvatarActorFromActorInfo());
     	const FGameplayEffectSpecHandle SpecHandle = SourceASC->MakeOutgoingSpec(DamageEffectClass, GetAbilityLevel(), SourceASC->MakeEffectContext());
 

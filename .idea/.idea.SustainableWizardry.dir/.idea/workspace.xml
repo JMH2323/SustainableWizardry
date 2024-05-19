@@ -9,67 +9,23 @@
   <component name="ChangeListManager">
     <list default="true" id="1579a7cd-1dd9-4102-8fb2-ded64c6e3088" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/EnemyRef/M_Goop.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/EnemyRef/M_Goop.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/EnemyRef/M_Goop_Inst1.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/EnemyRef/M_Goop_Inst1.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Enemy/Robo/Minions/Materials/Ranged/MI_Minion_Dusk_Ranged_Core.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Enemy/Robo/Minions/Materials/Ranged/MI_Minion_Dusk_Ranged_Core.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Enemy/Robo/Minions/Materials/Shared/M_Minion_Dusk_Parent.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Enemy/Robo/Minions/Materials/Shared/M_Minion_Dusk_Parent.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Extra/LavaGolem/Materials/M_RedBuff.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Extra/LavaGolem/Materials/M_RedBuff.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/FX/Textures/Gradients/Color/T_ShieldLightrays_color.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/FX/Textures/Water/T_Water_N.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Global2/Eyes/MaterialFunctions/MF_Minion_EmissiveFX.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Global2/Eyes/MaterialFunctions/MinionBurn.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Global2/FX/Materials/Functions/MF_MinionApperation.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Global2/FX/Textures/Tile/Noise/T_Voronoi_Cells_02.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Global2/FX/Textures/Water/T_Caustics_Softer.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Global2/MaterialFunctions/HitFlash.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Global2/MaterialFunctions/MF_BrightnessAdjust.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Global2/MaterialFunctions/MF_CharacterEffects.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Global2/MaterialFunctions/MF_DeathFade.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Global2/MaterialFunctions/MF_OrionRimlight.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Global2/MaterialFunctions/MF_ThinFilm_Frensel.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Global2/MaterialFunctions/MaterialLayerConstructors/MLC_ScratchAndGrime.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Global2/MaterialFunctions/MaterialLayerConstructors/MLC_Standard.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Global2/MaterialFunctions/T_ThinFilm_Spectrum_COLOR.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Global2/MaterialFunctions/Textures/T_AtmosphericCloudNoise01.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Global2/MaterialFunctions/Textures/T_AtmosphericCloudNoise01_N.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Global2/MaterialFunctions/Textures/T_AtmosphericCloudNoise03.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Global2/MaterialFunctions/Textures/T_Plasma_Noise.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Global2/MaterialFunctions/mf_MinionPrimeBuff.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Global2/MaterialLayers/ML__Blank.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Global2/MaterialLayers/Metal/ML_blue_Metal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Global2/MaterialLayers/Metal/T_Blue_Metal02.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Global2/MaterialLayers/Rubber/T_Blank_N.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Global2/MaterialLayers/T_TestML_Mask.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Global2/ParameterCollections/OrionGlobalGameplayCollection.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/OutsideEffects/AuraEffects/Projectiles/FireBolt/NS_Fire_3.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/OutsideEffects/AuraEffects/Projectiles/FireBolt/NS_Fire_3.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Player/BP_SusWizPlayer.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Player/BP_SusWizPlayer.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Robo/BP_Robo.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Robo/Minions/Materials/Melee/MI_Minion_Dusk_Melee.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Robo/Minions/Materials/Melee/MI_Minion_Dusk_Melee_Core.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Robo/Minions/Materials/Ranged/MI_Minion_Dusk_Ranged.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Robo/Minions/Materials/Ranged/MI_Minion_Dusk_Ranged_Core.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Robo/Minions/Materials/Shared/MI_Minion_Dusk_Core.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Robo/Minions/Materials/Shared/M_Minion_Dusk_Armored.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Robo/Minions/Materials/Shared/M_Minion_Dusk_Parent.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Robo/Minions/Materials/Siege/MI_Minion_Dusk_Siege.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Robo/Minions/Materials/Super/MI_Minion_Dusk_Super.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Robo/Minions/Materials/Super/MI_Minion_Dusk_Super_Core.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Robo/Minions/Meshes/Minion_Lane_Ranged_Core_Dusk.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Robo/Minions/Meshes/Minion_Lane_Ranged_Core_ShadowCyl.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Robo/Minions/Meshes/Minion_Lane_Siege_Core_ShadowCyl.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Robo/Minions/Meshes/Siege_Core_Dusk.uasset" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/Data/DA_AbilityInfo.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/Data/DA_AbilityInfo.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Fire/BP_EnergyShot.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Fire/BP_Firebolt.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Fire/GA_FireBoltLong.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Fire/GA_FireBoltShort.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UI/DataTable/DT_MessageWidgetData.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UI/SpellMenu/WBP_SpellMenu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/SpellMenu/WBP_SpellMenu.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/SusWizGameplayAbility.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/SusWizGameplayAbility.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/SusWizGameplayAbility.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/SusWizGameplayAbility.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/UI/Widget/WidgetController/SpellMenuWidgetController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/UI/Widget/WidgetController/SpellMenuWidgetController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/UI/Widget/WidgetController/SpellMenuWidgetController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/UI/Widget/WidgetController/SpellMenuWidgetController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Pure/BP_EnergyShot.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Pure/BP_Firebolt.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Pure/GA_EnergyBolt.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Pure/GA_FireBoltLong.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Pure/GA_FireBoltShort.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TestLevelSW.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/TestLevelSW.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/Overlay/WBP_Overlay.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/Overlay/WBP_Overlay.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/ProgressBars/WBP_ProgressBar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/ProgressBars/WBP_ProgressBar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/ProgressBars/WBP_XPBar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/ProgressBars/WBP_XPBar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/SpellGlobes/WBP_ValueGlobe.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/SpellGlobes/WBP_ValueGlobe.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/Spells/SpellsBase/SusWizProjectiles.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/Spells/SpellsBase/SusWizProjectiles.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/SpellsGA/SusWizProjectileSpell.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/SpellsGA/SusWizProjectileSpell.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/SusWizGameplayTags.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/SusWizGameplayTags.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/SusWizGameplayTags.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/SusWizGameplayTags.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -266,7 +222,7 @@
       <workItem from="1715897651332" duration="2819000" />
       <workItem from="1715911382286" duration="6924000" />
       <workItem from="1715979091606" duration="2243000" />
-      <workItem from="1716070874425" duration="5752000" />
+      <workItem from="1716070874425" duration="9622000" />
     </task>
     <servers />
   </component>

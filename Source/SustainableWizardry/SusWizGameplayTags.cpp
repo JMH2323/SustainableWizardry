@@ -107,6 +107,30 @@ void FSusWizGameplayTags::InitializeNativeGameplayTags()
 	GameplayTags.Abilities_Wind_Dash = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Wind.Dash"), FString ("WIND Ability Tag"));
 	GameplayTags.Abilities_Wind_InstantCarnage = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Wind.InstantCarnage"), FString ("WIND Ability Tag"));
 
+	/*
+	 * Spell Cooldown Tags
+	 */
+	// Fire
+	GameplayTags.Cooldown_Fire_FireBolt = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Cooldown.Fire.FireBolt"), FString ("FireBolt Cooldown Tag"));
+	GameplayTags.Cooldown_Fire_BigFireBolt = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Cooldown.Fire.BigFireBolt"), FString ("FireBolt Cooldown Tag"));
+	// Solar
+	GameplayTags.Cooldown_Solar_Flare = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Cooldown.Solar.Flare"), FString ("SOLAR Cooldown Tag"));
+	GameplayTags.Cooldown_Solar_Beam = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Cooldown.Solar.Beam"), FString ("SOLAR Cooldown Tag"));
+	GameplayTags.Cooldown_Solar_EverPresence = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Cooldown.Solar.EverPresence"), FString ("SOLAR Cooldown Tag"));
+	// Geo
+	GameplayTags.Cooldown_Geo_RockPunch = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Cooldown.Geo.RockPunch"), FString ("GEO Cooldown Tag"));
+	GameplayTags.Cooldown_Geo_ForceOfEarth = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Cooldown.Geo.ForceOfEarth"), FString ("GEO Cooldown Tag"));
+	GameplayTags.Cooldown_Geo_Boulder = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Cooldown.Geo.Boulder"), FString ("GEO Cooldown Tag"));
+	// Hydro
+	GameplayTags.Cooldown_Hydro_HydroPulse = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Cooldown.Hydro.HydroPulse"), FString ("HYDRO Cooldown Tag"));
+	GameplayTags.Cooldown_Hydro_WaterWhip = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Cooldown.Hydro.WaterWhip"), FString ("HYDRO Cooldown Tag"));
+	GameplayTags.Cooldown_Hydro_OceanCall = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Cooldown.Hydro.OceanCall"), FString ("HYDRO Cooldown Tag"));
+
+	// Wind
+	GameplayTags.Cooldown_Wind_Cut = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Cooldown.Wind.Cut"), FString ("WIND Cooldown Tag"));
+	GameplayTags.Cooldown_Wind_Dash = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Cooldown.Wind.Dash"), FString ("WIND Cooldown Tag"));
+	GameplayTags.Cooldown_Wind_InstantCarnage = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Cooldown.Wind.InstantCarnage"), FString ("WIND Cooldown Tag"));
+
 
 	
 }
