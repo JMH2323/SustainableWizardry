@@ -70,6 +70,7 @@ void UOverlayWidgetController::BindCallbacksToDependencies()
 
 	if (GetSusWizASC())
 	{
+		GetSusWizASC()->AbilityEquipped.AddUObject(this, &UOverlayWidgetController::OnAbilityEquipped);
 		if (GetSusWizASC()->bStartupAbilitiesGiven)
 		{
 			BroadcastAbilityInfo();
@@ -125,7 +126,23 @@ void UOverlayWidgetController::OnXPChanged(int32 NewXP)
 	}
 }
 
+void UOverlayWidgetController::OnAbilityEquipped(const FGameplayTag& AbilityTag, const FGameplayTag& Status,
+	const FGameplayTag& Slot, const FGameplayTag& PreviousSlot) const
+{
+	const FSusWizGameplayTags& GameplayTags = FSusWizGameplayTags::Get();
 
+	FSusWizAbilityInfo LastSlotInfo;
+	LastSlotInfo.StatusTag = GameplayTags.Abilities_Status_Unlocked;
+	LastSlotInfo.InputTag = PreviousSlot;
+	LastSlotInfo.AbilityTag = GameplayTags.Abilities_None;
+	// Broadcast empty info if PreviousSlot is a valid slot. Only if equipping an already-equipped spell
+	AbilityInfoDelegate.Broadcast(LastSlotInfo);
+
+	FSusWizAbilityInfo Info = AbilityInfo->FindAbilityInfoForTag(AbilityTag);
+	Info.StatusTag = Status;
+	Info.InputTag = Slot;
+	AbilityInfoDelegate.Broadcast(Info);
+}
 
 
 //
