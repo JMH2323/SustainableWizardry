@@ -76,7 +76,9 @@ static const FSusWizGameplayTags& Get() { return GameplayTags; }
  
  //Misc
  FGameplayTag Effects_HitReact;
- 
+
+
+ // Ability Types
 
  /* 
   * Spell Abilities

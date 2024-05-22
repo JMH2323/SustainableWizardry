@@ -39,7 +39,8 @@ void USpellMenuWidgetController::BindCallbacksToDependencies()
 			AbilityInfoDelegate.Broadcast(Info);
 		}
 	});
-
+	
+	GetSusWizASC()->AbilityEquipped.AddUObject(this, &USpellMenuWidgetController::OnAbilityEquipped);
 	GetSusWizPS()->OnSpellPointsChangedDelegate.AddLambda([this](int32 SpellPoints)
 	{
 		SpellPointsChanged.Broadcast(SpellPoints);
@@ -53,13 +54,22 @@ void USpellMenuWidgetController::BindCallbacksToDependencies()
 		GetSusWizASC()->GetDescriptionsByAbilityTag(SelectedAbility.Ability, Description, NextLevelDescription);
 		SpellGlobeSelectedDelegate.Broadcast(bEnableSpendPoints, bEnableEquip, Description, NextLevelDescription);
 	});
-
+	
 	
 }
 
 
 void USpellMenuWidgetController::SpellGlobeSelected(const FGameplayTag& AbilityTag)
 {
+	
+	// If we select a different ability, stop the "equip" action
+	if (bWaitingForEquipSelection)
+	{
+		const FGameplayTag SelectedAbilityType = AbilityInfo->FindAbilityInfoForTag(AbilityTag).AbilityTypeTag;
+		StopWaitingForEquipDelegate.Broadcast(SelectedAbilityType);
+		bWaitingForEquipSelection = false;
+	}
+	
 	const FSusWizGameplayTags GameplayTags = FSusWizGameplayTags::Get();	
 	const int32 SpellPoints = GetSusWizPS()->GetSpellPoints();
 	FGameplayTag AbilityStatus;	
@@ -95,6 +105,75 @@ void USpellMenuWidgetController::SpendPointButtonPressed()
 	{
 		GetSusWizASC()->ServerSpendSpellPoint(SelectedAbility.Ability);
 	}
+	
+}
+
+void USpellMenuWidgetController::GlobeDeselect()
+{
+
+	// If we select a different ability, stop the "equip" action
+	if (bWaitingForEquipSelection)
+	{
+		const FGameplayTag SelectedAbilityType = AbilityInfo->FindAbilityInfoForTag(SelectedAbility.Ability).AbilityTypeTag;
+		StopWaitingForEquipDelegate.Broadcast(SelectedAbilityType);
+		bWaitingForEquipSelection = false;
+	}
+	
+	SelectedAbility.Ability = FSusWizGameplayTags::Get().Abilities_None;
+	SelectedAbility.Status = FSusWizGameplayTags::Get().Abilities_Status_Locked;
+	SpellGlobeSelectedDelegate.Broadcast(false, false, FString(), FString());
+}
+
+void USpellMenuWidgetController::EquipButtonPressed()
+{
+	const FGameplayTag AbilityType = AbilityInfo->FindAbilityInfoForTag(SelectedAbility.Ability).AbilityTypeTag;
+
+	// Broadcast ability type. Inform user we are waiting for an equip selection.
+	WaitForEquipDelegate.Broadcast(AbilityType);
+	bWaitingForEquipSelection = true;
+	const FGameplayTag SelectedStatus = GetSusWizASC()->GetStatusFromAbilityTag(SelectedAbility.Ability);
+	if (SelectedStatus.MatchesTagExact(FSusWizGameplayTags::Get().Abilities_Status_Equipped))
+	{
+		SelectedSlot = GetSusWizASC()->GetInputTagFromAbilityTag(SelectedAbility.Ability);
+	}
+}
+
+void USpellMenuWidgetController::SpellRowGlobePressed(const FGameplayTag& SlotTag, const FGameplayTag& AbilityType)
+{
+
+	if (!bWaitingForEquipSelection) return;
+	// Check selected ability against the slot's ability type.
+	// (don't equip a passive spell)
+	const FGameplayTag& SelectedAbilityType = AbilityInfo->FindAbilityInfoForTag(SelectedAbility.Ability).AbilityTypeTag;
+	if (!SelectedAbilityType.MatchesTagExact(AbilityType)) return;
+
+	GetSusWizASC()->ServerEquipAbility(SelectedAbility.Ability, SlotTag);
+	
+}
+
+void USpellMenuWidgetController::OnAbilityEquipped(const FGameplayTag& AbilityTag, const FGameplayTag& Status,
+	const FGameplayTag& Slot, const FGameplayTag& PreviousSlot)
+{
+
+	bWaitingForEquipSelection = false;
+
+	const FSusWizGameplayTags& GameplayTags = FSusWizGameplayTags::Get();
+
+	FSusWizAbilityInfo LastSlotInfo;
+	LastSlotInfo.StatusTag = GameplayTags.Abilities_Status_Unlocked;
+	LastSlotInfo.InputTag = PreviousSlot;
+	LastSlotInfo.AbilityTag = GameplayTags.Abilities_None;
+	// Broadcast empty info if PreviousSlot is a valid slot. Only if equipping an already-equipped spell
+	AbilityInfoDelegate.Broadcast(LastSlotInfo);
+
+	FSusWizAbilityInfo Info = AbilityInfo->FindAbilityInfoForTag(AbilityTag);
+	Info.StatusTag = Status;
+	Info.InputTag = Slot;
+	AbilityInfoDelegate.Broadcast(Info);
+
+	StopWaitingForEquipDelegate.Broadcast(AbilityInfo->FindAbilityInfoForTag(AbilityTag).AbilityTypeTag);
+	SpellGlobeReassignedDelegate.Broadcast(AbilityTag);
+	GlobeDeselect();
 	
 }
 

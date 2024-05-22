@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "SusWizWidgetController.h"
+#include "SustainableWizardry/SusWizGameplayTags.h"
 #include "SustainableWizardry/GAS/Attribute/SusWizAttributeSet.h"
 #include "SustainableWizardry/GAS/Data/AbilityInfo.h"
 #include "Engine/DataTable.h"
@@ -115,6 +116,10 @@ protected:
 	T* GetDataTableRowByTag(UDataTable* DataTable, const FGameplayTag& Tag);
 
 	void OnXPChanged(int32 NewXP);
+
+
+	void OnAbilityEquipped(const FGameplayTag& AbilityTag, const FGameplayTag& Status, const FGameplayTag& Slot, const FGameplayTag& PreviousSlot) const;
+	
 	
 };
 

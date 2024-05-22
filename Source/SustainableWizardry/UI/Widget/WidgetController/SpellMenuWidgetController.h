@@ -11,9 +11,14 @@
 /**
  * 
  */
+
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FSpellGlobeSelectedSignature, bool, bSpendPointsButtonEnabled, bool, bEquipButtonEnabled,
 	FString, DescriptionString, FString, NextLevelDescriptionString);
 
+// Multicast for determining if an ability is active or passive to be displayed in equip menu.
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FWaitForEquipSelectionSignature, const FGameplayTag&, AbilityType);
+// Multicast for determining if a spell globe has been reassigned
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSpellGlobeReassignedSignature, const FGameplayTag&, AbilityTag);
 
 struct FSelectedAbility
 {
@@ -32,14 +37,36 @@ public:
 	UPROPERTY(BlueprintAssignable)
 	FOnPlayerStatChangedSignature SpellPointsChanged;
 
+	// Delegate for selection
 	UPROPERTY(BlueprintAssignable)
 	FSpellGlobeSelectedSignature SpellGlobeSelectedDelegate;
+
+	// Delegates for equip
+	UPROPERTY(BlueprintAssignable)
+	FWaitForEquipSelectionSignature WaitForEquipDelegate;
+	UPROPERTY(BlueprintAssignable)
+	FWaitForEquipSelectionSignature StopWaitingForEquipDelegate;
+	UPROPERTY(BlueprintAssignable)
+	FSpellGlobeReassignedSignature SpellGlobeReassignedDelegate;
 
 	UFUNCTION(BlueprintCallable)
 	void SpellGlobeSelected(const FGameplayTag& AbilityTag);
 
 	UFUNCTION(BlueprintCallable)
 	void SpendPointButtonPressed();
+
+	UFUNCTION(BlueprintCallable)
+	void GlobeDeselect();
+
+	UFUNCTION(BlueprintCallable)
+	void EquipButtonPressed();
+
+	
+
+	UFUNCTION(BlueprintCallable)
+	void SpellRowGlobePressed(const FGameplayTag& SlotTag, const FGameplayTag& AbilityType);
+
+	void OnAbilityEquipped(const FGameplayTag& AbilityTag, const FGameplayTag& Status, const FGameplayTag& Slot, const FGameplayTag& PreviousSlot);
 
 	
 private:
@@ -48,4 +75,9 @@ private:
 
 	FSelectedAbility SelectedAbility = { FSusWizGameplayTags::Get().Abilities_None,  FSusWizGameplayTags::Get().Abilities_Status_Locked };
 	int32 CurrentSpellPoints = 0;
+
+	// bool for if we're waiting or not
+	bool bWaitingForEquipSelection = false;
+
+	FGameplayTag SelectedSlot;
 };
