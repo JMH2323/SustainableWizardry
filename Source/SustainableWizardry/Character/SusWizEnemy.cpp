@@ -48,10 +48,10 @@ int32 ASusWizEnemy::GetPlayerLevel_Implementation()
 }
 
 
-void ASusWizEnemy::Die()
+void ASusWizEnemy::Die(const FVector& DeathImpulse)
 {
 	SetLifeSpan(Lifespan);
-	Super::Die();
+	Super::Die(DeathImpulse);
 }
 
 void ASusWizEnemy::SetCombatTarget_Implementation(AActor* InCombatTarget)

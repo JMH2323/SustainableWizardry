@@ -40,6 +40,7 @@ float USusWizGameplayAbility::GetEnergyCost(float InLevel) const
 	return EnergyCost;
 }
 
+
 float USusWizGameplayAbility::GetCooldown(float InLevel) const
 {
 

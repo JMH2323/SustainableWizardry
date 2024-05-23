@@ -57,25 +57,51 @@ void FSusWizGameplayTags::InitializeNativeGameplayTags()
 	GameplayTags.Abilities_None = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.None"), FString ("No Ability"));
 
 	
-	// Meta Tags
+	// Damage Tags
 	GameplayTags.Damage = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Damage"), FString ("Damage"));
-
-	GameplayTags.Damage_Fire = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Damage.Fire"),FString("Fire Damage Type"));
-	GameplayTags.DamageTypes.Add(GameplayTags.Damage_Fire);
-
+	GameplayTags.Damage_Pure = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Damage.Pure"),FString("Pure Damage Type"));
 	GameplayTags.Damage_Physical = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Damage.Physical"),FString("Physical Damage Type"));
+	GameplayTags.Damage_Hydro = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Damage.Hydro"),FString("Hydro Damage Type"));
+	GameplayTags.Damage_Solar = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Damage.Solar"),FString("Solar Damage Type"));
+	GameplayTags.Damage_Rock = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Damage.Rock"),FString("Rock Damage Type"));
+	GameplayTags.Damage_Aero = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Damage.Aero"),FString("Aero Damage Type"));
 
 	// Resistance
-
-	GameplayTags.Attributes_Resistance_Fire = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Resistance.Fire"),FString("Resistance to Fire damage"));
-
+	GameplayTags.Attributes_Resistance_Pure = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Resistance.Pure"),FString("Resistance to Pure damage"));
 	GameplayTags.Attributes_Resistance_Physical = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Resistance.Physical"),FString("Resistance to Physical damage"));
+	GameplayTags.Attributes_Resistance_Hydro = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Resistance.Hydro"),FString("Resistance to Hydro damage"));
+	GameplayTags.Attributes_Resistance_Solar = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Resistance.Solar"),FString("Resistance to Solar damage"));
+	GameplayTags.Attributes_Resistance_Rock = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Resistance.Rock"),FString("Resistance to Rock damage"));
+	GameplayTags.Attributes_Resistance_Aero = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Resistance.Aero"),FString("Resistance to Aero damage"));
 
+	// Debuffs
+	GameplayTags.Debuff_Bleed = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Debuff.Bleed"),FString("Bleed Debuff"));
+	GameplayTags.Debuff_Lit = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Debuff.Lit"),FString("Lit Debuff"));
+	GameplayTags.Debuff_Wet = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Debuff.Wet"),FString("Wet Debuff"));
+	GameplayTags.Debuff_Stun = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Debuff.Stun"),FString("Stun Debuff"));
+	// Debuff Params
+	GameplayTags.Debuff_Param_Chance = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Debuff.Param.Chance"),FString("Debuff Chance"));
+	GameplayTags.Debuff_Param_Damage = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Debuff.Param.Damage"),FString("Debuff Damage"));
+	GameplayTags.Debuff_Param_Duration = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Debuff.Param.Duration"),FString("Debuff Duration"));
+	GameplayTags.Debuff_Param_Frequency = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Debuff.Param.Frequency"),FString("Debuff Frequency"));
+	
 	/*
 	 * Map of Damage Types to Resistances
 	 */
 	GameplayTags.DamageTypesToResistances.Add(GameplayTags.Damage_Physical, GameplayTags.Attributes_Resistance_Physical);
-	GameplayTags.DamageTypesToResistances.Add(GameplayTags.Damage_Fire, GameplayTags.Attributes_Resistance_Fire);
+	GameplayTags.DamageTypesToResistances.Add(GameplayTags.Damage_Pure, GameplayTags.Attributes_Resistance_Pure);
+	GameplayTags.DamageTypesToResistances.Add(GameplayTags.Damage_Solar, GameplayTags.Attributes_Resistance_Solar);
+	GameplayTags.DamageTypesToResistances.Add(GameplayTags.Damage_Rock, GameplayTags.Attributes_Resistance_Rock);
+	GameplayTags.DamageTypesToResistances.Add(GameplayTags.Damage_Aero, GameplayTags.Attributes_Resistance_Aero);
+	GameplayTags.DamageTypesToResistances.Add(GameplayTags.Damage_Hydro, GameplayTags.Attributes_Resistance_Hydro);
+	
+	/*
+	 * Map of Damage Types to Debuffs
+	 */
+	GameplayTags.DamageTypesToDebuffs.Add(GameplayTags.Damage_Hydro, GameplayTags.Debuff_Wet);
+	GameplayTags.DamageTypesToDebuffs.Add(GameplayTags.Damage_Rock, GameplayTags.Debuff_Stun);
+	GameplayTags.DamageTypesToDebuffs.Add(GameplayTags.Damage_Aero, GameplayTags.Debuff_Bleed);
+	GameplayTags.DamageTypesToDebuffs.Add(GameplayTags.Damage_Solar, GameplayTags.Debuff_Lit);
 	
 	// Effect Tags
 	GameplayTags.Effects_HitReact = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Effects.HitReact"), FString("Tag granted when Hit Reacting"));

@@ -79,24 +79,7 @@ void USusWizProjectileSpell::SpawnProjectile()
             GetOwningActorFromActorInfo(), Cast<APawn>(GetOwningActorFromActorInfo()),
             ESpawnActorCollisionHandlingMethod::AlwaysSpawn);
 
-		// Give Projectile a GE Spec for damage.
-    	const UAbilitySystemComponent* SourceASC = UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(GetAvatarActorFromActorInfo());
-    	const FGameplayEffectSpecHandle SpecHandle = SourceASC->MakeOutgoingSpec(DamageEffectClass, GetAbilityLevel(), SourceASC->MakeEffectContext());
-
-
-    	/* Damage from Tags Meta */
-    	FSusWizGameplayTags GameplayTags = FSusWizGameplayTags::Get();
-    	
-
-    	for (auto& Pair : DamageTypes)
-    	{
-    		const float ScaledDamage = Pair.Value.GetValueAtLevel(GetAbilityLevel());
-    		UAbilitySystemBlueprintLibrary::AssignTagSetByCallerMagnitude(SpecHandle, Pair.Key, ScaledDamage);
-    	}
-
-    	
-
-    	Projectile->DamageEffectSpecHandle = SpecHandle;
+		Projectile->DamageEffectParams = MakeDamageEffectParamsFromClassDefaults();
         
         Projectile->FinishSpawning(SpawnTransform);
 	}
