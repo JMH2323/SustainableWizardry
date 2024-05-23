@@ -59,18 +59,42 @@ static const FSusWizGameplayTags& Get() { return GameplayTags; }
  FGameplayTag Abilities_Type_None;
  FGameplayTag Abilities_None;
 
- // Damage Types. Not Implemented
+ /*
+  * Damage Types
+  */
  FGameplayTag Damage;
- FGameplayTag Damage_Fire;
+ FGameplayTag Damage_Hydro;
+ FGameplayTag Damage_Solar;
+ FGameplayTag Damage_Pure;
  FGameplayTag Damage_Physical;
- // Array of Damages
- TArray<FGameplayTag> DamageTypes;
- TMap<FGameplayTag, FGameplayTag> DamageTypesToResistances;
+ FGameplayTag Damage_Rock;
+ FGameplayTag Damage_Aero;
 
- // Res
+ // Resistances
  FGameplayTag Attributes_Resistance_Physical;
- FGameplayTag Attributes_Resistance_Fire;
+ FGameplayTag Attributes_Resistance_Pure;
+ FGameplayTag Attributes_Resistance_Solar;
+ FGameplayTag Attributes_Resistance_Hydro;
+ FGameplayTag Attributes_Resistance_Rock;
+ FGameplayTag Attributes_Resistance_Aero;
 
+ // Debuffs
+ FGameplayTag Debuff_Bleed;
+ FGameplayTag Debuff_Stun;
+ FGameplayTag Debuff_Lit;
+ FGameplayTag Debuff_Wet;
+
+ // Debuff Params
+ FGameplayTag Debuff_Param_Chance;
+ FGameplayTag Debuff_Param_Damage;
+ FGameplayTag Debuff_Param_Duration;
+ FGameplayTag Debuff_Param_Frequency;
+
+ // Damage Mapping
+ TMap<FGameplayTag, FGameplayTag> DamageTypesToResistances;
+ TMap<FGameplayTag, FGameplayTag> DamageTypesToDebuffs;
+ 
+ 
  // Meta
  FGameplayTag Attributes_Meta_IncomingXP;
  
@@ -78,7 +102,7 @@ static const FSusWizGameplayTags& Get() { return GameplayTags; }
  FGameplayTag Effects_HitReact;
 
 
- // Ability Types
+ 
 
  /* 
   * Spell Abilities

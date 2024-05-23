@@ -9,7 +9,7 @@
 FString UEnergyBolt::GetDescription(int32 Level)
 {
 
-	const int32 Damage = GetDamageByDamageType(Level, FSusWizGameplayTags::Get().Damage_Fire);
+	const int32 ScaledDamage = Damage.GetValueAtLevel(Level);
 	const float EnergyCost = FMath::Abs(GetEnergyCost(Level));
 	const float Cooldown = GetCooldown(Level);
 	if (Level == 1)
@@ -35,7 +35,7 @@ FString UEnergyBolt::GetDescription(int32 Level)
 			Level,
 			EnergyCost,
 			Cooldown,
-			Damage);
+			ScaledDamage);
 	}
 	else
 	{
@@ -62,7 +62,7 @@ FString UEnergyBolt::GetDescription(int32 Level)
 			EnergyCost,
 			Cooldown,
 			FMath::Min(Level, NumProjectiles),
-			Damage);
+			ScaledDamage);
 
 	}
 	
@@ -71,7 +71,7 @@ FString UEnergyBolt::GetDescription(int32 Level)
 FString UEnergyBolt::GetNextLevelDescription(int32 Level)
 {
 	// Get Damage
-	const int32 Damage = GetDamageByDamageType(Level, FSusWizGameplayTags::Get().Damage_Fire);
+	const int32 ScaledDamage = Damage.GetValueAtLevel(Level);
 	// Get Cost
 	const float EnergyCost = FMath::Abs(GetEnergyCost(Level));
 	// Get Cooldown
@@ -100,6 +100,6 @@ FString UEnergyBolt::GetNextLevelDescription(int32 Level)
 			EnergyCost,
 			Cooldown,
 			FMath::Min(Level, NumProjectiles),
-			Damage);
+			ScaledDamage);
 
 }

@@ -30,12 +30,12 @@ UAnimMontage* ASusWizCharacterBase::GetHitReactMontage_Implementation()
 	return HitReactMontage;
 }
 
-void ASusWizCharacterBase::Die()
+void ASusWizCharacterBase::Die(const FVector& DeathImpulse)
 {
-	MulticastHandleDeath_Implementation();
+	MulticastHandleDeath_Implementation(DeathImpulse);
 }
 
-void ASusWizCharacterBase::MulticastHandleDeath_Implementation()
+void ASusWizCharacterBase::MulticastHandleDeath_Implementation(const FVector& DeathImpulse)
 {
 
 	GetMesh()->SetSimulatePhysics(true);
@@ -47,8 +47,8 @@ void ASusWizCharacterBase::MulticastHandleDeath_Implementation()
 	GetMesh()->SetOverlayMaterial(NoOverlay);
 
 	// Apply impulse
-	FVector ImpulseDirection(FMath::FRandRange(-1.f,1.f), FMath::FRandRange(-1.f,1.f), FMath::FRandRange(1.f,2.f));
-	float ImpulseStrength = 2000.0f; // Adjust as needed
+	FVector ImpulseDirection(FMath::FRandRange(-1.f,1.f), FMath::FRandRange(-1.f,1.f), FMath::FRandRange(0.f,1.f));
+	float ImpulseStrength = 2000.0f; 
 	GetMesh()->AddImpulse(ImpulseDirection * ImpulseStrength, NAME_None, true);
 
 	Dissolve();

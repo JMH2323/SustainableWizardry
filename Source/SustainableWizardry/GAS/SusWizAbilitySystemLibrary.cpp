@@ -3,11 +3,13 @@
 
 #include "SusWizAbilitySystemLibrary.h"
 
+#include "AbilitySystemBlueprintLibrary.h"
 #include "GameplayEffectTypes.h"
 #include "SustainableWizardry/Game/SuzWizGameModeBase.h"
 #include "AbilitySystemComponent.h"
 #include "GameplayAbilities/SusWizAbilityTypes.h"
 #include "Kismet/GameplayStatics.h"
+#include "SustainableWizardry/SusWizGameplayTags.h"
 #include "SustainableWizardry/Interaction/CombatInterface.h"
 #include "SustainableWizardry/Player/PlayerState/SusWizPlayerState.h"
 #include "SustainableWizardry/UI/HUD/SusWizHUD.h"
@@ -154,9 +156,31 @@ bool USusWizAbilitySystemLibrary::IsNotFriend(AActor* FirstActor, AActor* Second
 	return !bFriends;
 }
 
+FGameplayEffectContextHandle USusWizAbilitySystemLibrary::ApplyDamageEffect(
+	const FDamageEffectParams& DamageEffectParams)
+{
+
+	const FSusWizGameplayTags& GameplayTags = FSusWizGameplayTags::Get();
+	const AActor* SourceAvatarActor = DamageEffectParams.SourceAbilitySystemComponent->GetAvatarActor();
+
+	FGameplayEffectContextHandle EffectContexthandle = DamageEffectParams.SourceAbilitySystemComponent->MakeEffectContext();
+	EffectContexthandle.AddSourceObject(SourceAvatarActor);
+	const FGameplayEffectSpecHandle SpecHandle = DamageEffectParams.SourceAbilitySystemComponent->MakeOutgoingSpec(DamageEffectParams.DamageGameplayEffectClass, DamageEffectParams.AbilityLevel, EffectContexthandle);
+
+	UAbilitySystemBlueprintLibrary::AssignTagSetByCallerMagnitude(SpecHandle, DamageEffectParams.DamageType, DamageEffectParams.BaseDamage);
+	UAbilitySystemBlueprintLibrary::AssignTagSetByCallerMagnitude(SpecHandle, GameplayTags.Debuff_Param_Chance, DamageEffectParams.DebuffChance);
+	UAbilitySystemBlueprintLibrary::AssignTagSetByCallerMagnitude(SpecHandle, GameplayTags.Debuff_Param_Damage, DamageEffectParams.DebuffDamage);
+	UAbilitySystemBlueprintLibrary::AssignTagSetByCallerMagnitude(SpecHandle, GameplayTags.Debuff_Param_Duration, DamageEffectParams.DebuffDuration);
+	UAbilitySystemBlueprintLibrary::AssignTagSetByCallerMagnitude(SpecHandle, GameplayTags.Debuff_Param_Frequency, DamageEffectParams.DebuffFrequency);
+
+	DamageEffectParams.TargetAbilitySystemComponent->ApplyGameplayEffectSpecToSelf(*SpecHandle.Data);
+	return EffectContexthandle;
+	
+}
+
 void USusWizAbilitySystemLibrary::GetLivePlayersWithinRadius(const UObject* WorldContextObject,
-	TArray<AActor*>& OutOverlappingActors, const TArray<AActor*>& ActorsToIgnore, float Radius,
-	const FVector& SphereOrigin)
+                                                             TArray<AActor*>& OutOverlappingActors, const TArray<AActor*>& ActorsToIgnore, float Radius,
+                                                             const FVector& SphereOrigin)
 {
 	FCollisionQueryParams SphereParams;
 	SphereParams.AddIgnoredActors(ActorsToIgnore);
@@ -191,6 +215,72 @@ UAbilityInfo* USusWizAbilitySystemLibrary::GetAbilityInfo(const UObject* WorldCo
 	if (SusWizGameMode == nullptr) return nullptr;
 	return SusWizGameMode->AbilityInfo;
 	
+}
+
+bool USusWizAbilitySystemLibrary::IsSuccessfulDebuff(const FGameplayEffectContextHandle& EffectContextHandle)
+{
+	if (const FSusWizGameplayEffectContext* SusWizEffectContext = static_cast<const FSusWizGameplayEffectContext*>(EffectContextHandle.Get()))
+	{
+		return SusWizEffectContext->IsSuccessfulDebuff();
+	}
+	return false;
+}
+
+float USusWizAbilitySystemLibrary::GetDebuffDamage(const FGameplayEffectContextHandle& EffectContextHandle)
+{
+	if (const FSusWizGameplayEffectContext* SusWizEffectContext = static_cast<const FSusWizGameplayEffectContext*>(EffectContextHandle.Get()))
+	{
+		return SusWizEffectContext->GetDebuffDamage();
+	}
+	return 0.f;
+}
+
+float USusWizAbilitySystemLibrary::GetDebuffDuration(const FGameplayEffectContextHandle& EffectContextHandle)
+{
+	if (const FSusWizGameplayEffectContext* SusWizEffectContext = static_cast<const FSusWizGameplayEffectContext*>(EffectContextHandle.Get()))
+	{
+		return SusWizEffectContext->GetDebuffDuration();
+	}
+	return 0.f;
+}
+
+float USusWizAbilitySystemLibrary::GetDebuffFrequency(const FGameplayEffectContextHandle& EffectContextHandle)
+{
+	if (const FSusWizGameplayEffectContext* SusWizEffectContext = static_cast<const FSusWizGameplayEffectContext*>(EffectContextHandle.Get()))
+	{
+		return SusWizEffectContext->GetDebuffFrequency();
+	}
+	return 0.f;
+}
+
+FGameplayTag USusWizAbilitySystemLibrary::GetDamageType(const FGameplayEffectContextHandle& EffectContextHandle)
+{
+	if (const FSusWizGameplayEffectContext* SusWizEffectContext = static_cast<const FSusWizGameplayEffectContext*>(EffectContextHandle.Get()))
+	{
+		if (SusWizEffectContext->GetDamageType().IsValid())
+		{
+			return *SusWizEffectContext->GetDamageType();
+		}
+	}
+	return FGameplayTag();
+}
+
+FVector USusWizAbilitySystemLibrary::GetDeathImpulse(const FGameplayEffectContextHandle& EffectContextHandle)
+{
+	if (const FSusWizGameplayEffectContext* SusWizEffectContext = static_cast<const FSusWizGameplayEffectContext*>(EffectContextHandle.Get()))
+	{
+		return SusWizEffectContext->GetDeathImpulse();
+	}
+	return FVector::ZeroVector;
+}
+
+void USusWizAbilitySystemLibrary::SetDeathImpulse(FGameplayEffectContextHandle& EffectContextHandle,
+	const FVector& InImpulse)
+{
+	if (FSusWizGameplayEffectContext* SusWizEffectContext = static_cast<FSusWizGameplayEffectContext*>(EffectContextHandle.Get()))
+	{
+		SusWizEffectContext->SetDeathImpulse(InImpulse);
+	}
 }
 
 bool USusWizAbilitySystemLibrary::IsDodgedHit(const FGameplayEffectContextHandle& EffectContextHandle)
@@ -228,8 +318,52 @@ void USusWizAbilitySystemLibrary::SetIsCriticalHit(FGameplayEffectContextHandle&
 	}
 }
 
+void USusWizAbilitySystemLibrary::SetIsSuccessfulDebuff(FGameplayEffectContextHandle& EffectContextHandle,
+	bool bInSuccessfulDebuff)
+{
+	if (FSusWizGameplayEffectContext* SusWizEffectContext = static_cast<FSusWizGameplayEffectContext*>(EffectContextHandle.Get()))
+	{
+		SusWizEffectContext->SetIsSuccessfulDebuff(bInSuccessfulDebuff);
+	}
+}
+
+void USusWizAbilitySystemLibrary::SetDebuffDamage(FGameplayEffectContextHandle& EffectContextHandle, float InDamage)
+{
+	if (FSusWizGameplayEffectContext* SusWizEffectContext = static_cast<FSusWizGameplayEffectContext*>(EffectContextHandle.Get()))
+	{
+		SusWizEffectContext->SetDebuffDamage(InDamage);
+	}
+}
+
+void USusWizAbilitySystemLibrary::SetDebuffDuration(FGameplayEffectContextHandle& EffectContextHandle, float InDuration)
+{
+	if (FSusWizGameplayEffectContext* SusWizEffectContext = static_cast<FSusWizGameplayEffectContext*>(EffectContextHandle.Get()))
+	{
+		SusWizEffectContext->SetDebuffDuration(InDuration);
+	}
+}
+
+void USusWizAbilitySystemLibrary::SetDebuffFrequency(FGameplayEffectContextHandle& EffectContextHandle,
+	float InFrequency)
+{
+	if (FSusWizGameplayEffectContext* SusWizEffectContext = static_cast<FSusWizGameplayEffectContext*>(EffectContextHandle.Get()))
+	{
+		SusWizEffectContext->SetDebuffFrequency(InFrequency);
+	}
+}
+
+void USusWizAbilitySystemLibrary::SetDamageType(FGameplayEffectContextHandle& EffectContextHandle,
+	const FGameplayTag& InDamageType)
+{
+	if (FSusWizGameplayEffectContext* SusWizEffectContext = static_cast<FSusWizGameplayEffectContext*>(EffectContextHandle.Get()))
+	{
+		const TSharedPtr<FGameplayTag> DamageType = MakeShared<FGameplayTag>(InDamageType);
+		//SusWizEffectContext->SetDamageType(DamageType);
+	}
+}
+
 int32 USusWizAbilitySystemLibrary::GetXPRewardForClassAndLevel(const UObject* WorldContextObject,
-	ECharacterClass CharacterClass, int32 CharacterLevel)
+                                                               ECharacterClass CharacterClass, int32 CharacterLevel)
 {
 	UCharacterClassInfo* CharacterClassInfo = GetCharacterClassInfo(WorldContextObject);
 	if (CharacterClassInfo == nullptr) return 0;
