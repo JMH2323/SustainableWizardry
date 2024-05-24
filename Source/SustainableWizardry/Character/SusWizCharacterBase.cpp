@@ -47,9 +47,7 @@ void ASusWizCharacterBase::MulticastHandleDeath_Implementation(const FVector& De
 	GetMesh()->SetOverlayMaterial(NoOverlay);
 
 	// Apply impulse
-	FVector ImpulseDirection(FMath::FRandRange(-1.f,1.f), FMath::FRandRange(-1.f,1.f), FMath::FRandRange(0.f,1.f));
-	float ImpulseStrength = 2000.0f; 
-	GetMesh()->AddImpulse(ImpulseDirection * ImpulseStrength, NAME_None, true);
+	GetMesh()->AddImpulse(DeathImpulse, NAME_None, true);
 
 	Dissolve();
 	bDead = true;
