@@ -165,6 +165,10 @@ FGameplayEffectContextHandle USusWizAbilitySystemLibrary::ApplyDamageEffect(
 
 	FGameplayEffectContextHandle EffectContexthandle = DamageEffectParams.SourceAbilitySystemComponent->MakeEffectContext();
 	EffectContexthandle.AddSourceObject(SourceAvatarActor);
+	
+	SetDeathImpulse(EffectContexthandle, DamageEffectParams.DeathImpulse);
+	SetKnockbackForce(EffectContexthandle, DamageEffectParams.KnockbackForce);
+	
 	const FGameplayEffectSpecHandle SpecHandle = DamageEffectParams.SourceAbilitySystemComponent->MakeOutgoingSpec(DamageEffectParams.DamageGameplayEffectClass, DamageEffectParams.AbilityLevel, EffectContexthandle);
 
 	UAbilitySystemBlueprintLibrary::AssignTagSetByCallerMagnitude(SpecHandle, DamageEffectParams.DamageType, DamageEffectParams.BaseDamage);
@@ -274,12 +278,32 @@ FVector USusWizAbilitySystemLibrary::GetDeathImpulse(const FGameplayEffectContex
 	return FVector::ZeroVector;
 }
 
+FVector USusWizAbilitySystemLibrary::GetKnockbackForce(const FGameplayEffectContextHandle& EffectContextHandle)
+{
+
+	if (const FSusWizGameplayEffectContext* SusWizEffectContext = static_cast<const FSusWizGameplayEffectContext*>(EffectContextHandle.Get()))
+	{
+		return SusWizEffectContext->GetKnockbackForce();
+	}
+	return FVector::ZeroVector;
+	
+}
+
 void USusWizAbilitySystemLibrary::SetDeathImpulse(FGameplayEffectContextHandle& EffectContextHandle,
-	const FVector& InImpulse)
+                                                  const FVector& InImpulse)
 {
 	if (FSusWizGameplayEffectContext* SusWizEffectContext = static_cast<FSusWizGameplayEffectContext*>(EffectContextHandle.Get()))
 	{
 		SusWizEffectContext->SetDeathImpulse(InImpulse);
+	}
+}
+
+void USusWizAbilitySystemLibrary::SetKnockbackForce(FGameplayEffectContextHandle& EffectContextHandle,
+	const FVector& InForce)
+{
+	if (FSusWizGameplayEffectContext* SusWizEffectContext = static_cast<FSusWizGameplayEffectContext*>(EffectContextHandle.Get()))
+	{
+		SusWizEffectContext->SetKnockbackForce(InForce);
 	}
 }
 

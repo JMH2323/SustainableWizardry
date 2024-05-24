@@ -164,25 +164,42 @@ void USusWizAttributeSet::HandleIncomingDamage(const FEffectProperties& Props)
 		SetHealth(FMath::Clamp(NewHealth, 0.f, GetMaxHealth()));
 
 		const bool bFatal = NewHealth <= 0.f;
+
+		// If damage kills the character.
 		if (bFatal)
 		{
 			ICombatInterface* CombatInterface = Cast<ICombatInterface>(Props.TargetAvatarActor);
 			if (CombatInterface)
 			{
+				// Call death.
 				CombatInterface->Die(USusWizAbilitySystemLibrary::GetDeathImpulse(Props.EffectContextHandle));
 			}
+			// Send XP for kill.
 			SendXPEvent(Props);
 		}
+		// If damage does not kill.
 		else
 		{
+			// Apply a hit reaction to the target if they should flinch.
 			FGameplayTagContainer TagContainer;
 			TagContainer.AddTag(FSusWizGameplayTags::Get().Effects_HitReact);
 			Props.TargetASC->TryActivateAbilitiesByTag(TagContainer);
 		}
 
-		const bool bBlock = USusWizAbilitySystemLibrary::IsCriticalHit(Props.EffectContextHandle);
+		// Apply a knockback to the target if they should be knocked.
+		const FVector& KnockbackForce = USusWizAbilitySystemLibrary::GetKnockbackForce(Props.EffectContextHandle);
+		if (!KnockbackForce.IsNearlyZero(1.f))
+		{
+			// We use Launch Character as it does not require physics body / ragdoll.
+			Props.TargetCharacter->LaunchCharacter(KnockbackForce, true, true);
+		}
+
+		// Check if the damage is a dodge or critical to show to player.
+		const bool bDodge = USusWizAbilitySystemLibrary::IsDodgedHit(Props.EffectContextHandle);
 		const bool bCriticalHit = USusWizAbilitySystemLibrary::IsCriticalHit(Props.EffectContextHandle);
-		ShowFloatingText(Props, LocalIncomingDamage, bBlock, bCriticalHit);
+		// Show floating text to player that describes damage
+		ShowFloatingText(Props, LocalIncomingDamage, bDodge, bCriticalHit);
+		// Not Implemented: Debuffs
 		if (USusWizAbilitySystemLibrary::IsSuccessfulDebuff(Props.EffectContextHandle))
 		{
 			Debuff(Props);

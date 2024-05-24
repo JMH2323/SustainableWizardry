@@ -81,8 +81,24 @@ void ASusWizProjectiles::OnSphereOverlap(UPrimitiveComponent* OverlappedComponen
 	{
 		if (UAbilitySystemComponent* TargetASC = UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(OtherActor))
 		{
-			const FVector DeathImpulse = this->GetActorForwardVector();
+			// Determine Death impulse from projectile and apply to damage params
+			const FVector DeathImpulse = GetActorForwardVector() * DamageEffectParams.DeathImpulseMagnitude;
 			DamageEffectParams.DeathImpulse = DeathImpulse;
+
+			// Determine knockback chance and apply to damage params
+			const bool bKnockback = FMath::RandRange(1, 100) < DamageEffectParams.KnockbackChance;
+			if (bKnockback)
+			{
+				FRotator Rotation = GetActorRotation();
+				Rotation.Pitch = 45.f;
+
+				const FVector KnockbackDirection = Rotation.Vector();
+				const FVector KnockbackForce = KnockbackDirection * DamageEffectParams.KnockbackForceMagnitude;
+				DamageEffectParams.KnockbackForce = KnockbackForce;
+			}
+
+			// Take the Damage effect params and apply the effect to the target, effecting their ASC.
+			// ASC is where Damage is handled.
 			DamageEffectParams.TargetAbilitySystemComponent = TargetASC;
 			USusWizAbilitySystemLibrary::ApplyDamageEffect(DamageEffectParams);
 		}
