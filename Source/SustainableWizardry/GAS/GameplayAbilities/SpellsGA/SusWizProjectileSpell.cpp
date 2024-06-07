@@ -49,7 +49,7 @@ void USusWizProjectileSpell::SpawnProjectile()
         FVector ViewPointForward = PlayerViewPointRotator.Vector();
 
         // Create a line trace from the viewport location in the direction that the viewport is facing.
-        FVector EndPoint = PlayerViewPointLocation + (ViewPointForward * 5000);  // 5000 is your trace distance
+        FVector EndPoint = PlayerViewPointLocation + (ViewPointForward * 50000);  // 50000 is your trace distance
 
         FHitResult TraceResult;
         FCollisionQueryParams TraceParams;

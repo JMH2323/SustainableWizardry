@@ -95,7 +95,7 @@ protected:
 	int32 AttributePoints = 0;
 
 	UPROPERTY(VisibleAnywhere, ReplicatedUsing=OnRep_SpellPoints)
-	int32 SpellPoints = 1;
+	int32 SpellPoints = 50;
 
 	UFUNCTION()
 	void OnRep_Level(int32 OldLevel);

@@ -37,7 +37,7 @@ ASusWizProjectiles::ASusWizProjectiles()
 
 	
 	ProjectileMovement = CreateDefaultSubobject<UProjectileMovementComponent>("ProjectileMovement");
-	ProjectileMovement->InitialSpeed = 1000.f;
+	ProjectileMovement->InitialSpeed = 100.f;
 	ProjectileMovement->MaxSpeed = 1000.f;
 	ProjectileMovement->ProjectileGravityScale = 0.f;
 
