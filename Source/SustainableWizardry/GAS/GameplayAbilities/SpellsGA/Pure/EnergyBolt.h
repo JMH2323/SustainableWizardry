@@ -19,8 +19,29 @@ public:
 	virtual FString GetDescription(int32 Level) override;
 	virtual FString GetNextLevelDescription(int32 Level) override;
 
+	UFUNCTION(BlueprintCallable)
+	void SpawnProjectiles();
+
 protected:
-	UPROPERTY(EditDefaultsOnly)
-	int32 NumProjectiles = 3;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "EnergyBolt")
+	float ProjectileSpread = 10.f;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "EnergyBolt")
+	int32 MaxNumProjectiles = 4;
+
+	UPROPERTY(EditDefaultsOnly, Category = "EnergyBolt")
+	int32 NumProjectiles = 0;
+
+	UPROPERTY(EditDefaultsOnly, Category = "EnergyBolt")
+	float HomingAccelerationMin = 1600.f;
+
+	UPROPERTY(EditDefaultsOnly, Category = "EnergyBolt")
+	float HomingAccelerationMax = 3200.f;
+
+	UPROPERTY(EditDefaultsOnly, Category = "EnergyBolt")
+	bool bLaunchHomingProjectiles = true;
+
+	AActor* HomingTarget = nullptr;
 	
 };

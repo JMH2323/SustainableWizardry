@@ -3,6 +3,8 @@
 
 #include "SusWizGameplayAbility.h"
 
+#include "SustainableWizardry/GAS/SusWizAbilitySystemLibrary.h"
+#include "SustainableWizardry/GAS/Data/AbilityInfo.h"
 #include "SustainableWizardry/GAS/Attribute/SusWizAttributeSet.h"
 
 FString USusWizGameplayAbility::GetDescription(int32 Level)

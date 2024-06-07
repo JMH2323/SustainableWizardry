@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Abilities/GameplayAbility.h"
+#include "SustainableWizardry/GAS/Data/AbilityInfo.h"
 #include "SusWizGameplayAbility.generated.h"
 
 /**
@@ -16,8 +17,11 @@ class SUSTAINABLEWIZARDRY_API USusWizGameplayAbility : public UGameplayAbility
 
 public:
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Input")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Input")
 	FGameplayTag StartupInputTag;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Input")
+	mutable FGameplayTag CurrentInputTag;
 
 	UPROPERTY(EditAnywhere, BlueprintType)
 	bool isLeftHanded = false;
@@ -35,5 +39,4 @@ protected:
 	float GetEnergyCost(float InLevel = 1.f) const;
 	float GetCooldown(float InLevel = 1.f) const;
 	
-
 };
