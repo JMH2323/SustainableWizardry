@@ -51,5 +51,8 @@ public:
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 	ECharacterClass GetCharacterClass();
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	void SetInHydroBeamLoop(bool bInLoop);
 	
 };

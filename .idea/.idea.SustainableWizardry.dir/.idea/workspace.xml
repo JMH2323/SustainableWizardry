@@ -9,16 +9,20 @@
   <component name="ChangeListManager">
     <list default="true" id="1579a7cd-1dd9-4102-8fb2-ded64c6e3088" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/Player/RightHand/ABP_RightHand.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/Player/RightHand/ABP_RightHand.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Player/BP_SusWizPlayer.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Player/BP_SusWizPlayer.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/ETC/GA_Healing.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/ETC/GA_Healing.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Hydro/GA_HydroPulse.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Hydro/GA_HydroPulse.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Pure/EnergyBolt/GA_EnergyBolt.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Pure/EnergyBolt/GA_EnergyBolt.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Pure/EnergyBolt/GE_Cooldown_EnergyBolt.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Pure/EnergyBolt/GE_Cooldown_EnergyBolt.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Input/IC_SusWiz.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Input/IC_SusWiz.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Input/IMC_SusWizMappingContext.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Input/IMC_SusWizMappingContext.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TestLevelSW.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/TestLevelSW.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/Overlay/WBP_Overlay.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/Overlay/WBP_Overlay.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/SpellGlobes/WBP_SpellGlobe1.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/SpellGlobes/WBP_SpellGlobe1.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/SpellGlobes/WBP_SpellGlobe_Button.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/SpellGlobes/WBP_SpellGlobe_Button.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/SusWizGameplayAbility.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/SusWizGameplayAbility.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/SusWizAbilitySystemLibrary.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/SusWizAbilitySystemLibrary.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/SusWizAbilitySystemLibrary.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/SusWizAbilitySystemLibrary.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/SusWizGameplayTags.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/SusWizGameplayTags.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/SusWizGameplayTags.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/SusWizGameplayTags.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/Spells/SpellsBase/SusWizProjectiles.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/Spells/SpellsBase/SusWizProjectiles.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Interaction/CombatInterface.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Interaction/CombatInterface.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Player/SusWizPlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Player/SusWizPlayerController.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -288,7 +292,7 @@
       <workItem from="1716577915645" duration="2756000" />
       <workItem from="1717710560954" duration="748000" />
       <workItem from="1717711407154" duration="8137000" />
-      <workItem from="1717720323794" duration="8805000" />
+      <workItem from="1717720323794" duration="10614000" />
     </task>
     <servers />
   </component>
@@ -311,6 +315,11 @@
           <url>file://$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/SpellsGA/Pure/EnergyBolt.cpp</url>
           <line>169</line>
           <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/Spells/Hydro/HydroPulse.h</url>
+          <line>4</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
