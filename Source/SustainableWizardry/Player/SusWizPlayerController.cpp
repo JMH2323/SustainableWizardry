@@ -125,7 +125,8 @@ void ASusWizPlayerController::Move(const FInputActionValue& InputActionValue)
 
 void ASusWizPlayerController::AbilityInputTagPressed(FGameplayTag InputTag)
 {
-	//
+	if (GetASC())
+		GetASC()->AbilityInputTagPressed(InputTag);
 }
 
 void ASusWizPlayerController::AbilityInputTagReleased(FGameplayTag InputTag)
