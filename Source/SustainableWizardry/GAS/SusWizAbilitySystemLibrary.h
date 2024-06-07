@@ -61,8 +61,6 @@ public:
 	UFUNCTION(BlueprintCallable, Category="SusWizAbilitySystemLibrary|CharacterClassDefaults")
 	static UAbilityInfo* GetAbilityInfo(const UObject* WorldContextObject);
 
-	
-
 	// Setting and getting global booleans
 
 	UFUNCTION(BlueprintPure, Category = "SusWizAbilitySystemLibrary|GameplayEffects")

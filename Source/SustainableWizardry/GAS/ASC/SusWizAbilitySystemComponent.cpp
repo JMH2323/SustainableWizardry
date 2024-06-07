@@ -39,6 +39,7 @@ void USusWizAbilitySystemComponent::AddCharacterAbilities(TArray<TSubclassOf<UGa
 		{
 			AbilitySpec.DynamicAbilityTags.AddTag(SusWizAbility->StartupInputTag);
 			AbilitySpec.DynamicAbilityTags.AddTag(SusWizAbility->CurrentInputTag);
+			SusWizAbility->CurrentInputTag = SusWizAbility->StartupInputTag;
 			AbilitySpec.DynamicAbilityTags.AddTag(FSusWizGameplayTags::Get().Abilities_Status_Equipped);
 			
 			// Give ability to player
@@ -221,10 +222,10 @@ void USusWizAbilitySystemComponent::ServerEquipAbility_Implementation(const FGam
 				AbilitySpec->DynamicAbilityTags.RemoveTag(GameplayTags.Abilities_Status_Unlocked);
 				AbilitySpec->DynamicAbilityTags.AddTag(GameplayTags.Abilities_Status_Equipped);
 			}
-			// Update StartupInputTag of the ability
+			// Update InputTag of the ability
 			if (const USusWizGameplayAbility* SusWizAbility = Cast<USusWizGameplayAbility>(AbilitySpec->Ability))
 			{
-				SusWizAbility->CurrentInputTag = Slot; // Update the StartupInputTag
+				SusWizAbility->CurrentInputTag = Slot; // Update the InputTag
 			}
 			MarkAbilitySpecDirty(*AbilitySpec);
 		}
