@@ -204,6 +204,7 @@ void USusWizAbilitySystemLibrary::GetLivePlayersWithinRadius(const UObject* Worl
 }
 
 
+
 UCharacterClassInfo* USusWizAbilitySystemLibrary::GetCharacterClassInfo(const UObject* WorldContextObject)
 {
 	const ASuzWizGameModeBase* SusWizGameMode = Cast<ASuzWizGameModeBase>(UGameplayStatics::GetGameMode(WorldContextObject));

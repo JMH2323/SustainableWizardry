@@ -7,6 +7,7 @@
 #include "SustainableWizardry/GAS/Data/AbilityInfo.h"
 #include "SustainableWizardry/GAS/Attribute/SusWizAttributeSet.h"
 
+
 FString USusWizGameplayAbility::GetDescription(int32 Level)
 {
 	return FString::Printf(TEXT("<Default>%s, </><Level>%d</>"), L"Default Ability Name - "
