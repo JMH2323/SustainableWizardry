@@ -14,4 +14,22 @@ class SUSTAINABLEWIZARDRY_API UHydroPulse : public USusWizDamageGameplayAbility
 {
 	GENERATED_BODY()
 	
+public:
+	UFUNCTION(BlueprintCallable)
+	void StoreTraceDataInfo(const FHitResult& HitResult);
+
+	UFUNCTION(BlueprintCallable)
+	void StoreOwnerPlayerController();
+protected:
+
+	UPROPERTY(BlueprintReadWrite, Category = "Beam")
+	FVector TraceHitLocation;
+
+	UPROPERTY(BlueprintReadWrite, Category = "Beam")
+	TObjectPtr<AActor> TraceHitActor;
+
+	UPROPERTY(BlueprintReadWrite, Category = "Beam")
+	TObjectPtr<APlayerController> OwnerPlayerController;
+	
+	
 };

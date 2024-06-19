@@ -61,8 +61,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category="SusWizAbilitySystemLibrary|CharacterClassDefaults")
 	static UAbilityInfo* GetAbilityInfo(const UObject* WorldContextObject);
 
-	// Setting and getting global booleans
-
+	UFUNCTION(BlueprintCallable, Category="SusWizAbilitySystemLibrary|TagMechanics")
+	static bool isInputTagLeftHanded(FGameplayTag InputTag);
+	
 	UFUNCTION(BlueprintPure, Category = "SusWizAbilitySystemLibrary|GameplayEffects")
 	static bool IsSuccessfulDebuff(const FGameplayEffectContextHandle& EffectContextHandle);
 

@@ -234,6 +234,10 @@ void USusWizAbilitySystemComponent::ServerEquipAbility_Implementation(const FGam
 		{
 			// Remove this InputTag (slot) from any Ability that has it.
 			ClearAbilitiesOfSlot(Slot);
+			if (const USusWizGameplayAbility* SusWizAbility = Cast<USusWizGameplayAbility>(AbilitySpec->Ability))
+			{
+				SusWizAbility->CurrentInputTag = FSusWizGameplayTags::Get().Abilities_None;
+			}
 			// Clear this ability's slot, just in case, it's a different slot
 			ClearSlot(AbilitySpec);
 			// Now, assign this ability to this slot

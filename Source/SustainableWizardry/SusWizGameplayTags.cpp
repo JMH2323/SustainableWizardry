@@ -112,6 +112,18 @@ void FSusWizGameplayTags::InitializeNativeGameplayTags()
 	GameplayTags.Attributes_Meta_IncomingXP = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Meta.IncomingXP"),FString("Incoming XP Meta Attribute"));
 
 	/*
+	* Player Tags
+	*/
+	GameplayTags.Player_Block_LTrace = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Player.Block.LTrace"),FString("Block tracing"));
+	GameplayTags.Player_Block_LInputHeld = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Player.Block.LInputHeld"),FString("Block Left Input"));
+	GameplayTags.Player_Block_LInputPressed = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Player.Block.LInputPressed"),FString("Block Left Input"));
+	GameplayTags.Player_Block_LInputReleased = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Player.Block.LInputReleased"),FString("Block Left Input"));
+	GameplayTags.Player_Block_RTrace = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Player.Block.RTrace"),FString("Block tracing"));
+	GameplayTags.Player_Block_RInputHeld = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Player.Block.RInputHeld"),FString("Block Right Input"));
+	GameplayTags.Player_Block_RInputPressed = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Player.Block.RInputPressed"),FString("Block Right Input"));
+	GameplayTags.Player_Block_RInputReleased = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Player.Block.RInputReleased"),FString("Block Right Input"));
+	
+	/*
 	 * Spell Ability Tags
 	 */
 	// Fire
@@ -159,6 +171,10 @@ void FSusWizGameplayTags::InitializeNativeGameplayTags()
 	GameplayTags.Cooldown_Wind_Dash = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Cooldown.Wind.Dash"), FString ("WIND Cooldown Tag"));
 	GameplayTags.Cooldown_Wind_InstantCarnage = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Cooldown.Wind.InstantCarnage"), FString ("WIND Cooldown Tag"));
 
-
+	/* Spells Extra */
+	GameplayTags.Abilities_Hydro_HydroPulse_BlockLEffect = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Hydro.HydroPulse.BlockLEffect"),
+		FString ("The input blocking effect for the spell casting left handed"));
+	GameplayTags.Abilities_Hydro_HydroPulse_BlockREffect = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Hydro.HydroPulse.BlockREffect"),
+		FString ("The input blocking effect for the spell casting right handed"));
 	
 }
