@@ -30,9 +30,12 @@ public:
 	UFUNCTION(Client, Reliable)
 	void ShowDamageNumber(float DamageAmount, ACharacter* TargetCharacter, bool bDodgedHit, bool bCrit);
 
+
 protected:
 	virtual void BeginPlay() override;
 	virtual void SetupInputComponent() override;
+
+	bool IsInputLeftHanded(FGameplayTag Input);
 
 private:
 

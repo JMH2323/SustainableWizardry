@@ -53,6 +53,11 @@ public:
 	ECharacterClass GetCharacterClass();
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
-	void SetInHydroBeamLoop(bool bInLoop);
+	void SetInLHydroBeamLoop(bool bInLoop);
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	void SetInRHydroBeamLoop(bool bInLoop);
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	void SetHydroBeamLoopEnd(bool bEndLoop);
 	
 };

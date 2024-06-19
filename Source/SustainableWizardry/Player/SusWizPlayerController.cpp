@@ -11,6 +11,7 @@
 #include "EnhancedInputComponent.h"
 #include "Animation/AnimInstance.h"
 #include "GameFramework/Character.h"
+#include "SustainableWizardry/SusWizGameplayTags.h"
 #include "SustainableWizardry/UI/Widget/WidgetComponent/DamageTextComponent.h"
 #include "SustainableWizardry/Input/SusWizInputComponent.h"
 
@@ -31,6 +32,7 @@ void ASusWizPlayerController::ShowDamageNumber_Implementation(float DamageAmount
 		DamageText->SetDamageText(DamageAmount, bDodgedHit, bCrit);
 	}
 }
+
 
 void ASusWizPlayerController::BeginPlay()
 {
@@ -75,6 +77,14 @@ void ASusWizPlayerController::SetupInputComponent()
 	// Ability Actions
 	SusWizInputComponent->BindAbilityActions(InputConfig, this, &ThisClass::AbilityInputTagPressed, &ThisClass::AbilityInputTagReleased, &ThisClass::AbilityInputTagHeld);
 	
+}
+
+bool ASusWizPlayerController::IsInputLeftHanded(FGameplayTag Input)
+{
+	if (Input.MatchesTagExact(FSusWizGameplayTags::Get().InputTag_LMB)) return true;
+	if (Input.MatchesTagExact(FSusWizGameplayTags::Get().InputTag_1)) return true;
+	if (Input.MatchesTagExact(FSusWizGameplayTags::Get().InputTag_3)) return true;
+	return false;
 }
 
 
@@ -125,19 +135,54 @@ void ASusWizPlayerController::Move(const FInputActionValue& InputActionValue)
 
 void ASusWizPlayerController::AbilityInputTagPressed(FGameplayTag InputTag)
 {
-	if (GetASC())
-		GetASC()->AbilityInputTagPressed(InputTag);
+	
+	if (GetASC() == nullptr) return;
+	
+
+	if (IsInputLeftHanded(InputTag) && GetASC()->HasMatchingGameplayTag(FSusWizGameplayTags::Get().Player_Block_LInputPressed))
+	{
+		return;
+	}
+	if (!IsInputLeftHanded(InputTag) &&	GetASC()->HasMatchingGameplayTag(FSusWizGameplayTags::Get().Player_Block_RInputPressed))
+	{
+		return;
+	}
+	
+	GetASC()->AbilityInputTagPressed(InputTag);
+	
 }
 
 void ASusWizPlayerController::AbilityInputTagReleased(FGameplayTag InputTag)
 {
+
 	if (GetASC() == nullptr) return;
+	
+	if (IsInputLeftHanded(InputTag) && GetASC()->HasMatchingGameplayTag(FSusWizGameplayTags::Get().Player_Block_LInputReleased))
+	{
+		return;
+	}
+	if (!IsInputLeftHanded(InputTag) && GetASC()->HasMatchingGameplayTag(FSusWizGameplayTags::Get().Player_Block_RInputReleased))
+	{
+		return;
+	}
+	
 	GetASC()->AbilityInputTagReleased(InputTag);
 }
 
 void ASusWizPlayerController::AbilityInputTagHeld(FGameplayTag InputTag)
 {
+
 	if (GetASC() == nullptr) return;
+	
+	if (IsInputLeftHanded(InputTag) && GetASC()->HasMatchingGameplayTag(FSusWizGameplayTags::Get().Player_Block_LInputHeld))
+	{
+		return;
+	}
+	if (!IsInputLeftHanded(InputTag) && GetASC()->HasMatchingGameplayTag(FSusWizGameplayTags::Get().Player_Block_RInputHeld))
+	{
+		return;
+	}
+	
 	GetASC()->AbilityInputTagHeld(InputTag);
 }
 

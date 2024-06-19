@@ -222,6 +222,15 @@ UAbilityInfo* USusWizAbilitySystemLibrary::GetAbilityInfo(const UObject* WorldCo
 	
 }
 
+bool USusWizAbilitySystemLibrary::isInputTagLeftHanded(FGameplayTag InputTag)
+{
+	if (InputTag.MatchesTagExact(FSusWizGameplayTags::Get().InputTag_LMB)) return true;
+	if (InputTag.MatchesTagExact(FSusWizGameplayTags::Get().InputTag_1)) return true;
+	if (InputTag.MatchesTagExact(FSusWizGameplayTags::Get().InputTag_3)) return true;
+	return false;
+}
+
+
 bool USusWizAbilitySystemLibrary::IsSuccessfulDebuff(const FGameplayEffectContextHandle& EffectContextHandle)
 {
 	if (const FSusWizGameplayEffectContext* SusWizEffectContext = static_cast<const FSusWizGameplayEffectContext*>(EffectContextHandle.Get()))

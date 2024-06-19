@@ -23,7 +23,6 @@ static const FSusWizGameplayTags& Get() { return GameplayTags; }
  FGameplayTag Attributes_Primary_Deep;
 
  // Secondary Attribute Tags
- // TODO: Alex/Jeff add tags for attributes you have been working with.
  FGameplayTag Attributes_Secondary_Armor;
  FGameplayTag Attributes_Secondary_ArmorPen;
  FGameplayTag Attributes_Secondary_MaxEnergy;
@@ -100,11 +99,23 @@ static const FSusWizGameplayTags& Get() { return GameplayTags; }
  // Meta
  FGameplayTag Attributes_Meta_IncomingXP;
  
- //Misc
+ // Effects
  FGameplayTag Effects_HitReact;
 
+/*
+ * Player Tags
+ */
 
- 
+ // Blocking Tags for preventing multiple spell overlaps for Left hand
+ FGameplayTag Player_Block_LInputPressed;
+ FGameplayTag Player_Block_LInputHeld;
+ FGameplayTag Player_Block_LInputReleased;
+ FGameplayTag Player_Block_LTrace;
+ // Right hand casting
+ FGameplayTag Player_Block_RInputPressed;
+ FGameplayTag Player_Block_RInputHeld;
+ FGameplayTag Player_Block_RInputReleased;
+ FGameplayTag Player_Block_RTrace;
 
  /* 
   * Spell Abilities
@@ -151,6 +162,15 @@ static const FSusWizGameplayTags& Get() { return GameplayTags; }
  FGameplayTag Cooldown_Wind_Cut;
  FGameplayTag Cooldown_Wind_Dash;
  FGameplayTag Cooldown_Wind_InstantCarnage;
+
+
+ /*
+  * Spells Extras
+  */
+ FGameplayTag Abilities_Hydro_HydroPulse_BlockLEffect;
+ FGameplayTag Abilities_Hydro_HydroPulse_BlockREffect;
+
+
  
 protected:
 
