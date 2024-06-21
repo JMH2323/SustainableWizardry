@@ -85,6 +85,16 @@ ECharacterClass ASusWizCharacterBase::GetCharacterClass_Implementation()
 	return CharacterClass;
 }
 
+USkeletalMeshComponent* ASusWizCharacterBase::GetMainWeapon_Implementation()
+{
+	return MainWeapon;
+}
+
+USkeletalMeshComponent* ASusWizCharacterBase::GetSecWeapon_Implementation()
+{
+	return SecondaryWeapon;
+}
+
 void ASusWizCharacterBase::InitAbilityActorInfo()
 {
 	// override in character player
