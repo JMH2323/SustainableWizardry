@@ -7,22 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1579a7cd-1dd9-4102-8fb2-ded64c6e3088" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultGame.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultGame.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultGameplayTags.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultGameplayTags.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/Player/RightHand/AS_RHand_Hydro/HydroPulse/AM_HydroPulseCast.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/Player/RightHand/AS_RHand_Hydro/HydroPulse/AM_HydroPulseCast.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/SunSpells/NS_SolarBeam.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/SunSpells/NS_SolarBeam.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaEffects/Shock/NS_ElectricBeam.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaEffects/Shock/NS_ElectricBeam.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Player/BP_SusWizPlayer.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Player/BP_SusWizPlayer.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Hydro/GA_HydroPulse.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Hydro/GA_HydroPulse.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Pure/EnergyBolt/GA_EnergyBolt.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Pure/EnergyBolt/GA_EnergyBolt.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UI/ProgressBars/WBP_EnemyHealth.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/ProgressBars/WBP_EnemyHealth.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterBase.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterBase.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Interaction/CombatInterface.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Interaction/CombatInterface.h" afterDir="false" />
-    </list>
+    <list default="true" id="1579a7cd-1dd9-4102-8fb2-ded64c6e3088" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -701,6 +686,7 @@
       <workItem from="1718477394720" duration="1457000" />
       <workItem from="1718812659024" duration="17753000" />
       <workItem from="1718943702199" duration="1584000" />
+      <workItem from="1719004421078" duration="645000" />
     </task>
     <servers />
   </component>

@@ -20,6 +20,10 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void StoreOwnerPlayerController();
+
+	// Function for determining if there is another enemy in the path from our beam to our OG target.
+	UFUNCTION(BlueprintCallable)
+	void TraceFirstTarget(const FVector& BeamTargetLocation);
 protected:
 
 	UPROPERTY(BlueprintReadWrite, Category = "Beam")
@@ -29,7 +33,13 @@ protected:
 	TObjectPtr<AActor> TraceHitActor;
 
 	UPROPERTY(BlueprintReadWrite, Category = "Beam")
+	bool isBeamLeftHanded = false;
+
+	UPROPERTY(BlueprintReadWrite, Category = "Beam")
 	TObjectPtr<APlayerController> OwnerPlayerController;
+
+	UPROPERTY(BlueprintReadWrite, Category = "Beam")
+	TObjectPtr<ACharacter> OwnerCharacter;
 	
 	
 };
