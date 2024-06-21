@@ -48,6 +48,8 @@ public:
 
 
 	virtual ECharacterClass GetCharacterClass_Implementation() override;
+	virtual USkeletalMeshComponent* GetMainWeapon_Implementation() override;
+	virtual USkeletalMeshComponent* GetSecWeapon_Implementation() override;
 	/** end Combat Interface */
 
 	bool bDead = false;
@@ -63,9 +65,6 @@ protected:
 	USkeletalMeshComponent* MainWeapon;
 	UPROPERTY(EditAnywhere, Category = "Combat")
 	USkeletalMeshComponent* SecondaryWeapon;
-
-	UFUNCTION(BlueprintCallable, Category = "Combat")
-	const USkeletalMeshComponent* GetSecWeapon() { return SecondaryWeapon; }
 	
 	UPROPERTY(EditAnywhere, Category = "Combat")
 	FName MainWeaponTipSocketName;

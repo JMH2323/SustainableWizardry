@@ -33,6 +33,12 @@ public:
 	virtual FVector GetSecCombatSocketLocation();
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+	USkeletalMeshComponent* GetMainWeapon();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+	USkeletalMeshComponent* GetSecWeapon();
+	
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 	UAnimMontage* GetHitReactMontage();
 
 	virtual void Die(const FVector& DeathImpulse) = 0;
