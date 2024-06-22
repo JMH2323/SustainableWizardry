@@ -5,6 +5,7 @@
 
 #include "Kismet/KismetSystemLibrary.h"
 #include "GameFramework/Character.h"
+#include "SustainableWizardry/GAS/SusWizAbilitySystemLibrary.h"
 #include "SustainableWizardry/Interaction/CombatInterface.h"
 
 void UHydroPulse::StoreTraceDataInfo(const FHitResult& HitResult)
@@ -98,4 +99,27 @@ void UHydroPulse::TraceFirstTarget(const FVector& BeamTargetLocation)
 	}
 	
 	
+}
+
+void UHydroPulse::StoreAdditionalTargets(TArray<AActor*>& OutAdditionalTargets)
+{
+
+	// Ignore the first hit target and caster.
+	TArray<AActor*> ActorsToIgnore;
+	ActorsToIgnore.Add(OwnerCharacter);
+	ActorsToIgnore.Add(TraceHitActor);
+
+	// Set storage for nearby actors, use function to get all living characters.
+	TArray<AActor*> OverlappingActors;
+	USusWizAbilitySystemLibrary::GetLivePlayersWithinRadius(
+		GetAvatarActorFromActorInfo(),
+		OverlappingActors,
+		ActorsToIgnore,
+		1000.f,
+		TraceHitActor->GetActorLocation());
+
+	// Set the number of targets and get the closest ones, returning closest actors.
+	int32 NumAdditionalTargets = FMath::Min(GetAbilityLevel(), MaxNumShockTargets);
+	USusWizAbilitySystemLibrary::GetClosestTargets(NumAdditionalTargets,
+		OverlappingActors,  OutAdditionalTargets, TraceHitActor->GetActorLocation());
 }

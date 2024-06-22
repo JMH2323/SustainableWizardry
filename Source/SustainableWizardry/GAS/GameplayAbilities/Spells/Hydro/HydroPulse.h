@@ -24,6 +24,10 @@ public:
 	// Function for determining if there is another enemy in the path from our beam to our OG target.
 	UFUNCTION(BlueprintCallable)
 	void TraceFirstTarget(const FVector& BeamTargetLocation);
+
+	UFUNCTION(BlueprintCallable)
+	void StoreAdditionalTargets(TArray<AActor*>& OutAdditionalTargets);
+	
 protected:
 
 	UPROPERTY(BlueprintReadWrite, Category = "Beam")
@@ -40,6 +44,9 @@ protected:
 
 	UPROPERTY(BlueprintReadWrite, Category = "Beam")
 	TObjectPtr<ACharacter> OwnerCharacter;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Beam")
+	int32 MaxNumShockTargets = 5;
 	
 	
 };

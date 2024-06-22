@@ -156,6 +156,45 @@ bool USusWizAbilitySystemLibrary::IsNotFriend(AActor* FirstActor, AActor* Second
 	return !bFriends;
 }
 
+void USusWizAbilitySystemLibrary::GetClosestTargets(int32 MaxTargets, const TArray<AActor*>& Actors,
+	TArray<AActor*>& OutClosestTargets, const FVector& Origin)
+{
+	// If there are less actors than max targets, set all targeting to the close actors.
+	if (Actors.Num() <= MaxTargets)
+	{
+		OutClosestTargets = Actors;
+		return;
+	}
+
+	TArray<AActor*> ActorsToCheck = Actors;
+	int32 NumTargetsFound = 0;
+
+	while (NumTargetsFound < MaxTargets)
+	{
+		// If there are no more nearby actors, stop.
+		if (ActorsToCheck.Num() == 0) break;
+		
+		// Set the closest distance to large as a start and keep closest actor info
+		double ClosestDistance = TNumericLimits<double>::Max();
+		AActor* ClosestActor;
+
+		// Loop through all potential targets in range, check distance and add closest ones to targeting.
+		for (AActor* PotentialTarget : ActorsToCheck)
+		{
+			const double Distance = (PotentialTarget->GetActorLocation() - Origin).Length();
+			if (Distance < ClosestDistance)
+			{
+				ClosestDistance = Distance;
+				ClosestActor = PotentialTarget;
+			}
+		}
+		// After loop, remove the closest found actor and store it as a unique return.
+		ActorsToCheck.Remove(ClosestActor);
+		OutClosestTargets.AddUnique(ClosestActor);
+		++NumTargetsFound;
+	}
+}
+
 FGameplayEffectContextHandle USusWizAbilitySystemLibrary::ApplyDamageEffect(
 	const FDamageEffectParams& DamageEffectParams)
 {
