@@ -22,6 +22,9 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void SpawnProjectiles();
 
+	UFUNCTION(BlueprintImplementableEvent)
+	void HomingTargetDied(AActor* DeadActor);
+
 protected:
 	
 	UPROPERTY(EditDefaultsOnly, Category = "EnergyBolt")

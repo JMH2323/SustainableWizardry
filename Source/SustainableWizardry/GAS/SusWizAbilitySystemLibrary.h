@@ -47,7 +47,7 @@ public:
 	UFUNCTION(BlueprintPure, Category = "SusWizAbilitySystemLibrary|GameplayMechanics")
 	static bool IsNotFriend(AActor* FirstActor, AActor* SecondActor);
 
-	UFUNCTION(BlueprintCallable, Category = "AuraAbilitySystemLibrary|GameplayMechanics")
+	UFUNCTION(BlueprintCallable, Category = "SusWizAbilitySystemLibrary|GameplayMechanics")
 	static void GetClosestTargets(int32 MaxTargets, const TArray<AActor*>& Actors, TArray<AActor*>& OutClosestTargets, const FVector& Origin);
 	
 	UFUNCTION(BlueprintCallable, Category = "SusWizAbilitySystemLibrary|DamageEffect")
@@ -121,10 +121,10 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "SusWizAbilitySystemLibrary|GameplayEffects")
 	static void SetKnockbackForce(UPARAM(ref) FGameplayEffectContextHandle& EffectContextHandle, const FVector& InForce);
 
-	UFUNCTION(BlueprintPure, Category = "AuraAbilitySystemLibrary|GameplayMechanics")
+	UFUNCTION(BlueprintPure, Category = "SusWizAbilitySystemLibrary|GameplayMechanics")
 	static TArray<FRotator> EvenlySpacedRotators(const FVector& Forward, const FVector& Axis, float Spread, int32 NumRotators);
 
-	UFUNCTION(BlueprintPure, Category = "AuraAbilitySystemLibrary|GameplayMechanics")
+	UFUNCTION(BlueprintPure, Category = "SusWizAbilitySystemLibrary|GameplayMechanics")
 	static TArray<FVector> EvenlyRotatedVectors(const FVector& Forward, const FVector& Axis, float Spread, int32 NumVectors);
 	
 	static int32 GetXPRewardForClassAndLevel(const UObject* WorldContextObject, ECharacterClass CharacterClass, int32 CharacterLevel);

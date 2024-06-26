@@ -135,10 +135,11 @@ static const FSusWizGameplayTags& Get() { return GameplayTags; }
  FGameplayTag Abilities_Solar_Flare;
  FGameplayTag Abilities_Solar_Beam;
  FGameplayTag Abilities_Solar_EverPresence;
- // Wind
- FGameplayTag Abilities_Wind_Cut;
- FGameplayTag Abilities_Wind_Dash;
- FGameplayTag Abilities_Wind_InstantCarnage;
+ // Aero
+ FGameplayTag Abilities_Aero_Airrow;
+ FGameplayTag Abilities_Aero_Cut;
+ FGameplayTag Abilities_Aero_Dash;
+ FGameplayTag Abilities_Aero_InstantCarnage;
 
  /* 
   * Spell Cooldowns
@@ -158,10 +159,11 @@ static const FSusWizGameplayTags& Get() { return GameplayTags; }
  FGameplayTag Cooldown_Solar_Flare;
  FGameplayTag Cooldown_Solar_Beam;
  FGameplayTag Cooldown_Solar_EverPresence;
- // Wind
- FGameplayTag Cooldown_Wind_Cut;
- FGameplayTag Cooldown_Wind_Dash;
- FGameplayTag Cooldown_Wind_InstantCarnage;
+ // Aero
+ FGameplayTag Cooldown_Aero_Airrow;
+ FGameplayTag Cooldown_Aero_Cut;
+ FGameplayTag Cooldown_Aero_Dash;
+ FGameplayTag Cooldown_Aero_InstantCarnage;
 
 
  /*
@@ -169,6 +171,8 @@ static const FSusWizGameplayTags& Get() { return GameplayTags; }
   */
  FGameplayTag Abilities_Hydro_HydroPulse_BlockLEffect;
  FGameplayTag Abilities_Hydro_HydroPulse_BlockREffect;
+ FGameplayTag Abilities_Aero_Airrow_BlockLEffect;
+ FGameplayTag Abilities_Aero_Airrow_BlockREffect;
 
 
  

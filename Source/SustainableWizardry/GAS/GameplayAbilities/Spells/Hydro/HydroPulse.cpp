@@ -97,7 +97,13 @@ void UHydroPulse::TraceFirstTarget(const FVector& BeamTargetLocation)
 			}
 		}
 	}
-	
+	if (ICombatInterface* CombatInterface = Cast<ICombatInterface>(TraceHitActor))
+	{
+		if (!CombatInterface->GetOnDeathDelegate().IsAlreadyBound(this, &UHydroPulse::PrimaryTargetDied))
+		{
+			CombatInterface->GetOnDeathDelegate().AddDynamic(this, &UHydroPulse::PrimaryTargetDied);
+		}
+	}
 	
 }
 
@@ -122,4 +128,16 @@ void UHydroPulse::StoreAdditionalTargets(TArray<AActor*>& OutAdditionalTargets)
 	int32 NumAdditionalTargets = FMath::Min(GetAbilityLevel(), MaxNumShockTargets);
 	USusWizAbilitySystemLibrary::GetClosestTargets(NumAdditionalTargets,
 		OverlappingActors,  OutAdditionalTargets, TraceHitActor->GetActorLocation());
+
+	for (AActor* Target : OutAdditionalTargets)
+	{
+		if (ICombatInterface* CombatInterface = Cast<ICombatInterface>(Target))
+		{
+			if (!CombatInterface->GetOnDeathDelegate().IsAlreadyBound(this, &UHydroPulse::AdditionalTargetDied))
+			{
+				CombatInterface->GetOnDeathDelegate().AddDynamic(this, &UHydroPulse::AdditionalTargetDied);
+			}
+		}
+	}
+	
 }

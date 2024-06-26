@@ -142,10 +142,11 @@ void FSusWizGameplayTags::InitializeNativeGameplayTags()
 	GameplayTags.Abilities_Hydro_WaterWhip = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Hydro.WaterWhip"), FString ("HYDRO Ability Tag"));
 	GameplayTags.Abilities_Hydro_OceanCall = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Hydro.OceanCall"), FString ("HYDRO Ability Tag"));
 
-	// Wind
-	GameplayTags.Abilities_Wind_Cut = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Wind.Cut"), FString ("WIND Ability Tag"));
-	GameplayTags.Abilities_Wind_Dash = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Wind.Dash"), FString ("WIND Ability Tag"));
-	GameplayTags.Abilities_Wind_InstantCarnage = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Wind.InstantCarnage"), FString ("WIND Ability Tag"));
+	// Aero
+	GameplayTags.Abilities_Aero_Cut = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Aero.Airrow"), FString ("Aero Ability Tag"));
+	GameplayTags.Abilities_Aero_Cut = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Aero.Cut"), FString ("Aero Ability Tag"));
+	GameplayTags.Abilities_Aero_Dash = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Aero.Dash"), FString ("Aero Ability Tag"));
+	GameplayTags.Abilities_Aero_InstantCarnage = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Aero.InstantCarnage"), FString ("Aero Ability Tag"));
 
 	/*
 	 * Spell Cooldown Tags
@@ -166,15 +167,20 @@ void FSusWizGameplayTags::InitializeNativeGameplayTags()
 	GameplayTags.Cooldown_Hydro_WaterWhip = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Cooldown.Hydro.WaterWhip"), FString ("HYDRO Cooldown Tag"));
 	GameplayTags.Cooldown_Hydro_OceanCall = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Cooldown.Hydro.OceanCall"), FString ("HYDRO Cooldown Tag"));
 
-	// Wind
-	GameplayTags.Cooldown_Wind_Cut = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Cooldown.Wind.Cut"), FString ("WIND Cooldown Tag"));
-	GameplayTags.Cooldown_Wind_Dash = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Cooldown.Wind.Dash"), FString ("WIND Cooldown Tag"));
-	GameplayTags.Cooldown_Wind_InstantCarnage = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Cooldown.Wind.InstantCarnage"), FString ("WIND Cooldown Tag"));
+	// Aero
+	GameplayTags.Cooldown_Aero_Cut = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Cooldown.Aero.Airrow"), FString ("Aero Cooldown Tag"));
+	GameplayTags.Cooldown_Aero_Cut = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Cooldown.Aero.Cut"), FString ("Aero Cooldown Tag"));
+	GameplayTags.Cooldown_Aero_Dash = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Cooldown.Aero.Dash"), FString ("Aero Cooldown Tag"));
+	GameplayTags.Cooldown_Aero_InstantCarnage = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Cooldown.Aero.InstantCarnage"), FString ("Aero Cooldown Tag"));
 
 	/* Spells Extra */
 	GameplayTags.Abilities_Hydro_HydroPulse_BlockLEffect = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Hydro.HydroPulse.BlockLEffect"),
 		FString ("The input blocking effect for the spell casting left handed"));
 	GameplayTags.Abilities_Hydro_HydroPulse_BlockREffect = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Hydro.HydroPulse.BlockREffect"),
+		FString ("The input blocking effect for the spell casting right handed"));
+	GameplayTags.Abilities_Aero_Airrow_BlockLEffect = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Aero.Airrow.BlockLEffect"),
+		FString ("The input blocking effect for the spell casting left handed"));
+	GameplayTags.Abilities_Aero_Airrow_BlockREffect = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Aero.Airrow.BlockREffect"),
 		FString ("The input blocking effect for the spell casting right handed"));
 	
 }
