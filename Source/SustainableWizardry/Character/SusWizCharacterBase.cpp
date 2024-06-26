@@ -35,6 +35,11 @@ void ASusWizCharacterBase::Die(const FVector& DeathImpulse)
 	MulticastHandleDeath_Implementation(DeathImpulse);
 }
 
+FOnDeathSignature& ASusWizCharacterBase::GetOnDeathDelegate()
+{
+	return OnDeathDelegate;
+}
+
 void ASusWizCharacterBase::MulticastHandleDeath_Implementation(const FVector& DeathImpulse)
 {
 
@@ -51,6 +56,7 @@ void ASusWizCharacterBase::MulticastHandleDeath_Implementation(const FVector& De
 
 	Dissolve();
 	bDead = true;
+	OnDeathDelegate.Broadcast(this);
 }
 
 // Called when the game starts or when spawned

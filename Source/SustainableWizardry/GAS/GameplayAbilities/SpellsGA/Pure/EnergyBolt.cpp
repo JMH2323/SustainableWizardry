@@ -188,6 +188,13 @@ void UEnergyBolt::SpawnProjectiles()
 				{
 					Projectile->ProjectileMovement->HomingTargetComponent = HomingTarget->GetRootComponent();
 					Projectile->ProjectileMovement->bIsHomingProjectile = true;
+					if (ICombatInterface* CIHM = Cast<ICombatInterface>(HomingTarget))
+					{
+						if (!CIHM->GetOnDeathDelegate().IsAlreadyBound(this, &UEnergyBolt::HomingTargetDied))
+						{
+							CIHM->GetOnDeathDelegate().AddDynamic(this, &UEnergyBolt::HomingTargetDied);
+						}
+					}
 				}
 				else
 				{

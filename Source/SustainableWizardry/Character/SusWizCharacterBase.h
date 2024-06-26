@@ -40,7 +40,8 @@ public:
 
 	/** Combat Interface */
 	virtual UAnimMontage* GetHitReactMontage_Implementation() override;	
-	virtual void Die(const FVector& DeathImpulse) override;	
+	virtual void Die(const FVector& DeathImpulse) override;
+	virtual FOnDeathSignature& GetOnDeathDelegate() override;
 	virtual FVector GetCombatSocketLocation() override;
 	virtual FVector GetSecCombatSocketLocation() override;
 	virtual bool IsDead_Implementation() const override;
@@ -52,6 +53,7 @@ public:
 	virtual USkeletalMeshComponent* GetSecWeapon_Implementation() override;
 	/** end Combat Interface */
 
+	FOnDeathSignature OnDeathDelegate;
 	bool bDead = false;
 
 protected:

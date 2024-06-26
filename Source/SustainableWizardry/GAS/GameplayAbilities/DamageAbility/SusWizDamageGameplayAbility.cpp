@@ -17,6 +17,11 @@ void USusWizDamageGameplayAbility::CauseDamage(AActor* TargetActor)
 	GetAbilitySystemComponentFromActorInfo()->ApplyGameplayEffectSpecToTarget(*DamageSpecHandle.Data.Get(), UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(TargetActor));
 }
 
+float USusWizDamageGameplayAbility::GetDamageAtLevel() const
+{
+	return Damage.GetValueAtLevel(GetAbilityLevel());
+}
+
 FDamageEffectParams USusWizDamageGameplayAbility::MakeDamageEffectParamsFromClassDefaults(AActor* TargetActor) const
 {
 
@@ -47,6 +52,16 @@ FDamageEffectParams USusWizDamageGameplayAbility::MakeDamageEffectParamsFromClas
 	Params.DebuffFrequency = DebuffFrequency;
 	return Params;
 	
+}
+
+void USusWizDamageGameplayAbility::SetKnockbackChance(float Chance)
+{
+	KnockbackChance = Chance;
+}
+
+void USusWizDamageGameplayAbility::SetKnockbackForceMagnitute(float ForceMagnitude)
+{
+	KnockbackForceMagnitude = ForceMagnitude;
 }
 
 
