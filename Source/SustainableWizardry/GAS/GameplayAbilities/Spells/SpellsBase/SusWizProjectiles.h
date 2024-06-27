@@ -33,7 +33,7 @@ public:
 protected:
 	
 	virtual void BeginPlay() override;
-	void OnHit();
+	virtual void OnHit();
 	virtual void Destroyed() override;
 
 	UFUNCTION()

@@ -54,6 +54,7 @@ void ASusWizProjectiles::BeginPlay()
 
 void ASusWizProjectiles::OnHit()
 {
+	
 	UGameplayStatics::PlaySoundAtLocation(this, ImpactSound, GetActorLocation(), FRotator::ZeroRotator);
 	UNiagaraFunctionLibrary::SpawnSystemAtLocation(this, ImpactEffect, GetActorLocation());
 	if (LoopingSoundComponent)
@@ -84,6 +85,8 @@ void ASusWizProjectiles::OnSphereOverlap(UPrimitiveComponent* OverlappedComponen
 	AActor* SourceAvatarActor = DamageEffectParams.SourceAbilitySystemComponent->GetAvatarActor();
 	if (SourceAvatarActor == OtherActor) return;
 	if (!USusWizAbilitySystemLibrary::IsNotFriend(SourceAvatarActor, OtherActor)) return;
+	// Allows for ground collision events. ex: bouncing.
+	//if (!OtherActor->ActorHasTag("Enemy")) return;
 	if (!bHit) OnHit();
 	
 	if (HasAuthority())
@@ -99,7 +102,7 @@ void ASusWizProjectiles::OnSphereOverlap(UPrimitiveComponent* OverlappedComponen
 			if (bKnockback)
 			{
 				FRotator Rotation = GetActorRotation();
-				Rotation.Pitch = 45.f;
+				Rotation.Pitch = 35.f;
 
 				const FVector KnockbackDirection = Rotation.Vector();
 				const FVector KnockbackForce = KnockbackDirection * DamageEffectParams.KnockbackForceMagnitude;

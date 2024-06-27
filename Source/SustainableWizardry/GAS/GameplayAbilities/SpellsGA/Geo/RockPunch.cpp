@@ -47,6 +47,7 @@ void URockPunch::FindAndSpawnGeoProjectile()
 			break;
 
 		default:
+			SpawnGeoProjectile(GeoProjectileFive);
 			break;
 		}
 	
@@ -69,9 +70,7 @@ const void URockPunch::SpawnGeoProjectile(TSubclassOf<ASusWizProjectiles> GeoPro
     		SocketLocation = CombatInterface->GetSecCombatSocketLocation();
     	}
 
-    	SocketLocation = SocketLocation - RockOffset;
-          	
-        FTransform SpawnTransform;
+    	
 
     	
         // Getting the player's viewpoint.
@@ -79,6 +78,11 @@ const void URockPunch::SpawnGeoProjectile(TSubclassOf<ASusWizProjectiles> GeoPro
         FRotator PlayerViewPointRotator;
         StoredActorInfo->PlayerController->GetPlayerViewPoint(PlayerViewPointLocation, PlayerViewPointRotator);
 
+    	// Unique: Calculate the rock offset relative to player's view
+    	FVector RockOffsetRelative = PlayerViewPointRotator.RotateVector(RockOffset);
+    	SocketLocation = SocketLocation - RockOffsetRelative;
+    	
+    	FTransform SpawnTransform;
         // Get the forward vector of the player viewpoint
         FVector ViewPointForward = PlayerViewPointRotator.Vector();
 
