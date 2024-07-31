@@ -61,6 +61,23 @@ int32 ASusWizCharacterPlayer::GetSpellPoints_Implementation() const
 	return SusWizPlayerState->GetSpellPoints();
 }
 
+void ASusWizCharacterPlayer::ShowMagicCircle_Implementation(UMaterialInterface* DecalMaterial)
+{
+	if (ASusWizPlayerController* SusWizPlayerController = Cast<ASusWizPlayerController>(GetController()))
+	{
+		SusWizPlayerController->ShowMagicCircle(DecalMaterial);
+	}
+	
+}
+
+void ASusWizCharacterPlayer::HideMagicCircle_Implementation()
+{
+	if (ASusWizPlayerController* SusWizPlayerController = Cast<ASusWizPlayerController>(GetController()))
+	{
+		SusWizPlayerController->HideMagicCircle();
+	}
+}
+
 void ASusWizCharacterPlayer::AddToXP_Implementation(int32 InXP)
 {
 	ASusWizPlayerState* SusWizPlayerState = GetPlayerState<ASusWizPlayerState>();
