@@ -4,6 +4,8 @@
 
 #include "SusWizPlayerController.h"
 
+#include <string>
+
 #include "AbilitySystemBlueprintLibrary.h"
 #include "AttributeSet.h"
 #include "SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.h"
@@ -11,7 +13,9 @@
 #include "EnhancedInputComponent.h"
 #include "Animation/AnimInstance.h"
 #include "GameFramework/Character.h"
+#include "Components/DecalComponent.h"
 #include "SustainableWizardry/SusWizGameplayTags.h"
+#include "SustainableWizardry/Effects/Actors/SolarBeamDecal.h"
 #include "SustainableWizardry/UI/Widget/WidgetComponent/DamageTextComponent.h"
 #include "SustainableWizardry/Input/SusWizInputComponent.h"
 
@@ -19,6 +23,26 @@
 ASusWizPlayerController::ASusWizPlayerController()
 {
 	bReplicates = true;
+}
+
+void ASusWizPlayerController::ShowMagicCircle(UMaterialInterface* DecalMaterial)
+{
+	if (!IsValid(MagicCircle))
+	{
+		MagicCircle = GetWorld()->SpawnActor<ASolarBeamDecal>(MagicCircleClass);
+		if (DecalMaterial)
+		{
+			MagicCircle->MagicCircleDecal->SetMaterial(0, DecalMaterial);
+		}
+	}
+}
+
+void ASusWizPlayerController::HideMagicCircle()
+{
+	if (IsValid(MagicCircle))
+	{
+		MagicCircle->Destroy();
+	}
 }
 
 void ASusWizPlayerController::ShowDamageNumber_Implementation(float DamageAmount, ACharacter* TargetCharacter, bool bDodgedHit, bool bCrit)
@@ -105,6 +129,11 @@ void ASusWizPlayerController::Look(const FInputActionValue& Value)
 		// add yaw and pitch input to controller
 		ControlledPawn->AddControllerYawInput(LookAxisVector.X);
 		ControlledPawn->AddControllerPitchInput(LookAxisVector.Y);
+	}
+
+	if (IsValid(MagicCircle))
+	{
+		UpdateMagicCircleLocation();
 	}
 		
 	
@@ -193,4 +222,43 @@ USusWizAbilitySystemComponent* ASusWizPlayerController::GetASC()
 		SusWizAbilitySystemComponent = Cast<USusWizAbilitySystemComponent>(UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(GetPawn<APawn>()));
 	}
 	return SusWizAbilitySystemComponent;
+}
+
+void ASusWizPlayerController::UpdateMagicCircleLocation()
+{
+	if (IsValid(MagicCircle))
+	{
+
+		/// Get the player's forward vector and pitch to calculate distance of AOE Decal.
+		FVector PlayerForwardVector = GetPawn()->GetActorForwardVector();
+		FRotator CameraRotation = GetControlRotation();
+		float CameraPitch = CameraRotation.Pitch;
+		if (CameraPitch > 180.0f)
+		{
+			CameraPitch -= 360.0f;
+		}
+		CameraPitch += 15.f;
+		
+		
+        float NormalizedPitch = FMath::Clamp((CameraPitch * 5.0f) / 180.0f, 0.0f, 1.0f);
+		float Distance = NormalizedPitch * 7000.0f;
+		if(Distance < 500.f) Distance = 500.f;
+		
+		FVector NewLocation = GetPawn()->GetActorLocation() + FVector(PlayerForwardVector.X, PlayerForwardVector.Y, 0).GetSafeNormal() * Distance;
+		NewLocation.Z = GetPawn()->GetActorLocation().Z; 
+
+		/* Debug logs to verify the calculations
+		UE_LOG(LogTemp, Warning, TEXT("Player Location: %s"), *GetPawn()->GetActorLocation().ToString());
+		UE_LOG(LogTemp, Warning, TEXT("Player Forward Vector: %s"), *PlayerForwardVector.ToString());
+		UE_LOG(LogTemp, Warning, TEXT("Camera Pitch: %f"), CameraPitch);
+		UE_LOG(LogTemp, Warning, TEXT("Normalized Pitch: %f"), NormalizedPitch);
+		UE_LOG(LogTemp, Warning, TEXT("Distance: %f"), Distance);
+		UE_LOG(LogTemp, Warning, TEXT("New Location: %s"), *NewLocation.ToString());
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow,
+			FString::Printf(TEXT("%f"), CameraPitch));
+			*/
+		
+		MagicCircle->SetActorLocation(NewLocation);
+		
+	}
 }

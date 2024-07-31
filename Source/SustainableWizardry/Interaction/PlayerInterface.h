@@ -40,7 +40,7 @@ public:
 
 	UFUNCTION(BlueprintNativeEvent)
 	void LevelUp();
-
+	
 	UFUNCTION(BlueprintNativeEvent)
 	void AddToPlayerLevel(int32 InPlayerLevel);
 
@@ -55,5 +55,11 @@ public:
 	
 	UFUNCTION(BlueprintNativeEvent)
 	int32 GetSpellPoints() const;
+	
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+	void ShowMagicCircle(UMaterialInterface* DecalMaterial = nullptr);
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+	void HideMagicCircle();
 	
 };
