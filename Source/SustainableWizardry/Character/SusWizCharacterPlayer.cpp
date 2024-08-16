@@ -78,6 +78,19 @@ void ASusWizCharacterPlayer::HideMagicCircle_Implementation()
 	}
 }
 
+FVector ASusWizCharacterPlayer::GetMagicCircleLocation_Implementation()
+{
+	if (ASusWizPlayerController* SusWizPlayerController = Cast<ASusWizPlayerController>(GetController()))
+	{
+		return SusWizPlayerController->GetMagicCircleLocation();
+	}
+	else
+	{
+		FVector Failcase;
+		return Failcase;
+	}
+}
+
 void ASusWizCharacterPlayer::AddToXP_Implementation(int32 InXP)
 {
 	ASusWizPlayerState* SusWizPlayerState = GetPlayerState<ASusWizPlayerState>();
