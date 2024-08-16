@@ -37,6 +37,9 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void HideMagicCircle();
 
+	UFUNCTION(BlueprintCallable)
+	FVector GetMagicCircleLocation();
+
 protected:
 	virtual void BeginPlay() override;
 	virtual void SetupInputComponent() override;

@@ -45,6 +45,20 @@ void ASusWizPlayerController::HideMagicCircle()
 	}
 }
 
+FVector ASusWizPlayerController::GetMagicCircleLocation()
+{
+	if (IsValid(MagicCircle))
+	{
+		return MagicCircle->GetActorLocation();
+	}
+	else
+	{
+		FVector Failcase;
+		return Failcase;
+	}
+	
+}
+
 void ASusWizPlayerController::ShowDamageNumber_Implementation(float DamageAmount, ACharacter* TargetCharacter, bool bDodgedHit, bool bCrit)
 {
 	if (IsValid(TargetCharacter) && DamageTextComponentClass && IsLocalController())

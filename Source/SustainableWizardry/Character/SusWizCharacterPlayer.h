@@ -34,6 +34,7 @@ public:
 	/** Player Interface */
 	virtual void ShowMagicCircle_Implementation(UMaterialInterface* DecalMaterial) override;
 	virtual void HideMagicCircle_Implementation() override;
+	virtual FVector GetMagicCircleLocation_Implementation() override;
 	
 	virtual void AddToXP_Implementation(int32 InXP) override;
 	virtual void LevelUp_Implementation() override;
