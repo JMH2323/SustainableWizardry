@@ -7,7 +7,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1579a7cd-1dd9-4102-8fb2-ded64c6e3088" name="Changes" comment="" />
+    <list default="true" id="1579a7cd-1dd9-4102-8fb2-ded64c6e3088" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/SunSpells/NS_EnergyBeam.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/SunSpells/NS_EnergyBeam.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/SunSpells/NS_SolarBeam.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/SunSpells/NS_SolarBeam.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaEffects/ManaDrain/NS_ManaDrain.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaEffects/ManaDrain/NS_ManaDrain.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FXVarietyPack/Materials/MI_ky_lightning02_4x4.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FXVarietyPack/Materials/MI_ky_lightning02_4x4.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FXVarietyPack/Particles/P_ky_lightning1.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FXVarietyPack/Particles/P_ky_lightning1.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Hydro/HydroPulse/GA_HydroPulse.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Hydro/HydroPulse/GA_HydroPulse.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Solar/Beam/GA_SolarBeam.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Solar/Beam/GA_SolarBeam.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TestLevelSW.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/TestLevelSW.umap" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -696,6 +707,7 @@
       <workItem from="1721334217896" duration="599000" />
       <workItem from="1721603455762" duration="165000" />
       <workItem from="1722377293304" duration="6508000" />
+      <workItem from="1723767021061" duration="1256000" />
     </task>
     <servers />
   </component>
