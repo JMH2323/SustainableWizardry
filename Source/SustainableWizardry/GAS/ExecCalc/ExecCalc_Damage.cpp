@@ -10,6 +10,8 @@
 #include "SustainableWizardry/GAS/SusWizAbilitySystemLibrary.h"
 #include "SustainableWizardry/GAS/Data/CharacterClassInfo.h"
 #include "SustainableWizardry/GAS/GameplayAbilities/SusWizAbilityTypes.h"
+#include "Kismet/GameplayStatics.h"
+#include "Camera/CameraShakeSourceActor.h"
 #include "SustainableWizardry/Interaction/CombatInterface.h"
 
 struct SusWizDamageStatics
@@ -161,8 +163,9 @@ void UExecCalc_Damage::Execute_Implementation(const FGameplayEffectCustomExecuti
 		TargetPlayerLevel = ICombatInterface::Execute_GetPlayerLevel(TargetAvatar);
 	}
 	
-	// Get the owning gameplay effect specs
+	// Get the owning gameplay effect specs and context
 	const FGameplayEffectSpec& Spec = ExecutionParams.GetOwningSpec();
+	FGameplayEffectContextHandle ContextHandle = Spec.GetContext();
 
 	// Use specs to get captured and associated gameplay tags
 	const FGameplayTagContainer* SourceTags = Spec.CapturedSourceTags.GetAggregatedTags();
@@ -193,6 +196,19 @@ void UExecCalc_Damage::Execute_Implementation(const FGameplayEffectCustomExecuti
 
 		DamageTypeValue *= ( 100.f - Resistance ) / 100.f;
 
+		// End Resistance
+		// Begin Radial Damage
+		if(USusWizAbilitySystemLibrary::IsRadialDamage(ContextHandle))
+		{
+			// Pseudo 
+			// 1. override TakeDamage in Character Base
+			// 2. create Damage Delegate, broadcast TakeDamage
+			// 3. Lambda to Damage Delegate
+			// 4. Call "ApplyRadialDamageWithFalloff (read)
+			// 5. in lambda, set damage type value.
+			
+		}
+		
 		Damage += DamageTypeValue;
 
 		
