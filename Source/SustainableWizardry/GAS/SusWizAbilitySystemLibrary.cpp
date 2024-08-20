@@ -207,6 +207,12 @@ FGameplayEffectContextHandle USusWizAbilitySystemLibrary::ApplyDamageEffect(
 	
 	SetDeathImpulse(EffectContexthandle, DamageEffectParams.DeathImpulse);
 	SetKnockbackForce(EffectContexthandle, DamageEffectParams.KnockbackForce);
+
+	// Radial Damage Mods
+	SetIsRadialDamage(EffectContexthandle, DamageEffectParams.bIsRadialDamage);
+	SetRadialDamageInnerRadius(EffectContexthandle, DamageEffectParams.RadialDamageInnerRadius);
+	SetRadialDamageOuterRadius(EffectContexthandle, DamageEffectParams.RadialDamageOuterRadius);
+	SetRadialDamageOrigin(EffectContexthandle, DamageEffectParams.RadialDamageOrigin);
 	
 	const FGameplayEffectSpecHandle SpecHandle = DamageEffectParams.SourceAbilitySystemComponent->MakeOutgoingSpec(DamageEffectParams.DamageGameplayEffectClass, DamageEffectParams.AbilityLevel, EffectContexthandle);
 
@@ -338,6 +344,42 @@ FVector USusWizAbilitySystemLibrary::GetKnockbackForce(const FGameplayEffectCont
 	
 }
 
+bool USusWizAbilitySystemLibrary::IsRadialDamage(const FGameplayEffectContextHandle& EffectContextHandle)
+{
+	if (const FSusWizGameplayEffectContext* SusWizEffectContext = static_cast<const FSusWizGameplayEffectContext*>(EffectContextHandle.Get()))
+	{
+		return SusWizEffectContext->IsRadialDamage();
+	}
+	return false;
+}
+
+float USusWizAbilitySystemLibrary::GetRadialDamageInnerRadius(const FGameplayEffectContextHandle& EffectContextHandle)
+{
+	if (const FSusWizGameplayEffectContext* SusWizEffectContext = static_cast<const FSusWizGameplayEffectContext*>(EffectContextHandle.Get()))
+	{
+		return SusWizEffectContext->GetRadialDamageInnerRadius();
+	}
+	return 0.f;
+}
+
+float USusWizAbilitySystemLibrary::GetRadialDamageOuterRadius(const FGameplayEffectContextHandle& EffectContextHandle)
+{
+	if (const FSusWizGameplayEffectContext* SusWizEffectContext = static_cast<const FSusWizGameplayEffectContext*>(EffectContextHandle.Get()))
+	{
+		return SusWizEffectContext->GetRadialDamageOuterRadius();
+	}
+	return 0.f;
+}
+
+FVector USusWizAbilitySystemLibrary::GetRadialDamageOrigin(const FGameplayEffectContextHandle& EffectContextHandle)
+{
+	if (const FSusWizGameplayEffectContext* SusWizEffectContext = static_cast<const FSusWizGameplayEffectContext*>(EffectContextHandle.Get()))
+	{
+		return SusWizEffectContext->GetRadialDamageOrigin();
+	}
+	return FVector::ZeroVector;
+}
+
 void USusWizAbilitySystemLibrary::SetDeathImpulse(FGameplayEffectContextHandle& EffectContextHandle,
                                                   const FVector& InImpulse)
 {
@@ -356,8 +398,44 @@ void USusWizAbilitySystemLibrary::SetKnockbackForce(FGameplayEffectContextHandle
 	}
 }
 
+void USusWizAbilitySystemLibrary::SetIsRadialDamage(FGameplayEffectContextHandle& EffectContextHandle,
+	bool bInIsRadialDamage)
+{
+	if (FSusWizGameplayEffectContext* SusWizEffectContext = static_cast<FSusWizGameplayEffectContext*>(EffectContextHandle.Get()))
+	{
+		SusWizEffectContext->SetIsRadialDamage(bInIsRadialDamage);
+	}
+}
+
+void USusWizAbilitySystemLibrary::SetRadialDamageInnerRadius(FGameplayEffectContextHandle& EffectContextHandle,
+	float InInnerRadius)
+{
+	if (FSusWizGameplayEffectContext* SusWizEffectContext = static_cast<FSusWizGameplayEffectContext*>(EffectContextHandle.Get()))
+	{
+		SusWizEffectContext->SetRadialDamageInnerRadius(InInnerRadius);
+	}
+}
+
+void USusWizAbilitySystemLibrary::SetRadialDamageOuterRadius(FGameplayEffectContextHandle& EffectContextHandle,
+	float InOuterRadius)
+{
+	if (FSusWizGameplayEffectContext* SusWizEffectContext = static_cast<FSusWizGameplayEffectContext*>(EffectContextHandle.Get()))
+	{
+		SusWizEffectContext->SetRadialDamageOuterRadius(InOuterRadius);
+	}
+}
+
+void USusWizAbilitySystemLibrary::SetRadialDamageOrigin(FGameplayEffectContextHandle& EffectContextHandle,
+	const FVector& InOrigin)
+{
+	if (FSusWizGameplayEffectContext* SusWizEffectContext = static_cast<FSusWizGameplayEffectContext*>(EffectContextHandle.Get()))
+	{
+		SusWizEffectContext->SetRadialDamageOrigin(InOrigin);
+	}
+}
+
 TArray<FRotator> USusWizAbilitySystemLibrary::EvenlySpacedRotators(const FVector& Forward, const FVector& Axis,
-	float Spread, int32 NumRotators)
+                                                                   float Spread, int32 NumRotators)
 {
 	TArray<FRotator> Rotators;
 

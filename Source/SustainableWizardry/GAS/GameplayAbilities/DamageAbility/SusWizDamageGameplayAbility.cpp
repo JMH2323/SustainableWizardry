@@ -45,11 +45,21 @@ FDamageEffectParams USusWizDamageGameplayAbility::MakeDamageEffectParamsFromClas
 		Params.DeathImpulse = ToTarget * DeathImpulseMagnitude;
 		Params.KnockbackForce = ToTarget * KnockbackForceMagnitude;
 	}
+	
 	// Debuffs
 	Params.DebuffChance = DebuffChance;
 	Params.DebuffDamage = DebuffDamage;
 	Params.DebuffDuration = DebuffDuration;
 	Params.DebuffFrequency = DebuffFrequency;
+
+	// Radial Damage Modifier
+	if (bIsRadialDamage)
+	{
+		Params.bIsRadialDamage = bIsRadialDamage;
+		Params.RadialDamageOrigin = RadialDamageOrigin;
+		Params.RadialDamageInnerRadius = RadialDamageInnerRadius;
+		Params.RadialDamageOuterRadius = RadialDamageOuterRadius;
+	}
 	return Params;
 	
 }
