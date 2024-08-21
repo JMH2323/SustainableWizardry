@@ -7,6 +7,10 @@
 #include "SustainableWizardry/GAS/Data/CharacterClassInfo.h"
 #include "CombatInterface.generated.h"
 
+
+
+//Delegates
+DECLARE_MULTICAST_DELEGATE_OneParam(FOnDamageSignature, float /*DamageAmount*/);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnDeathSignature, AActor*, DeadActor);
 
 // This class does not need to be modified.
@@ -45,6 +49,7 @@ public:
 
 	virtual void Die(const FVector& DeathImpulse) = 0;
 	virtual FOnDeathSignature& GetOnDeathDelegate() = 0;
+	virtual FOnDamageSignature& GetOnDamageSignature() = 0;
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void SetCombatTarget(AActor* InCombatTarget);
