@@ -12,6 +12,8 @@
 #include "SustainableWizardry/GAS/GameplayAbilities/SusWizAbilityTypes.h"
 #include "Kismet/GameplayStatics.h"
 #include "Camera/CameraShakeSourceActor.h"
+#include "DSP/LFO.h"
+#include "Kismet/KismetMathLibrary.h"
 #include "SustainableWizardry/Interaction/CombatInterface.h"
 
 struct SusWizDamageStatics
@@ -189,6 +191,7 @@ void UExecCalc_Damage::Execute_Implementation(const FGameplayEffectCustomExecuti
 		checkf(TagsToCaptureDefs.Contains(ResistanceTag), TEXT("TagsToCaptureDefs doesn't contain Tag: [%s] in ExecCalc_Damage"), *ResistanceTag.ToString());
 		const FGameplayEffectAttributeCaptureDefinition CaptureDef = TagsToCaptureDefs[ResistanceTag];
 		float DamageTypeValue = Spec.GetSetByCallerMagnitude(Pair.Key);
+		if(DamageTypeValue <= 0.f) {continue;}
 
 		float Resistance = 1.f;
 		ExecutionParams.AttemptCalculateCapturedAttributeMagnitude(CaptureDef, EvaluateParameters, Resistance);
@@ -200,13 +203,29 @@ void UExecCalc_Damage::Execute_Implementation(const FGameplayEffectCustomExecuti
 		// Begin Radial Damage
 		if(USusWizAbilitySystemLibrary::IsRadialDamage(ContextHandle))
 		{
-			// Pseudo 
-			// 1. override TakeDamage in Character Base
-			// 2. create Damage Delegate, broadcast TakeDamage
-			// 3. Lambda to Damage Delegate
-			// 4. Call "ApplyRadialDamageWithFalloff (read)
-			// 5. in lambda, set damage type value.
-			
+			FVector TargetLocation = TargetAvatar->GetActorLocation();
+			const FVector OriginLocation = USusWizAbilitySystemLibrary::GetRadialDamageOrigin(ContextHandle);
+			TargetLocation.Z = OriginLocation.Z;
+			const float SquareDistance = UKismetMathLibrary::Vector_DistanceSquared(TargetLocation, OriginLocation);
+			const float SquareOuterRadius = FMath::Square(USusWizAbilitySystemLibrary::GetRadialDamageOuterRadius(ContextHandle));
+			const float SquareInnerRadius = FMath::Square(USusWizAbilitySystemLibrary::GetRadialDamageInnerRadius(ContextHandle));
+
+			if(SquareDistance > SquareOuterRadius)
+			{
+				Damage = 0.f;
+				return;
+			}
+			if (SquareDistance <= SquareInnerRadius)
+			{
+				Damage += DamageTypeValue;
+				continue;
+			}
+			else
+			{
+				DamageTypeValue = UKismetMathLibrary::MapRangeClamped(
+			SquareDistance, SquareInnerRadius, SquareOuterRadius,
+			DamageTypeValue, 1.f);	
+			}
 		}
 		
 		Damage += DamageTypeValue;

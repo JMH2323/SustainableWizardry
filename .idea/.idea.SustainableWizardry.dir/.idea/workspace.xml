@@ -9,20 +9,25 @@
   <component name="ChangeListManager">
     <list default="true" id="1579a7cd-1dd9-4102-8fb2-ded64c6e3088" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultGameplayTags.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultGameplayTags.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/SunSpells/NS_SBeam.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/SunSpells/NS_SBeam.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaSounds/Abilities/FireNado/SFX_Fire-Nado_01.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaSounds/Abilities/FireNado/SFX_Fire-Nado_01.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaSounds/Abilities/FireNado/SFX_Fire-Nado_02.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaSounds/Abilities/FireNado/SFX_Fire-Nado_02.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaSounds/Abilities/FireNado/SFX_Fire-Nado_03.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaSounds/Abilities/FireNado/SFX_Fire-Nado_03.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Enemy/Robo/BP_EXPMAN.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Enemy/Robo/BP_EXPMAN.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Enemy/Robo/BP_Robo.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Enemy/Robo/BP_Robo.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Enemy/Robo/BP_RoboFighter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Enemy/Robo/BP_RoboFighter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Enemy/Robo/BP_RoboRanger.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Enemy/Robo/BP_RoboRanger.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/EnemyAbilities/Melee/GA_SludgeGolemAttack.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/EnemyAbilities/Melee/GA_SludgeGolemAttack.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/CurveTables/CT_Damage.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/CurveTables/CT_Damage.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/CurveTables/CT_SpellCost.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/CurveTables/CT_SpellCost.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Solar/Beam/GA_SolarBeam.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Solar/Beam/GA_SolarBeam.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayCueNotifies/GC_SolarBeam.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayCueNotifies/GC_SolarBeam.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GameMode/BP_GameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GameMode/BP_GameMode.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/TestLevelSW.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/TestLevelSW.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterBase.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterBase.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/ExecCalc/ExecCalc_Damage.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/ExecCalc/ExecCalc_Damage.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/DamageAbility/SusWizDamageGameplayAbility.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/DamageAbility/SusWizDamageGameplayAbility.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/DamageAbility/SusWizDamageGameplayAbility.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/DamageAbility/SusWizDamageGameplayAbility.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/SusWizAbilityTypes.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/SusWizAbilityTypes.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/SusWizAbilityTypes.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/SusWizAbilityTypes.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/SusWizAbilitySystemLibrary.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/SusWizAbilitySystemLibrary.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/SusWizAbilitySystemLibrary.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/SusWizAbilitySystemLibrary.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Interaction/CombatInterface.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Interaction/CombatInterface.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -715,7 +720,7 @@
       <workItem from="1723767021061" duration="4981000" />
       <workItem from="1723842164895" duration="982000" />
       <workItem from="1723849246083" duration="3469000" />
-      <workItem from="1724186150674" duration="1133000" />
+      <workItem from="1724186150674" duration="11060000" />
     </task>
     <servers />
   </component>

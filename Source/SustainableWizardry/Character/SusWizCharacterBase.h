@@ -10,6 +10,8 @@
 #include "SusWizCharacterBase.generated.h"
 
 
+
+
 // Forward declare for GAS
 class UAbilitySystemComponent;
 class UAttributeSet;
@@ -28,7 +30,9 @@ public:
 	ASusWizCharacterBase();
 
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
-
+	virtual float TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent,
+		AController* EventInstigator, AActor* DamageCauser) override;
+	
 	UAttributeSet* GetAttributeSet() const { return AttributeSet; }
 
 	
@@ -51,9 +55,12 @@ public:
 	virtual ECharacterClass GetCharacterClass_Implementation() override;
 	virtual USkeletalMeshComponent* GetMainWeapon_Implementation() override;
 	virtual USkeletalMeshComponent* GetSecWeapon_Implementation() override;
+
+	virtual FOnDamageSignature& GetOnDamageSignature() override;
 	/** end Combat Interface */
 
 	FOnDeathSignature OnDeathDelegate;
+	FOnDamageSignature OnDamageDelegate;
 	bool bDead = false;
 
 protected:

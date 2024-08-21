@@ -139,16 +139,16 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "SusWizAbilitySystemLibrary|GameplayEffects")
 	static void SetKnockbackForce(UPARAM(ref) FGameplayEffectContextHandle& EffectContextHandle, const FVector& InForce);
 	
-	UFUNCTION(BlueprintCallable, Category = "AuraAbilitySystemLibrary|GameplayEffects")
+	UFUNCTION(BlueprintCallable, Category = "SusWizAbilitySystemLibrary|GameplayEffects")
 	static void SetIsRadialDamage(UPARAM(ref) FGameplayEffectContextHandle& EffectContextHandle, bool bInIsRadialDamage);
 
-	UFUNCTION(BlueprintCallable, Category = "AuraAbilitySystemLibrary|GameplayEffects")
+	UFUNCTION(BlueprintCallable, Category = "SusWizAbilitySystemLibrary|GameplayEffects")
 	static void SetRadialDamageInnerRadius(UPARAM(ref) FGameplayEffectContextHandle& EffectContextHandle, float InInnerRadius);
 
-	UFUNCTION(BlueprintCallable, Category = "AuraAbilitySystemLibrary|GameplayEffects")
+	UFUNCTION(BlueprintCallable, Category = "SusWizAbilitySystemLibrary|GameplayEffects")
 	static void SetRadialDamageOuterRadius(UPARAM(ref) FGameplayEffectContextHandle& EffectContextHandle, float InOuterRadius);
 
-	UFUNCTION(BlueprintCallable, Category = "AuraAbilitySystemLibrary|GameplayEffects")
+	UFUNCTION(BlueprintCallable, Category = "SusWizAbilitySystemLibrary|GameplayEffects")
 	static void SetRadialDamageOrigin(UPARAM(ref) FGameplayEffectContextHandle& EffectContextHandle, const FVector& InOrigin);
 	
 	/* Gameplay Mechanics Getters */

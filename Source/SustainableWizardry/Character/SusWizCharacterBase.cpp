@@ -25,6 +25,14 @@ UAbilitySystemComponent* ASusWizCharacterBase::GetAbilitySystemComponent() const
 	return AbilitySystemComponent;	
 }
 
+float ASusWizCharacterBase::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent,
+	AController* EventInstigator, AActor* DamageCauser)
+{
+	const float DamageTaken =  Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
+	OnDamageDelegate.Broadcast(DamageTaken);
+	return DamageTaken;
+}
+
 UAnimMontage* ASusWizCharacterBase::GetHitReactMontage_Implementation()
 {
 	return HitReactMontage;
@@ -99,6 +107,11 @@ USkeletalMeshComponent* ASusWizCharacterBase::GetMainWeapon_Implementation()
 USkeletalMeshComponent* ASusWizCharacterBase::GetSecWeapon_Implementation()
 {
 	return SecondaryWeapon;
+}
+
+FOnDamageSignature& ASusWizCharacterBase::GetOnDamageSignature()
+{
+	return OnDamageDelegate;
 }
 
 void ASusWizCharacterBase::InitAbilityActorInfo()

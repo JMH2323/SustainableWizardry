@@ -22,7 +22,7 @@ float USusWizDamageGameplayAbility::GetDamageAtLevel() const
 	return Damage.GetValueAtLevel(GetAbilityLevel());
 }
 
-FDamageEffectParams USusWizDamageGameplayAbility::MakeDamageEffectParamsFromClassDefaults(AActor* TargetActor) const
+FDamageEffectParams USusWizDamageGameplayAbility::MakeDamageEffectParamsFromClassDefaults(AActor* TargetActor, FVector InRadialDamageOrigin) const
 {
 
 	FDamageEffectParams Params;
@@ -56,7 +56,7 @@ FDamageEffectParams USusWizDamageGameplayAbility::MakeDamageEffectParamsFromClas
 	if (bIsRadialDamage)
 	{
 		Params.bIsRadialDamage = bIsRadialDamage;
-		Params.RadialDamageOrigin = RadialDamageOrigin;
+		Params.RadialDamageOrigin = InRadialDamageOrigin;
 		Params.RadialDamageInnerRadius = RadialDamageInnerRadius;
 		Params.RadialDamageOuterRadius = RadialDamageOuterRadius;
 	}
