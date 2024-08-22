@@ -31,11 +31,6 @@ ASusWizProjectiles::ASusWizProjectiles()
 	Sphere->SetCollisionResponseToChannel(ECC_Pawn, ECR_Overlap);
 	//Sphere->IgnoreActorWhenMoving(GetOwner(), true);
 	
-
-	 
-
-
-	
 	ProjectileMovement = CreateDefaultSubobject<UProjectileMovementComponent>("ProjectileMovement");
 	ProjectileMovement->InitialSpeed = 100.f;
 	ProjectileMovement->MaxSpeed = 1000.f;
