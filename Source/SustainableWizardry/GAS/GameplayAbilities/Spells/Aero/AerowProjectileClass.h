@@ -25,6 +25,7 @@ virtual void OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* O
 	int NumAeroBounces = 5;
 	int BounceCount;
 	bool bHitMe;
+	bool bHitMeSpawn;
 
 	UFUNCTION(BlueprintCallable)
 	virtual void AssignNewHomingTarget();

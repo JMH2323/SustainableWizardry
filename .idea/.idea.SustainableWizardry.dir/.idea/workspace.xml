@@ -10,32 +10,17 @@
     <list default="true" id="1579a7cd-1dd9-4102-8fb2-ded64c6e3088" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/DefaultGameplayTags.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultGameplayTags.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/OutsideEffects/AuraEffects/Projectiles/FireBolt/NS_Fire_3.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/OutsideEffects/AuraEffects/Projectiles/FireBolt/NS_Fire_3.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaEffects/Combat/NS_BloodImpact.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaEffects/Combat/NS_BloodImpact.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaEffects/Combat/NS_CombatImpact.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaEffects/Combat/NS_CombatImpact.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaEffects/Fire/NS_Fire.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaEffects/Fire/NS_Fire.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaEffects/Firenado/NS_Tornado.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaEffects/Firenado/NS_Tornado.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaEffects/Projectiles/FireBolt/NS_Fire_1.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaEffects/Projectiles/FireBolt/NS_Fire_1.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaEffects/Projectiles/FireBolt/NS_Fire_3.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaEffects/Projectiles/FireBolt/NS_Fire_3.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaEffects/Soul/NS_Embers.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaEffects/Soul/NS_Embers.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaEffects/Soul/NS_Soul.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaEffects/Soul/NS_Soul.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FXVarietyPack/Materials/M_ky_smoke01.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FXVarietyPack/Materials/M_ky_smoke01.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Enemy/Robo/BP_EXPMAN.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Enemy/Robo/BP_EXPMAN.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Enemy/Robo/BP_Robo.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Enemy/Robo/BP_Robo.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Enemy/Robo/BP_RoboFighter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Enemy/Robo/BP_RoboFighter.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Enemy/Robo/BP_RoboRanger.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Enemy/Robo/BP_RoboRanger.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Player/BP_SusWizPlayer.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Player/BP_SusWizPlayer.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/Data/DA_AbilityInfo.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/Data/DA_AbilityInfo.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/ETC/GA_Healing.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/ETC/GA_Healing.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Pure/EnergyBolt/BP_EnergyShot.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Pure/EnergyBolt/BP_EnergyShot.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Solar/Beam/GA_SolarBeam.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Solar/Beam/GA_SolarBeam.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Solar/Beam/GE_CooldownSolarBeam.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Solar/Beam/GE_CooldownSolarBeam.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GameMode/BP_GameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GameMode/BP_GameMode.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Aero/BP_AerowProjectile.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Aero/BP_AerowProjectile.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Aero/GA_Aerow.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Aero/GA_Aerow.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Spawner/BP_EnemySpawner.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Spawner/BP_EnemySpawner.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/TestLevelSW.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/TestLevelSW.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UI/SpellMenu/SpellTrees/WBP_SpellTreeOffense.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/SpellMenu/SpellTrees/WBP_SpellTreeOffense.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/Spells/Geo/RockPunchProjectile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/Spells/Geo/RockPunchProjectile.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/Spells/SpellsBase/SusWizProjectiles.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/Spells/SpellsBase/SusWizProjectiles.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/Spells/Aero/AerowProjectileClass.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/Spells/Aero/AerowProjectileClass.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/Spells/Aero/AerowProjectileClass.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/Spells/Aero/AerowProjectileClass.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/SusWizAbilitySystemLibrary.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/SusWizAbilitySystemLibrary.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -408,7 +393,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Uproject.SustainableWizardry.executor": "Debug",
+    "Uproject.SustainableWizardry.executor": "Run",
     "git-widget-placeholder": "Abilities-Level-GameLoop",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
@@ -579,6 +564,7 @@
       <workItem from="1723849246083" duration="3469000" />
       <workItem from="1724186150674" duration="11719000" />
       <workItem from="1724273705954" duration="20240000" />
+      <workItem from="1724805690387" duration="3317000" />
     </task>
     <servers />
   </component>
@@ -588,47 +574,6 @@
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/Spells/Aero/AerowProjectileClass.cpp</url>
-          <line>84</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/Spells/Aero/AerowProjectileClass.cpp</url>
-          <line>80</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/Spells/Aero/AerowProjectileClass.cpp</url>
-          <line>90</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/Spells/Aero/AerowProjectileClass.cpp</url>
-          <line>93</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/Spells/Aero/AerowProjectileClass.cpp</url>
-          <line>111</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/Spells/Aero/AerowProjectileClass.cpp</url>
-          <line>104</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/Spells/Aero/AerowProjectileClass.cpp</url>
-          <line>106</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -35,11 +35,16 @@ void AAerowProjectileClass::OnSphereOverlap(UPrimitiveComponent* OverlappedCompo
                                             UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	AActor* SourceAvatarActor = DamageEffectParams.SourceAbilitySystemComponent->GetAvatarActor();
-	if (SourceAvatarActor == OtherActor)
+	if(SourceAvatarActor == OtherActor && !bHitMeSpawn)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Spawned Arrow Hit Me"));
+		bHitMeSpawn = true;
+		return;
+	}
+	if (SourceAvatarActor == OtherActor && bHitMeSpawn)
 	{
 		UE_LOG(LogTemp, Warning, TEXT("Hit Me"));
 		bHitMe = true;
-		// TODO: Fix Hitting Self
 		AssignNewHomingTarget();
 		return;
 	}
@@ -75,45 +80,24 @@ void AAerowProjectileClass::AssignNewHomingTarget()
 	{
 		AActor* SourceAvatarActor = DamageEffectParams.SourceAbilitySystemComponent->GetAvatarActor();
 		AActor* OldTargetAvatarActor = DamageEffectParams.TargetAbilitySystemComponent->GetAvatarActor();
+		AActor* HitTargetAvatarActor;
 		TArray<AActor*> ActorsToIgnore;
 		if (bHitMe)
 		{
-			ActorsToIgnore.Add(SourceAvatarActor);
+			HitTargetAvatarActor = SourceAvatarActor;
 		}
 		else
 		{
-			ActorsToIgnore.Add(OldTargetAvatarActor);
+			HitTargetAvatarActor = OldTargetAvatarActor;
 		}
 		
+		ActorsToIgnore.Add(HitTargetAvatarActor);
 		TArray<AActor*> OtherLiveActors;
 		TArray<AActor*> ClosestTargetArray;
 		
-		USusWizAbilitySystemLibrary::GetLivePlayersWithinRadius(SourceAvatarActor, OtherLiveActors, ActorsToIgnore, 10000, GetActorLocation());
-
-		// Filter Spawners
-		TArray<AActor*> FilteredActors;
-		for (AActor* Actor : OtherLiveActors)
-		{
-			if (Actor->IsPendingKill())
-			{
-				UE_LOG(LogTemp, Warning, TEXT("Actor Pending kill: %s"), *Actor->GetName());
-				continue;
-			}
-			ASusWizEnemy* Enemy = Cast<ASusWizEnemy>(Actor);
-			if(Enemy)
-			{
-				if (Enemy->CombatTarget == nullptr)
-				{
-					UE_LOG(LogTemp, Warning, TEXT("Filtering out spawner: %s"), *Actor->GetName());
-				}
-			}
-			else
-			{
-				FilteredActors.Add(Actor);
-			}
-		}
+		USusWizAbilitySystemLibrary::GetLivePlayersWithinRadius(SourceAvatarActor, OtherLiveActors, ActorsToIgnore, 10000, HitTargetAvatarActor->GetActorLocation());
 		
-		USusWizAbilitySystemLibrary::GetClosestTargets(1, FilteredActors, ClosestTargetArray, GetActorLocation());
+		USusWizAbilitySystemLibrary::GetClosestTargets(1, OtherLiveActors, ClosestTargetArray, HitTargetAvatarActor->GetActorLocation());
 
 		if (ClosestTargetArray.Num() > 0)
 		{
@@ -121,25 +105,9 @@ void AAerowProjectileClass::AssignNewHomingTarget()
 			{
 				UE_LOG(LogTemp, Warning, TEXT("Old target Was: %s"), *OldTargetAvatarActor->GetName());
 				UE_LOG(LogTemp, Warning, TEXT("New target selected: %s"), *NewTargetActor->GetName());
-
-				OldTargetAvatarActor = NewTargetActor;
-				if(NewTargetActor == SourceAvatarActor)
-				{
-					ProjectileMovement->HomingTargetComponent = nullptr;
-					ProjectileMovement->HomingTargetComponent = NewTargetActor->GetRootComponent();
-				}
-				else
-				{
-					if(NewTargetActor->GetOwner()->GetRootComponent())
-					{
-						ProjectileMovement->HomingTargetComponent = nullptr;
-						ProjectileMovement->HomingTargetComponent = NewTargetActor->GetOwner()->GetRootComponent();
-					}
-					else
-					{
-						AssignNewHomingTarget();
-					}
-				}
+				
+				ProjectileMovement->HomingTargetComponent = nullptr;
+				ProjectileMovement->HomingTargetComponent = NewTargetActor->GetRootComponent();
 			}
 		}
 		else
