@@ -1,114 +1,26 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "EnergyBolt.h"
-#include "SustainableWizardry/SusWizGameplayTags.h"
-#include "SustainableWizardry/GAS/SusWizAbilitySystemLibrary.h"
-#include "GameFramework/ProjectileMovementComponent.h"
+#include "AerrowSpell.h"
+
 #include "SustainableWizardry/SustainableWizardry.h"
+#include "GameFramework/ProjectileMovementComponent.h"
+#include "SustainableWizardry/GAS/SusWizAbilitySystemLibrary.h"
+#include "SustainableWizardry/GAS/GameplayAbilities/Spells/Aero/AerowProjectileClass.h"
 #include "SustainableWizardry/GAS/GameplayAbilities/Spells/SpellsBase/SusWizProjectiles.h"
 #include "SustainableWizardry/Interaction/CombatInterface.h"
 
-
-FString UEnergyBolt::GetDescription(int32 Level)
+FString UAerrowSpell::GetDescription(int32 Level)
 {
-
-	const int32 ScaledDamage = Damage.GetValueAtLevel(Level);
-	const float EnergyCost = FMath::Abs(GetEnergyCost(Level));
-	const float Cooldown = GetCooldown(Level);
-	if (Level == 1)
-	{
-		return FString::Printf(TEXT(
-			// Title
-			"<Title>ENERGY BOLT</>\n\n"
-
-			// Level
-			"<Small>Level: </><Level>%d</>\n"
-			// Energy Cost
-			"<Small>Energy Cost: </><Energy>%.1f</>\n"
-			// Cooldown
-			"<Small>Cooldown: </><Cooldown>%.1f</>\n\n"
-
-			"<Default>Launches a bolt of  energy, "
-			"exploding on impact and dealing: </>"
-
-			// Damage
-			"<Damage>%d</><Default> pure damage</>"),
-
-			// Values
-			Level,
-			EnergyCost,
-			Cooldown,
-			ScaledDamage);
-	}
-	else
-	{
-		return FString::Printf(TEXT(
-			// Title
-			"<Title>ENERGY BOLT</>\n\n"
-
-			// Level
-			"<Small>Level: </><Level>%d</>\n"
-			// ManaCost
-			"<Small>Energy Cost: </><Energy>%.1f</>\n"
-			// Cooldown
-			"<Small>Cooldown: </><Cooldown>%.1f</>\n\n"
-
-			// Number of FireBolts
-			"<Default>Launches %d bolts of energy, "
-			"exploding on impact and dealing: </>"
-
-			// Damage
-			"<Damage>%d</><Default> pure damage</>"),
-
-			// Values
-			Level,
-			EnergyCost,
-			Cooldown,
-			FMath::Min(Level, MaxNumProjectiles),
-			ScaledDamage);
-
-	}
-	
+	return Super::GetDescription(Level);
 }
 
-FString UEnergyBolt::GetNextLevelDescription(int32 Level)
+FString UAerrowSpell::GetNextLevelDescription(int32 Level)
 {
-	// Get Damage
-	const int32 ScaledDamage = Damage.GetValueAtLevel(Level);
-	// Get Cost
-	const float EnergyCost = FMath::Abs(GetEnergyCost(Level));
-	// Get Cooldown
-	const float Cooldown = GetCooldown(Level);
-	
-	return FString::Printf(TEXT(
-			// Title
-			"<Title>ENERGY BOLT</>\n\n"
-
-			// Level
-			"<Small>Level: </><Level>%d</>\n"
-			// ManaCost
-			"<Small>Energy Cost: </><Energy>%.1f</>\n"
-			// Cooldown
-			"<Small>Cooldown: </><Cooldown>%.1f</>\n\n"
-
-			// Number of FireBolts
-			"<Default>Launches %d bolts of energy, "
-			"exploding on impact and dealing: </>"
-
-			// Damage
-			"<Damage>%d</><Default> pure damage</>"),
-
-			// Values
-			Level,
-			EnergyCost,
-			Cooldown,
-			FMath::Min(Level, MaxNumProjectiles),
-			ScaledDamage);
-
+	return Super::GetNextLevelDescription(Level);
 }
 
-void UEnergyBolt::SpawnProjectiles()
+void UAerrowSpell::SpawnAerrowProjectiles()
 {
 	const bool bIsServer = GetAvatarActorFromActorInfo()->HasAuthority();
 	if (!bIsServer) return;
@@ -161,8 +73,14 @@ void UEnergyBolt::SpawnProjectiles()
 
 		FRotator Rotation = ShotDirection.Rotation();
 		const FVector Forward = Rotation.Vector();
+		
 		// Determine the number of projectiles to spawn based on level.
-		const int32 EffectiveNumProjectiles = FMath::Min(MaxNumProjectiles, GetAbilityLevel());
+		int32 EffectiveNumProjectiles = 1;
+		if (GetAbilityLevel() >= 4)
+		{
+			EffectiveNumProjectiles = 2;	
+		}
+		
 		// Pass those into getting our rotations and directions for multiple projectiles.
 		TArray<FRotator> Rotations = USusWizAbilitySystemLibrary::EvenlySpacedRotators(Forward, FVector::UpVector, ProjectileSpread, EffectiveNumProjectiles);
 
@@ -173,15 +91,17 @@ void UEnergyBolt::SpawnProjectiles()
 			SpawnTransform.SetLocation(SocketLocation);
 			SpawnTransform.SetRotation(Rot.Quaternion());
 
-			ASusWizProjectiles* Projectile = GetWorld()->SpawnActorDeferred<ASusWizProjectiles>(
-			ProjectileClass,
+			AAerowProjectileClass* Projectile = GetWorld()->SpawnActorDeferred<AAerowProjectileClass>(
+			AerowProjectileClass,
 			SpawnTransform,
 			GetOwningActorFromActorInfo(),
 			Cast<APawn>(GetOwningActorFromActorInfo()),
 			ESpawnActorCollisionHandlingMethod::AlwaysSpawn);
 
 			Projectile->DamageEffectParams = MakeDamageEffectParamsFromClassDefaults();
-
+			
+			Projectile->NumAeroBounces = GetAbilityLevel() + 1;
+			
 			if (Projectile->ProjectileMovement)
 			{
 				if (HomingTarget)
@@ -190,9 +110,9 @@ void UEnergyBolt::SpawnProjectiles()
 					Projectile->ProjectileMovement->bIsHomingProjectile = true;
 					if (ICombatInterface* CIHM = Cast<ICombatInterface>(HomingTarget))
 					{
-						if (!CIHM->GetOnDeathDelegate().IsAlreadyBound(this, &UEnergyBolt::HomingTargetDied))
+						if (!CIHM->GetOnDeathDelegate().IsAlreadyBound(this, &UAerrowSpell::HomingTargetDied))
 						{
-							CIHM->GetOnDeathDelegate().AddDynamic(this, &UEnergyBolt::HomingTargetDied);
+							CIHM->GetOnDeathDelegate().AddDynamic(this, &UAerrowSpell::HomingTargetDied);
 						}
 					}
 				}

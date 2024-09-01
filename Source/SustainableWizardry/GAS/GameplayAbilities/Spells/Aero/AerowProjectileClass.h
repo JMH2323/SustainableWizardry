@@ -14,15 +14,18 @@ class SUSTAINABLEWIZARDRY_API AAerowProjectileClass : public ASusWizProjectiles
 {
 	GENERATED_BODY()
 
+public:
+	UPROPERTY(BlueprintReadWrite, Category = "AerowProjectile")
+	int NumAeroBounces = 5;
 
 protected:
 
 	virtual void BeginPlay() override;
 	virtual void OnHit() override;
-virtual void OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult) override;
+	virtual void OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult) override;
 
-	UPROPERTY(EditDefaultsOnly, Category = "AerowProjectile")
-	int NumAeroBounces = 5;
+	
+	
 	int BounceCount;
 	bool bHitMe;
 	bool bHitMeSpawn;
