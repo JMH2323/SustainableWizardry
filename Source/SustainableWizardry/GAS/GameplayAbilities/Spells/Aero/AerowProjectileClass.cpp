@@ -17,6 +17,7 @@ void AAerowProjectileClass::BeginPlay()
 {
 	Super::BeginPlay();
 	BounceCount = 0;
+	
 }
 
 void AAerowProjectileClass::OnHit()
