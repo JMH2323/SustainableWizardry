@@ -252,8 +252,12 @@ void USusWizAttributeSet::ShowFloatingText(const FEffectProperties& Props, float
 	{
 		if(ASusWizPlayerController* PC = Cast<ASusWizPlayerController>(Props.SourceCharacter->Controller))
 		{
-			PC->ShowDamageNumber(Damage, Props.TargetCharacter, bDodgedHit, bCrit);
-			return;
+			if(Props.TargetCharacter)
+			{
+				PC->ShowDamageNumber(Damage, Props.TargetCharacter, bDodgedHit, bCrit);
+				return;
+			}
+			
 		}
 		if(ASusWizPlayerController* PC = Cast<ASusWizPlayerController>(Props.TargetCharacter->Controller))
 		{
