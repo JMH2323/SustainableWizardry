@@ -250,22 +250,29 @@ void USusWizAttributeSet::ShowFloatingText(const FEffectProperties& Props, float
 
 	if(Props.SourceCharacter != Props.TargetCharacter)
 	{
-		if(ASusWizPlayerController* PC = Cast<ASusWizPlayerController>(Props.SourceCharacter->Controller))
+		
+		if (Props.SourceCharacter && IsValid(Props.SourceCharacter))
 		{
-			if(Props.TargetCharacter)
+			if (ASusWizPlayerController* PC = Cast<ASusWizPlayerController>(Props.SourceCharacter->Controller))
 			{
-				PC->ShowDamageNumber(Damage, Props.TargetCharacter, bDodgedHit, bCrit);
-				return;
+				if (Props.TargetCharacter && IsValid(Props.TargetCharacter))
+				{
+					PC->ShowDamageNumber(Damage, Props.TargetCharacter, bDodgedHit, bCrit);
+					return;
+				}
 			}
-			
 		}
-		if(ASusWizPlayerController* PC = Cast<ASusWizPlayerController>(Props.TargetCharacter->Controller))
+		if (Props.TargetCharacter && IsValid(Props.TargetCharacter))
 		{
-			PC->ShowDamageNumber(Damage, Props.TargetCharacter, bDodgedHit, bCrit);
+			if (ASusWizPlayerController* PC = Cast<ASusWizPlayerController>(Props.TargetCharacter->Controller))
+			{
+				if (Props.SourceCharacter && IsValid(Props.SourceCharacter))
+				{
+					PC->ShowDamageNumber(Damage, Props.TargetCharacter, bDodgedHit, bCrit);
+				}
+			}
 		}
-				
 	}
-	
 }
 
 void USusWizAttributeSet::SendXPEvent(const FEffectProperties& Props)
@@ -283,6 +290,7 @@ void USusWizAttributeSet::SendXPEvent(const FEffectProperties& Props)
 		UAbilitySystemBlueprintLibrary::SendGameplayEventToActor(Props.SourceCharacter, GameplayTags.Attributes_Meta_IncomingXP, Payload);
 	}
 }
+
 
 /*
  * Attribute stuff start

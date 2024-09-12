@@ -254,7 +254,7 @@ void UExecCalc_Damage::Execute_Implementation(const FGameplayEffectCustomExecuti
 
 	/* TODONE: Scale Damage */
 	float SourceDamageScale = 0.f;
-	ExecutionParams.AttemptCalculateCapturedAttributeMagnitude(DamageStatics().ArmorDef, EvaluateParameters, SourceDamageScale);
+	ExecutionParams.AttemptCalculateCapturedAttributeMagnitude(DamageStatics().DamageScaleDef, EvaluateParameters, SourceDamageScale);
 	SourceDamageScale = FMath::Max<float>(SourceDamageScale, 0.f);
 
 	Damage *= (1.f + (SourceDamageScale * 0.01));
