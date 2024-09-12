@@ -3,6 +3,7 @@
 
 #include "SpellMenuWidgetController.h"
 
+#include "NativeGameplayTags.h"
 #include "SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.h"
 #include "SustainableWizardry/GAS/Data/AbilityInfo.h"
 #include "SustainableWizardry/Player/PlayerState/SusWizPlayerState.h"

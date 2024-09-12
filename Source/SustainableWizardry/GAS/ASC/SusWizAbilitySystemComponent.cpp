@@ -144,7 +144,7 @@ void USusWizAbilitySystemComponent::UpgradeAttribute(const FGameplayTag& Attribu
 {
 	if (GetAvatarActor()->Implements<UPlayerInterface>())
 	{
-		if (IPlayerInterface::Execute_GetAttributePoints(GetAvatarActor()) > 0)
+		if (IPlayerInterface::Execute_GetAttributePoints(GetAvatarActor()))
 		{
 			ServerUpgradeAttribute(AttributeTag);
 		}
@@ -169,11 +169,7 @@ void USusWizAbilitySystemComponent::ServerUpgradeAttribute_Implementation(const 
 	Payload.EventMagnitude = 1.f;
 
 	UAbilitySystemBlueprintLibrary::SendGameplayEventToActor(GetAvatarActor(), AttributeTag, Payload);
-
-	if (GetAvatarActor()->Implements<UPlayerInterface>())
-	{
-		IPlayerInterface::Execute_AddToAttributePoints(GetAvatarActor(), -1);
-	}
+	
 }
 
 
@@ -383,6 +379,23 @@ void USusWizAbilitySystemComponent::ServerSpendSpellPoint_Implementation(const F
 		else if (Status.MatchesTagExact(GameplayTags.Abilities_Status_Unlocked) || Status.MatchesTagExact(GameplayTags.Abilities_Status_Equipped))
 		{
 			AbilitySpec->Level += 1;
+			
+			if(AbilityTag.MatchesTagExact(GameplayTags.Abilities_Aero_Airrow))
+			{
+				UpgradeAttribute(GameplayTags.Attributes_Primary_Swift);
+			}
+			if(AbilityTag.MatchesTagExact(GameplayTags.Abilities_Solar_Beam))
+			{
+				UpgradeAttribute(GameplayTags.Attributes_Primary_Flare);
+			}
+			if(AbilityTag.MatchesTagExact(GameplayTags.Abilities_Geo_RockPunch))
+			{
+				UpgradeAttribute(GameplayTags.Attributes_Primary_Seismic);
+			}
+			if(AbilityTag.MatchesTagExact(GameplayTags.Abilities_Hydro_HydroPulse))
+			{
+				UpgradeAttribute(GameplayTags.Attributes_Primary_Deep);
+			}
 		}
 
 		ClientUpdateAbilityStatus(AbilityTag, Status, AbilitySpec->Level);

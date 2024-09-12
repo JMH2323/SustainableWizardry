@@ -18,7 +18,6 @@ void FSusWizGameplayTags::InitializeNativeGameplayTags()
 
 
 	// Secondary Attributes
-	// TODO: Alex/Jeff add your attributes. NOTE: Tags wont view with Live coding since this is created in engine launch, so you have to stop and start
 	GameplayTags.Attributes_Secondary_Armor = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Secondary.Armor"), FString ("Reduces Damage Taken"));
 	GameplayTags.Attributes_Secondary_ArmorPen = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Secondary.ArmorPen"), FString ("Reduces Armor Effect"));
 	GameplayTags.Attributes_Secondary_MaxHealth = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Secondary.MaxHealth"), FString ("Maximum Health Capacity"));
@@ -143,7 +142,7 @@ void FSusWizGameplayTags::InitializeNativeGameplayTags()
 	GameplayTags.Abilities_Hydro_OceanCall = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Hydro.OceanCall"), FString ("HYDRO Ability Tag"));
 
 	// Aero
-	GameplayTags.Abilities_Aero_Cut = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Aero.Airrow"), FString ("Aero Ability Tag"));
+	GameplayTags.Abilities_Aero_Airrow = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Aero.Airrow"), FString ("Aero Ability Tag"));
 	GameplayTags.Abilities_Aero_Cut = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Aero.Cut"), FString ("Aero Ability Tag"));
 	GameplayTags.Abilities_Aero_Dash = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Aero.Dash"), FString ("Aero Ability Tag"));
 	GameplayTags.Abilities_Aero_InstantCarnage = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Abilities.Aero.InstantCarnage"), FString ("Aero Ability Tag"));
