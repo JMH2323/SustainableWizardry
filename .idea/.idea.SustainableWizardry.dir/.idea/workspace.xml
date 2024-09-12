@@ -9,15 +9,13 @@
   <component name="ChangeListManager">
     <list default="true" id="1579a7cd-1dd9-4102-8fb2-ded64c6e3088" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UI/AttributeMenu/WBP_AttributeMenu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/AttributeMenu/WBP_AttributeMenu.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UI/AttributeMenu/WBP_RowButton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/AttributeMenu/WBP_RowButton.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UI/SpellMenu/WBP_SpellMenu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/SpellMenu/WBP_SpellMenu.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/Attribute/SusWizAttributeSet.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/Attribute/SusWizAttributeSet.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/Attribute/SusWizAttributeSet.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/Attribute/SusWizAttributeSet.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/ExecCalc/ExecCalc_Damage.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/ExecCalc/ExecCalc_Damage.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/SusWizGameplayTags.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/SusWizGameplayTags.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/UI/Widget/WidgetController/SpellMenuWidgetController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/UI/Widget/WidgetController/SpellMenuWidgetController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Enemy/Robo/BP_RoboFighter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Enemy/Robo/BP_RoboFighter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/Data/CT_XPReward.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/Data/CT_XPReward.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GameMode/BP_GameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GameMode/BP_GameMode.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Spawner/BP_EnemySpawner.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Spawner/BP_EnemySpawner.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TestLevelSW.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/TestLevelSW.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/Overlay/WBP_Overlay.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/Overlay/WBP_Overlay.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizEnemy.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizEnemy.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,7 +247,7 @@
       <workItem from="1725330393758" duration="1414000" />
       <workItem from="1725480185439" duration="1624000" />
       <workItem from="1725991698185" duration="2400000" />
-      <workItem from="1726168742752" duration="4558000" />
+      <workItem from="1726168742752" duration="6018000" />
     </task>
     <servers />
   </component>
