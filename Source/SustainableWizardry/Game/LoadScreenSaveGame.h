@@ -31,6 +31,12 @@ public:
 	int32 SlotIndex = 0;
 
 	UPROPERTY()
+	int32 WaveCount = 0;
+
+	UPROPERTY()
+	FString MapName = FString("Default Map Name");
+
+	UPROPERTY()
 	FString PlayerName = FString("Default Name");
 
 	UPROPERTY()
