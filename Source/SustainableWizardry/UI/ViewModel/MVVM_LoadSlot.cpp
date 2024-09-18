@@ -13,3 +13,13 @@ void UMVVM_LoadSlot::SetPlayerName(FString InPlayerName)
 {
 	UE_MVVM_SET_PROPERTY_VALUE(PlayerName, InPlayerName);
 }
+
+void UMVVM_LoadSlot::SetWaveCount(int32 InWaveCount)
+{
+	UE_MVVM_SET_PROPERTY_VALUE(WaveCount, InWaveCount);
+}
+
+void UMVVM_LoadSlot::SetMapName(FString InMapName)
+{
+	UE_MVVM_SET_PROPERTY_VALUE(MapName, InMapName);
+}

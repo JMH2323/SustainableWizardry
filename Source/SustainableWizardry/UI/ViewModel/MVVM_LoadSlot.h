@@ -9,6 +9,7 @@
 
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSetWidgetSwitcherIndex, int32, WidgetSwitcherIndex);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEnableSelectSlotButton, bool, bEnableSelectSlot);
 /**
  * 
  */
@@ -22,23 +23,39 @@ public:
 	UPROPERTY(BlueprintAssignable)
 	FSetWidgetSwitcherIndex SetWidgetSwitcherIndex;
 
+	UPROPERTY(BlueprintAssignable)
+	FEnableSelectSlotButton EnableSelectSlotButton;
+
 	void InitializeSlot();
 	
 	UPROPERTY()
 	FString LoadSlotName;
 
 	UPROPERTY()
-	FString SlotIndex;
+	int32 SlotIndex;
 	
 	UPROPERTY()
 	TEnumAsByte<ESaveSlotStatus> SlotStatus;
 	
-	/** Field Notifies */
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, FieldNotify, Setter, Getter);
-	FString PlayerName;
+	
 
 	void SetPlayerName(FString InPlayerName);
+	void SetWaveCount(int32 InWaveCount);
+	void SetMapName(FString InMapName);
 
 	FString GetPlayerName() const { return PlayerName; }
+	int32 GetWaveCount() const { return WaveCount; }
+	FString GetMapName() const { return MapName; }
+
+private:
+
+	/** Field Notifies */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, FieldNotify, Setter, Getter, meta = (AllowPrivateAccess="true"));
+	FString PlayerName;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, FieldNotify, Setter, Getter, meta = (AllowPrivateAccess="true"));
+	int32 WaveCount;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, FieldNotify, Setter, Getter, meta = (AllowPrivateAccess="true"));
+	FString MapName;
 };
