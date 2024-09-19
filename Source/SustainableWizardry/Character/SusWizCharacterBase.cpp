@@ -5,6 +5,7 @@
 #include "AbilitySystemComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.h"
+#include "SustainableWizardry/GAS/Attribute/SusWizAttributeSet.h"
 
 // Sets default values
 ASusWizCharacterBase::ASusWizCharacterBase()
@@ -25,8 +26,13 @@ UAbilitySystemComponent* ASusWizCharacterBase::GetAbilitySystemComponent() const
 	return AbilitySystemComponent;	
 }
 
+USusWizAttributeSet* ASusWizCharacterBase::GetSusWizAttributeSet() const
+{
+	return Cast<USusWizAttributeSet>(AttributeSet);
+}
+
 float ASusWizCharacterBase::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent,
-	AController* EventInstigator, AActor* DamageCauser)
+                                       AController* EventInstigator, AActor* DamageCauser)
 {
 	const float DamageTaken =  Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
 	OnDamageDelegate.Broadcast(DamageTaken);

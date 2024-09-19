@@ -49,11 +49,10 @@ void ASusWizCharacterPlayer::LoadProgress()
 	{
 		ULoadScreenSaveGame* SaveData = SusWizGameMode->RetrieveInGameSaveData();
 		if (SaveData == nullptr) return;
-
 		
-
 		if(SaveData->bFirstTimeLoadIn)
 		{
+			
 			InitializeDefaultAttributes();
 			AddCharacterAbilities();
 		}
@@ -70,6 +69,7 @@ void ASusWizCharacterPlayer::LoadProgress()
 			if (USusWizAbilitySystemComponent* SusWizASC = Cast<USusWizAbilitySystemComponent>(AbilitySystemComponent))
 			{
 				SusWizASC->AddCharacterAbilitiesFromSaveData(SaveData);
+				SusWizASC->AddCharacterPassiveAbilities(StartupPassiveAbilities);
 			}
 
 			
@@ -92,8 +92,11 @@ void ASusWizCharacterPlayer::OnRep_PlayerState()
 
 int32 ASusWizCharacterPlayer::GetAttributePoints_Implementation() const
 {
+	
 	ASusWizPlayerState* SusWizPlayerState = GetPlayerState<ASusWizPlayerState>();
+	
 	check(SusWizPlayerState);
+	
 	return SusWizPlayerState->GetAttributePoints();
 }
 
@@ -226,11 +229,15 @@ void ASusWizCharacterPlayer::SaveProgress_Implementation(const FName& Checkpoint
 			SaveData->SpellPoints = SusWizPlayerState->GetSpellPoints();
 			SaveData->PlayerSaveLocation = GetActorLocation();
 		}
-		SaveData->Deep = USusWizAttributeSet::GetDeepAttribute().GetNumericValue(GetAttributeSet());
-		SaveData->Flare = USusWizAttributeSet::GetFlareAttribute().GetNumericValue(GetAttributeSet());
-		SaveData->Swift = USusWizAttributeSet::GetSwiftAttribute().GetNumericValue(GetAttributeSet());
-		SaveData->Seismic = USusWizAttributeSet::GetSeismicAttribute().GetNumericValue(GetAttributeSet());
-
+		if (USusWizAttributeSet* SusWizAS = GetSusWizAttributeSet())
+		{
+			SaveData->Deep = SusWizAS->GetDeep();
+			SaveData->Flare = SusWizAS->GetFlare();
+			SaveData->Swift = SusWizAS->GetSwift();
+			SaveData->Seismic = SusWizAS->GetSeismic();
+		}
+		
+		
 		SaveData->bFirstTimeLoadIn = false;
 		if (!HasAuthority()) return;
 

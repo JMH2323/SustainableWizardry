@@ -10,8 +10,7 @@
 #include "SusWizCharacterBase.generated.h"
 
 
-
-
+class USusWizAttributeSet;
 // Forward declare for GAS
 class UAbilitySystemComponent;
 class UAttributeSet;
@@ -30,6 +29,7 @@ public:
 	ASusWizCharacterBase();
 
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
+	USusWizAttributeSet* GetSusWizAttributeSet() const;
 	virtual float TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent,
 		AController* EventInstigator, AActor* DamageCauser) override;
 	
@@ -123,7 +123,7 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TObjectPtr<UMaterialInstance> DissolveMaterialInstance;
 
-	private:
+	protected:
 
 	UPROPERTY(EditAnywhere, Category = "Abilities|Startup")
 	TArray<TSubclassOf<UGameplayAbility>> StartupAbilities;

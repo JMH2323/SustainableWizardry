@@ -175,10 +175,7 @@ void USusWizAbilitySystemComponent::UpgradeAttribute(const FGameplayTag& Attribu
 {
 	if (GetAvatarActor()->Implements<UPlayerInterface>())
 	{
-		if (IPlayerInterface::Execute_GetAttributePoints(GetAvatarActor()))
-		{
 			ServerUpgradeAttribute(AttributeTag);
-		}
 	}
 }
 
@@ -195,6 +192,7 @@ void USusWizAbilitySystemComponent::OnRep_ActivateAbilities()
 
 void USusWizAbilitySystemComponent::ServerUpgradeAttribute_Implementation(const FGameplayTag& AttributeTag)
 {
+	UE_LOG(LogTemp, Warning, TEXT("Server Here: Calling %s"), *AttributeTag.ToString());
 	FGameplayEventData Payload;
 	Payload.EventTag = AttributeTag;
 	Payload.EventMagnitude = 1.f;
@@ -294,7 +292,7 @@ void USusWizAbilitySystemComponent::ServerEquipAbility_Implementation(const FGam
 	}
 }
 
-void USusWizAbilitySystemComponent::ClientEquipAbility(const FGameplayTag& AbilityTag, const FGameplayTag& Status,
+void USusWizAbilitySystemComponent::ClientEquipAbility_Implementation(const FGameplayTag& AbilityTag, const FGameplayTag& Status,
 	const FGameplayTag& Slot, const FGameplayTag& PreviousSlot)
 {
 	AbilityEquipped.Broadcast(AbilityTag, Status, Slot, PreviousSlot);
@@ -419,23 +417,25 @@ void USusWizAbilitySystemComponent::ServerSpendSpellPoint_Implementation(const F
 		else if (Status.MatchesTagExact(GameplayTags.Abilities_Status_Unlocked) || Status.MatchesTagExact(GameplayTags.Abilities_Status_Equipped))
 		{
 			AbilitySpec->Level += 1;
-			
-			if(AbilityTag.MatchesTagExact(GameplayTags.Abilities_Aero_Airrow))
-			{
-				UpgradeAttribute(GameplayTags.Attributes_Primary_Swift);
-			}
-			if(AbilityTag.MatchesTagExact(GameplayTags.Abilities_Solar_Beam))
-			{
-				UpgradeAttribute(GameplayTags.Attributes_Primary_Flare);
-			}
-			if(AbilityTag.MatchesTagExact(GameplayTags.Abilities_Geo_RockPunch))
-			{
-				UpgradeAttribute(GameplayTags.Attributes_Primary_Seismic);
-			}
-			if(AbilityTag.MatchesTagExact(GameplayTags.Abilities_Hydro_HydroPulse))
-			{
-				UpgradeAttribute(GameplayTags.Attributes_Primary_Deep);
-			}
+		}
+
+		UE_LOG(LogTemp, Warning, TEXT("Reached Tag phase"));
+		if(AbilityTag.MatchesTagExact(GameplayTags.Abilities_Aero_Airrow))
+		{
+			UpgradeAttribute(GameplayTags.Attributes_Primary_Swift);
+		}
+		if(AbilityTag.MatchesTagExact(GameplayTags.Abilities_Solar_Beam))
+		{
+			UpgradeAttribute(GameplayTags.Attributes_Primary_Flare);
+		}
+		if(AbilityTag.MatchesTagExact(GameplayTags.Abilities_Geo_RockPunch))
+		{
+			UpgradeAttribute(GameplayTags.Attributes_Primary_Seismic);
+		}
+		if(AbilityTag.MatchesTagExact(GameplayTags.Abilities_Hydro_HydroPulse))
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Reached HYDRO Tag phase"));
+			UpgradeAttribute(GameplayTags.Attributes_Primary_Deep);
 		}
 
 		ClientUpdateAbilityStatus(AbilityTag, Status, AbilitySpec->Level);
