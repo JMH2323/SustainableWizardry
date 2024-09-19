@@ -33,6 +33,9 @@ public:
 
 	UPROPERTY()
 	int32 SlotIndex;
+
+	UPROPERTY()
+	FName PlayerStartTag;
 	
 	UPROPERTY()
 	TEnumAsByte<ESaveSlotStatus> SlotStatus;
@@ -42,10 +45,12 @@ public:
 	void SetPlayerName(FString InPlayerName);
 	void SetWaveCount(int32 InWaveCount);
 	void SetMapName(FString InMapName);
+	void SetPlayerLevel(int32 InLevel);
 
 	FString GetPlayerName() const { return PlayerName; }
 	int32 GetWaveCount() const { return WaveCount; }
 	FString GetMapName() const { return MapName; }
+	int32 GetPlayerLevel() const { return PlayerLevel; }
 
 private:
 
@@ -58,4 +63,7 @@ private:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, FieldNotify, Setter, Getter, meta = (AllowPrivateAccess="true"));
 	FString MapName;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, FieldNotify, Setter, Getter, meta = (AllowPrivateAccess="true"));
+	int32 PlayerLevel;
 };

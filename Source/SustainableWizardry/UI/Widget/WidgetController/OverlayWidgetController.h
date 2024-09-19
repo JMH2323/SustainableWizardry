@@ -48,7 +48,7 @@ class USusWizAbilitySystemComponent;
 // 10. Single delegate for changing attributes. Make sure to change "changedsignatures" for each later here.
 // changing attributes = broadcasting a float. KEEP ATTRIBUTES FLOATS FOR THIS DELEGATE
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnAttributeChangedSignature, float, NewValue);
-
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnLevelChangedSignature, int32, NewLevel, bool, bLevelUp);
 // 9. 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMessageWidgetRowSignature, FUIWidgetRow, Row);
 
@@ -96,7 +96,7 @@ public:
 	FOnAttributeChangedSignature OnXPPercentChangedDelegate;
 
 	UPROPERTY(BlueprintAssignable, Category="GAS|Level")
-	FOnPlayerStatChangedSignature OnPlayerLevelChangedDelegate;
+	FOnLevelChangedSignature  OnPlayerLevelChangedDelegate;
 	
 protected:
 

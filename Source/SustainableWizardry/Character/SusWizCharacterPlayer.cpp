@@ -11,6 +11,12 @@
 #include "NiagaraComponent.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Kismet/GameplayStatics.h"
+#include "SustainableWizardry/Game/LoadScreenSaveGame.h"
+#include "SustainableWizardry/Game/SuzWizGameModeBase.h"
+#include "SustainableWizardry/GAS/SusWizAbilitySystemLibrary.h"
+#include "SustainableWizardry/GAS/Attribute/SusWizAttributeSet.h"
+#include "SustainableWizardry/GAS/Data/AbilityInfo.h"
 #include "SustainableWizardry/GAS/Data/CharacterClassInfo.h"
 #include "SustainableWizardry/UI/HUD/SusWizHUD.h"
 
@@ -32,9 +38,46 @@ void ASusWizCharacterPlayer::PossessedBy(AController* NewController)
 	// Init ability actor info for the Server and HUD
 	// If this actor is possessed by a player, we access the player's abilities
 	InitAbilityActorInfo();
-
-	AddCharacterAbilities();
+	LoadProgress();
 	
+}
+
+void ASusWizCharacterPlayer::LoadProgress()
+{
+	ASuzWizGameModeBase* SusWizGameMode = Cast<ASuzWizGameModeBase>(UGameplayStatics::GetGameMode(this));
+	if (SusWizGameMode)
+	{
+		ULoadScreenSaveGame* SaveData = SusWizGameMode->RetrieveInGameSaveData();
+		if (SaveData == nullptr) return;
+
+		
+
+		if(SaveData->bFirstTimeLoadIn)
+		{
+			InitializeDefaultAttributes();
+			AddCharacterAbilities();
+		}
+		else
+		{
+			if(ASusWizPlayerState* SusWizPlayerState = Cast<ASusWizPlayerState>(GetPlayerState()))
+			{
+				SusWizPlayerState->SetLevel(SaveData->PlayerLevel);
+				SusWizPlayerState->SetXP(SaveData->XP);
+				SusWizPlayerState->SetSpellPoints(SaveData->SpellPoints);
+				SusWizPlayerState->SetLocation(SaveData->PlayerSaveLocation);
+			}
+			
+			if (USusWizAbilitySystemComponent* SusWizASC = Cast<USusWizAbilitySystemComponent>(AbilitySystemComponent))
+			{
+				SusWizASC->AddCharacterAbilitiesFromSaveData(SaveData);
+			}
+
+			
+			USusWizAbilitySystemLibrary::InitializeDefaultAttributesFromSaveData(this, AbilitySystemComponent, SaveData);
+			
+		}
+		
+	}
 }
 
 void ASusWizCharacterPlayer::OnRep_PlayerState()
@@ -166,6 +209,58 @@ void ASusWizCharacterPlayer::AddToSpellPoints_Implementation(int32 InSpellPoints
 	SusWizPlayerState->AddToSpellPoints(InSpellPoints);
 }
 
+void ASusWizCharacterPlayer::SaveProgress_Implementation(const FName& CheckpointTag)
+{
+	ASuzWizGameModeBase* SusWizGameMode = Cast<ASuzWizGameModeBase>(UGameplayStatics::GetGameMode(this));
+	if (SusWizGameMode)
+	{
+		ULoadScreenSaveGame* SaveData = SusWizGameMode->RetrieveInGameSaveData();
+		if (SaveData == nullptr) return;
+
+		
+
+		if(ASusWizPlayerState* SusWizPlayerState = Cast<ASusWizPlayerState>(GetPlayerState()))
+		{
+			SaveData->PlayerLevel = SusWizPlayerState->GetPlayerLevel();
+			SaveData->XP = SusWizPlayerState->GetXP();
+			SaveData->SpellPoints = SusWizPlayerState->GetSpellPoints();
+			SaveData->PlayerSaveLocation = GetActorLocation();
+		}
+		SaveData->Deep = USusWizAttributeSet::GetDeepAttribute().GetNumericValue(GetAttributeSet());
+		SaveData->Flare = USusWizAttributeSet::GetFlareAttribute().GetNumericValue(GetAttributeSet());
+		SaveData->Swift = USusWizAttributeSet::GetSwiftAttribute().GetNumericValue(GetAttributeSet());
+		SaveData->Seismic = USusWizAttributeSet::GetSeismicAttribute().GetNumericValue(GetAttributeSet());
+
+		SaveData->bFirstTimeLoadIn = false;
+		if (!HasAuthority()) return;
+
+		USusWizAbilitySystemComponent* SusWizASC = Cast<USusWizAbilitySystemComponent>(AbilitySystemComponent);
+		FForEachAbility SaveAbilityDelegate;
+		SaveData->SavedAbilities.Empty();
+		
+		SaveAbilityDelegate.BindLambda([this, SusWizASC, SaveData] (const FGameplayAbilitySpec& AbilitySpec)
+		{
+			const FGameplayTag AbilityTag = SusWizASC->GetAbilityTagFromSpec(AbilitySpec);
+			UAbilityInfo* AbilityInfo = USusWizAbilitySystemLibrary::GetAbilityInfo(this);
+			FSusWizAbilityInfo Info = AbilityInfo->FindAbilityInfoForTag(AbilityTag);
+
+			FSavedAbility SavedAbility;
+			SavedAbility.GameplayAbility = Info.Ability;
+			SavedAbility.AbilityLevel = AbilitySpec.Level;
+			SavedAbility.AbilitySlot = SusWizASC->GetSlotFromAbilityTag(AbilityTag);
+			SavedAbility.AbilityStatus = SusWizASC->GetStatusFromAbilityTag(AbilityTag);
+			SavedAbility.AbilityTag = AbilityTag;
+			SavedAbility.AbilityType = Info.AbilityTypeTag;
+
+			SaveData->SavedAbilities.AddUnique(SavedAbility);
+		});
+		SusWizASC->ForEachAbility(SaveAbilityDelegate);
+		
+	
+		SusWizGameMode->SaveInGameProgressData(SaveData);
+	}
+}
+
 int32 ASusWizCharacterPlayer::GetPlayerLevel_Implementation()
 {
 	ASusWizPlayerState* SusWizPlayerState = GetPlayerState<ASusWizPlayerState>();
@@ -216,7 +311,7 @@ void ASusWizCharacterPlayer::InitAbilityActorInfo()
 	// 11.2 initializing default primary attributes
 	// InitializePrimaryAttributes();
 	// 12.4 Initialize all attributes
-	InitializeDefaultAttributes();
+	//InitializeDefaultAttributes();
 
 	
 };

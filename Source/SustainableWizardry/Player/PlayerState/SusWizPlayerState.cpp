@@ -56,7 +56,7 @@ void ASusWizPlayerState::AddToXP(int32 InXP)
 void ASusWizPlayerState::AddToLevel(int32 InLevel)
 {
 	Level += InLevel;
-	OnLevelChangedDelegate.Broadcast(Level);
+	OnLevelChangedDelegate.Broadcast(Level, true);
 }
 
 void ASusWizPlayerState::SetXP(int32 InXP)
@@ -68,12 +68,23 @@ void ASusWizPlayerState::SetXP(int32 InXP)
 void ASusWizPlayerState::SetLevel(int32 InLevel)
 {
 	Level = InLevel;
-	OnLevelChangedDelegate.Broadcast(Level);
+	OnLevelChangedDelegate.Broadcast(Level, false);
+}
+
+void ASusWizPlayerState::SetSpellPoints(int32 InPoints)
+{
+	SpellPoints = InPoints;
+	OnSpellPointsChangedDelegate.Broadcast(SpellPoints);
+}
+
+void ASusWizPlayerState::SetLocation(FVector InLocation)
+{
+	GetPawn()->SetActorLocation(InLocation);
 }
 
 void ASusWizPlayerState::OnRep_Level(int32 OldLevel)
 {
-	OnLevelChangedDelegate.Broadcast(Level);
+	OnLevelChangedDelegate.Broadcast(Level, true);
 }
 
 void ASusWizPlayerState::OnRep_XP(int32 OldXP)

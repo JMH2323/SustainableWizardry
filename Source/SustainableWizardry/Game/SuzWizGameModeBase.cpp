@@ -4,6 +4,7 @@
 #include "SuzWizGameModeBase.h"
 
 #include "GameFramework/PlayerStart.h"
+#include "Instance/SusWizGameInstance.h"
 #include "SustainableWizardry/Game/LoadScreenSaveGame.h"
 #include "Kismet/GameplayStatics.h"
 #include "SustainableWizardry/UI/ViewModel/MVVM_LoadSlot.h"
@@ -19,6 +20,7 @@ void ASuzWizGameModeBase::SaveSlotData(UMVVM_LoadSlot* LoadSlot, int32 SlotIndex
 	LoadScreenSaveGame->PlayerName = LoadSlot->GetPlayerName();
 	LoadScreenSaveGame->WaveCount = LoadSlot->GetWaveCount();
 	LoadScreenSaveGame->MapName = LoadSlot->GetMapName();
+	LoadScreenSaveGame->PlayerStartTag = LoadSlot->PlayerStartTag;
 	LoadScreenSaveGame->SaveSlotStatus = Taken;
 	
 
@@ -49,6 +51,23 @@ void ASuzWizGameModeBase::DeleteSlot(const FString& SlotName, int32 SlotIndex)
 	}
 }
 
+ULoadScreenSaveGame* ASuzWizGameModeBase::RetrieveInGameSaveData()
+{
+	USusWizGameInstance* SusWizGameInstance = Cast<USusWizGameInstance>(GetGameInstance());
+	const FString InGameLoadSlotName = SusWizGameInstance->LoadSlotName;
+	const int32 InGameLoadSlotIndex = SusWizGameInstance->LoadSlotIndex;
+	return GetSaveSlotData(InGameLoadSlotName, InGameLoadSlotIndex);
+}
+
+void ASuzWizGameModeBase::SaveInGameProgressData(ULoadScreenSaveGame* SaveObject)
+{
+	USusWizGameInstance* SusWizGameInstance = Cast<USusWizGameInstance>(GetGameInstance());
+	const FString InGameLoadSlotName = SusWizGameInstance->LoadSlotName;
+	const int32 InGameLoadSlotIndex = SusWizGameInstance->LoadSlotIndex;
+	SusWizGameInstance->PlayerStartTag = SaveObject->PlayerStartTag;
+	UGameplayStatics::SaveGameToSlot(SaveObject, InGameLoadSlotName, InGameLoadSlotIndex);
+}
+
 void ASuzWizGameModeBase::TravelToMap(UMVVM_LoadSlot* Slot)
 {
 	const FString SlotName = Slot->LoadSlotName;
@@ -58,6 +77,9 @@ void ASuzWizGameModeBase::TravelToMap(UMVVM_LoadSlot* Slot)
 
 AActor* ASuzWizGameModeBase::ChoosePlayerStart_Implementation(AController* Player)
 {
+
+	USusWizGameInstance* SusWizGameInstance = Cast<USusWizGameInstance>(GetGameInstance());
+	
 	TArray<AActor*> Actors;
 	UGameplayStatics::GetAllActorsOfClass(GetWorld(), APlayerStart::StaticClass(), Actors);
 	if (Actors.Num() > 0)
@@ -67,7 +89,7 @@ AActor* ASuzWizGameModeBase::ChoosePlayerStart_Implementation(AController* Playe
 		{
 			if (APlayerStart* PlayerStart = Cast<APlayerStart>(Actor))
 			{
-				if (PlayerStart->PlayerStartTag == FName("TheTag"))
+				if (PlayerStart->PlayerStartTag == SusWizGameInstance->PlayerStartTag)
 				{
 					SelectedActor = PlayerStart;
 					break;

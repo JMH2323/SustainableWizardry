@@ -59,7 +59,6 @@ template<class T>
 using TStaticFunPtr = typename TBaseStaticDelegateInstance<T, FDefaultDelegateUserPolicy>::FFuncPtr;
 
 
-// TODO: READ THROUGH ATTRIBUTE SET COMMENTS!!!!
 UCLASS()
 class SUSTAINABLEWIZARDRY_API USusWizAttributeSet : public UAttributeSet
 {
@@ -160,7 +159,7 @@ public:
 	UFUNCTION()
 	void OnRep_ArmorPen(const FGameplayAttributeData& OldArmorPen) const;
 
-	// TODO: Jeff = Speed, dodge (Wind power/Swift)
+	
 	//CriticalChance
 	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_CriticalChance, Category = "Secondary Attributes")
 	FGameplayAttributeData CriticalChance;
@@ -175,7 +174,6 @@ public:
 	UFUNCTION()
 	void OnRep_Dodge(const FGameplayAttributeData& OldDodge) const;
 	
-	// TODO: Alex = Healing scale, Damage scale (Deep/Flare)
 
 	//DamageScale
 	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_DamageScale, Category = "Secondary Attributes")

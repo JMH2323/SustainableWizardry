@@ -5,6 +5,7 @@
 #include "MVVM_LoadSlot.h"
 #include "SustainableWizardry/Game/SuzWizGameModeBase.h"
 #include "Kismet/GameplayStatics.h"
+#include "SustainableWizardry/Game/Instance/SusWizGameInstance.h"
 
 void UMVVM_LoadScreen::InitializeLoadSlots()
 {
@@ -45,10 +46,17 @@ void UMVVM_LoadScreen::NewSlotButtonPressed(int32 Slot, const FString& EnteredNa
 	LoadSlots[Slot]->SetPlayerName(EnteredName);
 	LoadSlots[Slot]->SetWaveCount(0);
 	LoadSlots[Slot]->SetMapName(SusWizGameMode->DefaultMapName);
+	LoadSlots[Slot]->SetPlayerLevel(1);
 	LoadSlots[Slot]->SlotStatus = Taken;
+	LoadSlots[Slot]->PlayerStartTag = SusWizGameMode->DefaultPlayerStartTag;
 	
 	SusWizGameMode->SaveSlotData(LoadSlots[Slot], Slot);
 	LoadSlots[Slot]->InitializeSlot();
+
+	USusWizGameInstance* SusWizGameInstance = Cast<USusWizGameInstance>(SusWizGameMode->GetGameInstance());
+	SusWizGameInstance->LoadSlotName = LoadSlots[Slot]->LoadSlotName;
+	SusWizGameInstance->LoadSlotIndex = LoadSlots[Slot]->SlotIndex;
+	SusWizGameInstance->PlayerStartTag = SusWizGameMode->DefaultPlayerStartTag;
 	
 }
 
@@ -89,6 +97,11 @@ void UMVVM_LoadScreen::PlayButtonPressed()
 {
 	ASuzWizGameModeBase* SusWizGameMode = Cast<ASuzWizGameModeBase>
 	(UGameplayStatics::GetGameMode(this));
+
+	USusWizGameInstance* SusWizGameInstance = Cast<USusWizGameInstance>(SusWizGameMode->GetGameInstance());
+	SusWizGameInstance->PlayerStartTag = SelectedSlot->PlayerStartTag;
+	SusWizGameInstance->LoadSlotName = SelectedSlot->LoadSlotName;
+	SusWizGameInstance->LoadSlotIndex = SelectedSlot->SlotIndex;
 	if (IsValid(SelectedSlot))
 	{
 		SusWizGameMode->TravelToMap(SelectedSlot);	
@@ -109,6 +122,8 @@ void UMVVM_LoadScreen::LoadData()
 		LoadSlot.Value->SetPlayerName(PlayerName);
 		LoadSlot.Value->SetWaveCount(SaveObject->WaveCount);
 		LoadSlot.Value->SetMapName(SaveObject->MapName);
+		LoadSlot.Value->PlayerStartTag = SaveObject->PlayerStartTag;
+		LoadSlot.Value->SetPlayerLevel(SaveObject->PlayerLevel);
 		LoadSlot.Value->InitializeSlot();
 	}
 }
