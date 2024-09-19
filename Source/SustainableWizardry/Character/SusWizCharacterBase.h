@@ -7,6 +7,7 @@
 #include "AbilitySystemInterface.h"
 #include "SustainableWizardry/Interaction/CombatInterface.h"
 #include "SustainableWizardry/GAS/Data/CharacterClassInfo.h"
+#include "SustainableWizardry/Interaction/SaveInterface.h"
 #include "SusWizCharacterBase.generated.h"
 
 
@@ -20,7 +21,7 @@ class UAnimMontage;
 
 UCLASS()
 class SUSTAINABLEWIZARDRY_API ASusWizCharacterBase : public ACharacter,
-public IAbilitySystemInterface, public ICombatInterface
+public IAbilitySystemInterface, public ICombatInterface, public ISaveInterface
 {
 	GENERATED_BODY()
 
@@ -35,9 +36,10 @@ public:
 	
 	UAttributeSet* GetAttributeSet() const { return AttributeSet; }
 
-	
-
-	
+	/* Save Interface */
+	virtual bool ShouldLoadTransform_Implementation() override {return true; };
+	//virtual void LoadActor_Implementation() override;
+	/* Save Interface End */
 
 	UFUNCTION(NetMulticast, Reliable)
 	virtual void MulticastHandleDeath(const FVector& DeathImpulse);

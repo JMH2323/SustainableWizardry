@@ -39,6 +39,11 @@ void ASusWizCharacterPlayer::PossessedBy(AController* NewController)
 	// If this actor is possessed by a player, we access the player's abilities
 	InitAbilityActorInfo();
 	LoadProgress();
+
+	if (ASuzWizGameModeBase* SusWizGameMode = Cast<ASuzWizGameModeBase>(UGameplayStatics::GetGameMode(this)))
+	{
+		SusWizGameMode->LoadWorldState(GetWorld());
+	}
 	
 }
 
