@@ -35,6 +35,9 @@ public:
 
 	static void DeleteSlot(const FString& SlotName, int32 SlotIndex);
 
+	ULoadScreenSaveGame* RetrieveInGameSaveData();
+	void SaveInGameProgressData(ULoadScreenSaveGame* SaveObject);
+
 	UPROPERTY(EditDefaultsOnly)
 	FString DefaultMapName;
 	UPROPERTY(EditDefaultsOnly)
@@ -44,6 +47,8 @@ public:
 
 	void TravelToMap(UMVVM_LoadSlot* Slot);
 
+	UPROPERTY(EditDefaultsOnly)
+	FName DefaultPlayerStartTag;
 	virtual AActor* ChoosePlayerStart_Implementation(AController* Player) override;
 	
 	void PlayerDied(ACharacter* DeadCharacter);

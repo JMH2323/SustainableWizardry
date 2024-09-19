@@ -22,8 +22,8 @@ void UOverlayWidgetController::BindCallbacksToDependencies()
 
 	GetSusWizPS()->OnXPChangedDelegate.AddUObject(this, &UOverlayWidgetController::OnXPChanged);
 	GetSusWizPS()->OnLevelChangedDelegate.AddLambda(
-		[this](int32 NewLevel)
-		{OnPlayerLevelChangedDelegate.Broadcast(NewLevel);}
+		[this](int32 NewLevel, bool bLevelUp)
+		{OnPlayerLevelChangedDelegate.Broadcast(NewLevel, bLevelUp);}
 	);
 	
 	

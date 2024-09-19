@@ -24,6 +24,7 @@ class SUSTAINABLEWIZARDRY_API ASusWizCharacterPlayer : public ASusWizCharacterBa
 public:
 	ASusWizCharacterPlayer();
 	virtual void PossessedBy(AController* NewController) override;
+	void LoadProgress();
 	virtual void OnRep_PlayerState() override;
 
 	virtual int32 GetAttributePoints_Implementation() const override;
@@ -45,6 +46,7 @@ public:
 	virtual void AddToPlayerLevel_Implementation(int32 InPlayerLevel) override;
 	virtual void AddToAttributePoints_Implementation(int32 InAttributePoints) override;
 	virtual void AddToSpellPoints_Implementation(int32 InSpellPoints) override;
+	virtual void SaveProgress_Implementation(const FName& CheckpointTag) override;
 	/** end Player Interface */
 
 	/* Combat Interface */
@@ -59,7 +61,7 @@ public:
 	
 
 private:
-	// 6.0 overrided from character base. Not needed at first
+	// 6.0 overriden from character base. Not needed at first
 	void InitAbilityActorInfo() override;
 	
 	

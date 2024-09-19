@@ -9,6 +9,7 @@
 #include "SusWizAbilitySystemLibrary.generated.h"
 
 
+class ULoadScreenSaveGame;
 class UAbilityInfo;
 class UAbilitySystemComponent;
 class UAttributeMenuWidgetController;
@@ -46,6 +47,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category="SusWizAbilitySystemLibrary|CharacterClassDefaults")
 	static void GiveStartupAbilities(const UObject* WorldContextObject, UAbilitySystemComponent* ASC, ECharacterClass CharacterClass);
 
+	UFUNCTION(BlueprintCallable, Category="SusWizAbilitySystemLibrary|CharacterClassDefaults")
+	static void InitializeDefaultAttributesFromSaveData(const UObject* WorldContextObject, UAbilitySystemComponent* ASC, ULoadScreenSaveGame* SaveGame);
+	
 	// A way to get curve tables or data assets from our engine to our c++
 	UFUNCTION(BlueprintCallable, Category="SusWizAbilitySystemLibrary|CharacterClassDefaults")
 	static UCharacterClassInfo* GetCharacterClassInfo(const UObject* WorldContextObject);

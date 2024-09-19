@@ -5,6 +5,7 @@
 
 #include "SustainableWizardry/SustainableWizardry.h"
 #include "GameFramework/ProjectileMovementComponent.h"
+#include "Kismet/KismetSystemLibrary.h"
 #include "SustainableWizardry/GAS/SusWizAbilitySystemLibrary.h"
 #include "SustainableWizardry/GAS/GameplayAbilities/Spells/Aero/AerowProjectileClass.h"
 #include "SustainableWizardry/GAS/GameplayAbilities/Spells/SpellsBase/SusWizProjectiles.h"
