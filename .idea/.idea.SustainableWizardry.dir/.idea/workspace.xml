@@ -9,19 +9,10 @@
   <component name="ChangeListManager">
     <list default="true" id="1579a7cd-1dd9-4102-8fb2-ded64c6e3088" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultGameplayTags.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultGameplayTags.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/Data/DA_AbilityInfo.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/Data/DA_AbilityInfo.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/PassiveStartup/GA_ListenForEvent.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/PassiveStartup/GA_ListenForEvent.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/ETC/GA_EnergyRestore.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/ETC/GA_EnergyRestore.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/ETC/GA_Healing.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/ETC/GA_Healing.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterBase.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterBase.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterPlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Character/SusWizCharacterPlayer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/Attribute/SusWizAttributeSet.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/Attribute/SusWizAttributeSet.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Game/LoadScreenSaveGame.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Game/LoadScreenSaveGame.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Game/LoadScreenSaveGame.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Game/LoadScreenSaveGame.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Game/SuzWizGameModeBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Game/SuzWizGameModeBase.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Game/SuzWizGameModeBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Game/SuzWizGameModeBase.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,7 +254,7 @@
       <workItem from="1726525512655" duration="11722000" />
       <workItem from="1726602032892" duration="537000" />
       <workItem from="1726695315452" duration="19062000" />
-      <workItem from="1726767962318" duration="4200000" />
+      <workItem from="1726767962318" duration="7207000" />
     </task>
     <servers />
   </component>
