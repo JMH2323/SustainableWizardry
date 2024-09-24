@@ -12,6 +12,7 @@
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Kismet/GameplayStatics.h"
+#include "SustainableWizardry/SusWizLogChannels.h"
 #include "SustainableWizardry/Game/LoadScreenSaveGame.h"
 #include "SustainableWizardry/Game/SuzWizGameModeBase.h"
 #include "SustainableWizardry/GAS/SusWizAbilitySystemLibrary.h"
@@ -57,7 +58,6 @@ void ASusWizCharacterPlayer::LoadProgress()
 		
 		if(SaveData->bFirstTimeLoadIn)
 		{
-			
 			InitializeDefaultAttributes();
 			AddCharacterAbilities();
 		}
@@ -69,6 +69,7 @@ void ASusWizCharacterPlayer::LoadProgress()
 				SusWizPlayerState->SetXP(SaveData->XP);
 				SusWizPlayerState->SetSpellPoints(SaveData->SpellPoints);
 				SusWizPlayerState->SetLocation(SaveData->PlayerSaveLocation);
+				SusWizGameMode->SetWaveCount(SaveData->WaveCount);
 			}
 			
 			if (USusWizAbilitySystemComponent* SusWizASC = Cast<USusWizAbilitySystemComponent>(AbilitySystemComponent))
@@ -233,6 +234,7 @@ void ASusWizCharacterPlayer::SaveProgress_Implementation(const FName& Checkpoint
 			SaveData->XP = SusWizPlayerState->GetXP();
 			SaveData->SpellPoints = SusWizPlayerState->GetSpellPoints();
 			SaveData->PlayerSaveLocation = GetActorLocation();
+			SaveData->WaveCount = SusWizGameMode->GetWaveCount();
 		}
 		if (USusWizAttributeSet* SusWizAS = GetSusWizAttributeSet())
 		{

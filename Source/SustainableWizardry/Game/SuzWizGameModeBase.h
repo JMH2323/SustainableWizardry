@@ -40,6 +40,14 @@ public:
 
 	void SaveWorldState(UWorld* World) const;
 	void LoadWorldState(UWorld* World) const;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 SusWizWaveCount;
+
+	UFUNCTION(BlueprintCallable)
+	int32 GetWaveCount(){return SusWizWaveCount; };
+	UFUNCTION(BlueprintCallable)
+	void SetWaveCount(int32 NewWaveCount){ SusWizWaveCount = NewWaveCount; };
 	
 	UPROPERTY(EditDefaultsOnly)
 	FString DefaultMapName;
