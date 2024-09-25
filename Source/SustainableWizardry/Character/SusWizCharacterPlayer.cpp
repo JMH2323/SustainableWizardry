@@ -275,11 +275,63 @@ void ASusWizCharacterPlayer::SaveProgress_Implementation(const FName& Checkpoint
 	}
 }
 
+void ASusWizCharacterPlayer::ResetPlayerProgress()
+{
+	// Reset the Player State
+	if(ASusWizPlayerState* SusWizPlayerState = GetPlayerState<ASusWizPlayerState>())
+	{
+		SusWizPlayerState->SetLevel(1);
+		SusWizPlayerState->SetXP(0);
+		SusWizPlayerState->SetSpellPoints(1);
+		SusWizPlayerState->SetLocation(StartingLocation);
+	}
+    
+	// Reset the Ability System Component
+	if(USusWizAbilitySystemComponent* SusWizASC = Cast<USusWizAbilitySystemComponent>(AbilitySystemComponent))
+	{
+		// Clear our all abilities.
+		SusWizASC->ClearAllAbilities();
+
+		// Then grant the default abilities again.
+		SusWizASC->AddCharacterAbilities(StartupAbilities);
+		SusWizASC->AddCharacterPassiveAbilities(StartupPassiveAbilities);
+	}
+
+	// Reset the Attribute Set
+	if(USusWizAttributeSet* SusWizAS = GetSusWizAttributeSet())
+	{
+		SusWizAS->SetDeep(1);
+		SusWizAS->SetFlare(1);
+		SusWizAS->SetSwift(1);
+		SusWizAS->SetSeismic(1);
+	}
+	FName CheckpointTag;
+	this->Execute_SaveProgress(this, CheckpointTag);
+}
+
 int32 ASusWizCharacterPlayer::GetPlayerLevel_Implementation()
 {
 	ASusWizPlayerState* SusWizPlayerState = GetPlayerState<ASusWizPlayerState>();
 	check(SusWizPlayerState)
 	return SusWizPlayerState->GetPlayerLevel();
+}
+
+void ASusWizCharacterPlayer::Die(const FVector& DeathImpulse)
+{
+	Super::Die(DeathImpulse);
+
+	FTimerDelegate DeathTimerDelegate;
+	DeathTimerDelegate.BindLambda([this]()
+	{
+		ASuzWizGameModeBase* SusWizGM = Cast<ASuzWizGameModeBase>(UGameplayStatics::GetGameMode(this));
+		if (SusWizGM)
+		{
+			ResetPlayerProgress();
+			SusWizGM->PlayerDied(this);
+		}
+	});
+	GetWorldTimerManager().SetTimer(DeathTimer, DeathTimerDelegate, DeathTime, false);
+	//CameraComponent->DetachFromComponent(FDetachmentTransformRules::KeepWorldTransform);
 }
 
 void ASusWizCharacterPlayer::InitAbilityActorInfo()

@@ -47,25 +47,42 @@ public:
 	virtual void AddToAttributePoints_Implementation(int32 InAttributePoints) override;
 	virtual void AddToSpellPoints_Implementation(int32 InSpellPoints) override;
 	virtual void SaveProgress_Implementation(const FName& CheckpointTag) override;
+	void ResetPlayerProgress();
 	/** end Player Interface */
 
 	/* Combat Interface */
 	virtual int32 GetPlayerLevel_Implementation() override;
+	virtual void Die(const FVector& DeathImpulse) override;
 	/* End Combat Interface */
+
+	UPROPERTY(EditDefaultsOnly)
+	float DeathTime = 5.f;
+	
+	FTimerHandle DeathTimer;
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	TObjectPtr<UNiagaraComponent> LevelUpNiagaraComponent;
 
-	
-	
-	
+	FVector StartingLocation = FVector::ZeroVector;
+
 
 private:
 	// 6.0 overriden from character base. Not needed at first
 	void InitAbilityActorInfo() override;
 	
-	
+	UPROPERTY(VisibleAnywhere)
+	TObjectPtr<UCameraComponent> CameraComponent;
 
 	UFUNCTION(NetMulticast, Reliable)
 	void MulticastLevelUpParticles() const;
+
+protected:
+	virtual void BeginPlay() override;
 };
+
+inline void ASusWizCharacterPlayer::BeginPlay()
+{
+	Super::BeginPlay();
+
+	StartingLocation = GetActorLocation();
+}
