@@ -63,13 +63,12 @@ public:
 
 	FOnDeathSignature OnDeathDelegate;
 	FOnDamageSignature OnDamageDelegate;
+	UPROPERTY(BlueprintReadOnly)
 	bool bDead = false;
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-
-	
 	
 	// Create the weapon mesh component to allow us to spawn spells from hand
 	UPROPERTY(EditAnywhere, Category = "Combat")
@@ -124,9 +123,7 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TObjectPtr<UMaterialInstance> DissolveMaterialInstance;
-
-	protected:
-
+	
 	UPROPERTY(EditAnywhere, Category = "Abilities|Startup")
 	TArray<TSubclassOf<UGameplayAbility>> StartupAbilities;
 
@@ -135,5 +132,8 @@ protected:
 
 	UPROPERTY(EditAnywhere, Category = "Combat")
 	TObjectPtr<UAnimMontage> HitReactMontage;
+
+
+
 	
 };

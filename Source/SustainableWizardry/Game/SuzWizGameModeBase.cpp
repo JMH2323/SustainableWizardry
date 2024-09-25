@@ -8,6 +8,7 @@
 #include "Instance/SusWizGameInstance.h"
 #include "SustainableWizardry/Game/LoadScreenSaveGame.h"
 #include "Kismet/GameplayStatics.h"
+#include "GameFramework/Character.h"
 #include "Serialization/ObjectAndNameAsStringProxyArchive.h"
 #include "SustainableWizardry/SusWizLogChannels.h"
 #include "SustainableWizardry/Interaction/SaveInterface.h"
@@ -205,7 +206,10 @@ AActor* ASuzWizGameModeBase::ChoosePlayerStart_Implementation(AController* Playe
 
 void ASuzWizGameModeBase::PlayerDied(ACharacter* DeadCharacter)
 {
-	//
+	ULoadScreenSaveGame* SaveGame = RetrieveInGameSaveData();
+	if (!IsValid(SaveGame)) return;
+	SetWaveCount(0);
+	UGameplayStatics::OpenLevel(DeadCharacter, FName(SaveGame->MapName));
 }
 
 void ASuzWizGameModeBase::BeginPlay()
