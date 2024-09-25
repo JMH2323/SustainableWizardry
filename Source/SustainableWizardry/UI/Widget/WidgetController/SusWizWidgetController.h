@@ -9,9 +9,17 @@
 /**
  * 
  */
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPlayerStatChangedSignature, int32, NewValue);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAbilityInfoSignature, const FSusWizAbilityInfo&, Info);
+
 class UAttributeSet;
 class UAbilitySystemComponent;
-
+class ASusWizPlayerController;
+class ASusWizPlayerState;
+class USusWizAbilitySystemComponent;
+class USusWizAttributeSet;
+class UAbilityInfo;
 
 
 
@@ -55,10 +63,18 @@ public:
 	virtual void BroadcastInitialValues();
 
 	virtual void BindCallbacksToDependencies();
+
+	UPROPERTY(BlueprintAssignable, Category="GAS|Messages")
+	FAbilityInfoSignature AbilityInfoDelegate;
+
+	void BroadcastAbilityInfo();
 	
 	
 protected:
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Widget Data")
+	TObjectPtr<UAbilityInfo> AbilityInfo;
+	
 	UPROPERTY(BlueprintReadOnly, Category="WidgetController")
 	TObjectPtr<APlayerController> PlayerController;
 
@@ -70,5 +86,22 @@ protected:
 
 	UPROPERTY(BlueprintReadOnly, Category="WidgetController")
 	TObjectPtr<UAttributeSet> AttributeSet;
+
+	UPROPERTY(BlueprintReadOnly, Category="WidgetController")
+	TObjectPtr<ASusWizPlayerController> SusWizPlayerController;
+
+	UPROPERTY(BlueprintReadOnly, Category="WidgetController")
+	TObjectPtr<ASusWizPlayerState> SusWizPlayerState;
+
+	UPROPERTY(BlueprintReadOnly, Category="WidgetController")
+	TObjectPtr<USusWizAbilitySystemComponent> SusWizAbilitySystemComponent;
+
+	UPROPERTY(BlueprintReadOnly, Category="WidgetController")
+	TObjectPtr<USusWizAttributeSet> SusWizAttributeSet;
+
+	ASusWizPlayerController* GetSusWizPC();
+	ASusWizPlayerState* GetSusWizPS();
+	USusWizAbilitySystemComponent* GetSusWizASC();
+	USusWizAttributeSet* GetSusWizAS();
 	
 };

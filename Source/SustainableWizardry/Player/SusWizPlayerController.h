@@ -9,6 +9,7 @@
 #include "SusWizPlayerController.generated.h"
 
 
+class ASolarBeamDecal;
 /**
  * 
  */
@@ -30,9 +31,20 @@ public:
 	UFUNCTION(Client, Reliable)
 	void ShowDamageNumber(float DamageAmount, ACharacter* TargetCharacter, bool bDodgedHit, bool bCrit);
 
+	UFUNCTION(BlueprintCallable)
+	void ShowMagicCircle(UMaterialInterface* DecalMaterial = nullptr);
+
+	UFUNCTION(BlueprintCallable)
+	void HideMagicCircle();
+
+	UFUNCTION(BlueprintCallable)
+	FVector GetMagicCircleLocation();
+
 protected:
 	virtual void BeginPlay() override;
 	virtual void SetupInputComponent() override;
+
+	bool IsInputLeftHanded(FGameplayTag Input);
 
 private:
 
@@ -71,5 +83,12 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<UDamageTextComponent> DamageTextComponentClass;
 
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<ASolarBeamDecal> MagicCircleClass;
+
+	UPROPERTY()
+	TObjectPtr<ASolarBeamDecal> MagicCircle;
+
+	void UpdateMagicCircleLocation();
 	
 };

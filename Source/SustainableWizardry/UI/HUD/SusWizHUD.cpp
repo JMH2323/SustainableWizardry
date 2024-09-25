@@ -6,6 +6,7 @@
 #include "Blueprint/UserWidget.h"
 #include "SustainableWizardry/UI/Widget/WidgetController/AttributeMenuWidgetController.h"
 #include "SustainableWizardry/UI/Widget/WidgetController/OverlayWidgetController.h"
+#include "SustainableWizardry/UI/Widget/WidgetController/SpellMenuWidgetController.h"
 
 UOverlayWidgetController* ASusWizHUD::GetOverlayWidgetController(const FWidgetControllerParams& WCParams)
 {
@@ -37,6 +38,17 @@ UAttributeMenuWidgetController* ASusWizHUD::GetAttributeMenuWidgetController(con
 		
 	}
 	return AttributeMenuWidgetController;
+}
+
+USpellMenuWidgetController* ASusWizHUD::GetSpellMenuWidgetController(const FWidgetControllerParams& WCParams)
+{
+	if (SpellMenuWidgetController == nullptr)
+	{
+		SpellMenuWidgetController = NewObject<USpellMenuWidgetController>(this, SpellMenuWidgetControllerClass);
+		SpellMenuWidgetController->SetWidgetControllerParams(WCParams);
+		SpellMenuWidgetController->BindCallbacksToDependencies();
+	}
+	return SpellMenuWidgetController;
 }
 
 void ASusWizHUD::InitOverlay(APlayerController* PC, APlayerState* PS, UAbilitySystemComponent* ASC, UAttributeSet* AS)

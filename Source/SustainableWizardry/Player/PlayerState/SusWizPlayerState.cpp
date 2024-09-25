@@ -41,10 +41,75 @@ void ASusWizPlayerState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& O
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
 	DOREPLIFETIME(ASusWizPlayerState, Level);
+	DOREPLIFETIME(ASusWizPlayerState, XP);
+	DOREPLIFETIME(ASusWizPlayerState, AttributePoints);
+	DOREPLIFETIME(ASusWizPlayerState, SpellPoints);
 }
 
 
+void ASusWizPlayerState::AddToXP(int32 InXP)
+{
+	XP += InXP;
+	OnXPChangedDelegate.Broadcast(XP);
+}
+
+void ASusWizPlayerState::AddToLevel(int32 InLevel)
+{
+	Level += InLevel;
+	OnLevelChangedDelegate.Broadcast(Level, true);
+}
+
+void ASusWizPlayerState::SetXP(int32 InXP)
+{
+	XP = InXP;
+	OnXPChangedDelegate.Broadcast(XP);
+}
+
+void ASusWizPlayerState::SetLevel(int32 InLevel)
+{
+	Level = InLevel;
+	OnLevelChangedDelegate.Broadcast(Level, false);
+}
+
+void ASusWizPlayerState::SetSpellPoints(int32 InPoints)
+{
+	SpellPoints = InPoints;
+	OnSpellPointsChangedDelegate.Broadcast(SpellPoints);
+}
+
+void ASusWizPlayerState::SetLocation(FVector InLocation)
+{
+	GetPawn()->SetActorLocation(InLocation);
+}
+
 void ASusWizPlayerState::OnRep_Level(int32 OldLevel)
 {
-	// 
+	OnLevelChangedDelegate.Broadcast(Level, true);
+}
+
+void ASusWizPlayerState::OnRep_XP(int32 OldXP)
+{
+	OnXPChangedDelegate.Broadcast(XP);
+}
+
+void ASusWizPlayerState::OnRep_AttributePoints(int32 OldAttributePoints)
+{
+	OnAttributePointsChangedDelegate.Broadcast(AttributePoints);
+}
+
+void ASusWizPlayerState::OnRep_SpellPoints(int32 OldSpellPoints)
+{
+	OnSpellPointsChangedDelegate.Broadcast(SpellPoints);
+}
+
+void ASusWizPlayerState::AddToAttributePoints(int32 InPoints)
+{
+	AttributePoints += InPoints;
+	OnAttributePointsChangedDelegate.Broadcast(AttributePoints);
+}
+
+void ASusWizPlayerState::AddToSpellPoints(int32 InPoints)
+{
+	SpellPoints += InPoints;
+	OnSpellPointsChangedDelegate.Broadcast(SpellPoints);
 }

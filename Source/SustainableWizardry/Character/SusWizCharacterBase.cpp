@@ -5,6 +5,7 @@
 #include "AbilitySystemComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.h"
+#include "SustainableWizardry/GAS/Attribute/SusWizAttributeSet.h"
 
 // Sets default values
 ASusWizCharacterBase::ASusWizCharacterBase()
@@ -25,17 +26,35 @@ UAbilitySystemComponent* ASusWizCharacterBase::GetAbilitySystemComponent() const
 	return AbilitySystemComponent;	
 }
 
+USusWizAttributeSet* ASusWizCharacterBase::GetSusWizAttributeSet() const
+{
+	return Cast<USusWizAttributeSet>(AttributeSet);
+}
+
+float ASusWizCharacterBase::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent,
+                                       AController* EventInstigator, AActor* DamageCauser)
+{
+	const float DamageTaken =  Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
+	OnDamageDelegate.Broadcast(DamageTaken);
+	return DamageTaken;
+}
+
 UAnimMontage* ASusWizCharacterBase::GetHitReactMontage_Implementation()
 {
 	return HitReactMontage;
 }
 
-void ASusWizCharacterBase::Die()
+void ASusWizCharacterBase::Die(const FVector& DeathImpulse)
 {
-	MulticastHandleDeath_Implementation();
+	MulticastHandleDeath_Implementation(DeathImpulse);
 }
 
-void ASusWizCharacterBase::MulticastHandleDeath_Implementation()
+FOnDeathSignature& ASusWizCharacterBase::GetOnDeathDelegate()
+{
+	return OnDeathDelegate;
+}
+
+void ASusWizCharacterBase::MulticastHandleDeath_Implementation(const FVector& DeathImpulse)
 {
 
 	GetMesh()->SetSimulatePhysics(true);
@@ -47,12 +66,11 @@ void ASusWizCharacterBase::MulticastHandleDeath_Implementation()
 	GetMesh()->SetOverlayMaterial(NoOverlay);
 
 	// Apply impulse
-	FVector ImpulseDirection(FMath::FRandRange(-1.f,1.f), FMath::FRandRange(-1.f,1.f), FMath::FRandRange(1.f,2.f));
-	float ImpulseStrength = 2000.0f; // Adjust as needed
-	GetMesh()->AddImpulse(ImpulseDirection * ImpulseStrength, NAME_None, true);
+	GetMesh()->AddImpulse(DeathImpulse, NAME_None, true);
 
 	Dissolve();
 	bDead = true;
+	OnDeathDelegate.Broadcast(this);
 }
 
 // Called when the game starts or when spawned
@@ -67,6 +85,11 @@ FVector ASusWizCharacterBase::GetCombatSocketLocation()
 	return MainWeapon->GetSocketLocation(MainWeaponTipSocketName);
 }
 
+FVector ASusWizCharacterBase::GetSecCombatSocketLocation()
+{
+	return SecondaryWeapon->GetSocketLocation(SecondaryWeaponTipSocketName);
+}
+
 bool ASusWizCharacterBase::IsDead_Implementation() const
 {
 	return bDead;
@@ -75,6 +98,26 @@ bool ASusWizCharacterBase::IsDead_Implementation() const
 AActor* ASusWizCharacterBase::GetAvatar_Implementation()
 {
 	return this;
+}
+
+ECharacterClass ASusWizCharacterBase::GetCharacterClass_Implementation()
+{
+	return CharacterClass;
+}
+
+USkeletalMeshComponent* ASusWizCharacterBase::GetMainWeapon_Implementation()
+{
+	return MainWeapon;
+}
+
+USkeletalMeshComponent* ASusWizCharacterBase::GetSecWeapon_Implementation()
+{
+	return SecondaryWeapon;
+}
+
+FOnDamageSignature& ASusWizCharacterBase::GetOnDamageSignature()
+{
+	return OnDamageDelegate;
 }
 
 void ASusWizCharacterBase::InitAbilityActorInfo()
@@ -110,6 +153,7 @@ void ASusWizCharacterBase::AddCharacterAbilities()
 		if(!HasAuthority()) return;
 	
 	SusWizASC->AddCharacterAbilities(StartupAbilities);
+	SusWizASC->AddCharacterPassiveAbilities(StartupPassiveAbilities);
 	
 }
 

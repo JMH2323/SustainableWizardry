@@ -4,16 +4,18 @@
 #include "AttributeMenuWidgetController.h"
 
 #include "SustainableWizardry/SusWizGameplayTags.h"
+#include "SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.h"
 #include "SustainableWizardry/GAS/Data/AttributeInfo.h"
 #include "SustainableWizardry/GAS/Attribute/SusWizAttributeSet.h"
+#include "SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.h"
+#include "SustainableWizardry/Player/PlayerState/SusWizPlayerState.h"
 
 void UAttributeMenuWidgetController::BindCallbacksToDependencies()
 {
 
-	// Get attribute set for getting attribute values
-	USusWizAttributeSet* AS = CastChecked<USusWizAttributeSet>(AttributeSet);
 	
-	for (auto& Pair : AS->TagsToAttributes)
+	
+	for (auto& Pair : GetSusWizAS()->TagsToAttributes)
 	{
 		AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(Pair.Value()).AddLambda(
 		[this, Pair](const FOnAttributeChangeData& Data)
@@ -23,10 +25,17 @@ void UAttributeMenuWidgetController::BindCallbacksToDependencies()
 		);
 
 		// Error Log each bind operation
-		UE_LOG(LogTemp, Log, TEXT("Binding Callbacks For Tag: %s, Attribute: %s"),
-				*Pair.Key.ToString(), *Pair.Value().AttributeName);
+		//UE_LOG(LogTemp, Log, TEXT("Binding Callbacks For Tag: %s, Attribute: %s"),
+				//*Pair.Key.ToString(), *Pair.Value().AttributeName);
 	}
+
 	
+	GetSusWizPS()->OnAttributePointsChangedDelegate.AddLambda(
+		[this](int32 Points)
+		{
+			AttributePointsChangedDelegate.Broadcast(Points);
+		}
+	);
 	
 }
 
@@ -42,14 +51,21 @@ void UAttributeMenuWidgetController::BroadcastInitialValues()
 		BroadcastAttributeInfo(Pair.Key, Pair.Value());
 	}
 
-	
 	BruteForceBroadcast();
+
 	
+	AttributePointsChangedDelegate.Broadcast(GetSusWizPS()->GetAttributePoints());
 	
 }
 
+void UAttributeMenuWidgetController::UpgradeAttribute(const FGameplayTag& AttributeTag)
+{
+	USusWizAbilitySystemComponent* SusWizASC = CastChecked<USusWizAbilitySystemComponent>(AbilitySystemComponent);
+	SusWizASC->UpgradeAttribute(AttributeTag);
+}
+
 void UAttributeMenuWidgetController::BroadcastAttributeInfo(const FGameplayTag& AttributeTag,
-	const FGameplayAttribute& Attribute) const
+                                                            const FGameplayAttribute& Attribute) const
 {
 	FSusWizAttributeInfo Info = AttributeInfo->FindAttributeInfoForTag(AttributeTag);
 	Info.AttributeValue = Attribute.GetNumericValue(AttributeSet);

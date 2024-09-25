@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "SusWizCharacterBase.h"
 #include "SustainableWizardry/UI/Widget/WidgetController/OverlayWidgetController.h"
-#include "SustainableWizardry/GAS/Data/CharacterClassInfo.h"
+
 #include "SusWizEnemy.generated.h"
 
 /**
@@ -25,8 +25,8 @@ public:
 	virtual void PossessedBy(AController* NewController) override;
 
 	/* Combat Interface */
-	virtual int32 GetPlayerLevel() override;
-	virtual void Die() override;
+	virtual int32 GetPlayerLevel_Implementation() override;
+	virtual void Die(const FVector& DeathImpulse) override;
 	virtual void SetCombatTarget_Implementation(AActor* InCombatTarget) override;
 	virtual AActor* GetCombatTarget_Implementation() const override;
 	
@@ -61,11 +61,12 @@ protected:
 	virtual void InitAbilityActorInfo() override;
 	virtual void InitializeDefaultAttributes() const override;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Character Class Defaults")
-	int32 Level = 1;
+	UFUNCTION(BlueprintCallable, Category = "Character Class Functions")
+	void SetLevel(int level){Level = level;}
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Character Class Defaults")
-	ECharacterClass CharacterClass = ECharacterClass::Ranger;
+	int32 Level = 1;
+	
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	TObjectPtr<UWidgetComponent> HealthBar;
