@@ -31,6 +31,7 @@ protected:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TSubclassOf<ASusWizProjectiles> ProjectileClass;
+
 	
 	
 	

@@ -42,16 +42,16 @@ void ASusWizEnemy::PossessedBy(AController* NewController)
 	
 }
 
-int32 ASusWizEnemy::GetPlayerLevel()
+int32 ASusWizEnemy::GetPlayerLevel_Implementation()
 {
 	return Level;
 }
 
 
-void ASusWizEnemy::Die()
+void ASusWizEnemy::Die(const FVector& DeathImpulse)
 {
 	SetLifeSpan(Lifespan);
-	Super::Die();
+	Super::Die(DeathImpulse);
 }
 
 void ASusWizEnemy::SetCombatTarget_Implementation(AActor* InCombatTarget)

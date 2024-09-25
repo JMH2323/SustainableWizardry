@@ -59,7 +59,6 @@ template<class T>
 using TStaticFunPtr = typename TBaseStaticDelegateInstance<T, FDefaultDelegateUserPolicy>::FFuncPtr;
 
 
-// TODO: READ THROUGH ATTRIBUTE SET COMMENTS!!!!
 UCLASS()
 class SUSTAINABLEWIZARDRY_API USusWizAttributeSet : public UAttributeSet
 {
@@ -86,14 +85,25 @@ public:
 
 private:
 
+	void HandleIncomingDamage(const FEffectProperties& Props);
+	void HandleIncomingXP(const FEffectProperties& Props);
+	void Debuff(const FEffectProperties& Props);
+	
 	// Get all the data effect properties
 	void SetEffectProperties(const FGameplayEffectModCallbackData Data, FEffectProperties& Props) const;
 
 	void ShowFloatingText(const FEffectProperties& Props, float Damage, bool bDodgedHit, bool bCriticalHit);
 
+	void SendXPEvent(const FEffectProperties& Props);
+
 	
 public:
 
+	
+	
+
+	
+	
 
 	// Attribute Data
 	// Steps) 1. Create attribute in .h file. 2. creating the OnRep_ Function. 3. Add to props list
@@ -149,7 +159,7 @@ public:
 	UFUNCTION()
 	void OnRep_ArmorPen(const FGameplayAttributeData& OldArmorPen) const;
 
-	// TODO: Jeff = Speed, dodge (Wind power/Swift)
+	
 	//CriticalChance
 	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_CriticalChance, Category = "Secondary Attributes")
 	FGameplayAttributeData CriticalChance;
@@ -164,7 +174,6 @@ public:
 	UFUNCTION()
 	void OnRep_Dodge(const FGameplayAttributeData& OldDodge) const;
 	
-	// TODO: Alex = Healing scale, Damage scale (Deep/Flare)
 
 	//DamageScale
 	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_DamageScale, Category = "Secondary Attributes")
@@ -223,22 +232,50 @@ public:
 	FGameplayAttributeData IncomingDamage;
 	ATTRIBUTE_ACCESSORS(USusWizAttributeSet, IncomingDamage);
 
+	UPROPERTY(BlueprintReadOnly, Category = "Meta Attributes")
+	FGameplayAttributeData IncomingXP;
+	ATTRIBUTE_ACCESSORS(USusWizAttributeSet, IncomingXP);
+
 
 	/*
 	 * Res
 	 */
 
-	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_FireResistance, Category = "Resistance Attributes")
-	FGameplayAttributeData FireResistance;
-	ATTRIBUTE_ACCESSORS(USusWizAttributeSet, FireResistance);
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_PureResistance, Category = "Resistance Attributes")
+	FGameplayAttributeData PureResistance;
+	ATTRIBUTE_ACCESSORS(USusWizAttributeSet, PureResistance);
 	UFUNCTION()
-	void OnRep_FireResistance(const FGameplayAttributeData& OldFireResistance) const;
+	void OnRep_PureResistance(const FGameplayAttributeData& OldPureResistance) const;
 
 	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_PhysicalResistance, Category = "Resistance Attributes")
 	FGameplayAttributeData PhysicalResistance;
 	ATTRIBUTE_ACCESSORS(USusWizAttributeSet, PhysicalResistance);
 	UFUNCTION()
 	void OnRep_PhysicalResistance(const FGameplayAttributeData& OldPhysicalResistance) const;
+
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_HydroResistance, Category = "Resistance Attributes")
+	FGameplayAttributeData HydroResistance;
+	ATTRIBUTE_ACCESSORS(USusWizAttributeSet, HydroResistance);
+	UFUNCTION()
+	void OnRep_HydroResistance(const FGameplayAttributeData& OldHydroResistance) const;
+	
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_RockResistance, Category = "Resistance Attributes")
+	FGameplayAttributeData RockResistance;
+	ATTRIBUTE_ACCESSORS(USusWizAttributeSet, RockResistance);
+	UFUNCTION()
+	void OnRep_RockResistance(const FGameplayAttributeData& OldRockResistance) const;
+	
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_AeroResistance, Category = "Resistance Attributes")
+	FGameplayAttributeData AeroResistance;
+	ATTRIBUTE_ACCESSORS(USusWizAttributeSet, AeroResistance);
+	UFUNCTION()
+	void OnRep_AeroResistance(const FGameplayAttributeData& OldAeroResistance) const;
+
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_SolarResistance, Category = "Resistance Attributes")
+	FGameplayAttributeData SolarResistance;
+	ATTRIBUTE_ACCESSORS(USusWizAttributeSet, SolarResistance);
+	UFUNCTION()
+	void OnRep_SolarResistance(const FGameplayAttributeData& OldSolarResistance) const;
 
 	
 };

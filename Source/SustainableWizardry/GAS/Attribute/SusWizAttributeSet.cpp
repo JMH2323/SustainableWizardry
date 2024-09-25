@@ -9,8 +9,10 @@
 #include "GameplayEffectExtension.h"
 #include "Kismet/GameplayStatics.h"
 #include "SustainableWizardry/SusWizGameplayTags.h"
+#include "SustainableWizardry/SusWizLogChannels.h"
 #include "SustainableWizardry/GAS/SusWizAbilitySystemLibrary.h"
 #include "SustainableWizardry/Interaction/CombatInterface.h"
+#include "SustainableWizardry/Interaction/PlayerInterface.h"
 #include "SustainableWizardry/Player/SusWizPlayerController.h"
 
 USusWizAttributeSet::USusWizAttributeSet()
@@ -43,7 +45,7 @@ const FSusWizGameplayTags& GameplayTags = FSusWizGameplayTags::Get();
 	TagsToAttributes.Add(GameplayTags.Attributes_Vital_Energy, GetEnergyAttribute);
 
 	/* Resistance Attributes */
-	TagsToAttributes.Add(GameplayTags.Attributes_Resistance_Fire, GetFireResistanceAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Resistance_Pure, GetPureResistanceAttribute);
 	TagsToAttributes.Add(GameplayTags.Attributes_Resistance_Physical, GetPhysicalResistanceAttribute);
 }
 
@@ -122,6 +124,7 @@ void USusWizAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCall
 		
 	FEffectProperties Props;
 	SetEffectProperties(Data, Props);
+	if(Props.TargetCharacter->Implements<UCombatInterface>() && ICombatInterface::Execute_IsDead(Props.TargetCharacter)) return;
 
 	// Now that we have props, we can access all post gameplay effect executions!!
 
@@ -143,40 +146,106 @@ void USusWizAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCall
 	}
 	if (Data.EvaluatedData.Attribute == GetIncomingDamageAttribute())
 	{
-		const float LocalIncomingDamage = GetIncomingDamage();
-		SetIncomingDamage(0.f);
-		if (LocalIncomingDamage > 0.f)
+		HandleIncomingDamage(Props);
+	}
+	if (Data.EvaluatedData.Attribute == GetIncomingXPAttribute())
+	{
+		HandleIncomingXP(Props);
+	}
+}
+
+void USusWizAttributeSet::HandleIncomingDamage(const FEffectProperties& Props)
+{
+	const float LocalIncomingDamage = GetIncomingDamage();
+	SetIncomingDamage(0.f);
+	if (LocalIncomingDamage > 0.f)
+	{
+		const float NewHealth = GetHealth() - LocalIncomingDamage;
+		SetHealth(FMath::Clamp(NewHealth, 0.f, GetMaxHealth()));
+
+		const bool bFatal = NewHealth <= 0.f;
+
+		// If damage kills the character.
+		if (bFatal)
 		{
-			const float NewHealth = GetHealth() - LocalIncomingDamage;
-			SetHealth(FMath::Clamp(NewHealth, 0.f, GetMaxHealth()));
-
-
-			// Check if damage was fatal, apply death or hit if able
-			const bool bFatal = NewHealth <= 0.f;
-			if(bFatal)
+			ICombatInterface* CombatInterface = Cast<ICombatInterface>(Props.TargetAvatarActor);
+			if (CombatInterface)
 			{
-				ICombatInterface* CombatInterface = Cast<ICombatInterface>(Props.TargetAvatarActor);
-				if(CombatInterface)
-				{
-					CombatInterface->Die();
-				}
+				// Call death.
+				CombatInterface->Die(USusWizAbilitySystemLibrary::GetDeathImpulse(Props.EffectContextHandle));
 			}
-			else
-			{
-				FGameplayTagContainer TagContainer;
-				TagContainer.AddTag(FSusWizGameplayTags::Get().Effects_HitReact);
-				Props.TargetASC->TryActivateAbilitiesByTag(TagContainer);
-			}
+			// Send XP for kill.
+			SendXPEvent(Props);
+		}
+		// If damage does not kill.
+		else
+		{
+			// Apply a hit reaction to the target if they should flinch.
+			FGameplayTagContainer TagContainer;
+			TagContainer.AddTag(FSusWizGameplayTags::Get().Effects_HitReact);
+			Props.TargetASC->TryActivateAbilitiesByTag(TagContainer);
+		}
 
-			const bool bDodgedHit = USusWizAbilitySystemLibrary::IsDodgedHit(Props.EffectContextHandle);
-			const bool bCrit = USusWizAbilitySystemLibrary::IsCriticalHit(Props.EffectContextHandle);
-						
-			// When damage is dealt, show the damage on the enemy as a pop-up and it's context
-			ShowFloatingText(Props, LocalIncomingDamage, bDodgedHit, bCrit);
-			
+		// Apply a knockback to the target if they should be knocked.
+		const FVector& KnockbackForce = USusWizAbilitySystemLibrary::GetKnockbackForce(Props.EffectContextHandle);
+		if (!KnockbackForce.IsNearlyZero(1.f))
+		{
+			// We use Launch Character as it does not require physics body / ragdoll.
+			Props.TargetCharacter->LaunchCharacter(KnockbackForce, true, true);
+		}
+
+		// Check if the damage is a dodge or critical to show to player.
+		const bool bDodge = USusWizAbilitySystemLibrary::IsDodgedHit(Props.EffectContextHandle);
+		const bool bCriticalHit = USusWizAbilitySystemLibrary::IsCriticalHit(Props.EffectContextHandle);
+		// Show floating text to player that describes damage
+		ShowFloatingText(Props, LocalIncomingDamage, bDodge, bCriticalHit);
+		// Not Implemented: Debuffs
+		if (USusWizAbilitySystemLibrary::IsSuccessfulDebuff(Props.EffectContextHandle))
+		{
+			Debuff(Props);
 		}
 	}
-	
+}
+
+void USusWizAttributeSet::HandleIncomingXP(const FEffectProperties& Props)
+{
+	const float LocalIncomingXP = GetIncomingXP();
+	SetIncomingXP(0.f);
+
+	// Source Character is the owner, since GA_ListenForEvents applies GE_EventBasedEffect, adding to IncomingXP
+	if (Props.SourceCharacter->Implements<UPlayerInterface>() && Props.SourceCharacter->Implements<UCombatInterface>())
+	{
+		const int32 CurrentLevel = ICombatInterface::Execute_GetPlayerLevel(Props.SourceCharacter);
+		const int32 CurrentXP = IPlayerInterface::Execute_GetXP(Props.SourceCharacter);
+
+		const int32 NewLevel = IPlayerInterface::Execute_FindLevelForXP(Props.SourceCharacter, CurrentXP + LocalIncomingXP);
+		const int32 NumLevelUps = NewLevel - CurrentLevel;
+		if (NumLevelUps > 0)
+		{
+
+			IPlayerInterface::Execute_AddToPlayerLevel(Props.SourceCharacter, NumLevelUps);
+
+			int32 SpellPointsReward = 0;
+			for (int32 i = 0; i < NumLevelUps; i++)
+			{
+				SpellPointsReward += IPlayerInterface::Execute_GetSpellPointsReward(Props.SourceCharacter, CurrentLevel + i);
+			}
+			
+			IPlayerInterface::Execute_AddToSpellPoints(Props.SourceCharacter, SpellPointsReward);
+
+			SetHealth(GetMaxHealth());
+			SetEnergy(GetMaxEnergy());
+
+			IPlayerInterface::Execute_LevelUp(Props.SourceCharacter);
+		}
+
+		IPlayerInterface::Execute_AddToXP(Props.SourceCharacter, LocalIncomingXP);
+	}
+}
+
+void USusWizAttributeSet::Debuff(const FEffectProperties& Props)
+{
+	// TODO: Add Debuffs
 }
 
 
@@ -185,19 +254,47 @@ void USusWizAttributeSet::ShowFloatingText(const FEffectProperties& Props, float
 
 	if(Props.SourceCharacter != Props.TargetCharacter)
 	{
-		if(ASusWizPlayerController* PC = Cast<ASusWizPlayerController>(Props.SourceCharacter->Controller))
+		
+		if (Props.SourceCharacter && IsValid(Props.SourceCharacter))
 		{
-			PC->ShowDamageNumber(Damage, Props.TargetCharacter, bDodgedHit, bCrit);
-			return;
+			if (ASusWizPlayerController* PC = Cast<ASusWizPlayerController>(Props.SourceCharacter->Controller))
+			{
+				if (Props.TargetCharacter && IsValid(Props.TargetCharacter))
+				{
+					PC->ShowDamageNumber(Damage, Props.TargetCharacter, bDodgedHit, bCrit);
+					return;
+				}
+			}
 		}
-		if(ASusWizPlayerController* PC = Cast<ASusWizPlayerController>(Props.TargetCharacter->Controller))
+		if (Props.TargetCharacter && IsValid(Props.TargetCharacter))
 		{
-			PC->ShowDamageNumber(Damage, Props.TargetCharacter, bDodgedHit, bCrit);
+			if (ASusWizPlayerController* PC = Cast<ASusWizPlayerController>(Props.TargetCharacter->Controller))
+			{
+				if (Props.SourceCharacter && IsValid(Props.SourceCharacter))
+				{
+					PC->ShowDamageNumber(Damage, Props.TargetCharacter, bDodgedHit, bCrit);
+				}
+			}
 		}
-				
 	}
-	
 }
+
+void USusWizAttributeSet::SendXPEvent(const FEffectProperties& Props)
+{
+	if (Props.TargetCharacter->Implements<UCombatInterface>())
+	{
+		const int32 TargetLevel = ICombatInterface::Execute_GetPlayerLevel(Props.TargetCharacter);
+		const ECharacterClass TargetClass = ICombatInterface::Execute_GetCharacterClass(Props.TargetCharacter);
+		const int32 XPReward = USusWizAbilitySystemLibrary::GetXPRewardForClassAndLevel(Props.TargetCharacter, TargetClass, TargetLevel);
+
+		const FSusWizGameplayTags& GameplayTags = FSusWizGameplayTags::Get();
+		FGameplayEventData Payload;
+		Payload.EventTag = GameplayTags.Attributes_Meta_IncomingXP;
+		Payload.EventMagnitude = XPReward;
+		UAbilitySystemBlueprintLibrary::SendGameplayEventToActor(Props.SourceCharacter, GameplayTags.Attributes_Meta_IncomingXP, Payload);
+	}
+}
+
 
 /*
  * Attribute stuff start
@@ -221,7 +318,7 @@ void USusWizAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& 
 	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, ArmorPen, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, MaxHealth, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, MaxEnergy, COND_None, REPNOTIFY_Always);
-	// TODO: JEFF AND ALEX
+	
 	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, CriticalChance, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, Dodge, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, DamageScale, COND_None, REPNOTIFY_Always);
@@ -234,8 +331,12 @@ void USusWizAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& 
 
 	// Resistance Attributes
 
-	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, FireResistance, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, PureResistance, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, PhysicalResistance, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, HydroResistance, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, RockResistance, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, AeroResistance, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(USusWizAttributeSet, SolarResistance, COND_None, REPNOTIFY_Always);
 	
 }
 
@@ -308,9 +409,6 @@ void USusWizAttributeSet::OnRep_MaxEnergy(const FGameplayAttributeData& OldMaxEn
 	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, MaxHealth, OldMaxEnergy);
 }
 
-
-//TODO: JEFF ALEX
-
 /*
  * Vital
  */
@@ -329,9 +427,31 @@ void USusWizAttributeSet::OnRep_Energy(const FGameplayAttributeData& OldEnergy) 
 /*
  * Resistance
  */
-void USusWizAttributeSet::OnRep_FireResistance(const FGameplayAttributeData& OldFireResistance) const
+
+
+void USusWizAttributeSet::OnRep_PureResistance(const FGameplayAttributeData& OldPureResistance) const
 {
-	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, FireResistance, OldFireResistance);
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, PureResistance, OldPureResistance);
+}
+
+void USusWizAttributeSet::OnRep_HydroResistance(const FGameplayAttributeData& OldHydroResistance) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, HydroResistance, OldHydroResistance);
+}
+
+void USusWizAttributeSet::OnRep_RockResistance(const FGameplayAttributeData& OldRockResistance) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, RockResistance, OldRockResistance);
+}
+
+void USusWizAttributeSet::OnRep_AeroResistance(const FGameplayAttributeData& OldAeroResistance) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, AeroResistance, OldAeroResistance);
+}
+
+void USusWizAttributeSet::OnRep_SolarResistance(const FGameplayAttributeData& OldSolarResistance) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(USusWizAttributeSet, SolarResistance, OldSolarResistance);
 }
 
 void USusWizAttributeSet::OnRep_PhysicalResistance(const FGameplayAttributeData& OldPhysicalResistance) const

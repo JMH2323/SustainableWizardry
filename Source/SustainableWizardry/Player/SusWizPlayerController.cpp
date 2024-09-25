@@ -4,6 +4,8 @@
 
 #include "SusWizPlayerController.h"
 
+#include <string>
+
 #include "AbilitySystemBlueprintLibrary.h"
 #include "AttributeSet.h"
 #include "SustainableWizardry/GAS/ASC/SusWizAbilitySystemComponent.h"
@@ -11,6 +13,9 @@
 #include "EnhancedInputComponent.h"
 #include "Animation/AnimInstance.h"
 #include "GameFramework/Character.h"
+#include "Components/DecalComponent.h"
+#include "SustainableWizardry/SusWizGameplayTags.h"
+#include "SustainableWizardry/Effects/Actors/SolarBeamDecal.h"
 #include "SustainableWizardry/UI/Widget/WidgetComponent/DamageTextComponent.h"
 #include "SustainableWizardry/Input/SusWizInputComponent.h"
 
@@ -18,6 +23,40 @@
 ASusWizPlayerController::ASusWizPlayerController()
 {
 	bReplicates = true;
+}
+
+void ASusWizPlayerController::ShowMagicCircle(UMaterialInterface* DecalMaterial)
+{
+	if (!IsValid(MagicCircle))
+	{
+		MagicCircle = GetWorld()->SpawnActor<ASolarBeamDecal>(MagicCircleClass);
+		if (DecalMaterial)
+		{
+			MagicCircle->MagicCircleDecal->SetMaterial(0, DecalMaterial);
+		}
+	}
+}
+
+void ASusWizPlayerController::HideMagicCircle()
+{
+	if (IsValid(MagicCircle))
+	{
+		MagicCircle->Destroy();
+	}
+}
+
+FVector ASusWizPlayerController::GetMagicCircleLocation()
+{
+	if (IsValid(MagicCircle))
+	{
+		return MagicCircle->GetActorLocation();
+	}
+	else
+	{
+		FVector Failcase;
+		return Failcase;
+	}
+	
 }
 
 void ASusWizPlayerController::ShowDamageNumber_Implementation(float DamageAmount, ACharacter* TargetCharacter, bool bDodgedHit, bool bCrit)
@@ -31,6 +70,7 @@ void ASusWizPlayerController::ShowDamageNumber_Implementation(float DamageAmount
 		DamageText->SetDamageText(DamageAmount, bDodgedHit, bCrit);
 	}
 }
+
 
 void ASusWizPlayerController::BeginPlay()
 {
@@ -77,6 +117,14 @@ void ASusWizPlayerController::SetupInputComponent()
 	
 }
 
+bool ASusWizPlayerController::IsInputLeftHanded(FGameplayTag Input)
+{
+	if (Input.MatchesTagExact(FSusWizGameplayTags::Get().InputTag_LMB)) return true;
+	if (Input.MatchesTagExact(FSusWizGameplayTags::Get().InputTag_1)) return true;
+	if (Input.MatchesTagExact(FSusWizGameplayTags::Get().InputTag_3)) return true;
+	return false;
+}
+
 
 void ASusWizPlayerController::Look(const FInputActionValue& Value)
 {
@@ -95,6 +143,11 @@ void ASusWizPlayerController::Look(const FInputActionValue& Value)
 		// add yaw and pitch input to controller
 		ControlledPawn->AddControllerYawInput(LookAxisVector.X);
 		ControlledPawn->AddControllerPitchInput(LookAxisVector.Y);
+	}
+
+	if (IsValid(MagicCircle))
+	{
+		UpdateMagicCircleLocation();
 	}
 		
 	
@@ -125,18 +178,54 @@ void ASusWizPlayerController::Move(const FInputActionValue& InputActionValue)
 
 void ASusWizPlayerController::AbilityInputTagPressed(FGameplayTag InputTag)
 {
-	//
+	
+	if (GetASC() == nullptr) return;
+	
+
+	if (IsInputLeftHanded(InputTag) && GetASC()->HasMatchingGameplayTag(FSusWizGameplayTags::Get().Player_Block_LInputPressed))
+	{
+		return;
+	}
+	if (!IsInputLeftHanded(InputTag) &&	GetASC()->HasMatchingGameplayTag(FSusWizGameplayTags::Get().Player_Block_RInputPressed))
+	{
+		return;
+	}
+	
+	GetASC()->AbilityInputTagPressed(InputTag);
+	
 }
 
 void ASusWizPlayerController::AbilityInputTagReleased(FGameplayTag InputTag)
 {
+
 	if (GetASC() == nullptr) return;
+	
+	if (IsInputLeftHanded(InputTag) && GetASC()->HasMatchingGameplayTag(FSusWizGameplayTags::Get().Player_Block_LInputReleased))
+	{
+		return;
+	}
+	if (!IsInputLeftHanded(InputTag) && GetASC()->HasMatchingGameplayTag(FSusWizGameplayTags::Get().Player_Block_RInputReleased))
+	{
+		return;
+	}
+	
 	GetASC()->AbilityInputTagReleased(InputTag);
 }
 
 void ASusWizPlayerController::AbilityInputTagHeld(FGameplayTag InputTag)
 {
+
 	if (GetASC() == nullptr) return;
+	
+	if (IsInputLeftHanded(InputTag) && GetASC()->HasMatchingGameplayTag(FSusWizGameplayTags::Get().Player_Block_LInputHeld))
+	{
+		return;
+	}
+	if (!IsInputLeftHanded(InputTag) && GetASC()->HasMatchingGameplayTag(FSusWizGameplayTags::Get().Player_Block_RInputHeld))
+	{
+		return;
+	}
+	
 	GetASC()->AbilityInputTagHeld(InputTag);
 }
 
@@ -147,4 +236,43 @@ USusWizAbilitySystemComponent* ASusWizPlayerController::GetASC()
 		SusWizAbilitySystemComponent = Cast<USusWizAbilitySystemComponent>(UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(GetPawn<APawn>()));
 	}
 	return SusWizAbilitySystemComponent;
+}
+
+void ASusWizPlayerController::UpdateMagicCircleLocation()
+{
+	if (IsValid(MagicCircle))
+	{
+
+		/// Get the player's forward vector and pitch to calculate distance of AOE Decal.
+		FVector PlayerForwardVector = GetPawn()->GetActorForwardVector();
+		FRotator CameraRotation = GetControlRotation();
+		float CameraPitch = CameraRotation.Pitch;
+		if (CameraPitch > 180.0f)
+		{
+			CameraPitch -= 360.0f;
+		}
+		CameraPitch += 15.f;
+		
+		
+        float NormalizedPitch = FMath::Clamp((CameraPitch * 5.0f) / 180.0f, 0.0f, 1.0f);
+		float Distance = NormalizedPitch * 7000.0f;
+		if(Distance < 500.f) Distance = 500.f;
+		
+		FVector NewLocation = GetPawn()->GetActorLocation() + FVector(PlayerForwardVector.X, PlayerForwardVector.Y, 0).GetSafeNormal() * Distance;
+		NewLocation.Z = GetPawn()->GetActorLocation().Z; 
+
+		/* Debug logs to verify the calculations
+		UE_LOG(LogTemp, Warning, TEXT("Player Location: %s"), *GetPawn()->GetActorLocation().ToString());
+		UE_LOG(LogTemp, Warning, TEXT("Player Forward Vector: %s"), *PlayerForwardVector.ToString());
+		UE_LOG(LogTemp, Warning, TEXT("Camera Pitch: %f"), CameraPitch);
+		UE_LOG(LogTemp, Warning, TEXT("Normalized Pitch: %f"), NormalizedPitch);
+		UE_LOG(LogTemp, Warning, TEXT("Distance: %f"), Distance);
+		UE_LOG(LogTemp, Warning, TEXT("New Location: %s"), *NewLocation.ToString());
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow,
+			FString::Printf(TEXT("%f"), CameraPitch));
+			*/
+		
+		MagicCircle->SetActorLocation(NewLocation);
+		
+	}
 }

@@ -4,13 +4,16 @@
 
 #include "CoreMinimal.h"
 #include "SusWizWidgetController.h"
+#include "SustainableWizardry/SusWizGameplayTags.h"
 #include "SustainableWizardry/GAS/Attribute/SusWizAttributeSet.h"
+#include "SustainableWizardry/GAS/Data/AbilityInfo.h"
 #include "Engine/DataTable.h"
 
 #include "OverlayWidgetController.generated.h"
 
 // 8.0 Create Row Structure for our Data Tables
 
+struct FSusWizAbilityInfo;
 USTRUCT(BlueprintType, Blueprintable)
 struct FUIWidgetRow : public FTableRowBase
 {
@@ -33,6 +36,7 @@ struct FUIWidgetRow : public FTableRowBase
 
 class USusWizUserWidget;
 class UAbilityInfo;
+class USusWizAbilitySystemComponent;
 
 // 7.0
 // Here we are declaring a delegate for every attribute. We can scale them instead -> see part 10
@@ -44,9 +48,13 @@ class UAbilityInfo;
 // 10. Single delegate for changing attributes. Make sure to change "changedsignatures" for each later here.
 // changing attributes = broadcasting a float. KEEP ATTRIBUTES FLOATS FOR THIS DELEGATE
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnAttributeChangedSignature, float, NewValue);
-
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnLevelChangedSignature, int32, NewLevel, bool, bLevelUp);
 // 9. 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMessageWidgetRowSignature, FUIWidgetRow, Row);
+
+
+
+
 
 
 /**
@@ -83,15 +91,19 @@ public:
 	//9.1 
 	UPROPERTY(BlueprintAssignable, Category="GAS|Messages")
 	FMessageWidgetRowSignature MessageWidgetRowDelegate;
+
+	UPROPERTY(BlueprintAssignable, Category="GAS|XP")
+	FOnAttributeChangedSignature OnXPPercentChangedDelegate;
+
+	UPROPERTY(BlueprintAssignable, Category="GAS|Level")
+	FOnLevelChangedSignature  OnPlayerLevelChangedDelegate;
 	
 protected:
 
 	// Get the data table for messaging widgets
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Widget Data")
 	TObjectPtr<UDataTable> MessageWidgetDataTable;
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Widget Data")
-	TObjectPtr<UAbilityInfo> AbilityInfo;
+	
 	
 	
 	// PRE LAMBDA
@@ -102,6 +114,13 @@ protected:
 	// Template files want you to create the function here and not in the cpp
 	template<typename T>
 	T* GetDataTableRowByTag(UDataTable* DataTable, const FGameplayTag& Tag);
+
+	void OnXPChanged(int32 NewXP);
+
+
+	void OnAbilityEquipped(const FGameplayTag& AbilityTag, const FGameplayTag& Status, const FGameplayTag& Slot, const FGameplayTag& PreviousSlot) const;
+	
+	
 };
 
 // Template files want you to create the function here and not in the cpp

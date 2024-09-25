@@ -23,7 +23,6 @@ static const FSusWizGameplayTags& Get() { return GameplayTags; }
  FGameplayTag Attributes_Primary_Deep;
 
  // Secondary Attribute Tags
- // TODO: Alex/Jeff add tags for attributes you have been working with.
  FGameplayTag Attributes_Secondary_Armor;
  FGameplayTag Attributes_Secondary_ArmorPen;
  FGameplayTag Attributes_Secondary_MaxEnergy;
@@ -44,27 +43,138 @@ static const FSusWizGameplayTags& Get() { return GameplayTags; }
  FGameplayTag InputTag_2;
  FGameplayTag InputTag_3;
  FGameplayTag InputTag_4;
+ FGameplayTag InputTag_Q;
+ FGameplayTag InputTag_E;
 
  // Abilities
  FGameplayTag Abilities_Attack;
 
- // Meta
+ // Ability Info
+ FGameplayTag Abilities_Status_Locked;
+ FGameplayTag Abilities_Status_Eligible;
+ FGameplayTag Abilities_Status_Unlocked;
+ FGameplayTag Abilities_Status_Equipped;
+
+ FGameplayTag Abilities_Type_Passive;
+ FGameplayTag Abilities_Type_Active;
+ FGameplayTag Abilities_Type_None;
+ FGameplayTag Abilities_None;
+
+ /*
+  * Damage Types
+  */
  FGameplayTag Damage;
- FGameplayTag Damage_Fire;
+ FGameplayTag Damage_Hydro;
+ FGameplayTag Damage_Solar;
+ FGameplayTag Damage_Pure;
  FGameplayTag Damage_Physical;
+ FGameplayTag Damage_Rock;
+ FGameplayTag Damage_Aero;
 
- TArray<FGameplayTag> DamageTypes;
-
- TMap<FGameplayTag, FGameplayTag> DamageTypesToResistances;
-
+ // Resistances
  FGameplayTag Attributes_Resistance_Physical;
- FGameplayTag Attributes_Resistance_Fire;
+ FGameplayTag Attributes_Resistance_Pure;
+ FGameplayTag Attributes_Resistance_Solar;
+ FGameplayTag Attributes_Resistance_Hydro;
+ FGameplayTag Attributes_Resistance_Rock;
+ FGameplayTag Attributes_Resistance_Aero;
+
+ // Debuffs
+ FGameplayTag Debuff_Bleed;
+ FGameplayTag Debuff_Stun;
+ FGameplayTag Debuff_Lit;
+ FGameplayTag Debuff_Wet;
+
+ // Debuff Params
+ FGameplayTag Debuff_Param_Chance;
+ FGameplayTag Debuff_Param_Damage;
+ FGameplayTag Debuff_Param_Duration;
+ FGameplayTag Debuff_Param_Frequency;
+
+ // Damage Mapping
+ TMap<FGameplayTag, FGameplayTag> DamageTypesToResistances;
+ TMap<FGameplayTag, FGameplayTag> DamageTypesToDebuffs;
  
- //Misc
+ 
+ // Meta
+ FGameplayTag Attributes_Meta_IncomingXP;
+ 
+ // Effects
  FGameplayTag Effects_HitReact;
 
- // Abilities
+/*
+ * Player Tags
+ */
+
+ // Blocking Tags for preventing multiple spell overlaps for Left hand
+ FGameplayTag Player_Block_LInputPressed;
+ FGameplayTag Player_Block_LInputHeld;
+ FGameplayTag Player_Block_LInputReleased;
+ FGameplayTag Player_Block_LTrace;
+ // Right hand casting
+ FGameplayTag Player_Block_RInputPressed;
+ FGameplayTag Player_Block_RInputHeld;
+ FGameplayTag Player_Block_RInputReleased;
+ FGameplayTag Player_Block_RTrace;
+
+ /* 
+  * Spell Abilities
+  */
+ // Starting Fire 
  FGameplayTag Abilities_Fire_FireBolt;
+ FGameplayTag Abilities_Fire_BigFireBolt;
+ // Hydro
+ FGameplayTag Abilities_Hydro_HydroPulse;
+ FGameplayTag Abilities_Hydro_WaterWhip;
+ FGameplayTag Abilities_Hydro_OceanCall;
+ // Geo
+ FGameplayTag Abilities_Geo_RockPunch;
+ FGameplayTag Abilities_Geo_ForceOfEarth;
+ FGameplayTag Abilities_Geo_Boulder;
+ // Solar
+ FGameplayTag Abilities_Solar_Flare;
+ FGameplayTag Abilities_Solar_Beam;
+ FGameplayTag Abilities_Solar_EverPresence;
+ // Aero
+ FGameplayTag Abilities_Aero_Airrow;
+ FGameplayTag Abilities_Aero_Cut;
+ FGameplayTag Abilities_Aero_Dash;
+ FGameplayTag Abilities_Aero_InstantCarnage;
+
+ /* 
+  * Spell Cooldowns
+  */
+ // Starting Fire 
+ FGameplayTag Cooldown_Fire_FireBolt;
+ FGameplayTag Cooldown_Fire_BigFireBolt;
+ // Hydro
+ FGameplayTag Cooldown_Hydro_HydroPulse;
+ FGameplayTag Cooldown_Hydro_WaterWhip;
+ FGameplayTag Cooldown_Hydro_OceanCall;
+ // Geo
+ FGameplayTag Cooldown_Geo_RockPunch;
+ FGameplayTag Cooldown_Geo_ForceOfEarth;
+ FGameplayTag Cooldown_Geo_Boulder;
+ // Solar
+ FGameplayTag Cooldown_Solar_Flare;
+ FGameplayTag Cooldown_Solar_Beam;
+ FGameplayTag Cooldown_Solar_EverPresence;
+ // Aero
+ FGameplayTag Cooldown_Aero_Airrow;
+ FGameplayTag Cooldown_Aero_Cut;
+ FGameplayTag Cooldown_Aero_Dash;
+ FGameplayTag Cooldown_Aero_InstantCarnage;
+
+
+ /*
+  * Spells Extras
+  */
+ FGameplayTag Abilities_Hydro_HydroPulse_BlockLEffect;
+ FGameplayTag Abilities_Hydro_HydroPulse_BlockREffect;
+ FGameplayTag Abilities_Aero_Airrow_BlockLEffect;
+ FGameplayTag Abilities_Aero_Airrow_BlockREffect;
+
+
  
 protected:
 

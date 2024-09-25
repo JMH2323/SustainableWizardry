@@ -6,9 +6,12 @@
 #include "GameFramework/Character.h"
 #include "AbilitySystemInterface.h"
 #include "SustainableWizardry/Interaction/CombatInterface.h"
+#include "SustainableWizardry/GAS/Data/CharacterClassInfo.h"
+#include "SustainableWizardry/Interaction/SaveInterface.h"
 #include "SusWizCharacterBase.generated.h"
 
 
+class USusWizAttributeSet;
 // Forward declare for GAS
 class UAbilitySystemComponent;
 class UAttributeSet;
@@ -18,7 +21,7 @@ class UAnimMontage;
 
 UCLASS()
 class SUSTAINABLEWIZARDRY_API ASusWizCharacterBase : public ACharacter,
-public IAbilitySystemInterface, public ICombatInterface
+public IAbilitySystemInterface, public ICombatInterface, public ISaveInterface
 {
 	GENERATED_BODY()
 
@@ -27,37 +30,51 @@ public:
 	ASusWizCharacterBase();
 
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
-
+	USusWizAttributeSet* GetSusWizAttributeSet() const;
+	virtual float TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent,
+		AController* EventInstigator, AActor* DamageCauser) override;
+	
 	UAttributeSet* GetAttributeSet() const { return AttributeSet; }
 
-	
-
-	
+	/* Save Interface */
+	virtual bool ShouldLoadTransform_Implementation() override {return true; };
+	//virtual void LoadActor_Implementation() override;
+	/* Save Interface End */
 
 	UFUNCTION(NetMulticast, Reliable)
-	virtual void MulticastHandleDeath();
+	virtual void MulticastHandleDeath(const FVector& DeathImpulse);
 
 	/** Combat Interface */
 	virtual UAnimMontage* GetHitReactMontage_Implementation() override;	
-	virtual void Die() override;	
+	virtual void Die(const FVector& DeathImpulse) override;
+	virtual FOnDeathSignature& GetOnDeathDelegate() override;
 	virtual FVector GetCombatSocketLocation() override;
+	virtual FVector GetSecCombatSocketLocation() override;
 	virtual bool IsDead_Implementation() const override;
 	virtual AActor* GetAvatar_Implementation() override;
+
+
+	virtual ECharacterClass GetCharacterClass_Implementation() override;
+	virtual USkeletalMeshComponent* GetMainWeapon_Implementation() override;
+	virtual USkeletalMeshComponent* GetSecWeapon_Implementation() override;
+
+	virtual FOnDamageSignature& GetOnDamageSignature() override;
 	/** end Combat Interface */
 
+	FOnDeathSignature OnDeathDelegate;
+	FOnDamageSignature OnDamageDelegate;
+	UPROPERTY(BlueprintReadOnly)
 	bool bDead = false;
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-
-	
 	
 	// Create the weapon mesh component to allow us to spawn spells from hand
 	UPROPERTY(EditAnywhere, Category = "Combat")
-	TObjectPtr<USkeletalMeshComponent> MainWeapon;
+	USkeletalMeshComponent* MainWeapon;
 	UPROPERTY(EditAnywhere, Category = "Combat")
-	TObjectPtr<USkeletalMeshComponent> SecondaryWeapon;
+	USkeletalMeshComponent* SecondaryWeapon;
 	
 	UPROPERTY(EditAnywhere, Category = "Combat")
 	FName MainWeaponTipSocketName;
@@ -65,7 +82,8 @@ protected:
 	FName SecondaryWeaponTipSocketName;
 
 	
-
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Character Class Defaults")
+	ECharacterClass CharacterClass = ECharacterClass::Warrior;
 	
 	UPROPERTY()
 	TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;
@@ -105,13 +123,17 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TObjectPtr<UMaterialInstance> DissolveMaterialInstance;
-
-	private:
-
+	
 	UPROPERTY(EditAnywhere, Category = "Abilities|Startup")
 	TArray<TSubclassOf<UGameplayAbility>> StartupAbilities;
 
+	UPROPERTY(EditAnywhere, Category = "Abilities|Startup")
+	TArray<TSubclassOf<UGameplayAbility>> StartupPassiveAbilities;
+
 	UPROPERTY(EditAnywhere, Category = "Combat")
 	TObjectPtr<UAnimMontage> HitReactMontage;
+
+
+
 	
 };

@@ -29,7 +29,14 @@ void USusWizProjectileSpell::SpawnProjectile()
     ICombatInterface* CombatInterface = Cast<ICombatInterface>(GetAvatarActorFromActorInfo());
     if (CombatInterface && StoredActorInfo)
     {
-        const FVector SocketLocation = CombatInterface->GetCombatSocketLocation();
+
+    	FVector SocketLocation = CombatInterface->GetCombatSocketLocation();
+    	
+    	if (isLeftHanded)
+    	{
+    		SocketLocation = CombatInterface->GetSecCombatSocketLocation();
+    	}
+          	
         FTransform SpawnTransform;
 
     	
@@ -42,7 +49,7 @@ void USusWizProjectileSpell::SpawnProjectile()
         FVector ViewPointForward = PlayerViewPointRotator.Vector();
 
         // Create a line trace from the viewport location in the direction that the viewport is facing.
-        FVector EndPoint = PlayerViewPointLocation + (ViewPointForward * 5000);  // 5000 is your trace distance
+        FVector EndPoint = PlayerViewPointLocation + (ViewPointForward * 50000);  // 50000 is your trace distance
 
         FHitResult TraceResult;
         FCollisionQueryParams TraceParams;
@@ -72,24 +79,7 @@ void USusWizProjectileSpell::SpawnProjectile()
             GetOwningActorFromActorInfo(), Cast<APawn>(GetOwningActorFromActorInfo()),
             ESpawnActorCollisionHandlingMethod::AlwaysSpawn);
 
-		// TODONE: Give Projectile a GE Spec for damage.
-    	const UAbilitySystemComponent* SourceASC = UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(GetAvatarActorFromActorInfo());
-    	const FGameplayEffectSpecHandle SpecHandle = SourceASC->MakeOutgoingSpec(DamageEffectClass, GetAbilityLevel(), SourceASC->MakeEffectContext());
-
-
-    	/* Damage from Tags Meta */
-    	FSusWizGameplayTags GameplayTags = FSusWizGameplayTags::Get();
-    	
-
-    	for (auto& Pair : DamageTypes)
-    	{
-    		const float ScaledDamage = Pair.Value.GetValueAtLevel(GetAbilityLevel());
-    		UAbilitySystemBlueprintLibrary::AssignTagSetByCallerMagnitude(SpecHandle, Pair.Key, ScaledDamage);
-    	}
-
-    	
-
-    	Projectile->DamageEffectSpecHandle = SpecHandle;
+		Projectile->DamageEffectParams = MakeDamageEffectParamsFromClassDefaults();
         
         Projectile->FinishSpawning(SpawnTransform);
 	}
