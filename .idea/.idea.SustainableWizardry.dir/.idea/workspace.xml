@@ -8,144 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1579a7cd-1dd9-4102-8fb2-ded64c6e3088" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Sounds/SFX_Fire-Nado_Loop1.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Assets/Materials/SmallRock/M_SlingshotRock.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Assets/Materials/SmallRock/SlingshotRock_low_DefaultMaterial_BaseColor.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Assets/Materials/SmallRock/SlingshotRock_low_DefaultMaterial_Normal.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Assets/Materials/SmallRock/SlingshotRock_low_DefaultMaterial_OcclusionRoughnessMetallic.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Assets/SM_SmallRock.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_RockImpact1.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_RockImpact1.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_RockImpact2.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_RockImpact2.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_RockImpact3.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_RockImpact3.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_RockImpact4.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_RockImpact4.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_RockImpact5.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_RockImpact5.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_UpEarth3.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_UpEarth3.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_UpEarth4.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_UpEarth4.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_UpEarth5.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_UpEarth5.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaSounds/Potions/Spawn/sfx_Potion_Spawn.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/AutaAssets/AutaSounds/Potions/Spawn/sfx_Potion_Spawn.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/AutaAssets/lilFBX.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/Enemies/Goblin/Slingshot/Materials/SlingshotRock/M_SlingshotRock.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/Enemies/Goblin/Slingshot/Materials/SlingshotRock/SlingshotRock_low_DefaultMaterial_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/Enemies/Goblin/Slingshot/Materials/SlingshotRock/SlingshotRock_low_DefaultMaterial_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/Enemies/Goblin/Slingshot/Materials/SlingshotRock/SlingshotRock_low_DefaultMaterial_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/Enemies/Goblin/Slingshot/SM_SlingshotRock.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FXVarietyPack/Materials/MI_ky_storm01_nonD.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FXVarietyPack/Materials/MI_ky_storm01_nonD.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/AI/Tasks/BTS_FindNearestPlayer.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/AI/Tasks/BTS_FindNearestPlayer.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/EnemyAbilities/Melee/GA_SludgeGolemAttack.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/EnemyAbilities/Melee/GA_SludgeGolemAttack.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/EnemyAbilities/Ranged/BP_SludgeBall.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/EnemyAbilities/Ranged/BP_SludgeBall.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Geo/RockPunch/BP_RP1.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Geo/RockPunch/BP_RP1.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Geo/RockPunch/BP_RP2.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Geo/RockPunch/BP_RP2.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Geo/RockPunch/BP_RP3.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Geo/RockPunch/BP_RP3.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Geo/RockPunch/BP_RP4.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Geo/RockPunch/BP_RP4.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Geo/RockPunch/BP_RP5.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Geo/RockPunch/BP_RP5.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Solar/Beam/BP_SBCircle.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Solar/Beam/BP_SBCircle.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Solar/Beam/GA_SolarBeam.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Solar/Beam/GA_SolarBeam.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Maps/Plains-ChoppedDownForest.umap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/Landscape/FoliageSpawners/PFS_GrassTrees.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/RuralAustralia/Landscape/FoliageSpawners/PFS_GrassTrees.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/Landscape/FoliageSpawners/PFS_Logs.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/RuralAustralia/Landscape/FoliageSpawners/PFS_Logs.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/Landscape/FoliageSpawners/PFS_Rocks.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/Landscape/FoliageSpawners/SMF_Foliage.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/RuralAustralia/Landscape/FoliageSpawners/SMF_Foliage.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/Landscape/Textures/T_Distant_Ground_02_CA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/Landscape/Textures/T_Distant_Ground_02_NA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/Presets/MF_Billboard.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/Presets/MF_CheapCameraFade.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/Presets/MF_ContactShadows.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/Presets/MF_DetailTexture.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/Presets/MF_DistantTextureOverlay.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/Presets/MF_NormalStrength.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/Presets/MF_ReconstructZ.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/Presets/MF_RockStains.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/Presets/MF_Wind.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/Presets/MF_WorldProjectedTexture.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/Presets/MPC_GlobalWind.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/Presets/M_Nature_01.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/RuralAustralia/Presets/M_Nature_01.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/Presets/M_Vegetation_01.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/Presets/M_Vegetation_Billboard_01.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Rocks/Rock_M_01/FT_Rock_M_01.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Rocks/Rock_M_01/MI_Rock_M_01.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Rocks/Rock_M_01/SM_Rock_M_01.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Rocks/Rock_M_01/T_Rock_M_01_CA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Rocks/Rock_M_01/T_Rock_M_01_NA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Rocks/Rock_M_02/FT_Rock_M_02.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Rocks/Rock_M_02/MI_Rock_M_02.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Rocks/Rock_M_02/SM_Rock_M_02.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Rocks/Rock_M_02/T_Rock_M_02_CA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Rocks/Rock_M_02/T_Rock_M_02_NA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Rocks/Rock_M_03/FT_Rock_M_03.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Rocks/Rock_M_03/MI_Rock_M_03.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Rocks/Rock_M_03/SM_Rock_M_03.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Rocks/Rock_M_03/T_Rock_M_03_CA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Rocks/Rock_M_03/T_Rock_M_03_NA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Rocks/Rock_S_01/FT_Rock_S_01.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Rocks/Rock_S_01/MI_Rock_S_01.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Rocks/Rock_S_01/SM_Rock_S_01.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Rocks/Rock_S_01/T_Rock_S_01_CA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Rocks/Rock_S_01/T_Rock_S_01_NA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Rocks/Rock_S_02/FT_Rock_S_02.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Rocks/Rock_S_02/MI_Rock_S_02.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Rocks/Rock_S_02/SM_Rock_S_02.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Rocks/Rock_S_02/T_Rock_S_02_CA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Rocks/Rock_S_02/T_Rock_S_02_NA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Rocks/_SharedTextures/T_Cliff_Tile_CA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Rocks/_SharedTextures/T_Cliff_Tile_NA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Rocks/_SharedTextures/T_DetailTexture_01_NA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Rocks/_SharedTextures/T_RockStains_CA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/FT_GrassTree_01.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/FT_GrassTree_01.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/FT_GrassTree_02.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/FT_GrassTree_02.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/FT_GrassTree_03.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/FT_GrassTree_03.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/FT_GrassTree_04.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/FT_GrassTree_04.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/MI_GrassTree_01.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/MI_GrassTree_01_Base.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/MI_GrassTree_01_Billboard.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/MI_GrassTree_02.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/MI_GrassTree_02_Base.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/MI_GrassTree_02_Billboard.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/MI_GrassTree_03.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/MI_GrassTree_03_Base.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/MI_GrassTree_03_Billboard.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/MI_GrassTree_04.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/MI_GrassTree_04_Billboard.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/SM_GrassTree_01.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/SM_GrassTree_01.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/SM_GrassTree_02.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/SM_GrassTree_02.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/SM_GrassTree_03.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/SM_GrassTree_03.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/SM_GrassTree_04.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/SM_GrassTree_04.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/T_GrassTree_01_Billboard_CA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/T_GrassTree_01_Billboard_NA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/T_GrassTree_01_CA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/T_GrassTree_01_NA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/T_GrassTree_02_Billboard_CA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/T_GrassTree_02_Billboard_NA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/T_GrassTree_03_Billboard_CA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/T_GrassTree_03_Billboard_NA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/T_GrassTree_04_Billboard_CA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/T_GrassTree_04_Billboard_NA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/T_GrassTree_Base_01_CA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/GrassTree_01/T_GrassTree_Base_01_NA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/Log_L_01/FT_Log_L_01.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/Log_L_01/MI_Log_L_01.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/Log_L_01/SM_Log_L_01.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/Log_L_01/T_Log_L_01_CA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/Log_L_01/T_Log_L_01_NA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/Log_M_01/FT_Log_M_01.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/Log_M_01/FT_Log_M_01.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/Log_M_01/MI_Log_M_01.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/Log_M_01/SM_Log_M_01.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/Log_M_01/SM_Log_M_01.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/Log_M_01/T_Log_M_01_CA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/Log_M_01/T_Log_M_01_NA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/Log_S_01/FT_Log_S_01.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/Log_S_01/FT_Log_S_01.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/Log_S_01/MI_Log_S_01.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/Log_S_01/SM_Log_S_01.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/Log_S_01/SM_Log_S_01.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/Log_S_01/T_Log_S_01_CA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/Log_S_01/T_Log_S_01_NA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/Log_S_02/FT_Log_S_02.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/Log_S_02/FT_Log_S_02.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/Log_S_02/MI_Log_S_02.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/Log_S_02/SM_Log_S_02.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/Log_S_02/SM_Log_S_02.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/Log_S_02/T_Log_S_02_CA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/Log_S_02/T_Log_S_02_NA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/Tree_L_01/T_Tree_L_01_Billboard_CA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/Tree_L_01/T_Tree_L_01_Billboard_NA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/_SharedTextures/T_Branches_01_CA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RuralAustralia/StaticMeshes/Vegetation/_SharedTextures/T_Branches_01_NA.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/LevelDevelopment/LandscapeMaterials/Landscape/MI_landscape.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LevelDevelopment/LandscapeMaterials/Landscape/MI_landscape.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/LevelDevelopment/Maps/MapOne.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LevelDevelopment/Maps/MapOne.umap" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,30 +68,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Uproject.SustainableWizardry.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.General&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Uproject.SustainableWizardry.executor": "Run",
+    "git-widget-placeholder": "Landscape-Changes",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.General",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\angryjack67\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\angryjack67\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\angryjack67\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\angryjack67\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\angryjack67\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\angryjack67\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="SustainableWizardry" type="Uproject" factoryName="rider.uproject">
       <option name="PROJECT_FILE_PATH" value="$PROJECT_DIR$/SustainableWizardry.uproject" />
@@ -397,6 +262,7 @@
       <workItem from="1727210345912" duration="6530000" />
       <workItem from="1727217420812" duration="5304000" />
       <workItem from="1727300614544" duration="1768000" />
+      <workItem from="1727379745739" duration="771000" />
     </task>
     <servers />
   </component>
