@@ -9,7 +9,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1579a7cd-1dd9-4102-8fb2-ded64c6e3088" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LevelDevelopment/LandscapeMaterials/Landscape/MI_landscape.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LevelDevelopment/LandscapeMaterials/Landscape/MI_landscape.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GameMode/BP_GameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GameMode/BP_GameMode.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/LevelDevelopment/Maps/MapOne.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LevelDevelopment/Maps/MapOne.umap" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -263,6 +263,7 @@
       <workItem from="1727217420812" duration="5304000" />
       <workItem from="1727300614544" duration="1768000" />
       <workItem from="1727379745739" duration="771000" />
+      <workItem from="1727576918188" duration="711000" />
     </task>
     <servers />
   </component>
