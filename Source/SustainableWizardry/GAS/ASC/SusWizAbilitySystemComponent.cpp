@@ -272,7 +272,7 @@ void USusWizAbilitySystemComponent::ServerEquipAbility_Implementation(const FGam
 			{
 				SusWizAbility->CurrentInputTag = FSusWizGameplayTags::Get().Abilities_None;
 			}
-			// Clear this ability's slot, just in case, it's a different slot
+			// Clear this ability's slot, just in case it's a different slot
 			ClearSlot(AbilitySpec);
 			// Now, assign this ability to this slot
 			AbilitySpec->DynamicAbilityTags.AddTag(Slot);
