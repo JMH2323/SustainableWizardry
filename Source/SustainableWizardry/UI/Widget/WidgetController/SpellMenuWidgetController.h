@@ -18,7 +18,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FSpellGlobeSelectedSignature, bool
 // Multicast for determining if an ability is active or passive to be displayed in equip menu.
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FWaitForEquipSelectionSignature, const FGameplayTag&, AbilityType);
 // Multicast for determining if a spell globe has been reassigned
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSpellGlobeReassignedSignature, const FGameplayTag&, AbilityTag);
+
 
 struct FSelectedAbility
 {
@@ -46,8 +46,7 @@ public:
 	FWaitForEquipSelectionSignature WaitForEquipDelegate;
 	UPROPERTY(BlueprintAssignable)
 	FWaitForEquipSelectionSignature StopWaitingForEquipDelegate;
-	UPROPERTY(BlueprintAssignable)
-	FSpellGlobeReassignedSignature SpellGlobeReassignedDelegate;
+	
 
 	UFUNCTION(BlueprintCallable)
 	void SpellGlobeSelected(const FGameplayTag& AbilityTag);

@@ -20,6 +20,11 @@ void UOverlayWidgetController::BroadcastInitialValues()
 void UOverlayWidgetController::BindCallbacksToDependencies()
 {
 
+	if (SpellMenuWidgetController)
+	{
+		SpellMenuWidgetController->SpellGlobeReassignedDelegate.AddDynamic(this, &UOverlayWidgetController::OnSpellGlobeReassigned);
+	}
+	
 	GetSusWizPS()->OnXPChangedDelegate.AddUObject(this, &UOverlayWidgetController::OnXPChanged);
 	GetSusWizPS()->OnLevelChangedDelegate.AddLambda(
 		[this](int32 NewLevel, bool bLevelUp)
@@ -100,7 +105,6 @@ void UOverlayWidgetController::BindCallbacksToDependencies()
 
 }
 
- 
 
 
 void UOverlayWidgetController::OnXPChanged(int32 NewXP)  
