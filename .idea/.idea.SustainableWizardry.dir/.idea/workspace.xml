@@ -7,7 +7,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1579a7cd-1dd9-4102-8fb2-ded64c6e3088" name="Changes" comment="" />
+    <list default="true" id="1579a7cd-1dd9-4102-8fb2-ded64c6e3088" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultGame.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultGame.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/UI/HUD/LoadScreenHUD.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/UI/HUD/LoadScreenHUD.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SustainableWizardry.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/SustainableWizardry.uproject" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -261,6 +267,7 @@
       <workItem from="1727379745739" duration="771000" />
       <workItem from="1727576918188" duration="711000" />
       <workItem from="1727839147207" duration="5106000" />
+      <workItem from="1727905427662" duration="2777000" />
     </task>
     <servers />
   </component>
