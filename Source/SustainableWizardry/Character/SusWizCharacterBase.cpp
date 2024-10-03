@@ -46,6 +46,10 @@ UAnimMontage* ASusWizCharacterBase::GetHitReactMontage_Implementation()
 
 void ASusWizCharacterBase::Die(const FVector& DeathImpulse)
 {
+	if (GetMesh())
+	{
+	GetMesh()->Stop();
+	}
 	MulticastHandleDeath_Implementation(DeathImpulse);
 }
 

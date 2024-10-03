@@ -8,6 +8,107 @@
 #include "SustainableWizardry/GAS/SusWizAbilitySystemLibrary.h"
 #include "SustainableWizardry/Interaction/CombatInterface.h"
 
+FString UHydroPulse::GetDescription(int32 Level)
+{
+	const int32 ScaledDamage = Damage.GetValueAtLevel(Level);
+	float EnergyCost = FMath::Abs(GetEnergyCost(Level));
+	EnergyCost *= 10;
+	const float Cooldown = GetCooldown(Level);
+	int32 NumAdd = FMath::Min(Level + 1, 6);
+
+	if (Level == 1)
+	{
+		return FString::Printf(TEXT(
+			// Title
+			"<Title>HYDRO PULSE</>\n\n"
+
+			// Level
+			"<Small>Level: </><Level>%d</>\n"
+			// Energy Cost
+			"<Small>Energy Cost: </><Energy>%.1f per second</>\n"
+			// Cooldown
+			"<Small>Cooldown: </><Cooldown>%.1f</>\n\n"
+
+			"<Default>After tracking an enemy, Shoot out a beam of water that"
+			" connects and deals </>"
+
+			// Damage
+			"<Damage>1.5</><Default> Hydro damage every tenth second. The Beam will also spread to"
+			// Additional Targets
+			" </><Cooldown>%i</> targets near the enemy."),
+			
+			// Values
+			Level,
+			EnergyCost,
+			Cooldown,
+			NumAdd);
+	}
+	else
+	{
+		return FString::Printf(TEXT(
+			// Title
+			"<Title>HYDRO PULSE</>\n\n"
+
+			// Level
+			"<Small>Level: </><Level>%d</>\n"
+			// Energy Cost
+			"<Small>Energy Cost: </><Energy>%.1f per second</>\n"
+			// Cooldown
+			"<Small>Cooldown: </><Cooldown>%.1f</>\n\n"
+
+			"<Default>After tracking an enemy, Shoot out a beam of water that"
+			" connects and deals </>"
+
+			// Damage
+			"<Damage>%d</><Default> Hydro damage every tenth second. The Beam will also spread to"
+			// Additional Targets
+			" </><Cooldown>%i</> targets near the enemy."),
+			
+			// Values
+			Level,
+			EnergyCost,
+			Cooldown,
+			ScaledDamage,
+			NumAdd);
+	}
+	
+}
+
+FString UHydroPulse::GetNextLevelDescription(int32 Level)
+{
+	const int32 ScaledDamage = Damage.GetValueAtLevel(Level);
+	float EnergyCost = FMath::Abs(GetEnergyCost(Level));
+	EnergyCost *= 10;
+	const float Cooldown = GetCooldown(Level);
+	int32 NumAdd = FMath::Min(Level + 1, 6);
+	
+	return FString::Printf(TEXT(
+		// Title
+		"<Title>HYDRO PULSE</>\n\n"
+
+		// Level
+		"<Small>Level: </><Level>%d</>\n"
+		// Energy Cost
+		"<Small>Energy Cost: </><Energy>%.1f per second</>\n"
+		// Cooldown
+		"<Small>Cooldown: </><Cooldown>%.1f</>\n\n"
+
+		"<Default>After tracking an enemy, Shoot out a beam of water that"
+		" connects and deals </>"
+
+		// Damage
+		"<Damage>%d</><Default> Hydro damage every tenth second. The Beam will also spread to"
+		// Additional Targets
+		" </><Cooldown>%i</> targets near the enemy."),
+			
+		// Values
+		Level,
+		EnergyCost,
+		Cooldown,
+		ScaledDamage,
+		NumAdd);
+}
+
 void UHydroPulse::StoreTraceDataInfo(const FHitResult& HitResult)
 {
 	if (HitResult.bBlockingHit)
@@ -121,11 +222,11 @@ void UHydroPulse::StoreAdditionalTargets(TArray<AActor*>& OutAdditionalTargets)
 		GetAvatarActorFromActorInfo(),
 		OverlappingActors,
 		ActorsToIgnore,
-		1000.f,
+		3000.f,
 		TraceHitActor->GetActorLocation());
 
 	// Set the number of targets and get the closest ones, returning closest actors.
-	int32 NumAdditionalTargets = FMath::Min(GetAbilityLevel(), MaxNumShockTargets);
+	int32 NumAdditionalTargets = FMath::Min(GetAbilityLevel() + 1, MaxNumShockTargets);
 	USusWizAbilitySystemLibrary::GetClosestTargets(NumAdditionalTargets,
 		OverlappingActors,  OutAdditionalTargets, TraceHitActor->GetActorLocation());
 
