@@ -55,7 +55,7 @@ FString UEnergyBolt::GetDescription(int32 Level)
 			"<Small>Cooldown: </><Cooldown>%.1f</>\n\n"
 
 			// Number of FireBolts
-			"<Default>Launches %d bolts of energy, "
+			"<Default>Launches %d homing bolts of energy, "
 			"exploding on impact and dealing: </>"
 
 			// Damage
@@ -93,7 +93,7 @@ FString UEnergyBolt::GetNextLevelDescription(int32 Level)
 			"<Small>Cooldown: </><Cooldown>%.1f</>\n\n"
 
 			// Number of FireBolts
-			"<Default>Launches %d bolts of energy, "
+			"<Default>Launches %d homing bolts of energy, "
 			"exploding on impact and dealing: </>"
 
 			// Damage

@@ -15,6 +15,10 @@ class SUSTAINABLEWIZARDRY_API UHydroPulse : public USusWizDamageGameplayAbility
 	GENERATED_BODY()
 	
 public:
+
+	virtual FString GetDescription(int32 Level) override;
+	virtual FString GetNextLevelDescription(int32 Level) override;
+	
 	UFUNCTION(BlueprintCallable)
 	void StoreTraceDataInfo(const FHitResult& HitResult);
 
@@ -52,7 +56,7 @@ protected:
 	TObjectPtr<ACharacter> OwnerCharacter;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Beam")
-	int32 MaxNumShockTargets = 5;
+	int32 MaxNumShockTargets = 6;
 	
 	
 };

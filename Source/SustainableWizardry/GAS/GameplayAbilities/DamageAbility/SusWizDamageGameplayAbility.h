@@ -72,6 +72,9 @@ protected:
 	void SetKnockbackChance(float Chance);
 
 	UFUNCTION(BlueprintCallable)
+	float GetKnockbackChance() {return KnockbackChance; } ;
+
+	UFUNCTION(BlueprintCallable)
 	void SetKnockbackForceMagnitute(float ForceMagnitude);
 	
 	//UFUNCTION(BlueprintPure)

@@ -28,27 +28,27 @@ public:
 
 protected:
 	
-	UPROPERTY(EditDefaultsOnly, Category = "EnergyBolt")
+	UPROPERTY(EditDefaultsOnly, Category = "Aerrow")
 	float ProjectileSpread = 10.f;
 	
-	UPROPERTY(EditDefaultsOnly, Category = "EnergyBolt")
+	UPROPERTY(EditDefaultsOnly, Category = "Aerrow")
 	int32 MaxNumProjectiles = 4;
 
-	UPROPERTY(EditDefaultsOnly, Category = "EnergyBolt")
+	UPROPERTY(EditDefaultsOnly, Category = "Aerrow")
 	int32 NumProjectiles = 0;
-
-	UPROPERTY(EditDefaultsOnly, Category = "EnergyBolt")
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Aerrow")
 	float HomingAccelerationMin = 1600.f;
 
-	UPROPERTY(EditDefaultsOnly, Category = "EnergyBolt")
+	UPROPERTY(EditDefaultsOnly, Category = "Aerrow")
 	float HomingAccelerationMax = 3200.f;
 
-	UPROPERTY(EditDefaultsOnly, Category = "EnergyBolt")
+	UPROPERTY(EditDefaultsOnly, Category = "Aerrow")
 	bool bLaunchHomingProjectiles = true;
 
 	AActor* HomingTarget = nullptr;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TSubclassOf<AAerowProjectileClass> AerowProjectileClass;
-	
+
 };
