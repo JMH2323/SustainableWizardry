@@ -7,19 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1579a7cd-1dd9-4102-8fb2-ded64c6e3088" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Build/Windows/FileOpenOrder/EditorOpenOrder.log" beforeDir="false" afterPath="$PROJECT_DIR$/Build/Windows/FileOpenOrder/EditorOpenOrder.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/Player/LeftHand/ABP_Left.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Animation/Player/LeftHand/ABP_Left.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/Data/DA_AbilityInfo.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/Data/DA_AbilityInfo.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Solar/Beam/GA_SolarBeam.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Solar/Beam/GA_SolarBeam.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GameMode/BP_GameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GameMode/BP_GameMode.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LevelDevelopment/Maps/MapOne.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LevelDevelopment/Maps/MapOne.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LevelDevelopment/Maps/MapOne_BuiltData.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LevelDevelopment/Maps/MapOne_BuiltData.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MainMenu.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainMenu.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UIDevelopment/UIData/DT_MessageWidgetData.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/UI/ViewModel/MVVM_LoadScreen.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/UI/ViewModel/MVVM_LoadScreen.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="1579a7cd-1dd9-4102-8fb2-ded64c6e3088" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -275,6 +263,7 @@
       <workItem from="1727839147207" duration="5106000" />
       <workItem from="1727905427662" duration="13941000" />
       <workItem from="1727987148905" duration="3748000" />
+      <workItem from="1728079351030" duration="652000" />
     </task>
     <servers />
   </component>
