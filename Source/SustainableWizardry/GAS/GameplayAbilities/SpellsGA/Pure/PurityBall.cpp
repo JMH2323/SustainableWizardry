@@ -8,7 +8,6 @@ FString UPurityBall::GetDescription(int32 Level)
 	const int32 ScaledDamage = Damage.GetValueAtLevel(Level);
 	const float EnergyCost = FMath::Abs(GetEnergyCost(Level));
 	const float Cooldown = GetCooldown(Level);
-	
 	return FString::Printf(TEXT(
 			// Title
 			"<Title>PURITY</>\n\n"
@@ -30,7 +29,6 @@ FString UPurityBall::GetDescription(int32 Level)
 
 			// Values
 			Level,
-			EnergyCost,
 			Cooldown,
 			ScaledDamage);
 }
@@ -62,7 +60,6 @@ FString UPurityBall::GetNextLevelDescription(int32 Level)
 
 			// Values
 			Level,
-			EnergyCost,
 			Cooldown,
 			ScaledDamage);
 }
