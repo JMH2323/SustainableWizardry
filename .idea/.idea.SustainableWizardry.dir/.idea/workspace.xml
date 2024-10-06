@@ -9,17 +9,26 @@
   <component name="ChangeListManager">
     <list default="true" id="1579a7cd-1dd9-4102-8fb2-ded64c6e3088" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/Blendspaces/MovementBlends.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/Blendspaces/MovementBlends.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/Run_Fwd.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/Run_Fwd.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/Assets_UI/SpellIcons/HydroBeamIcon.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/Assets_UI/SpellIcons/HydroBeamIcon.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Enemy/BP_EXPMAN.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Enemy/BP_EXPMAN.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Enemy/BP_RoboFighter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/Characters/Enemy/BP_RoboFighter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/EnemyAbilities/Ranged/BP_SludgeBall.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/EnemyAbilities/Ranged/BP_SludgeBall.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_RockImpact1.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_RockImpact1.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_RockImpact2.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_RockImpact2.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_RockImpact3.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_RockImpact3.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_RockImpact4.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_RockImpact4.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_RockImpact5.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_RockImpact5.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_UpEarth3.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_UpEarth3.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_UpEarth4.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_UpEarth4.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_UpEarth5.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArtDevelopment/Niagara/Spells/Geo/NS_UpEarth5.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Golem/RockHit/SFX_RockHit_Body_01.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Golem/RockHit/SFX_RockHit_Body_01.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Golem/RockHit/SFX_RockHit_Body_02.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Golem/RockHit/SFX_RockHit_Body_02.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Golem/RockHit/SFX_RockHit_Body_03.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Golem/RockHit/SFX_RockHit_Body_03.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Golem/RockHit/SFX_RockHit_Body_04.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Golem/RockHit/SFX_RockHit_Body_04.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Golem/RockHit/SFX_RockHit_Body_05.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Golem/RockHit/SFX_RockHit_Body_05.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/CurveTables/CT_Damage.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/CurveTables/CT_Damage.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/CurveTables/CT_SpellCost.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/CurveTables/CT_SpellCost.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/ETC/GA_EnergyRestore.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/ETC/GA_EnergyRestore.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LevelDevelopment/Maps/MapOne.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LevelDevelopment/Maps/MapOne.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/SpellsGA/Aero/AerrowSpell.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/SpellsGA/Aero/AerrowSpell.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Geo/RockPunch/BP_RP3.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Geo/RockPunch/BP_RP3.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Geo/RockPunch/BP_RP4.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Geo/RockPunch/BP_RP4.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Geo/RockPunch/BP_RP5.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Geo/RockPunch/BP_RP5.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/Spells/Geo/RockPunchProjectile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/Spells/Geo/RockPunchProjectile.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/Spells/Geo/RockPunchProjectile.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/Spells/Geo/RockPunchProjectile.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/SpellsGA/Geo/RockPunch.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/GAS/GameplayAbilities/SpellsGA/Geo/RockPunch.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -279,7 +288,7 @@
       <workItem from="1728079351030" duration="1255000" />
       <workItem from="1728172287439" duration="3745000" />
       <workItem from="1728193116444" duration="3795000" />
-      <workItem from="1728249042798" duration="3094000" />
+      <workItem from="1728249042798" duration="6367000" />
     </task>
     <servers />
   </component>

@@ -6,6 +6,7 @@
 #include "AbilitySystemBlueprintLibrary.h"
 #include "AbilitySystemComponent.h"
 #include "NiagaraFunctionLibrary.h"
+#include "Components/SphereComponent.h"
 #include "Components/AudioComponent.h"
 #include "SustainableWizardry/GAS/SusWizAbilitySystemLibrary.h"
 #include "GameFramework/ProjectileMovementComponent.h"
@@ -44,7 +45,10 @@ void ARockPunchProjectile::HandleBounce(const FHitResult& ImpactResult, const FV
 		UGameplayStatics::PlaySoundAtLocation(this, ImpactSound, GetActorLocation(), FRotator::ZeroRotator);
 		FVector SystemOffset = GetActorLocation();
 		SystemOffset = SystemOffset + BounceEffectOffset;
-		UNiagaraFunctionLibrary::SpawnSystemAtLocation(this, RockUpearthEffect, SystemOffset);
+		
+		// Rock upearth niagara effect
+		UNiagaraFunctionLibrary::SpawnSystemAtLocation(this, RockUpearthEffect, SystemOffset,
+			FRotator::ZeroRotator, NiagaraScale);
 		
 		// Apply damage to all enemies near to the bounce.
 		if (HasAuthority() && bCanSplash)
@@ -89,8 +93,32 @@ void ARockPunchProjectile::HandleBounce(const FHitResult& ImpactResult, const FV
 				}
 			}
 		}
-		// Now that the projectile has bounced, it can no longer bounce.
-		bCanBounce = false;
+		CurrentRockBounces++;
+		
+		// Scale the rock to shrink with bounces
+		if (UStaticMeshComponent* MeshComp = Cast<UStaticMeshComponent>(GetComponentByClass(UStaticMeshComponent::StaticClass())))
+		{
+			FVector NewScale = MeshComp->GetComponentScale() * 0.8f; // Shrink
+			MeshComp->SetWorldScale3D(NewScale);
+			
+			NiagaraScale *= 0.8f;
+		}
+		// Scale collision
+		if (USphereComponent* CollisionComp = Cast<USphereComponent>(GetComponentByClass(USphereComponent::StaticClass())))
+		{
+			float NewRadius = CollisionComp->GetUnscaledSphereRadius() * 0.8f;  // Shrink the collision sphere by 20%
+			CollisionComp->SetSphereRadius(NewRadius, true);  // Adjust the sphere radius and update physics
+		}		
+		// Reduce bounce and splash impact radii % as well
+		BounceImpactRadius *= 0.9f;
+		SplashImpactRadius *= 0.9f;
+		// Now that the projectile has bounced, it can no longer bounce, unless it has yet to hit an enemy
+		// or has bounced the max number of times.
+		if (bHasHitEnemy || CurrentRockBounces >= MaxRockBounces)
+		{
+			bCanBounce = false;
+		}
+		
 	}
 	else
 	{
@@ -106,13 +134,18 @@ void ARockPunchProjectile::OnHit()
 {
 	
 	UGameplayStatics::PlaySoundAtLocation(this, ImpactSound, GetActorLocation(), FRotator::ZeroRotator);
-	UNiagaraFunctionLibrary::SpawnSystemAtLocation(this, ImpactEffect, GetActorLocation());
+	UNiagaraFunctionLibrary::SpawnSystemAtLocation(this, ImpactEffect, GetActorLocation(), FRotator::ZeroRotator,
+		FVector(1.f), true);
 	if (LoopingSoundComponent)
 	{
 		LoopingSoundComponent->Stop();
 		LoopingSoundComponent->DestroyComponent();
 	}
-	bHit = true;
+	if (!bCanBounce)
+	{
+		bHit = true;
+	}
+	
 }
 
 void ARockPunchProjectile::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
@@ -126,6 +159,7 @@ void ARockPunchProjectile::OnSphereOverlap(UPrimitiveComponent* OverlappedCompon
 	
 	// Non-Enemy collision events. ex: bouncing.
 	if (!OtherActor->ActorHasTag("Enemy") && bCanBounce) return;
+	bHasHitEnemy = true;
 	if (!bHit) OnHit();
 	
 	if (HasAuthority())
@@ -143,7 +177,7 @@ void ARockPunchProjectile::OnSphereOverlap(UPrimitiveComponent* OverlappedCompon
 				FRotator Rotation = GetActorRotation();
 				Rotation.Pitch = 35.f;
 
-				const FVector KnockbackDirection = Rotation.Vector();
+				const FVector KnockbackDirection = -Rotation.Vector();
 				const FVector KnockbackForce = KnockbackDirection * DamageEffectParams.KnockbackForceMagnitude;
 				DamageEffectParams.KnockbackForce = KnockbackForce;
 			}
@@ -198,8 +232,10 @@ void ARockPunchProjectile::OnSphereOverlap(UPrimitiveComponent* OverlappedCompon
 			}
 		}
 		
-
-		Destroy();
+		if (!bCanBounce)
+		{
+			Destroy();
+		}
 	}
 	else bHit = true;
 	
