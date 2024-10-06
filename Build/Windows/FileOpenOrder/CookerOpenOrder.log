@@ -130,223 +130,223 @@
 "../../../Engine/Plugins/2D/Paper2D/Content/DefaultPaperTerrainMaterial.uexp" 129
 "../../../Engine/Content/EditorMaterials/WidgetVertexColorMaterial.uasset" 130
 "../../../Engine/Content/EditorMaterials/WidgetVertexColorMaterial.uexp" 131
-"../../../Engine/Content/EngineSounds/Master.uasset" 132
-"../../../Engine/Content/EngineSounds/Master.uexp" 133
-"../../../Engine/Plugins/Runtime/MeshModelingToolset/Content/Materials/M_DynamicMeshComponentVtxColor.uasset" 134
-"../../../Engine/Plugins/Runtime/MeshModelingToolset/Content/Materials/M_DynamicMeshComponentVtxColor.uexp" 135
-"../../../Engine/Plugins/Interchange/Runtime/Content/Pipelines/DefaultTexturePipeline.uasset" 136
-"../../../Engine/Plugins/Interchange/Runtime/Content/Pipelines/DefaultTexturePipeline.uexp" 137
-"../../../Engine/Plugins/Interchange/Runtime/Content/Pipelines/DefaultSceneLevelPipeline.uasset" 138
-"../../../Engine/Plugins/Interchange/Runtime/Content/Pipelines/DefaultSceneLevelPipeline.uexp" 139
-"../../../Engine/Plugins/Interchange/Runtime/Content/Pipelines/DefaultSceneAssetsPipeline.uasset" 140
-"../../../Engine/Plugins/Interchange/Runtime/Content/Pipelines/DefaultSceneAssetsPipeline.uexp" 141
-"../../../Engine/Plugins/Interchange/Runtime/Content/Pipelines/DefaultMaterialPipeline.uasset" 142
-"../../../Engine/Plugins/Interchange/Runtime/Content/Pipelines/DefaultMaterialPipeline.uexp" 143
-"../../../Engine/Plugins/Interchange/Runtime/Content/Pipelines/DefaultAssetsPipeline.uasset" 144
-"../../../Engine/Plugins/Interchange/Runtime/Content/Pipelines/DefaultAssetsPipeline.uexp" 145
-"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/game_wind_noise.ubulk" 146
-"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/game_wind_noise.uasset" 147
-"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/game_wind_noise.uexp" 148
-"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/UnpackDirection.uasset" 149
-"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/UnpackDirection.uexp" 150
-"../../../Engine/Content/Functions/Engine_MaterialFunctions02/ObjectLocalBounds.uasset" 151
-"../../../Engine/Content/Functions/Engine_MaterialFunctions02/ObjectLocalBounds.uexp" 152
-"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat3Components.uasset" 153
-"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat3Components.uexp" 154
-"../../../Engine/Content/Functions/Engine_MaterialFunctions02/UVs/BoundingBoxBased_0-1_UVW.uasset" 155
-"../../../Engine/Content/Functions/Engine_MaterialFunctions02/UVs/BoundingBoxBased_0-1_UVW.uexp" 156
-"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/VectorLength.uasset" 157
-"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/VectorLength.uexp" 158
-"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/UnpackInteger3.uasset" 159
-"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/UnpackInteger3.uexp" 160
-"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeCameraFacing.uasset" 161
-"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeCameraFacing.uexp" 162
-"../../../Engine/Content/Functions/Engine_MaterialFunctions02/WorldPositionOffset/ObjectScale.uasset" 163
-"../../../Engine/Content/Functions/Engine_MaterialFunctions02/WorldPositionOffset/ObjectScale.uexp" 164
-"../../../Engine/Content/Functions/Engine_MaterialFunctions02/SafeNormalize.uasset" 165
-"../../../Engine/Content/Functions/Engine_MaterialFunctions02/SafeNormalize.uexp" 166
-"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeWindMotion.uasset" 167
-"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeWindMotion.uexp" 168
-"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeBranchMotion.uasset" 169
-"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeBranchMotion.uexp" 170
-"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeWind.uasset" 171
-"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeWind.uexp" 172
-"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/EmptyNormal.uasset" 173
-"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/EmptyNormal.uexp" 174
-"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/Empty.uasset" 175
-"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/Empty.uexp" 176
-"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeMaster.uasset" 177
-"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeMaster.uexp" 178
-"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeBillboard.uasset" 179
-"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeBillboard.uexp" 180
-"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeBillboardMaster.uasset" 181
-"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeBillboardMaster.uexp" 182
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Wedge_solid.ubulk" 183
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Wedge_solid.uasset" 184
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Wedge_solid.uexp" 185
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Wedge_3mm.ubulk" 186
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Wedge_3mm.uasset" 187
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Wedge_3mm.uexp" 188
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Wedge_1mm.ubulk" 189
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Wedge_1mm.uasset" 190
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Wedge_1mm.uexp" 191
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Triangle_solid.ubulk" 192
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Triangle_solid.uasset" 193
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Triangle_solid.uexp" 194
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Triangle_3mm.ubulk" 195
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Triangle_3mm.uasset" 196
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Triangle_3mm.uexp" 197
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Triangle_1mm.ubulk" 198
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Triangle_1mm.uasset" 199
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Triangle_1mm.uexp" 200
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Star4_solid.ubulk" 201
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Star4_solid.uasset" 202
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Star4_solid.uexp" 203
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Star4_3mm.ubulk" 204
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Star4_3mm.uasset" 205
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Star4_3mm.uexp" 206
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Star4_1mm.ubulk" 207
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Star4_1mm.uasset" 208
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Star4_1mm.uexp" 209
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Square_solid.ubulk" 210
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Square_solid.uasset" 211
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Square_solid.uexp" 212
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Square_3mm.ubulk" 213
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Square_3mm.uasset" 214
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Square_3mm.uexp" 215
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Square_1mm.ubulk" 216
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Square_1mm.uasset" 217
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Square_1mm.uexp" 218
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Sphere_solid.ubulk" 219
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Sphere_solid.uasset" 220
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Sphere_solid.uexp" 221
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Sphere_3mm.ubulk" 222
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Sphere_3mm.uasset" 223
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Sphere_3mm.uexp" 224
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Sphere_1mm.ubulk" 225
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Sphere_1mm.uasset" 226
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Sphere_1mm.uexp" 227
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedTriangle_solid.ubulk" 228
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedTriangle_solid.uasset" 229
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedTriangle_solid.uexp" 230
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedTriangle_3mm.ubulk" 231
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedTriangle_3mm.uasset" 232
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedTriangle_3mm.uexp" 233
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedTriangle_1mm.ubulk" 234
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedTriangle_1mm.uasset" 235
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedTriangle_1mm.uexp" 236
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedSquare_solid.ubulk" 237
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedSquare_solid.uasset" 238
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedSquare_solid.uexp" 239
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedSquare_3mm.ubulk" 240
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedSquare_3mm.uasset" 241
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedSquare_3mm.uexp" 242
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedSquare_1mm.ubulk" 243
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedSquare_1mm.uasset" 244
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedSquare_1mm.uexp" 245
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_QuarterCircle_solid.ubulk" 246
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_QuarterCircle_solid.uasset" 247
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_QuarterCircle_solid.uexp" 248
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_QuarterCircle_3mm.ubulk" 249
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_QuarterCircle_3mm.uasset" 250
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_QuarterCircle_3mm.uexp" 251
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_QuarterCircle_1mm.ubulk" 252
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_QuarterCircle_1mm.uasset" 253
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_QuarterCircle_1mm.uexp" 254
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Pyramid_solid.ubulk" 255
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Pyramid_solid.uasset" 256
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Pyramid_solid.uexp" 257
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Pyramid_3mm.ubulk" 258
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Pyramid_3mm.uasset" 259
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Pyramid_3mm.uexp" 260
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Pyramid_1mm.ubulk" 261
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Pyramid_1mm.uasset" 262
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Pyramid_1mm.uexp" 263
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Octagon_solid.ubulk" 264
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Octagon_solid.uasset" 265
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Octagon_solid.uexp" 266
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Octagon_3mm.ubulk" 267
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Octagon_3mm.uasset" 268
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Octagon_3mm.uexp" 269
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Octagon_1mm.ubulk" 270
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Octagon_1mm.uasset" 271
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Octagon_1mm.uexp" 272
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Hexagon_solid.ubulk" 273
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Hexagon_solid.uasset" 274
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Hexagon_solid.uexp" 275
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Hexagon_3mm.ubulk" 276
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Hexagon_3mm.uasset" 277
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Hexagon_3mm.uexp" 278
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Hexagon_1mm.ubulk" 279
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Hexagon_1mm.uasset" 280
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Hexagon_1mm.uexp" 281
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_HalfCircle_solid.ubulk" 282
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_HalfCircle_solid.uasset" 283
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_HalfCircle_solid.uexp" 284
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_HalfCircle_3mm.ubulk" 285
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_HalfCircle_3mm.uasset" 286
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_HalfCircle_3mm.uexp" 287
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_HalfCircle_1mm.ubulk" 288
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_HalfCircle_1mm.uasset" 289
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_HalfCircle_1mm.uexp" 290
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Diamond_solid.ubulk" 291
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Diamond_solid.uasset" 292
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Diamond_solid.uexp" 293
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Diamond_3mm.ubulk" 294
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Diamond_3mm.uasset" 295
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Diamond_3mm.uexp" 296
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Diamond_1mm.ubulk" 297
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Diamond_1mm.uasset" 298
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Diamond_1mm.uexp" 299
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Circle_solid.ubulk" 300
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Circle_solid.uasset" 301
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Circle_solid.uexp" 302
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Circle_3mm.ubulk" 303
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Circle_3mm.uasset" 304
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Circle_3mm.uexp" 305
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Circle_1mm.ubulk" 306
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Circle_1mm.uasset" 307
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Circle_1mm.uexp" 308
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Box_solid.ubulk" 309
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Box_solid.uasset" 310
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Box_solid.uexp" 311
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Box_3mm.ubulk" 312
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Box_3mm.uasset" 313
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Box_3mm.uexp" 314
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Box_1mm.ubulk" 315
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Box_1mm.uasset" 316
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Box_1mm.uexp" 317
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow_solid.ubulk" 318
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow_solid.uasset" 319
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow_solid.uexp" 320
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow_3mm.ubulk" 321
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow_3mm.uasset" 322
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow_3mm.uexp" 323
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow_1mm.ubulk" 324
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow_1mm.uasset" 325
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow_1mm.uexp" 326
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow4_solid.ubulk" 327
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow4_solid.uasset" 328
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow4_solid.uexp" 329
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow4_3mm.ubulk" 330
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow4_3mm.uasset" 331
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow4_3mm.uexp" 332
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow4_1mm.ubulk" 333
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow4_1mm.uasset" 334
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow4_1mm.uexp" 335
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow2_solid.ubulk" 336
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow2_solid.uasset" 337
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow2_solid.uexp" 338
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow2_3mm.ubulk" 339
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow2_3mm.uasset" 340
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow2_3mm.uexp" 341
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow2_1mm.ubulk" 342
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow2_1mm.uasset" 343
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow2_1mm.uexp" 344
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRigXRayMaterial.uasset" 345
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRigXRayMaterial.uexp" 346
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRigGizmoMaterial.uasset" 347
-"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRigGizmoMaterial.uexp" 348
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Wedge_solid.ubulk" 132
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Wedge_solid.uasset" 133
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Wedge_solid.uexp" 134
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Wedge_3mm.ubulk" 135
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Wedge_3mm.uasset" 136
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Wedge_3mm.uexp" 137
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Wedge_1mm.ubulk" 138
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Wedge_1mm.uasset" 139
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Wedge_1mm.uexp" 140
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Triangle_solid.ubulk" 141
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Triangle_solid.uasset" 142
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Triangle_solid.uexp" 143
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Triangle_3mm.ubulk" 144
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Triangle_3mm.uasset" 145
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Triangle_3mm.uexp" 146
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Triangle_1mm.ubulk" 147
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Triangle_1mm.uasset" 148
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Triangle_1mm.uexp" 149
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Star4_solid.ubulk" 150
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Star4_solid.uasset" 151
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Star4_solid.uexp" 152
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Star4_3mm.ubulk" 153
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Star4_3mm.uasset" 154
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Star4_3mm.uexp" 155
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Star4_1mm.ubulk" 156
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Star4_1mm.uasset" 157
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Star4_1mm.uexp" 158
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Square_solid.ubulk" 159
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Square_solid.uasset" 160
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Square_solid.uexp" 161
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Square_3mm.ubulk" 162
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Square_3mm.uasset" 163
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Square_3mm.uexp" 164
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Square_1mm.ubulk" 165
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Square_1mm.uasset" 166
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Square_1mm.uexp" 167
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Sphere_solid.ubulk" 168
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Sphere_solid.uasset" 169
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Sphere_solid.uexp" 170
+"../../../Engine/Plugins/Runtime/MeshModelingToolset/Content/Materials/M_DynamicMeshComponentVtxColor.uasset" 171
+"../../../Engine/Plugins/Runtime/MeshModelingToolset/Content/Materials/M_DynamicMeshComponentVtxColor.uexp" 172
+"../../../Engine/Plugins/Interchange/Runtime/Content/Pipelines/DefaultTexturePipeline.uasset" 173
+"../../../Engine/Plugins/Interchange/Runtime/Content/Pipelines/DefaultTexturePipeline.uexp" 174
+"../../../Engine/Plugins/Interchange/Runtime/Content/Pipelines/DefaultSceneLevelPipeline.uasset" 175
+"../../../Engine/Plugins/Interchange/Runtime/Content/Pipelines/DefaultSceneLevelPipeline.uexp" 176
+"../../../Engine/Plugins/Interchange/Runtime/Content/Pipelines/DefaultSceneAssetsPipeline.uasset" 177
+"../../../Engine/Plugins/Interchange/Runtime/Content/Pipelines/DefaultSceneAssetsPipeline.uexp" 178
+"../../../Engine/Plugins/Interchange/Runtime/Content/Pipelines/DefaultMaterialPipeline.uasset" 179
+"../../../Engine/Plugins/Interchange/Runtime/Content/Pipelines/DefaultMaterialPipeline.uexp" 180
+"../../../Engine/Plugins/Interchange/Runtime/Content/Pipelines/DefaultAssetsPipeline.uasset" 181
+"../../../Engine/Plugins/Interchange/Runtime/Content/Pipelines/DefaultAssetsPipeline.uexp" 182
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/game_wind_noise.ubulk" 183
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/game_wind_noise.uasset" 184
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/game_wind_noise.uexp" 185
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/UnpackDirection.uasset" 186
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/UnpackDirection.uexp" 187
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/ObjectLocalBounds.uasset" 188
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/ObjectLocalBounds.uexp" 189
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat3Components.uasset" 190
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat3Components.uexp" 191
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/UVs/BoundingBoxBased_0-1_UVW.uasset" 192
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/UVs/BoundingBoxBased_0-1_UVW.uexp" 193
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/VectorLength.uasset" 194
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/VectorLength.uexp" 195
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/UnpackInteger3.uasset" 196
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/UnpackInteger3.uexp" 197
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeCameraFacing.uasset" 198
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeCameraFacing.uexp" 199
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/WorldPositionOffset/ObjectScale.uasset" 200
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/WorldPositionOffset/ObjectScale.uexp" 201
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/SafeNormalize.uasset" 202
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/SafeNormalize.uexp" 203
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeWindMotion.uasset" 204
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeWindMotion.uexp" 205
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeBranchMotion.uasset" 206
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeBranchMotion.uexp" 207
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeWind.uasset" 208
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeWind.uexp" 209
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/EmptyNormal.uasset" 210
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/EmptyNormal.uexp" 211
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/Empty.uasset" 212
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/Empty.uexp" 213
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeMaster.uasset" 214
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeMaster.uexp" 215
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeBillboard.uasset" 216
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeBillboard.uexp" 217
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeBillboardMaster.uasset" 218
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeBillboardMaster.uexp" 219
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Sphere_3mm.ubulk" 220
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Sphere_3mm.uasset" 221
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Sphere_3mm.uexp" 222
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Sphere_1mm.ubulk" 223
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Sphere_1mm.uasset" 224
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Sphere_1mm.uexp" 225
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedTriangle_solid.ubulk" 226
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedTriangle_solid.uasset" 227
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedTriangle_solid.uexp" 228
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedTriangle_3mm.ubulk" 229
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedTriangle_3mm.uasset" 230
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedTriangle_3mm.uexp" 231
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedTriangle_1mm.ubulk" 232
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedTriangle_1mm.uasset" 233
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedTriangle_1mm.uexp" 234
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedSquare_solid.ubulk" 235
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedSquare_solid.uasset" 236
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedSquare_solid.uexp" 237
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedSquare_3mm.ubulk" 238
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedSquare_3mm.uasset" 239
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedSquare_3mm.uexp" 240
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedSquare_1mm.ubulk" 241
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedSquare_1mm.uasset" 242
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_RoundedSquare_1mm.uexp" 243
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_QuarterCircle_solid.ubulk" 244
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_QuarterCircle_solid.uasset" 245
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_QuarterCircle_solid.uexp" 246
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_QuarterCircle_3mm.ubulk" 247
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_QuarterCircle_3mm.uasset" 248
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_QuarterCircle_3mm.uexp" 249
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_QuarterCircle_1mm.ubulk" 250
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_QuarterCircle_1mm.uasset" 251
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_QuarterCircle_1mm.uexp" 252
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Pyramid_solid.ubulk" 253
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Pyramid_solid.uasset" 254
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Pyramid_solid.uexp" 255
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Pyramid_3mm.ubulk" 256
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Pyramid_3mm.uasset" 257
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Pyramid_3mm.uexp" 258
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Pyramid_1mm.ubulk" 259
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Pyramid_1mm.uasset" 260
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Pyramid_1mm.uexp" 261
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Octagon_solid.ubulk" 262
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Octagon_solid.uasset" 263
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Octagon_solid.uexp" 264
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Octagon_3mm.ubulk" 265
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Octagon_3mm.uasset" 266
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Octagon_3mm.uexp" 267
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Octagon_1mm.ubulk" 268
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Octagon_1mm.uasset" 269
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Octagon_1mm.uexp" 270
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Hexagon_solid.ubulk" 271
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Hexagon_solid.uasset" 272
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Hexagon_solid.uexp" 273
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Hexagon_3mm.ubulk" 274
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Hexagon_3mm.uasset" 275
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Hexagon_3mm.uexp" 276
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Hexagon_1mm.ubulk" 277
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Hexagon_1mm.uasset" 278
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Hexagon_1mm.uexp" 279
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_HalfCircle_solid.ubulk" 280
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_HalfCircle_solid.uasset" 281
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_HalfCircle_solid.uexp" 282
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_HalfCircle_3mm.ubulk" 283
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_HalfCircle_3mm.uasset" 284
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_HalfCircle_3mm.uexp" 285
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_HalfCircle_1mm.ubulk" 286
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_HalfCircle_1mm.uasset" 287
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_HalfCircle_1mm.uexp" 288
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Diamond_solid.ubulk" 289
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Diamond_solid.uasset" 290
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Diamond_solid.uexp" 291
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Diamond_3mm.ubulk" 292
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Diamond_3mm.uasset" 293
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Diamond_3mm.uexp" 294
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Diamond_1mm.ubulk" 295
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Diamond_1mm.uasset" 296
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Diamond_1mm.uexp" 297
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Circle_solid.ubulk" 298
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Circle_solid.uasset" 299
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Circle_solid.uexp" 300
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Circle_3mm.ubulk" 301
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Circle_3mm.uasset" 302
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Circle_3mm.uexp" 303
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Circle_1mm.ubulk" 304
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Circle_1mm.uasset" 305
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Circle_1mm.uexp" 306
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Box_solid.ubulk" 307
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Box_solid.uasset" 308
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Box_solid.uexp" 309
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Box_3mm.ubulk" 310
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Box_3mm.uasset" 311
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Box_3mm.uexp" 312
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Box_1mm.ubulk" 313
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Box_1mm.uasset" 314
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Box_1mm.uexp" 315
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow_solid.ubulk" 316
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow_solid.uasset" 317
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow_solid.uexp" 318
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow_3mm.ubulk" 319
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow_3mm.uasset" 320
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow_3mm.uexp" 321
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow_1mm.ubulk" 322
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow_1mm.uasset" 323
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow_1mm.uexp" 324
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow4_solid.ubulk" 325
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow4_solid.uasset" 326
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow4_solid.uexp" 327
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow4_3mm.ubulk" 328
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow4_3mm.uasset" 329
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow4_3mm.uexp" 330
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow4_1mm.ubulk" 331
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow4_1mm.uasset" 332
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow4_1mm.uexp" 333
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow2_solid.ubulk" 334
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow2_solid.uasset" 335
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow2_solid.uexp" 336
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow2_3mm.ubulk" 337
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow2_3mm.uasset" 338
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow2_3mm.uexp" 339
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow2_1mm.ubulk" 340
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow2_1mm.uasset" 341
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRig_Arrow2_1mm.uexp" 342
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRigXRayMaterial.uasset" 343
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRigXRayMaterial.uexp" 344
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRigGizmoMaterial.uasset" 345
+"../../../Engine/Plugins/Animation/ControlRig/Content/Controls/ControlRigGizmoMaterial.uexp" 346
+"../../../Engine/Content/EngineSounds/Master.uasset" 347
+"../../../Engine/Content/EngineSounds/Master.uexp" 348
 "../../../Engine/Content/EngineResources/WhiteSquareTexture.uasset" 349
 "../../../Engine/Content/EngineResources/WhiteSquareTexture.uexp" 350
 "../../../Engine/Content/EngineMaterials/Widget3DPassThrough.uasset" 351
@@ -2568,77 +2568,77 @@
 "C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/Niagara/Spells/Healing/NS_Heal.uexp" 2567
 "C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/Niagara/Spells/Energy/M_ManaDrain.uasset" 2568
 "C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/Niagara/Spells/Energy/M_ManaDrain.uexp" 2569
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/XPBar/XP_Middle.uasset" 2570
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/XPBar/XP_Middle.uexp" 2571
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/XPBar/XP_Front.uasset" 2572
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/XPBar/XP_Front.uexp" 2573
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/XPBar/xp_frame.uasset" 2574
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/XPBar/xp_frame.uexp" 2575
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/XPBar/XP_Back.uasset" 2576
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/XPBar/XP_Back.uexp" 2577
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Wide_Button_Red/WideButton_Pressed_2.uasset" 2578
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Wide_Button_Red/WideButton_Pressed_2.uexp" 2579
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring4_active.uasset" 2580
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring4_active.uexp" 2581
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring4.uasset" 2582
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring4.uexp" 2583
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring3_active.uasset" 2584
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring3_active.uexp" 2585
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring3.uasset" 2586
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring3.uexp" 2587
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring2_active.uasset" 2588
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring2_active.uexp" 2589
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring2.uasset" 2590
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring2.uexp" 2591
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring1_active.uasset" 2592
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring1_active.uexp" 2593
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring1.uasset" 2594
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring1.uexp" 2595
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/PassiveSelectionBox.uasset" 2596
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/PassiveSelectionBox.uexp" 2597
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/OffensiveSelectionBox.uasset" 2598
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/OffensiveSelectionBox.uexp" 2599
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Line_Yellow.uasset" 2600
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Line_Yellow.uexp" 2601
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Line.uasset" 2602
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Line.uexp" 2603
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/EquippedSpellsRowOutline.uasset" 2604
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/EquippedSpellsRowOutline.uexp" 2605
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/connector_active.uasset" 2606
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/connector_active.uexp" 2607
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/connector.uasset" 2608
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/connector.uexp" 2609
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/Shock.uasset" 2610
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/Shock.uexp" 2611
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/Locked_sm_white.uasset" 2612
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/Locked_sm_white.uexp" 2613
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/Locked.uasset" 2614
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/Locked.uexp" 2615
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/LightningStorm.uasset" 2616
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/LightningStorm.uexp" 2617
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/LifeSiphon.uasset" 2618
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/LifeSiphon.uexp" 2619
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/Halo.uasset" 2620
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/Halo.uexp" 2621
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/FireNado.uasset" 2622
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/FireNado.uexp" 2623
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/FireBolt_white.uasset" 2624
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/FireBolt_white.uexp" 2625
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/FireBlast.uasset" 2626
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/FireBlast.uexp" 2627
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/bigFireball.ubulk" 2628
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/bigFireball.uasset" 2629
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/bigFireball.uexp" 2630
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/BallLightning.uasset" 2631
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/BallLightning.uexp" 2632
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/ArcaneStorm.uasset" 2633
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/ArcaneStorm.uexp" 2634
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/ArcaneShards2.uasset" 2635
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/ArcaneShards2.uexp" 2636
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/ArcaneShards.uasset" 2637
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/ArcaneShards.uexp" 2638
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/ArcaneBlast.uasset" 2639
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/ArcaneBlast.uexp" 2640
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/Shock.uasset" 2570
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/Shock.uexp" 2571
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/Locked_sm_white.uasset" 2572
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/Locked_sm_white.uexp" 2573
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/Locked.uasset" 2574
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/Locked.uexp" 2575
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/LightningStorm.uasset" 2576
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/LightningStorm.uexp" 2577
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/LifeSiphon.uasset" 2578
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/LifeSiphon.uexp" 2579
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/Halo.uasset" 2580
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/Halo.uexp" 2581
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/FireNado.uasset" 2582
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/FireNado.uexp" 2583
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/FireBolt_white.uasset" 2584
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/FireBolt_white.uexp" 2585
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/FireBlast.uasset" 2586
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/FireBlast.uexp" 2587
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/bigFireball.ubulk" 2588
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/bigFireball.uasset" 2589
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/bigFireball.uexp" 2590
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/BallLightning.uasset" 2591
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/BallLightning.uexp" 2592
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/ArcaneStorm.uasset" 2593
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/ArcaneStorm.uexp" 2594
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/ArcaneShards2.uasset" 2595
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/ArcaneShards2.uexp" 2596
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/ArcaneShards.uasset" 2597
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/ArcaneShards.uexp" 2598
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/ArcaneBlast.uasset" 2599
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Spells/ArcaneBlast.uexp" 2600
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/XPBar/XP_Middle.uasset" 2601
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/XPBar/XP_Middle.uexp" 2602
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/XPBar/XP_Front.uasset" 2603
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/XPBar/XP_Front.uexp" 2604
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/XPBar/xp_frame.uasset" 2605
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/XPBar/xp_frame.uexp" 2606
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/XPBar/XP_Back.uasset" 2607
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/XPBar/XP_Back.uexp" 2608
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Wide_Button_Red/WideButton_Pressed_2.uasset" 2609
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Wide_Button_Red/WideButton_Pressed_2.uexp" 2610
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring4_active.uasset" 2611
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring4_active.uexp" 2612
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring4.uasset" 2613
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring4.uexp" 2614
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring3_active.uasset" 2615
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring3_active.uexp" 2616
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring3.uasset" 2617
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring3.uexp" 2618
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring2_active.uasset" 2619
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring2_active.uexp" 2620
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring2.uasset" 2621
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring2.uexp" 2622
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring1_active.uasset" 2623
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring1_active.uexp" 2624
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring1.uasset" 2625
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Ring1.uexp" 2626
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/PassiveSelectionBox.uasset" 2627
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/PassiveSelectionBox.uexp" 2628
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/OffensiveSelectionBox.uasset" 2629
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/OffensiveSelectionBox.uexp" 2630
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Line_Yellow.uasset" 2631
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Line_Yellow.uexp" 2632
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Line.uasset" 2633
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/Line.uexp" 2634
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/EquippedSpellsRowOutline.uasset" 2635
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/EquippedSpellsRowOutline.uexp" 2636
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/connector_active.uasset" 2637
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/connector_active.uexp" 2638
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/connector.uasset" 2639
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/SpellTree/connector.uexp" 2640
 "C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Pickups/T_Potion_Red.uasset" 2641
 "C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Pickups/T_Potion_Red.uexp" 2642
 "C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Pickups/T_Potion_Blue.uasset" 2643
@@ -2939,120 +2939,120 @@
 "C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/UIDevelopment/UIAssets/AuraAssets/UI/Borders/BorderLarge_BG/Border_Large_BG.uexp" 2938
 "C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/GameplayDevelopment/GAS/GameplayEffects/DefaultAttributes/Enemy/CurveTables/CT_PrimaryAttributesWizard.uasset" 2939
 "C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/GameplayDevelopment/GAS/GameplayEffects/DefaultAttributes/Enemy/CurveTables/CT_PrimaryAttributesWizard.uexp" 2940
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_CD.uasset" 2941
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_CD.uexp" 2942
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_LD.uasset" 2943
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_LD.uexp" 2944
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_RU.uasset" 2945
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_RU.uexp" 2946
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_LU.uasset" 2947
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_LU.uexp" 2948
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_CU.uasset" 2949
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_CU.uexp" 2950
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_LC.uasset" 2951
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_LC.uexp" 2952
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_RC.uasset" 2953
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_RC.uexp" 2954
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_CC.uasset" 2955
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_CC.uexp" 2956
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_RD.uasset" 2957
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_RD.uexp" 2958
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/Blendspaces/CombatAims.uasset" 2959
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/Blendspaces/CombatAims.uexp" 2960
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/NewAimOffsetBlendSpace.uasset" 2961
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/NewAimOffsetBlendSpace.uexp" 2962
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Textures/Melee/T_Minion_Dusk_Melee_Core_RGBAO.ubulk" 2963
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Textures/Melee/T_Minion_Dusk_Melee_Core_RGBAO.uasset" 2964
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Textures/Melee/T_Minion_Dusk_Melee_Core_RGBAO.uexp" 2965
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Textures/Super/T_Minion_Dusk_Super_COL.ubulk" 2966
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Textures/Super/T_Minion_Dusk_Super_COL.uasset" 2967
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Textures/Super/T_Minion_Dusk_Super_COL.uexp" 2968
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/T_ThinFilm_Spectrum_COLOR.ubulk" 2969
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/T_ThinFilm_Spectrum_COLOR.uasset" 2970
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/T_ThinFilm_Spectrum_COLOR.uexp" 2971
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/MF_ThinFilm_Frensel.uasset" 2972
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/MF_ThinFilm_Frensel.uexp" 2973
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Textures/Super/T_Minion_Dusk_Super_RGBAO.ubulk" 2974
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Textures/Super/T_Minion_Dusk_Super_RGBAO.uasset" 2975
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Textures/Super/T_Minion_Dusk_Super_RGBAO.uexp" 2976
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/MF_BrightnessAdjust.uasset" 2977
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/MF_BrightnessAdjust.uexp" 2978
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialLayers/T_TestML_Mask.ubulk" 2979
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialLayers/T_TestML_Mask.uasset" 2980
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialLayers/T_TestML_Mask.uexp" 2981
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialLayers/ML__Blank.uasset" 2982
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialLayers/ML__Blank.uexp" 2983
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/ParameterCollections/OrionGlobalGameplayCollection.uasset" 2984
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/ParameterCollections/OrionGlobalGameplayCollection.uexp" 2985
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/HitFlash.uasset" 2986
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/HitFlash.uexp" 2987
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/MaterialLayerConstructors/MLC_ScratchAndGrime.uasset" 2988
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/MaterialLayerConstructors/MLC_ScratchAndGrime.uexp" 2989
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/MaterialLayerConstructors/MLC_Standard.uasset" 2990
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/MaterialLayerConstructors/MLC_Standard.uexp" 2991
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialLayers/Rubber/T_Blank_N.uasset" 2992
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialLayers/Rubber/T_Blank_N.uexp" 2993
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialLayers/Metal/T_Blue_Metal02.ubulk" 2994
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialLayers/Metal/T_Blue_Metal02.uasset" 2995
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialLayers/Metal/T_Blue_Metal02.uexp" 2996
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialLayers/Metal/ML_blue_Metal.uasset" 2997
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialLayers/Metal/ML_blue_Metal.uexp" 2998
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/MF_OrionRimlight.uasset" 2999
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/MF_OrionRimlight.uexp" 3000
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/Textures/T_AtmosphericCloudNoise01_N.ubulk" 3001
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/Textures/T_AtmosphericCloudNoise01_N.uasset" 3002
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/Textures/T_AtmosphericCloudNoise01_N.uexp" 3003
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/Textures/T_AtmosphericCloudNoise03.ubulk" 3004
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/Textures/T_AtmosphericCloudNoise03.uasset" 3005
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/Textures/T_AtmosphericCloudNoise03.uexp" 3006
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/Textures/T_AtmosphericCloudNoise01.ubulk" 3007
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/Textures/T_AtmosphericCloudNoise01.uasset" 3008
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/Textures/T_AtmosphericCloudNoise01.uexp" 3009
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/MF_DeathFade.uasset" 3010
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/MF_DeathFade.uexp" 3011
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/MF_CharacterEffects.uasset" 3012
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/MF_CharacterEffects.uexp" 3013
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/FX/Materials/Functions/MF_MinionApperation.uasset" 3014
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/FX/Materials/Functions/MF_MinionApperation.uexp" 3015
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Textures/Super/T_Minion_Dusk_Super_N.ubulk" 3016
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Textures/Super/T_Minion_Dusk_Super_N.uasset" 3017
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Textures/Super/T_Minion_Dusk_Super_N.uexp" 3018
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/FX/Textures/Tile/Noise/T_Voronoi_Cells_02.ubulk" 3019
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/FX/Textures/Tile/Noise/T_Voronoi_Cells_02.uasset" 3020
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/FX/Textures/Tile/Noise/T_Voronoi_Cells_02.uexp" 3021
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/Eyes/MaterialFunctions/MinionBurn.uasset" 3022
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/Eyes/MaterialFunctions/MinionBurn.uexp" 3023
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/Eyes/MaterialFunctions/MF_Minion_EmissiveFX.uasset" 3024
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/Eyes/MaterialFunctions/MF_Minion_EmissiveFX.uexp" 3025
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/mf_MinionPrimeBuff.uasset" 3026
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/mf_MinionPrimeBuff.uexp" 3027
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Materials/Shared/M_Minion_Dusk_Parent.uasset" 3028
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Materials/Shared/M_Minion_Dusk_Parent.uexp" 3029
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Textures/Melee/T_Minion_Dusk_Melee_Core_N.ubulk" 3030
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Textures/Melee/T_Minion_Dusk_Melee_Core_N.uasset" 3031
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Textures/Melee/T_Minion_Dusk_Melee_Core_N.uexp" 3032
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Materials/Shared/MI_Minion_Dusk_Core.uasset" 3033
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Materials/Shared/MI_Minion_Dusk_Core.uexp" 3034
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/NotForShip/Human_Scans/_Common/SSP_Human_Default.uasset" 3035
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/NotForShip/Human_Scans/_Common/SSP_Human_Default.uexp" 3036
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Materials/Melee/MI_Minion_Dusk_Melee_Core.uasset" 3037
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Materials/Melee/MI_Minion_Dusk_Melee_Core.uexp" 3038
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Meshes/Minion_Lane_Melee_Core_ShadowCyl.uasset" 3039
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Meshes/Minion_Lane_Melee_Core_ShadowCyl.uexp" 3040
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Meshes/Minion_Lane_Melee_Core_Dusk.uasset" 3041
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Meshes/Minion_Lane_Melee_Core_Dusk.uexp" 3042
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/SoundDesignAssets/AutaSounds/Abilities/FireBolt/wav/Impact/SFX_SmallFireball_Hit_03.ubulk" 3043
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/SoundDesignAssets/AutaSounds/Abilities/FireBolt/wav/Impact/SFX_SmallFireball_Hit_03.uasset" 3044
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/SoundDesignAssets/AutaSounds/Abilities/FireBolt/wav/Impact/SFX_SmallFireball_Hit_03.uexp" 3045
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/SoundDesignAssets/AutaSounds/Abilities/FireBolt/wav/Impact/SFX_SmallFireball_Hit_02.ubulk" 3046
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/SoundDesignAssets/AutaSounds/Abilities/FireBolt/wav/Impact/SFX_SmallFireball_Hit_02.uasset" 3047
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/SoundDesignAssets/AutaSounds/Abilities/FireBolt/wav/Impact/SFX_SmallFireball_Hit_02.uexp" 3048
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/SoundDesignAssets/AutaSounds/Abilities/FireBolt/wav/Impact/SFX_SmallFireball_Hit_01.ubulk" 3049
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/SoundDesignAssets/AutaSounds/Abilities/FireBolt/wav/Impact/SFX_SmallFireball_Hit_01.uasset" 3050
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/SoundDesignAssets/AutaSounds/Abilities/FireBolt/wav/Impact/SFX_SmallFireball_Hit_01.uexp" 3051
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Minions/Extra/Global2/MaterialFunctions/Textures/T_Plasma_Noise.ubulk" 3052
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Minions/Extra/Global2/MaterialFunctions/Textures/T_Plasma_Noise.uasset" 3053
-"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Minions/Extra/Global2/MaterialFunctions/Textures/T_Plasma_Noise.uexp" 3054
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/SoundDesignAssets/AutaSounds/Abilities/FireBolt/wav/Impact/SFX_SmallFireball_Hit_03.ubulk" 2941
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/SoundDesignAssets/AutaSounds/Abilities/FireBolt/wav/Impact/SFX_SmallFireball_Hit_03.uasset" 2942
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/SoundDesignAssets/AutaSounds/Abilities/FireBolt/wav/Impact/SFX_SmallFireball_Hit_03.uexp" 2943
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/SoundDesignAssets/AutaSounds/Abilities/FireBolt/wav/Impact/SFX_SmallFireball_Hit_02.ubulk" 2944
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/SoundDesignAssets/AutaSounds/Abilities/FireBolt/wav/Impact/SFX_SmallFireball_Hit_02.uasset" 2945
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/SoundDesignAssets/AutaSounds/Abilities/FireBolt/wav/Impact/SFX_SmallFireball_Hit_02.uexp" 2946
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/SoundDesignAssets/AutaSounds/Abilities/FireBolt/wav/Impact/SFX_SmallFireball_Hit_01.ubulk" 2947
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/SoundDesignAssets/AutaSounds/Abilities/FireBolt/wav/Impact/SFX_SmallFireball_Hit_01.uasset" 2948
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/SoundDesignAssets/AutaSounds/Abilities/FireBolt/wav/Impact/SFX_SmallFireball_Hit_01.uexp" 2949
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Minions/Extra/Global2/MaterialFunctions/Textures/T_Plasma_Noise.ubulk" 2950
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Minions/Extra/Global2/MaterialFunctions/Textures/T_Plasma_Noise.uasset" 2951
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Minions/Extra/Global2/MaterialFunctions/Textures/T_Plasma_Noise.uexp" 2952
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_CD.uasset" 2953
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_CD.uexp" 2954
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_LD.uasset" 2955
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_LD.uexp" 2956
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_RU.uasset" 2957
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_RU.uexp" 2958
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_LU.uasset" 2959
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_LU.uexp" 2960
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_CU.uasset" 2961
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_CU.uexp" 2962
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_LC.uasset" 2963
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_LC.uexp" 2964
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_RC.uasset" 2965
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_RC.uexp" 2966
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_CC.uasset" 2967
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_CC.uexp" 2968
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_RD.uasset" 2969
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/Aim_RD.uexp" 2970
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/Blendspaces/CombatAims.uasset" 2971
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/Blendspaces/CombatAims.uexp" 2972
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/NewAimOffsetBlendSpace.uasset" 2973
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/Assets/Assets_Characters/Extra/LavaGolem/Animations/AimOffsets/NewAimOffsetBlendSpace.uexp" 2974
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Textures/Melee/T_Minion_Dusk_Melee_Core_RGBAO.ubulk" 2975
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Textures/Melee/T_Minion_Dusk_Melee_Core_RGBAO.uasset" 2976
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Textures/Melee/T_Minion_Dusk_Melee_Core_RGBAO.uexp" 2977
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Textures/Super/T_Minion_Dusk_Super_COL.ubulk" 2978
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Textures/Super/T_Minion_Dusk_Super_COL.uasset" 2979
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Textures/Super/T_Minion_Dusk_Super_COL.uexp" 2980
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/T_ThinFilm_Spectrum_COLOR.ubulk" 2981
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/T_ThinFilm_Spectrum_COLOR.uasset" 2982
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/T_ThinFilm_Spectrum_COLOR.uexp" 2983
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/MF_ThinFilm_Frensel.uasset" 2984
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/MF_ThinFilm_Frensel.uexp" 2985
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Textures/Super/T_Minion_Dusk_Super_RGBAO.ubulk" 2986
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Textures/Super/T_Minion_Dusk_Super_RGBAO.uasset" 2987
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Textures/Super/T_Minion_Dusk_Super_RGBAO.uexp" 2988
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/MF_BrightnessAdjust.uasset" 2989
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/MF_BrightnessAdjust.uexp" 2990
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialLayers/T_TestML_Mask.ubulk" 2991
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialLayers/T_TestML_Mask.uasset" 2992
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialLayers/T_TestML_Mask.uexp" 2993
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialLayers/ML__Blank.uasset" 2994
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialLayers/ML__Blank.uexp" 2995
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/ParameterCollections/OrionGlobalGameplayCollection.uasset" 2996
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/ParameterCollections/OrionGlobalGameplayCollection.uexp" 2997
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/HitFlash.uasset" 2998
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/HitFlash.uexp" 2999
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/MaterialLayerConstructors/MLC_ScratchAndGrime.uasset" 3000
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/MaterialLayerConstructors/MLC_ScratchAndGrime.uexp" 3001
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/MaterialLayerConstructors/MLC_Standard.uasset" 3002
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/MaterialLayerConstructors/MLC_Standard.uexp" 3003
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialLayers/Rubber/T_Blank_N.uasset" 3004
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialLayers/Rubber/T_Blank_N.uexp" 3005
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialLayers/Metal/T_Blue_Metal02.ubulk" 3006
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialLayers/Metal/T_Blue_Metal02.uasset" 3007
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialLayers/Metal/T_Blue_Metal02.uexp" 3008
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialLayers/Metal/ML_blue_Metal.uasset" 3009
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialLayers/Metal/ML_blue_Metal.uexp" 3010
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/MF_OrionRimlight.uasset" 3011
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/MF_OrionRimlight.uexp" 3012
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/Textures/T_AtmosphericCloudNoise01_N.ubulk" 3013
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/Textures/T_AtmosphericCloudNoise01_N.uasset" 3014
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/Textures/T_AtmosphericCloudNoise01_N.uexp" 3015
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/Textures/T_AtmosphericCloudNoise03.ubulk" 3016
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/Textures/T_AtmosphericCloudNoise03.uasset" 3017
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/Textures/T_AtmosphericCloudNoise03.uexp" 3018
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/Textures/T_AtmosphericCloudNoise01.ubulk" 3019
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/Textures/T_AtmosphericCloudNoise01.uasset" 3020
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/Textures/T_AtmosphericCloudNoise01.uexp" 3021
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/MF_DeathFade.uasset" 3022
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/MF_DeathFade.uexp" 3023
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/MF_CharacterEffects.uasset" 3024
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/MF_CharacterEffects.uexp" 3025
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/FX/Materials/Functions/MF_MinionApperation.uasset" 3026
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/FX/Materials/Functions/MF_MinionApperation.uexp" 3027
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Textures/Super/T_Minion_Dusk_Super_N.ubulk" 3028
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Textures/Super/T_Minion_Dusk_Super_N.uasset" 3029
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Textures/Super/T_Minion_Dusk_Super_N.uexp" 3030
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/FX/Textures/Tile/Noise/T_Voronoi_Cells_02.ubulk" 3031
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/FX/Textures/Tile/Noise/T_Voronoi_Cells_02.uasset" 3032
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/FX/Textures/Tile/Noise/T_Voronoi_Cells_02.uexp" 3033
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/Eyes/MaterialFunctions/MinionBurn.uasset" 3034
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/Eyes/MaterialFunctions/MinionBurn.uexp" 3035
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/Eyes/MaterialFunctions/MF_Minion_EmissiveFX.uasset" 3036
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/Eyes/MaterialFunctions/MF_Minion_EmissiveFX.uexp" 3037
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/mf_MinionPrimeBuff.uasset" 3038
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/MaterialFunctions/mf_MinionPrimeBuff.uexp" 3039
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Materials/Shared/M_Minion_Dusk_Parent.uasset" 3040
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Materials/Shared/M_Minion_Dusk_Parent.uexp" 3041
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Textures/Melee/T_Minion_Dusk_Melee_Core_N.ubulk" 3042
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Textures/Melee/T_Minion_Dusk_Melee_Core_N.uasset" 3043
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Textures/Melee/T_Minion_Dusk_Melee_Core_N.uexp" 3044
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Materials/Shared/MI_Minion_Dusk_Core.uasset" 3045
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Materials/Shared/MI_Minion_Dusk_Core.uexp" 3046
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/NotForShip/Human_Scans/_Common/SSP_Human_Default.uasset" 3047
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Global/NotForShip/Human_Scans/_Common/SSP_Human_Default.uexp" 3048
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Materials/Melee/MI_Minion_Dusk_Melee_Core.uasset" 3049
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Materials/Melee/MI_Minion_Dusk_Melee_Core.uexp" 3050
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Meshes/Minion_Lane_Melee_Core_ShadowCyl.uasset" 3051
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Meshes/Minion_Lane_Melee_Core_ShadowCyl.uexp" 3052
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Meshes/Minion_Lane_Melee_Core_Dusk.uasset" 3053
+"C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Dusk_Minions/Meshes/Minion_Lane_Melee_Core_Dusk.uexp" 3054
 "C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Down_Minions/Animations/Ranged/KnockUp_B_Loop.uasset" 3055
 "C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Down_Minions/Animations/Ranged/KnockUp_B_Loop.uexp" 3056
 "C:/Documents/Unreal Projects/GameBuilder/SustainableWizardry/Content/ArtDevelopment/EnemyRef/Characters/Minions/Down_Minions/Animations/Ranged/KnockUp_A_Loop.uasset" 3057
