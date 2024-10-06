@@ -8,13 +8,68 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1579a7cd-1dd9-4102-8fb2-ded64c6e3088" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/Data/DA_AbilityInfo.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/Data/DA_AbilityInfo.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UIDevelopment/Overlay/Subwidget/WBP_SpellBar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UIDevelopment/Overlay/Subwidget/WBP_SpellBar.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UIDevelopment/SpellGlobes/WBP_SpellGlobe1.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UIDevelopment/SpellGlobes/WBP_SpellGlobe1.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Player/PlayerState/SusWizPlayerState.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Player/PlayerState/SusWizPlayerState.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/UI/Widget/WidgetController/SpellMenuWidgetController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/UI/Widget/WidgetController/SpellMenuWidgetController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/UI/Widget/WidgetController/SusWizWidgetController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/UI/Widget/WidgetController/SusWizWidgetController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Sounds/SFX_Fire-Nado_Loop1.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ArtDevelopment/Sounds/SFX_Fire-Nado_Loop1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Demon/Death/SFX_Demon_Death_01.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Demon/Death/SFX_Demon_Death_02.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Demon/Death/SFX_Demon_Death_03.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Demon/Hurt/SFX_Demon_Hurt_01.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Demon/Hurt/SFX_Demon_Hurt_02.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Demon/Hurt/SFX_Demon_Hurt_03.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Ghoul/Attack/SFX_Enemies_Ghoul_Attack_ClawSwipe_01.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Ghoul/Attack/SFX_Enemies_Ghoul_Attack_ClawSwipe_02.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Ghoul/Attack/SFX_Enemies_Ghoul_Attack_ClawSwipe_03.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Ghoul/Attack/SFX_Enemies_Ghoul_Attack_ClawSwipe_04.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Ghoul/Growl/SFX_Enemies_Ghoul_Attack_Vocal_01.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Ghoul/Growl/SFX_Enemies_Ghoul_Attack_Vocal_02.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Ghoul/Growl/SFX_Enemies_Ghoul_Attack_Vocal_03.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Ghoul/Growl/SFX_Enemies_Ghoul_Attack_Vocal_04.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Ghoul/Swipe/SFX_Swipe_01.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Ghoul/Swipe/SFX_Swipe_02.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Ghoul/Swipe/SFX_Swipe_03.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Goblin/Death/SFX_GolemHit1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Goblin/Death/SFX_GolemHit2.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Goblin/Death/SFX_GolemHit3.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Goblin/Death/Sfx_RoboGolemAttack.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Goblin/Death/sfx_RoboGolemHit.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Goblin/Hurt/SFX_GolemHit1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Goblin/Hurt/SFX_GolemHit2.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Goblin/Hurt/SFX_GolemHit3.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Goblin/RockHit/SFX_RockHit_Body_01.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Goblin/RockHit/SFX_RockHit_Body_02.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Goblin/RockHit/SFX_RockHit_Body_03.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Goblin/RockHit/SFX_RockHit_Body_04.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Goblin/RockHit/SFX_RockHit_Body_05.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Goblin/Swoosh/SFX_Sword_Swoosh_01.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Goblin/Swoosh/SFX_Sword_Swoosh_02.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Goblin/Swoosh/SFX_Sword_Swoosh_03.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Goblin/Swoosh/SFX_Sword_Swoosh_04.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Goblin/Swoosh/SFX_Sword_Swoosh_05.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Enemies/Goblin/Swoosh/SFX_Sword_Swoosh_06.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/FootSteps/sfx_Footsteps.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/FootSteps/sfx_FootstepsQuiet.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/FootSteps/wav/SFX_Footsteps_Stone_01.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/FootSteps/wav/SFX_Footsteps_Stone_02.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/FootSteps/wav/SFX_Footsteps_Stone_03.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/FootSteps/wav/SFX_Footsteps_Stone_04.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/FootSteps/wav/SFX_Footsteps_Stone_05.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/FootSteps/wav/SFX_Footsteps_Stone_06.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/FootSteps/wav/SFX_Footsteps_Stone_07.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/FootSteps/wav/SFX_Footsteps_Stone_08.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/FootSteps/wav/SFX_Footsteps_Stone_09.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/FootSteps/wav/SFX_Footsteps_Stone_10.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Slingshot/sfx_Slingshot_Fire.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Slingshot/wav/SFX_BowDraw_FastShot_Full_01.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Slingshot/wav/SFX_BowDraw_FastShot_Full_02.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Assets/SoundDesignAssets/AutaSounds/Slingshot/wav/SFX_BowDraw_FastShot_Full_03.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/EnemyAbilities/Melee/GA_SludgeGolemAttack.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/EnemyAbilities/Melee/GA_SludgeGolemAttack.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Geo/RockPunch/BP_RP1.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Geo/RockPunch/BP_RP1.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Geo/RockPunch/BP_RP2.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Geo/RockPunch/BP_RP2.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Geo/RockPunch/BP_RP3.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Geo/RockPunch/BP_RP3.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Geo/RockPunch/BP_RP4.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Geo/RockPunch/BP_RP4.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Geo/RockPunch/BP_RP5.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/GameplayAbilities/Spells/Geo/RockPunch/BP_RP5.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/LevelDevelopment/Maps/MapOne.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LevelDevelopment/Maps/MapOne.umap" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -272,7 +327,7 @@
       <workItem from="1727905427662" duration="13941000" />
       <workItem from="1727987148905" duration="3748000" />
       <workItem from="1728079351030" duration="1255000" />
-      <workItem from="1728172287439" duration="2472000" />
+      <workItem from="1728172287439" duration="3137000" />
     </task>
     <servers />
   </component>
