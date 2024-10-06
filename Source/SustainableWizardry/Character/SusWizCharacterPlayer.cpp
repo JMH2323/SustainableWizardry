@@ -321,6 +321,11 @@ void ASusWizCharacterPlayer::Die(const FVector& DeathImpulse)
 	Super::Die(DeathImpulse);
 
 	FTimerDelegate DeathTimerDelegate;
+	ASuzWizGameModeBase* SusWizGM = Cast<ASuzWizGameModeBase>(UGameplayStatics::GetGameMode(this));
+	if (SusWizGM)
+	{
+		SusWizGM->DeathScreen(); // Implemented in Blueprints
+	}
 	DeathTimerDelegate.BindLambda([this]()
 	{
 		ASuzWizGameModeBase* SusWizGM = Cast<ASuzWizGameModeBase>(UGameplayStatics::GetGameMode(this));
@@ -328,7 +333,6 @@ void ASusWizCharacterPlayer::Die(const FVector& DeathImpulse)
 		{
 			SusWizGM->SetWaveCount(1);
 			ResetPlayerProgress();
-			//CameraComponent->DetachFromComponent(FDetachmentTransformRules::KeepWorldTransform);
 			SusWizGM->PlayerDied(this);
 		}
 	});

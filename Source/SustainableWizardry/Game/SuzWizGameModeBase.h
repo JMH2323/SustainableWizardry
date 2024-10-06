@@ -63,6 +63,8 @@ public:
 	virtual AActor* ChoosePlayerStart_Implementation(AController* Player) override;
 	
 	void PlayerDied(ACharacter* DeadCharacter);
+	UFUNCTION(BlueprintImplementableEvent)
+	void DeathScreen();
 	
 protected:
 	virtual void BeginPlay() override;
