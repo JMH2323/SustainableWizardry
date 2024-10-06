@@ -27,7 +27,7 @@ FString URockPunch::GetDescription(int32 Level)
 			// Cooldown
 			"<Small>Cooldown: </><Cooldown>%.1f</>\n\n"
 
-			"<Default>Form and launch a small boulder, "
+			"<Default>Form and launch a </><Energy>small boulder</><Default>, "
 			"which deals </>"
 
 			// Damage
@@ -55,7 +55,7 @@ FString URockPunch::GetDescription(int32 Level)
 			// Cooldown
 			"<Small>Cooldown: </><Cooldown>%.1f</>\n\n"
 
-			"<Default>Form and launch a medium boulder, "
+			"<Default>Form and launch a </><Energy>medium boulder</><Default>, "
 			"which deals </>"
 
 			// Damage
@@ -85,7 +85,7 @@ FString URockPunch::GetDescription(int32 Level)
 			// Cooldown
 			"<Small>Cooldown: </><Cooldown>%.1f</>\n\n"
 
-			"<Default>Form and launch a large boulder, "
+			"<Default>Form and launch a </><Energy>large boulder</><Default>, "
 			"which deals </>"
 
 			// Damage
@@ -114,7 +114,7 @@ FString URockPunch::GetDescription(int32 Level)
 			// Cooldown
 			"<Small>Cooldown: </><Cooldown>%.1f</>\n\n"
 
-			"<Default>Form and launch a huge boulder, "
+			"<Default>Form and launch a </><Energy>huge boulder</><Default>, "
 			"which deals </>"
 
 			// Damage
@@ -143,7 +143,7 @@ FString URockPunch::GetDescription(int32 Level)
 			// Cooldown
 			"<Small>Cooldown: </><Cooldown>%.1f</>\n\n"
 
-			"<Default>Form and launch an immensely huge boulder, "
+			"<Default>Form and launch an </><Energy>immensely huge boulder</><Default>, "
 			"which deals </>"
 
 			// Damage
@@ -181,7 +181,7 @@ FString URockPunch::GetNextLevelDescription(int32 Level)
 			// Cooldown
 			"<Small>Cooldown: </><Cooldown>%.1f</>\n\n"
 
-			"<Default>Form and launch a medium boulder, "
+			"<Default>Form and launch a </><Energy>medium boulder</><Default>, "
 			"which deals </>"
 
 			// Damage
@@ -211,7 +211,7 @@ FString URockPunch::GetNextLevelDescription(int32 Level)
 			// Cooldown
 			"<Small>Cooldown: </><Cooldown>%.1f</>\n\n"
 
-			"<Default>Form and launch a large boulder, "
+			"<Default>Form and launch a </><Energy>large boulder</><Default>, "
 			"which deals </>"
 
 			// Damage
@@ -240,7 +240,7 @@ FString URockPunch::GetNextLevelDescription(int32 Level)
 			// Cooldown
 			"<Small>Cooldown: </><Cooldown>%.1f</>\n\n"
 
-			"<Default>Form and launch a huge boulder, "
+			"<Default>Form and launch a </><Energy>huge boulder</><Default>, "
 			"which deals </>"
 
 			// Damage
@@ -269,7 +269,7 @@ FString URockPunch::GetNextLevelDescription(int32 Level)
 			// Cooldown
 			"<Small>Cooldown: </><Cooldown>%.1f</>\n\n"
 
-			"<Default>Form and launch an immensely huge boulder, "
+			"<Default>Form and launch an </><Energy>immensely huge boulder</><Default>, "
 			"which deals </>"
 
 			// Damage
