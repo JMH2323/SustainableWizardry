@@ -326,12 +326,14 @@ void ASusWizCharacterPlayer::Die(const FVector& DeathImpulse)
 		ASuzWizGameModeBase* SusWizGM = Cast<ASuzWizGameModeBase>(UGameplayStatics::GetGameMode(this));
 		if (SusWizGM)
 		{
+			SusWizGM->SetWaveCount(1);
 			ResetPlayerProgress();
+			//CameraComponent->DetachFromComponent(FDetachmentTransformRules::KeepWorldTransform);
 			SusWizGM->PlayerDied(this);
 		}
 	});
 	GetWorldTimerManager().SetTimer(DeathTimer, DeathTimerDelegate, DeathTime, false);
-	//CameraComponent->DetachFromComponent(FDetachmentTransformRules::KeepWorldTransform);
+	
 }
 
 void ASusWizCharacterPlayer::InitAbilityActorInfo()
