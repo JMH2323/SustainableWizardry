@@ -17,7 +17,7 @@ FString UAerrowSpell::GetDescription(int32 Level)
 	const float Cooldown = GetCooldown(Level);
 	int32 NumArrows = 1;
 	if (Level >= 4) NumArrows++;
-	const int32 BounceCount = Level + 1;
+	const int32 BounceCount = Level * 2;
 	return FString::Printf(TEXT(
 			// Title
 			"<Title>AERROW</>\n\n"
@@ -55,7 +55,7 @@ FString UAerrowSpell::GetNextLevelDescription(int32 Level)
 	const float Cooldown = GetCooldown(Level);
 	int32 NumArrows = 1;
 	if (Level >= 4) NumArrows++;
-	const int32 BounceCount = Level + 1;
+	const int32 BounceCount = Level * 2;
 
 	if (NumArrows > 1)
 	{
@@ -202,7 +202,7 @@ void UAerrowSpell::SpawnAerrowProjectiles()
 
 			Projectile->DamageEffectParams = MakeDamageEffectParamsFromClassDefaults();
 			
-			Projectile->NumAeroBounces = GetAbilityLevel() + 1;
+			Projectile->NumAeroBounces = FMath::Min(GetAbilityLevel() * 2 + 1, 14);
 			
 			if (Projectile->ProjectileMovement)
 			{
