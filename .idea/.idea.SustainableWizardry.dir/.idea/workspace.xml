@@ -7,7 +7,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1579a7cd-1dd9-4102-8fb2-ded64c6e3088" name="Changes" comment="" />
+    <list default="true" id="1579a7cd-1dd9-4102-8fb2-ded64c6e3088" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/Data/DA_AbilityInfo.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GAS/Data/DA_AbilityInfo.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UIDevelopment/Overlay/Subwidget/WBP_SpellBar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UIDevelopment/Overlay/Subwidget/WBP_SpellBar.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UIDevelopment/SpellGlobes/WBP_SpellGlobe1.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UIDevelopment/SpellGlobes/WBP_SpellGlobe1.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/Player/PlayerState/SusWizPlayerState.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/Player/PlayerState/SusWizPlayerState.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/UI/Widget/WidgetController/SpellMenuWidgetController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/UI/Widget/WidgetController/SpellMenuWidgetController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SustainableWizardry/UI/Widget/WidgetController/SusWizWidgetController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SustainableWizardry/UI/Widget/WidgetController/SusWizWidgetController.h" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -263,7 +271,8 @@
       <workItem from="1727839147207" duration="5106000" />
       <workItem from="1727905427662" duration="13941000" />
       <workItem from="1727987148905" duration="3748000" />
-      <workItem from="1728079351030" duration="652000" />
+      <workItem from="1728079351030" duration="1255000" />
+      <workItem from="1728172287439" duration="2472000" />
     </task>
     <servers />
   </component>

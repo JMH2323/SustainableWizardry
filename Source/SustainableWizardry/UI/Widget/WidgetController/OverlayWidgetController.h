@@ -103,7 +103,7 @@ public:
 	FOnLevelChangedSignature  OnPlayerLevelChangedDelegate;
 
 	UFUNCTION(BlueprintImplementableEvent)
-	void OnSpellGlobeReassigned(const FGameplayTag& AbilityTag);
+	void OnSpellGlobeReassigned(const FGameplayTag& AbilityTag, const FGameplayTag& InputTag);
 	
 protected:
 

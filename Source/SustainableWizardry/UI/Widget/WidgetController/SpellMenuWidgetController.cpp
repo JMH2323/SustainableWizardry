@@ -173,7 +173,7 @@ void USpellMenuWidgetController::OnAbilityEquipped(const FGameplayTag& AbilityTa
 	AbilityInfoDelegate.Broadcast(Info);
 
 	StopWaitingForEquipDelegate.Broadcast(AbilityInfo->FindAbilityInfoForTag(AbilityTag).AbilityTypeTag);
-	SpellGlobeReassignedDelegate.Broadcast(AbilityTag);
+	SpellGlobeReassignedDelegate.Broadcast(AbilityTag, PreviousSlot);
 	GlobeDeselect();
 	
 }
