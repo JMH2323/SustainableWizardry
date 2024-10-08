@@ -37,11 +37,13 @@ public:
 	// Get key variables to initialize
 	void InitOverlay(APlayerController* PC, APlayerState* PS, UAbilitySystemComponent* ASC, UAttributeSet* AS);
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TObjectPtr<USusWizUserWidget>  OverlayWidget;
+	
 private:
 
 
-	UPROPERTY()
-	TObjectPtr<USusWizUserWidget>  OverlayWidget;
+	
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<USusWizUserWidget> OverlayWidgetClass;
 
