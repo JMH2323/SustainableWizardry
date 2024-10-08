@@ -53,11 +53,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnLevelChangedSignature, int32, Ne
 // 9. 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMessageWidgetRowSignature, FUIWidgetRow, Row);
 
-
-
-
-
-
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnDashed, float, dashcooldown);
 /**
  * 
  */

@@ -69,6 +69,7 @@ void UAttributeMenuWidgetController::BroadcastAttributeInfo(const FGameplayTag& 
 {
 	FSusWizAttributeInfo Info = AttributeInfo->FindAttributeInfoForTag(AttributeTag);
 	Info.AttributeValue = Attribute.GetNumericValue(AttributeSet);
+	Info.AttributeValue = static_cast<float>(FMath::RoundToInt(Info.AttributeValue));
 	AttributeInfoDelegate.Broadcast(Info);
 }
 
@@ -81,12 +82,14 @@ void UAttributeMenuWidgetController::BruteForceBroadcast() const
 	FSusWizAttributeInfo HealthInfo = AttributeInfo->FindAttributeInfoForTag(FSusWizGameplayTags::Get().Attributes_Vital_Health);
 	// // Set the information we hold about the attribute to it's value in the attribute set
 	HealthInfo.AttributeValue = AS->GetHealth();
+	HealthInfo.AttributeValue = static_cast<float>(FMath::RoundToInt(HealthInfo.AttributeValue));
 	// // Broadcast that info
 	AttributeInfoDelegate.Broadcast(HealthInfo);
 
 
 	FSusWizAttributeInfo EnergyInfo = AttributeInfo->FindAttributeInfoForTag(FSusWizGameplayTags::Get().Attributes_Vital_Energy);
 	EnergyInfo.AttributeValue = AS->GetEnergy();
+	EnergyInfo.AttributeValue = static_cast<float>(FMath::RoundToInt(EnergyInfo.AttributeValue));
 	AttributeInfoDelegate.Broadcast(EnergyInfo);
 
 	FSusWizAttributeInfo MaxHealthInfo = AttributeInfo->FindAttributeInfoForTag(FSusWizGameplayTags::Get().Attributes_Secondary_MaxHealth);
