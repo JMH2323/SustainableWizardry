@@ -30,7 +30,13 @@ void USpellMenuWidgetController::BindCallbacksToDependencies()
 			FString Description;
 			FString NextLevelDescription;
 			GetSusWizASC()->GetDescriptionsByAbilityTag(AbilityTag, Description, NextLevelDescription);
-			SpellGlobeSelectedDelegate.Broadcast(bEnableSpendPoints, bEnableEquip, Description, NextLevelDescription);
+			int32 SpellLevel = 0;
+			if (const FGameplayAbilitySpec* Spec = GetSusWizASC()->GetSpecFromAbilityTag(SelectedAbility.Ability))
+			{
+				SpellLevel = Spec->Level;
+			}
+	
+			SpellGlobeSelectedDelegate.Broadcast(bEnableSpendPoints, bEnableEquip, Description, NextLevelDescription, SpellLevel);
 		}
 		
 		if(AbilityInfo)
@@ -53,7 +59,13 @@ void USpellMenuWidgetController::BindCallbacksToDependencies()
 		FString Description;
 		FString NextLevelDescription;
 		GetSusWizASC()->GetDescriptionsByAbilityTag(SelectedAbility.Ability, Description, NextLevelDescription);
-		SpellGlobeSelectedDelegate.Broadcast(bEnableSpendPoints, bEnableEquip, Description, NextLevelDescription);
+		int32 SpellLevel = 0;
+	if (const FGameplayAbilitySpec* Spec = GetSusWizASC()->GetSpecFromAbilityTag(SelectedAbility.Ability))
+	{
+		SpellLevel = Spec->Level;
+	}
+	
+		SpellGlobeSelectedDelegate.Broadcast(bEnableSpendPoints, bEnableEquip, Description, NextLevelDescription, SpellLevel);
 	});
 	
 	
@@ -96,7 +108,13 @@ void USpellMenuWidgetController::SpellGlobeSelected(const FGameplayTag& AbilityT
 	FString Description;
 	FString NextLevelDescription;
 	GetSusWizASC()->GetDescriptionsByAbilityTag(AbilityTag, Description, NextLevelDescription);
-	SpellGlobeSelectedDelegate.Broadcast(bEnableSpendPoints, bEnableEquip, Description, NextLevelDescription);
+	int32 SpellLevel = 0;
+	if (const FGameplayAbilitySpec* Spec = GetSusWizASC()->GetSpecFromAbilityTag(SelectedAbility.Ability))
+	{
+		SpellLevel = Spec->Level;
+	}
+	
+	SpellGlobeSelectedDelegate.Broadcast(bEnableSpendPoints, bEnableEquip, Description, NextLevelDescription, SpellLevel);
 }
 
 void USpellMenuWidgetController::SpendPointButtonPressed()
@@ -122,7 +140,7 @@ void USpellMenuWidgetController::GlobeDeselect()
 	
 	SelectedAbility.Ability = FSusWizGameplayTags::Get().Abilities_None;
 	SelectedAbility.Status = FSusWizGameplayTags::Get().Abilities_Status_Locked;
-	SpellGlobeSelectedDelegate.Broadcast(false, false, FString(), FString());
+	SpellGlobeSelectedDelegate.Broadcast(false, false, FString(), FString(), 999);
 }
 
 void USpellMenuWidgetController::EquipButtonPressed()
