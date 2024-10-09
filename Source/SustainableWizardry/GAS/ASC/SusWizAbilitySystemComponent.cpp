@@ -232,6 +232,7 @@ FGameplayTag USusWizAbilitySystemComponent::GetStatusFromAbilityTag(const FGamep
 	if (const FGameplayAbilitySpec* Spec = GetSpecFromAbilityTag(AbilityTag))
 	{
 		return GetStatusFromSpec(*Spec);
+		
 	}
 	return FGameplayTag();
 }
