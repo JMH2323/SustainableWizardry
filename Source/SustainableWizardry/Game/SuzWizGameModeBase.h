@@ -28,6 +28,7 @@ public:
 
 	void SaveSlotData(UMVVM_LoadSlot* LoadSlot, int32 SlotIndex);
 
+	UFUNCTION(BlueprintCallable, Category = "SaveGame")
 	ULoadScreenSaveGame* GetSaveSlotData(const FString& SlotName, int32 SlotIndex) const;
 	
 	UPROPERTY(EditDefaultsOnly)

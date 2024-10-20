@@ -18,8 +18,8 @@ public:
 	
 	UPROPERTY()
 	FName PlayerStartTag = FName();
-	UPROPERTY()
+	UPROPERTY(BlueprintReadOnly)
 	FString LoadSlotName = FString();
-	UPROPERTY()
+	UPROPERTY(BlueprintReadOnly)
 	int32 LoadSlotIndex = 0;
 };
