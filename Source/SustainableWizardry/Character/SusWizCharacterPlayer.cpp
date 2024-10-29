@@ -56,7 +56,7 @@ void ASusWizCharacterPlayer::LoadProgress()
 		ULoadScreenSaveGame* SaveData = SusWizGameMode->RetrieveInGameSaveData();
 		if (SaveData == nullptr) return;
 		
-		if(SaveData->bFirstTimeLoadIn)
+		if(SaveData->bFirstTimeLoadIn || SaveData->bSettingsSaveFlag)
 		{
 			InitializeDefaultAttributes();
 			AddCharacterAbilities();
@@ -246,6 +246,7 @@ void ASusWizCharacterPlayer::SaveProgress_Implementation(const FName& Checkpoint
 		
 		
 		SaveData->bFirstTimeLoadIn = false;
+		SaveData->bSettingsSaveFlag = false;
 		if (!HasAuthority()) return;
 
 		USusWizAbilitySystemComponent* SusWizASC = Cast<USusWizAbilitySystemComponent>(AbilitySystemComponent);
