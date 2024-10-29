@@ -22,4 +22,8 @@ public:
 	FString LoadSlotName = FString();
 	UPROPERTY(BlueprintReadOnly)
 	int32 LoadSlotIndex = 0;
+	UPROPERTY(BlueprintReadWrite)
+	TArray<float> VolumeValues = {1.f, 1.f, 1.f, 1.f };
+	
 };
+
