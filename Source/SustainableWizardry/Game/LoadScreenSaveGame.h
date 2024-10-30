@@ -113,6 +113,9 @@ public:
 	UPROPERTY()
 	bool bFirstTimeLoadIn = true;
 	
+	UPROPERTY()
+	bool bSettingsSaveFlag = true;
+	
 	/*
 	 * Player Stats
 	 */

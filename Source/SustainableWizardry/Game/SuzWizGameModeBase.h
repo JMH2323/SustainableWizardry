@@ -28,6 +28,7 @@ public:
 
 	void SaveSlotData(UMVVM_LoadSlot* LoadSlot, int32 SlotIndex);
 
+	UFUNCTION(BlueprintCallable, Category = "SaveGame")
 	ULoadScreenSaveGame* GetSaveSlotData(const FString& SlotName, int32 SlotIndex) const;
 	
 	UPROPERTY(EditDefaultsOnly)
@@ -63,6 +64,8 @@ public:
 	virtual AActor* ChoosePlayerStart_Implementation(AController* Player) override;
 	
 	void PlayerDied(ACharacter* DeadCharacter);
+	UFUNCTION(BlueprintImplementableEvent)
+	void DeathScreen();
 	
 protected:
 	virtual void BeginPlay() override;

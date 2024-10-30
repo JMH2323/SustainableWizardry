@@ -23,6 +23,12 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = "RockPunchBounce")
 	bool bCanBounce = true;
 	UPROPERTY(EditDefaultsOnly, Category = "RockPunchBounce")
+	bool bHasHitEnemy = false;
+	UPROPERTY(EditDefaultsOnly, Category = "RockPunchBounce")
+	int32 MaxRockBounces = 6;
+	UPROPERTY(EditDefaultsOnly, Category = "RockPunchBounce")
+	int32 CurrentRockBounces = 0;
+	UPROPERTY(EditDefaultsOnly, Category = "RockPunchBounce")
 	float BounceVelocityZ = 1.5;
 	UPROPERTY(EditDefaultsOnly, Category = "RockPunchBounce")
 	float BounceVelocityY = 800;
@@ -30,6 +36,8 @@ public:
 	FVector BounceEffectOffset;
 	UPROPERTY(EditDefaultsOnly, Category = "RockPunchBounce")
 	float BounceImpactRadius = 200;
+	UPROPERTY(EditDefaultsOnly, Category = "RockPunchBounce")
+	FVector NiagaraScale = FVector(1.0f);
 	
 	UPROPERTY(EditDefaultsOnly, Category = "RockPunchVariables")
 	bool bCanSplash = false;

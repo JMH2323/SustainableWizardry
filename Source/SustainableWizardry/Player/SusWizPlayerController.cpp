@@ -131,6 +131,8 @@ void ASusWizPlayerController::Look(const FInputActionValue& Value)
 	// input is a Vector2D
 	FVector2D LookAxisVector = Value.Get<FVector2D>();
 
+	LookAxisVector *= MouseSensitivity;
+	
 	// Inverting Y Axis
 	LookAxisVector.Y *= -1;
 

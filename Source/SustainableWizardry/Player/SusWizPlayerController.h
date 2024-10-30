@@ -37,6 +37,9 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void HideMagicCircle();
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Input")
+	float MouseSensitivity = 1.0f; 
+	
 	UFUNCTION(BlueprintCallable)
 	FVector GetMagicCircleLocation();
 

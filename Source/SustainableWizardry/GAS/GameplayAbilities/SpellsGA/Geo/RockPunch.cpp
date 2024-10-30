@@ -10,12 +10,281 @@
 
 FString URockPunch::GetDescription(int32 Level)
 {
-	return Super::GetDescription(Level);
+	const int32 ScaledDamage = Damage.GetValueAtLevel(Level);
+	const float EnergyCost = FMath::Abs(GetEnergyCost(Level));
+	const float Cooldown = GetCooldown(Level);
+	const float KC = KnockbackChance;
+	if (Level == 1)
+	{
+		return FString::Printf(TEXT(
+			// Title
+			"<Title>ROCK PUNCH</>\n\n"
+
+			// Level
+			"<Small>Level: </><Level>%d</>\n"
+			// Energy Cost
+			"<Small>Energy Cost: </><Energy>%.1f</>\n"
+			// Cooldown
+			"<Small>Cooldown: </><Cooldown>%.1f</>\n\n"
+
+			"<Default>Form and launch a </><Energy>small boulder</><Default>, "
+			"which deals </>"
+
+			// Damage
+			"<Damage>%d</><Default> Seismic damage on impact and also has a </>"
+
+			// Knockback
+			"<Damage>20%%</><Default> Knock Back Chance.</>"),
+			
+			// Values
+			Level,
+			EnergyCost,
+			Cooldown,
+			ScaledDamage);
+	}
+	if (Level == 2)
+	{
+		return FString::Printf(TEXT(
+			// Title
+			"<Title>ROCK PUNCH</>\n\n"
+
+			// Level
+			"<Small>Level: </><Level>%d</>\n"
+			// Energy Cost
+			"<Small>Energy Cost: </><Energy>%.1f</>\n"
+			// Cooldown
+			"<Small>Cooldown: </><Cooldown>%.1f</>\n\n"
+
+			"<Default>Form and launch a </><Energy>medium boulder</><Default>, "
+			"which deals </>"
+
+			// Damage
+			"<Damage>%d</><Default> Seismic damage on impact and also has a </>"
+
+			// Knockback
+			"<Damage>40%%</><Default> Knock Back Chance.</>"),
+			
+
+			// Values
+			Level,
+			EnergyCost,
+			Cooldown,
+			ScaledDamage,
+			KC);
+	}
+	if (Level == 3)
+	{
+		return FString::Printf(TEXT(
+			// Title
+			"<Title>ROCK PUNCH</>\n\n"
+
+			// Level
+			"<Small>Level: </><Level>%d</>\n"
+			// Energy Cost
+			"<Small>Energy Cost: </><Energy>%.1f</>\n"
+			// Cooldown
+			"<Small>Cooldown: </><Cooldown>%.1f</>\n\n"
+
+			"<Default>Form and launch a </><Energy>large boulder</><Default>, "
+			"which deals </>"
+
+			// Damage
+			"<Damage>%d</><Default> Seismic damage on impact. </>"
+			"<Default>The boulder can also bounce once off the ground, damaging nearby enemies, and has a </>"
+			"<Damage>60%%</><Default> Knock Back Chance.</>"
+			),
+
+			// Values
+			Level,
+			EnergyCost,
+			Cooldown,
+			ScaledDamage,
+			KC);
+	}
+	if (Level == 4)
+	{
+		return FString::Printf(TEXT(
+			// Title
+			"<Title>ROCK PUNCH</>\n\n"
+
+			// Level
+			"<Small>Level: </><Level>%d</>\n"
+			// Energy Cost
+			"<Small>Energy Cost: </><Energy>%.1f</>\n"
+			// Cooldown
+			"<Small>Cooldown: </><Cooldown>%.1f</>\n\n"
+
+			"<Default>Form and launch a </><Energy>huge boulder</><Default>, "
+			"which deals </>"
+
+			// Damage
+			"<Damage>%d</><Default> Seismic damage on impact. </>"
+			"<Default>The boulder can also bounce once off the ground, damaging nearby enemies, and has a </>"
+			"<Damage>80%%</><Default> Knock Back Chance.</>"
+			),
+
+			// Values
+			Level,
+			EnergyCost,
+			Cooldown,
+			ScaledDamage,
+			KC);
+	}
+	else
+	{
+		return FString::Printf(TEXT(
+			// Title
+			"<Title>ROCK PUNCH</>\n\n"
+
+			// Level
+			"<Small>Level: </><Level>%d</>\n"
+			// Energy Cost
+			"<Small>Energy Cost: </><Energy>%.1f</>\n"
+			// Cooldown
+			"<Small>Cooldown: </><Cooldown>%.1f</>\n\n"
+
+			"<Default>Form and launch an </><Energy>immensely huge boulder</><Default>, "
+			"which deals </>"
+
+			// Damage
+			"<Damage>%d</><Default> Seismic damage on impact. </>"
+			"<Default>The boulder can also bounce once off the ground, damaging nearby enemies, and has a </>"
+			"<Damage>100%%</><Default> Knock Back Chance.</>"
+			),
+
+			// Values
+			Level,
+			EnergyCost,
+			Cooldown,
+			ScaledDamage,
+			KC);
+	}
+	
 }
 
 FString URockPunch::GetNextLevelDescription(int32 Level)
 {
-	return Super::GetNextLevelDescription(Level);
+	const int32 ScaledDamage = Damage.GetValueAtLevel(Level);
+	const float EnergyCost = FMath::Abs(GetEnergyCost(Level));
+	const float Cooldown = GetCooldown(Level);
+	const float KC = KnockbackChance;
+	if (Level == 2)
+	{
+		return FString::Printf(TEXT(
+			// Title
+			"<Title>ROCK PUNCH</>\n\n"
+
+			// Level
+			"<Small>Level: </><Level>%d</>\n"
+			// Energy Cost
+			"<Small>Energy Cost: </><Energy>%.1f</>\n"
+			// Cooldown
+			"<Small>Cooldown: </><Cooldown>%.1f</>\n\n"
+
+			"<Default>Form and launch a </><Energy>medium boulder</><Default>, "
+			"which deals </>"
+
+			// Damage
+			"<Damage>%d</><Default> Seismic damage on impact and also has a </>"
+
+			// Knockback
+			"<Damage>40%%</><Default> Knock Back Chance.</>"),
+			
+
+			// Values
+			Level,
+			EnergyCost,
+			Cooldown,
+			ScaledDamage,
+			KC);
+	}
+	if (Level == 3)
+	{
+		return FString::Printf(TEXT(
+			// Title
+			"<Title>ROCK PUNCH</>\n\n"
+
+			// Level
+			"<Small>Level: </><Level>%d</>\n"
+			// Energy Cost
+			"<Small>Energy Cost: </><Energy>%.1f</>\n"
+			// Cooldown
+			"<Small>Cooldown: </><Cooldown>%.1f</>\n\n"
+
+			"<Default>Form and launch a </><Energy>large boulder</><Default>, "
+			"which deals </>"
+
+			// Damage
+			"<Damage>%d</><Default> Seismic damage on impact. </>"
+			"<Default>The boulder can also bounce once off the ground, damaging nearby enemies, and has a </>"
+			"<Damage>60%%</><Default> Knock Back Chance.</>"
+			),
+
+			// Values
+			Level,
+			EnergyCost,
+			Cooldown,
+			ScaledDamage,
+			KC);
+	}
+	if (Level == 4)
+	{
+		return FString::Printf(TEXT(
+			// Title
+			"<Title>ROCK PUNCH</>\n\n"
+
+			// Level
+			"<Small>Level: </><Level>%d</>\n"
+			// Energy Cost
+			"<Small>Energy Cost: </><Energy>%.1f</>\n"
+			// Cooldown
+			"<Small>Cooldown: </><Cooldown>%.1f</>\n\n"
+
+			"<Default>Form and launch a </><Energy>huge boulder</><Default>, "
+			"which deals </>"
+
+			// Damage
+			"<Damage>%d</><Default> Seismic damage on impact. </>"
+			"<Default>The boulder can also bounce once off the ground, damaging nearby enemies, and has a </>"
+			"<Damage>80%%</><Default> Knock Back Chance.</>"
+			),
+
+			// Values
+			Level,
+			EnergyCost,
+			Cooldown,
+			ScaledDamage,
+			KC);
+	}
+	else
+	{
+		return FString::Printf(TEXT(
+			// Title
+			"<Title>ROCK PUNCH</>\n\n"
+
+			// Level
+			"<Small>Level: </><Level>%d</>\n"
+			// Energy Cost
+			"<Small>Energy Cost: </><Energy>%.1f</>\n"
+			// Cooldown
+			"<Small>Cooldown: </><Cooldown>%.1f</>\n\n"
+
+			"<Default>Form and launch an </><Energy>immensely huge boulder</><Default>, "
+			"which deals </>"
+
+			// Damage
+			"<Damage>%d</><Default> Seismic damage on impact. </>"
+			"<Default>The boulder can also bounce once off the ground, damaging nearby enemies, and has a </>"
+			"<Damage>100%%</><Default> Knock Back Chance.</>"
+			),
+
+			// Values
+			Level,
+			EnergyCost,
+			Cooldown,
+			ScaledDamage,
+			KC);
+	}
 }
 
 void URockPunch::FindAndSpawnGeoProjectile()

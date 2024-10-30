@@ -18,6 +18,9 @@ public:
 	UPROPERTY(BlueprintReadWrite, Category = "AerowProjectile")
 	int NumAeroBounces = 5;
 
+	UFUNCTION(BlueprintCallable)
+	int32 GetNumAeroBounces() {return NumAeroBounces; };
+	
 protected:
 
 	virtual void BeginPlay() override;

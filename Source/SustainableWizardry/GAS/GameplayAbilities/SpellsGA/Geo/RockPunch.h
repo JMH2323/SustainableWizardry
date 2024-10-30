@@ -33,7 +33,7 @@ protected:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TSubclassOf<ASusWizProjectiles> GeoProjectileOne;
-
+	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TSubclassOf<ASusWizProjectiles> GeoProjectileTwo;
 

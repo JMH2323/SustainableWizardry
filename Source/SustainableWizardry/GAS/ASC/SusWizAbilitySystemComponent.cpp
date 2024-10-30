@@ -232,6 +232,7 @@ FGameplayTag USusWizAbilitySystemComponent::GetStatusFromAbilityTag(const FGamep
 	if (const FGameplayAbilitySpec* Spec = GetSpecFromAbilityTag(AbilityTag))
 	{
 		return GetStatusFromSpec(*Spec);
+		
 	}
 	return FGameplayTag();
 }
@@ -272,7 +273,7 @@ void USusWizAbilitySystemComponent::ServerEquipAbility_Implementation(const FGam
 			{
 				SusWizAbility->CurrentInputTag = FSusWizGameplayTags::Get().Abilities_None;
 			}
-			// Clear this ability's slot, just in case, it's a different slot
+			// Clear this ability's slot, just in case it's a different slot
 			ClearSlot(AbilitySpec);
 			// Now, assign this ability to this slot
 			AbilitySpec->DynamicAbilityTags.AddTag(Slot);
@@ -373,13 +374,26 @@ bool USusWizAbilitySystemComponent::GetDescriptionsByAbilityTag(const FGameplayT
 	{
 		if(USusWizGameplayAbility* SusWizAbility = Cast<USusWizGameplayAbility>(AbilitySpec->Ability))
 		{
-			OutDescription = SusWizAbility->GetDescription(AbilitySpec->Level);
-			OutNextLevelDescription = SusWizAbility->GetNextLevelDescription(AbilitySpec->Level + 1);
+			if (USusWizAbilitySystemLibrary::isAbilityTagDemo(AbilityTag))
+			{
+				OutDescription = SusWizAbility->GetDescription(AbilitySpec->Level);
+				OutNextLevelDescription = SusWizAbility->GetNextLevelDescription(AbilitySpec->Level + 1);
+				return true;
+			}
+			OutDescription = FString::Printf(TEXT("<Default>Not included in DEMO</>"));
+			OutNextLevelDescription = FString::Printf(TEXT("<Default>Not included in DEMO</>"));
 			return true;
 		}
 	}
 	const UAbilityInfo* AbilityInfo = USusWizAbilitySystemLibrary::GetAbilityInfo(GetAvatarActor());
-	OutDescription = USusWizGameplayAbility::GetLockedDescription(AbilityInfo->FindAbilityInfoForTag(AbilityTag).LevelRequirement);
+	if (USusWizAbilitySystemLibrary::isAbilityTagDemo(AbilityTag))
+	{
+		OutDescription = USusWizGameplayAbility::GetLockedDescription(AbilityInfo->FindAbilityInfoForTag(AbilityTag).LevelRequirement);
+	}
+	else
+	{
+		OutDescription = FString::Printf(TEXT("<Default>Not included in DEMO</>"));
+	}
 
 	// Check the ability is not "null" or none
 	if (!AbilityTag.IsValid() || AbilityTag.MatchesTagExact(FSusWizGameplayTags::Get().Abilities_None))
@@ -388,7 +402,14 @@ bool USusWizAbilitySystemComponent::GetDescriptionsByAbilityTag(const FGameplayT
 	}
 	else
 	{
-		OutDescription = USusWizGameplayAbility::GetLockedDescription(AbilityInfo->FindAbilityInfoForTag(AbilityTag).LevelRequirement);
+		if (USusWizAbilitySystemLibrary::isAbilityTagDemo(AbilityTag))
+		{
+			OutDescription = USusWizGameplayAbility::GetLockedDescription(AbilityInfo->FindAbilityInfoForTag(AbilityTag).LevelRequirement);
+		}
+		else
+		{
+			OutDescription = FString::Printf(TEXT("<Default>Not included in DEMO</>"));
+		}
 	}
 	
 	OutNextLevelDescription = FString();

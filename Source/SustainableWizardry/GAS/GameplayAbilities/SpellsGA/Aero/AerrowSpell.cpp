@@ -5,7 +5,6 @@
 
 #include "SustainableWizardry/SustainableWizardry.h"
 #include "GameFramework/ProjectileMovementComponent.h"
-#include "Kismet/KismetSystemLibrary.h"
 #include "SustainableWizardry/GAS/SusWizAbilitySystemLibrary.h"
 #include "SustainableWizardry/GAS/GameplayAbilities/Spells/Aero/AerowProjectileClass.h"
 #include "SustainableWizardry/GAS/GameplayAbilities/Spells/SpellsBase/SusWizProjectiles.h"
@@ -13,12 +12,114 @@
 
 FString UAerrowSpell::GetDescription(int32 Level)
 {
-	return Super::GetDescription(Level);
+	const int32 ScaledDamage = Damage.GetValueAtLevel(Level);
+	const float EnergyCost = FMath::Abs(GetEnergyCost(Level));
+	const float Cooldown = GetCooldown(Level);
+	int32 NumArrows = 1;
+	if (Level >= 4) NumArrows++;
+	const int32 BounceCount = Level * 2;
+	return FString::Printf(TEXT(
+			// Title
+			"<Title>AERROW</>\n\n"
+
+			// Level
+			"<Small>Level: </><Level>%d</>\n"
+			// Energy Cost
+			"<Small>Energy Cost: </><Energy>%.1f</>\n"
+			// Cooldown
+			"<Small>Cooldown: </><Cooldown>%.1f</>\n\n"
+
+			// Num Arrows
+			"<Default>Harness the wind around you, summoning </><Level>%i</> Arrow, that tracks either "
+			"your target or the closest enemy. When it pierces, it deals "
+
+			// Damage
+			"<Damage>%d</><Default> Aero damage. "
+			// BounceCount
+			 "It then bounces to the next target, or off you, </><Level>%i</> times."
+			),
+			
+			// Values
+			Level,
+			EnergyCost,
+			Cooldown,
+			NumArrows,
+			ScaledDamage,
+			BounceCount);
 }
 
 FString UAerrowSpell::GetNextLevelDescription(int32 Level)
 {
-	return Super::GetNextLevelDescription(Level);
+	const int32 ScaledDamage = Damage.GetValueAtLevel(Level);
+	const float EnergyCost = FMath::Abs(GetEnergyCost(Level));
+	const float Cooldown = GetCooldown(Level);
+	int32 NumArrows = 1;
+	if (Level >= 4) NumArrows++;
+	const int32 BounceCount = Level * 2;
+
+	if (NumArrows > 1)
+	{
+		return FString::Printf(TEXT(
+			// Title
+			"<Title>AERROW</>\n\n"
+
+			// Level
+			"<Small>Level: </><Level>%d</>\n"
+			// Energy Cost
+			"<Small>Energy Cost: </><Energy>%.1f</>\n"
+			// Cooldown
+			"<Small>Cooldown: </><Cooldown>%.1f</>\n\n"
+
+			// Num Arrows
+			"<Default>Harness the wind around you, summoning </><Level>%i</> Arrows, that tracks either "
+			"your target or the closest enemy. When it pierces, it deals "
+
+			// Damage
+			"<Damage>%d</><Default> Aero damage. "
+			// BounceCount
+			 "It then bounces to the next target, or off you, </><Level>%i</> times."
+			),
+			
+			// Values
+			Level,
+			EnergyCost,
+			Cooldown,
+			NumArrows,
+			ScaledDamage,
+			BounceCount);
+	}
+	else
+	{
+		return FString::Printf(TEXT(
+			// Title
+			"<Title>AERROW</>\n\n"
+
+			// Level
+			"<Small>Level: </><Level>%d</>\n"
+			// Energy Cost
+			"<Small>Energy Cost: </><Energy>%.1f</>\n"
+			// Cooldown
+			"<Small>Cooldown: </><Cooldown>%.1f</>\n\n"
+
+			// Num Arrows
+			"<Default>Harness the wind around you, summoning </><Level>%i</> Arrow, that tracks either "
+			"your target or the closest enemy. When it pierces, it deals "
+
+			// Damage
+			"<Damage>%d</><Default> Aero damage. "
+			// BounceCount
+			 "It then bounces to the next target, or off you, </><Level>%i</> times."
+			),
+			
+			// Values
+			Level,
+			EnergyCost,
+			Cooldown,
+			NumArrows,
+			ScaledDamage,
+			BounceCount);
+	}
+	
 }
 
 void UAerrowSpell::SpawnAerrowProjectiles()
@@ -101,7 +202,7 @@ void UAerrowSpell::SpawnAerrowProjectiles()
 
 			Projectile->DamageEffectParams = MakeDamageEffectParamsFromClassDefaults();
 			
-			Projectile->NumAeroBounces = GetAbilityLevel() + 1;
+			Projectile->NumAeroBounces = FMath::Min(GetAbilityLevel() * 2 + 1, 14);
 			
 			if (Projectile->ProjectileMovement)
 			{

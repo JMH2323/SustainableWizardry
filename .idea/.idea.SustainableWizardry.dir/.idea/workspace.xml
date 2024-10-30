@@ -9,8 +9,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1579a7cd-1dd9-4102-8fb2-ded64c6e3088" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SustainableWizardry.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameplayDevelopment/GameMode/BP_GameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayDevelopment/GameMode/BP_GameMode.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LevelDevelopment/Maps/MapOne.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LevelDevelopment/Maps/MapOne.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Build/Windows/FileOpenOrder/CookerOpenOrder.log" beforeDir="false" afterPath="$PROJECT_DIR$/Build/Windows/FileOpenOrder/CookerOpenOrder.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Build/Windows/FileOpenOrder/EditorOpenOrder.log" beforeDir="false" afterPath="$PROJECT_DIR$/Build/Windows/FileOpenOrder/EditorOpenOrder.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +74,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;Uproject.SustainableWizardry.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Landscape-Changes&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Debuging-and-Tweaks&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -264,6 +264,14 @@
       <workItem from="1727300614544" duration="1768000" />
       <workItem from="1727379745739" duration="771000" />
       <workItem from="1727576918188" duration="711000" />
+      <workItem from="1727839147207" duration="5106000" />
+      <workItem from="1727905427662" duration="13941000" />
+      <workItem from="1727987148905" duration="3748000" />
+      <workItem from="1728079351030" duration="1255000" />
+      <workItem from="1728172287439" duration="3745000" />
+      <workItem from="1728193116444" duration="3795000" />
+      <workItem from="1728249042798" duration="7098000" />
+      <workItem from="1728337870680" duration="1111000" />
     </task>
     <servers />
   </component>
