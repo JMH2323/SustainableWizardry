@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "SpellMenuWidgetController.h"
 #include "SusWizWidgetController.h"
 #include "SustainableWizardry/SusWizGameplayTags.h"
 #include "SustainableWizardry/GAS/Attribute/SusWizAttributeSet.h"
@@ -52,11 +53,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnLevelChangedSignature, int32, Ne
 // 9. 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMessageWidgetRowSignature, FUIWidgetRow, Row);
 
-
-
-
-
-
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnDashed, float, dashcooldown);
 /**
  * 
  */
@@ -75,6 +72,9 @@ public:
 	//UPROPERTY(BlueprintAssignable, Category="GAS|Attributes")
 	//FOnHealthChangedSignature OnHealthChanged;
 
+	UPROPERTY(BlueprintReadWrite)
+	USpellMenuWidgetController* SpellMenuWidgetController;
+	
 	// 10
 	UPROPERTY(BlueprintAssignable, Category="GAS|Attributes")
 	FOnAttributeChangedSignature OnHealthChanged;
@@ -97,6 +97,9 @@ public:
 
 	UPROPERTY(BlueprintAssignable, Category="GAS|Level")
 	FOnLevelChangedSignature  OnPlayerLevelChangedDelegate;
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnSpellGlobeReassigned(const FGameplayTag& AbilityTag, const FGameplayTag& InputTag);
 	
 protected:
 
@@ -119,6 +122,8 @@ protected:
 
 
 	void OnAbilityEquipped(const FGameplayTag& AbilityTag, const FGameplayTag& Status, const FGameplayTag& Slot, const FGameplayTag& PreviousSlot) const;
+
+
 	
 	
 };

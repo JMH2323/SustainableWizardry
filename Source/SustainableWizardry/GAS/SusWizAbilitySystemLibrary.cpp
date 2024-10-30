@@ -321,6 +321,21 @@ bool USusWizAbilitySystemLibrary::isInputTagLeftHanded(FGameplayTag InputTag)
 	return false;
 }
 
+bool USusWizAbilitySystemLibrary::isAbilityTagDemo(FGameplayTag AbilityTag)
+{
+	if (AbilityTag.MatchesTagExact(FSusWizGameplayTags::Get().Abilities_Fire_FireBolt) ||
+		AbilityTag.MatchesTagExact(FSusWizGameplayTags::Get().Abilities_Fire_BigFireBolt) ||
+		AbilityTag.MatchesTagExact(FSusWizGameplayTags::Get().Abilities_Aero_Airrow) ||
+		AbilityTag.MatchesTagExact(FSusWizGameplayTags::Get().Abilities_Geo_RockPunch) ||
+		AbilityTag.MatchesTagExact(FSusWizGameplayTags::Get().Abilities_Solar_Beam) ||
+		AbilityTag.MatchesTagExact(FSusWizGameplayTags::Get().Abilities_Hydro_HydroPulse)
+		)
+	{
+		return true;
+	}
+	return false;
+}
+
 
 bool USusWizAbilitySystemLibrary::IsSuccessfulDebuff(const FGameplayEffectContextHandle& EffectContextHandle)
 {

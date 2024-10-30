@@ -104,7 +104,7 @@ void UMVVM_LoadScreen::PlayButtonPressed()
 	SusWizGameInstance->LoadSlotIndex = SelectedSlot->SlotIndex;
 	if (IsValid(SelectedSlot))
 	{
-		SusWizGameMode->TravelToMap(SelectedSlot);	
+		SusWizGameMode->TravelToMap(SelectedSlot);
 	}
 }
 

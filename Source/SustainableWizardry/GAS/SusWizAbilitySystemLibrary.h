@@ -101,6 +101,9 @@ public:
 	/* Gameplay Mechanics Getters */
 	UFUNCTION(BlueprintCallable, Category="SusWizAbilitySystemLibrary|TagMechanics")
 	static bool isInputTagLeftHanded(FGameplayTag InputTag);
+
+	UFUNCTION(BlueprintCallable, Category="SusWizAbilitySystemLibrary|TagMechanics")
+	static bool isAbilityTagDemo(FGameplayTag AbilityTag);
 	
 	UFUNCTION(BlueprintPure, Category = "SusWizAbilitySystemLibrary|GameplayMechanics")
 	static bool IsNotFriend(AActor* FirstActor, AActor* SecondActor);

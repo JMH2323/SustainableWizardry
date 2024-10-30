@@ -10,7 +10,7 @@
 ASusWizPlayerState::ASusWizPlayerState()
 {
 	
-	UE_LOG(LogTemp, Warning, TEXT("Player state is successfully created."));
+
 	AbilitySystemComponent = CreateDefaultSubobject<USusWizAbilitySystemComponent>("AbilitySystemComponent");
 	
 	AbilitySystemComponent->SetIsReplicated(true);
@@ -31,7 +31,7 @@ ASusWizPlayerState::ASusWizPlayerState()
 UAbilitySystemComponent* ASusWizPlayerState::GetAbilitySystemComponent() const
 {
 
-	UE_LOG(LogTemp, Warning, TEXT("Player state is getting ASC."));
+	//UE_LOG(LogTemp, Warning, TEXT("Player state is getting ASC."));
 	return AbilitySystemComponent;
 	
 }
