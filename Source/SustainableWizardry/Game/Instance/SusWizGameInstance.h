@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Engine/GameInstance.h"
+#include "GameFramework/SaveGame.h"
 #include "SusWizGameInstance.generated.h"
 
 /**
@@ -24,6 +25,9 @@ public:
 	int32 LoadSlotIndex = 0;
 	UPROPERTY(BlueprintReadWrite)
 	TArray<float> VolumeValues = {1.f, 1.f, 1.f, 1.f };
+	UPROPERTY(BlueprintReadWrite)
+	USaveGame* SaveGame = nullptr;
+
 	
 };
 
