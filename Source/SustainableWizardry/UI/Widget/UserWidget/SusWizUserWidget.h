@@ -18,8 +18,20 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void SetWidgetController(UObject* InWidgetController);
 
+	UFUNCTION(BlueprintCallable)
+	void CreatePausedTimer();
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void PausedTimerEvent();
+	
 	UPROPERTY(BlueprintReadOnly)
 	TObjectPtr<UObject> WidgetController;
+
+	UPROPERTY(BlueprintReadWrite)
+	FTimerHandle TimerHandle;
+
+	
+	
 protected:
 	UFUNCTION(BlueprintImplementableEvent)
 	void WidgetControllerSet();
