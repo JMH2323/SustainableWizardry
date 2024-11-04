@@ -220,59 +220,63 @@ void ASusWizCharacterPlayer::AddToSpellPoints_Implementation(int32 InSpellPoints
 
 void ASusWizCharacterPlayer::SaveProgress_Implementation(const FName& CheckpointTag)
 {
-	ASuzWizGameModeBase* SusWizGameMode = Cast<ASuzWizGameModeBase>(UGameplayStatics::GetGameMode(this));
-	if (SusWizGameMode)
+	FName ValidTag = FName(TEXT("ValidTag"));
+	if (ValidTag == CheckpointTag)
 	{
-		ULoadScreenSaveGame* SaveData = SusWizGameMode->RetrieveInGameSaveData();
-		if (SaveData == nullptr) return;
-
+		UE_LOG(LogSusWiz, Type::Error , TEXT("WTF SAVED AHHHAHH %s"), *CheckpointTag.ToString());
 		
-
-		if(ASusWizPlayerState* SusWizPlayerState = Cast<ASusWizPlayerState>(GetPlayerState()))
+		ASuzWizGameModeBase* SusWizGameMode = Cast<ASuzWizGameModeBase>(UGameplayStatics::GetGameMode(this));
+		if (SusWizGameMode)
 		{
-			SaveData->PlayerLevel = SusWizPlayerState->GetPlayerLevel();
-			SaveData->XP = SusWizPlayerState->GetXP();
-			SaveData->SpellPoints = SusWizPlayerState->GetSpellPoints();
-			SaveData->PlayerSaveLocation = GetActorLocation();
-			SaveData->WaveCount = SusWizGameMode->GetWaveCount();
+			ULoadScreenSaveGame* SaveData = SusWizGameMode->RetrieveInGameSaveData();
+			if (SaveData == nullptr) return;
+			
+			if(ASusWizPlayerState* SusWizPlayerState = Cast<ASusWizPlayerState>(GetPlayerState()))
+			{
+				SaveData->PlayerLevel = SusWizPlayerState->GetPlayerLevel();
+				SaveData->XP = SusWizPlayerState->GetXP();
+				SaveData->SpellPoints = SusWizPlayerState->GetSpellPoints();
+				SaveData->PlayerSaveLocation = GetActorLocation();
+				SaveData->WaveCount = SusWizGameMode->GetWaveCount();
+			}
+			if (USusWizAttributeSet* SusWizAS = GetSusWizAttributeSet())
+			{
+				SaveData->Deep = SusWizAS->GetDeep();
+				SaveData->Flare = SusWizAS->GetFlare();
+				SaveData->Swift = SusWizAS->GetSwift();
+				SaveData->Seismic = SusWizAS->GetSeismic();
+			}
+			
+			
+			SaveData->bFirstTimeLoadIn = false;
+			SaveData->bSettingsSaveFlag = false;
+			if (!HasAuthority()) return;
+
+			USusWizAbilitySystemComponent* SusWizASC = Cast<USusWizAbilitySystemComponent>(AbilitySystemComponent);
+			FForEachAbility SaveAbilityDelegate;
+			SaveData->SavedAbilities.Empty();
+			
+			SaveAbilityDelegate.BindLambda([this, SusWizASC, SaveData] (const FGameplayAbilitySpec& AbilitySpec)
+			{
+				const FGameplayTag AbilityTag = SusWizASC->GetAbilityTagFromSpec(AbilitySpec);
+				UAbilityInfo* AbilityInfo = USusWizAbilitySystemLibrary::GetAbilityInfo(this);
+				FSusWizAbilityInfo Info = AbilityInfo->FindAbilityInfoForTag(AbilityTag);
+
+				FSavedAbility SavedAbility;
+				SavedAbility.GameplayAbility = Info.Ability;
+				SavedAbility.AbilityLevel = AbilitySpec.Level;
+				SavedAbility.AbilitySlot = SusWizASC->GetSlotFromAbilityTag(AbilityTag);
+				SavedAbility.AbilityStatus = SusWizASC->GetStatusFromAbilityTag(AbilityTag);
+				SavedAbility.AbilityTag = AbilityTag;
+				SavedAbility.AbilityType = Info.AbilityTypeTag;
+
+				SaveData->SavedAbilities.AddUnique(SavedAbility);
+			});
+			SusWizASC->ForEachAbility(SaveAbilityDelegate);
+			
+		
+			SusWizGameMode->SaveInGameProgressData(SaveData);
 		}
-		if (USusWizAttributeSet* SusWizAS = GetSusWizAttributeSet())
-		{
-			SaveData->Deep = SusWizAS->GetDeep();
-			SaveData->Flare = SusWizAS->GetFlare();
-			SaveData->Swift = SusWizAS->GetSwift();
-			SaveData->Seismic = SusWizAS->GetSeismic();
-		}
-		
-		
-		SaveData->bFirstTimeLoadIn = false;
-		SaveData->bSettingsSaveFlag = false;
-		if (!HasAuthority()) return;
-
-		USusWizAbilitySystemComponent* SusWizASC = Cast<USusWizAbilitySystemComponent>(AbilitySystemComponent);
-		FForEachAbility SaveAbilityDelegate;
-		SaveData->SavedAbilities.Empty();
-		
-		SaveAbilityDelegate.BindLambda([this, SusWizASC, SaveData] (const FGameplayAbilitySpec& AbilitySpec)
-		{
-			const FGameplayTag AbilityTag = SusWizASC->GetAbilityTagFromSpec(AbilitySpec);
-			UAbilityInfo* AbilityInfo = USusWizAbilitySystemLibrary::GetAbilityInfo(this);
-			FSusWizAbilityInfo Info = AbilityInfo->FindAbilityInfoForTag(AbilityTag);
-
-			FSavedAbility SavedAbility;
-			SavedAbility.GameplayAbility = Info.Ability;
-			SavedAbility.AbilityLevel = AbilitySpec.Level;
-			SavedAbility.AbilitySlot = SusWizASC->GetSlotFromAbilityTag(AbilityTag);
-			SavedAbility.AbilityStatus = SusWizASC->GetStatusFromAbilityTag(AbilityTag);
-			SavedAbility.AbilityTag = AbilityTag;
-			SavedAbility.AbilityType = Info.AbilityTypeTag;
-
-			SaveData->SavedAbilities.AddUnique(SavedAbility);
-		});
-		SusWizASC->ForEachAbility(SaveAbilityDelegate);
-		
-	
-		SusWizGameMode->SaveInGameProgressData(SaveData);
 	}
 }
 
@@ -306,7 +310,7 @@ void ASusWizCharacterPlayer::ResetPlayerProgress()
 		SusWizAS->SetSwift(1);
 		SusWizAS->SetSeismic(1);
 	}
-	FName CheckpointTag;
+	FName CheckpointTag = FName(TEXT("ValidTag"));
 	this->Execute_SaveProgress(this, CheckpointTag);
 }
 
